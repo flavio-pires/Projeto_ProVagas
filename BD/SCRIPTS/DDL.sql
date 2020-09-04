@@ -67,7 +67,8 @@ GO
 CREATE TABLE Administrador (
 	IdAdministrador INT PRIMARY KEY IDENTITY,
 	NomeCompletoAdmin VARCHAR (255) NOT NULL,
-	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL,
+	NIF CHAR(9) UNIQUE
 )
 
 GO
