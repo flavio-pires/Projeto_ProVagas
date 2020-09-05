@@ -42,9 +42,9 @@ CREATE TABLE Usuario (
 	Email VARCHAR (255) NOT NULL UNIQUE,
 	Senha VARCHAR (64) NOT NULL,
 	Telefone VARCHAR (20) NOT NULL UNIQUE,
-	Rua VARCHAR (255) NOT NULL,
-	Num VARCHAR (10) NOT NULL,
-	Bairro VARCHAR (100) NOT NULL,
+	Rua VARCHAR (255),
+	Num VARCHAR (10),
+	Bairro VARCHAR (100),
 	Complemento VARCHAR (20),
 	CEP CHAR(8),
 	IdCidade INT FOREIGN KEY REFERENCES Cidade(IdCIdade) NOT NULL,
@@ -56,8 +56,24 @@ GO
 CREATE TABLE Candidato (
 	IdCandidato INT PRIMARY KEY IDENTITY,
 	NomeCompletoCandidato VARCHAR (255) NOT NULL,
-	CPF CHAR (11) NOT NULL UNIQUE,
+	CPF CHAR (11) UNIQUE,
 	DataNascimento DATE NOT NULL,
+	RG VARCHAR (10) NOT NULL,
+	NivelEscolaridade VARCHAR (50),
+	NivelInglês VARCHAR (30),
+	Linkedin VARCHAR (255),
+	FotoPerfil VARCHAR (255),
+	PossuiDeficiencia BIT NOT NULL,
+	Deficiencia VARCHAR (255),
+	CursandoSENAI BIT NOT NULL,
+	Curso VARCHAR(255),
+	Habilidades VARCHAR (255),
+	NomeEmpresaExperienciaProfissional VARCHAR (50),
+	Cargo VARCHAR (50),
+	DataInicio DATE,
+	DataTermino DATE,
+	EmpregoAtual BIT,
+	Atividades TEXT,
 	IdUsuario INT FOREIGN KEY REFERENCES Usuario (IdUsuario) NOT NULL,
 	IdGenero INT FOREIGN KEY REFERENCES Genero (IdGenero) NOT NULL
 )
@@ -67,8 +83,10 @@ GO
 CREATE TABLE Administrador (
 	IdAdministrador INT PRIMARY KEY IDENTITY,
 	NomeCompletoAdmin VARCHAR (255) NOT NULL,
+	NIF CHAR(9) UNIQUE,
+	UnidadeSENAI VARCHAR (255) NOT NULL,
+	Departamento VARCHAR (255) NOT NULL,
 	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL,
-	NIF CHAR(9) UNIQUE
 )
 
 GO
@@ -77,6 +95,10 @@ CREATE TABLE Empresa (
 	IdEmpresa INT PRIMARY KEY IDENTITY,
 	RazaoSocial VARCHAR (255) NOT NULL,
 	NomeFantasia VARCHAR (255) NOT NULL,
+	TotalFuncionarios VARCHAR (255),
+	NomeParaContato VARCHAR (255),
+	Linkedin VARCHAR (255),
+	Site VARCHAR (255),
 	Porte VARCHAR (255) NOT NULL,
 	CNPJ CHAR (14) NOT NULL UNIQUE,
 	CNAE CHAR (7) NOT NULL UNIQUE,
