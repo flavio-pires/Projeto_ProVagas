@@ -58,7 +58,6 @@ CREATE TABLE Candidato (
 	NomeCompletoCandidato VARCHAR (255) NOT NULL,
 	CPF CHAR (11) UNIQUE,
 	DataNascimento DATE NOT NULL,
-	RG CHAR (10) UNIQUE NOT NULL,
 	NivelEscolaridade VARCHAR (50),
 	NivelInglês VARCHAR (30),
 	Linkedin VARCHAR (200),
@@ -66,11 +65,11 @@ CREATE TABLE Candidato (
 	PossuiDeficiencia BIT NOT NULL,
 	Deficiencia VARCHAR (255),
 	CursandoSENAI BIT NOT NULL,
-	Curso VARCHAR(255) NOT NULL,
-	Habilidades VARCHAR (255),
-	NomeEmpresaExperienciaProfissional VARCHAR (50) ,
+	Curso VARCHAR(255),
+	Habilidades VARCHAR (255) NOT NULL,
+	NomeEmpresaExperienciaProfissional VARCHAR (50),
 	Cargo VARCHAR (50),
-	EmpregoAtual BIT ,
+	EmpregoAtual BIT,
 	Atividades VARCHAR (255),
 	IdUsuario INT FOREIGN KEY REFERENCES Usuario (IdUsuario) NOT NULL,
 	IdGenero INT FOREIGN KEY REFERENCES Genero (IdGenero) NOT NULL
@@ -94,10 +93,9 @@ CREATE TABLE Empresa (
 	RazaoSocial VARCHAR (255) NOT NULL,
 	NomeFantasia VARCHAR (255) NOT NULL,
 	PorteEmpresa VARCHAR (255) NOT NULL,
-	NomeParaContato VARCHAR (255),
+	NomeParaContato VARCHAR (255) NOT NULL,
 	Linkedin VARCHAR (255),
 	Website VARCHAR (255),
-	Porte VARCHAR (255) NOT NULL,
 	CNPJ CHAR (14) NOT NULL UNIQUE,
 	CNAE CHAR (7) NOT NULL UNIQUE,
 	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL
@@ -137,8 +135,8 @@ CREATE TABLE Inscricao (
 
 CREATE TABLE Estagio (
 	IdEstagio INT PRIMARY KEY IDENTITY,
-	Datainicio DATE NOT NULL,
-	DataFim DATE NOT NULL,
+	DataInicio DATE NOT NULL,
+	DataFinal DATE NOT NULL,
 	IdCandidato INT FOREIGN KEY REFERENCES Candidato (IdCandidato) NOT NULL,
 	IdEmpresa INT FOREIGN KEY REFERENCES Empresa (IdEmpresa) NOT NULL
 )
