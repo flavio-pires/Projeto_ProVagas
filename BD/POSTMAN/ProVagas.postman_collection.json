@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "d997b112-1609-4a40-bded-2947af36c1bd",
+		"name": "ProVagas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Beneficios",
+			"item": [
+				{
+					"name": "Listar beneficios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/Beneficios",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Beneficios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar benefício por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Beneficios/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Beneficios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar novo benefício",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/Beneficios",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Beneficios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar benefício",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Beneficios/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Beneficios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar um benefício",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/Beneficios/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Beneficios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Estagios",
+			"item": [
+				{
+					"name": "Listar estágios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Estagios",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Estagios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar novo estágio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Estagios",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Estagios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar estágio",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Estagios/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Estagios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar um estagio",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/Estagios/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"Estagios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Empresas",
+			"item": [
+				{
+					"name": "Listar empresas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Empresas",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Empresas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar empresa por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Empresas/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Empresas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar nova empresa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Empresas",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Empresas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar empresa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Empresas/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Empresas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar uma empresa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Empresas/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Empresas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
