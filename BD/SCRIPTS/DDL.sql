@@ -37,10 +37,8 @@ CREATE TABLE  Cidade (
 
 GO
 
-CREATE TABLE Usuario (
-	IdUsuario INT PRIMARY KEY IDENTITY,
-	Email VARCHAR (255) NOT NULL UNIQUE,
-	Senha VARCHAR (64) NOT NULL,
+CREATE TABLE Endereco (
+	IdEndereco INT PRIMARY KEY IDENTITY,
 	Telefone VARCHAR (20),
 	Rua VARCHAR (255) NOT NULL,
 	Num VARCHAR (10) NOT NULL,
@@ -48,7 +46,30 @@ CREATE TABLE Usuario (
 	Complemento VARCHAR (20),
 	CEP CHAR(8) NOT NULL,
 	IdCidade INT FOREIGN KEY REFERENCES Cidade(IdCIdade) NOT NULL,
+)
+
+GO
+
+CREATE TABLE Usuario (
+	IdUsuario INT PRIMARY KEY IDENTITY,
+	Email VARCHAR (255) NOT NULL UNIQUE,
+	Senha VARCHAR (64) NOT NULL,
 	IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(IdTIpoUsuario)NOT NULL,
+	IdEndereco INT FOREIGN KEY REFERENCES Endereco(IdEndereco) NOT NULL
+)
+
+GO
+
+CREATE TABLE NivelEscolaridade (
+	IdNivelEscolaridade INT PRIMARY KEY IDENTITY,
+	Escolaridade VARCHAR
+)
+
+GO
+
+CREATE TABLE NivelIngles (
+	IdNivelIngles INT PRIMARY KEY IDENTITY,
+	Ingles VARCHAR
 )
 
 GO
@@ -58,8 +79,6 @@ CREATE TABLE Candidato (
 	NomeCompletoCandidato VARCHAR (255) NOT NULL,
 	CPF CHAR (11) UNIQUE,
 	DataNascimento DATE NOT NULL,
-	NivelEscolaridade VARCHAR (50),
-	NivelInglês VARCHAR (30),
 	Linkedin VARCHAR (200),
 	FotoPerfil IMAGE,
 	PossuiDeficiencia BIT NOT NULL,
@@ -72,7 +91,9 @@ CREATE TABLE Candidato (
 	EmpregoAtual BIT,
 	Atividades VARCHAR (255),
 	IdUsuario INT FOREIGN KEY REFERENCES Usuario (IdUsuario) NOT NULL,
-	IdGenero INT FOREIGN KEY REFERENCES Genero (IdGenero) NOT NULL
+	IdGenero INT FOREIGN KEY REFERENCES Genero (IdGenero) NOT NULL,
+	IdNivelIngles INT FOREIGN KEY REFERENCES NivelIngles (IdNivelIngles) NOT NULL,
+	IdNivelEscolaridade INT FOREIGN KEY REFERENCES NivelEscolaridade (IdNivelEscolaridade) NOT NULL
 )
 
 GO
@@ -121,6 +142,8 @@ CREATE TABLE Vaga (
 	IdTipoVaga INT FOREIGN KEY REFERENCES TipoVaga(IdTipoVaga) NOT NULL
 )
 
+GO
+
 CREATE TABLE StatusInscricao (
 	IdStatusInscricao INT PRIMARY KEY IDENTITY,
 	NomeStatus VARCHAR (255) NOT NULL
@@ -128,23 +151,37 @@ CREATE TABLE StatusInscricao (
 
 CREATE TABLE Inscricao (
 	IdInscricao INT PRIMARY KEY IDENTITY,
+	DataInscricao DATE NOT NULL,
 	IdVaga INT FOREIGN KEY REFERENCES Vaga(IdVaga) NOT NULL,
 	IdStatusInscricao INT FOREIGN KEY REFERENCES StatusInscricao(IdStatusInscricao) NOT NULL,
 	IdCandidato INT FOREIGN KEY REFERENCES Candidato(IdCandidato) NOT NULL
 )
 
+GO
+
+CREATE TABLE StatusEstagio (
+	IdStatusEstagio INT PRIMARY KEY IDENTITY,
+	NomeStatus VARCHAR (255) NOT NULL
+)
+
+GO
+
 CREATE TABLE Estagio (
 	IdEstagio INT PRIMARY KEY IDENTITY,
 	DataInicio DATE NOT NULL,
 	DataFinal DATE NOT NULL,
-	IdCandidato INT FOREIGN KEY REFERENCES Candidato (IdCandidato) NOT NULL,
-	IdEmpresa INT FOREIGN KEY REFERENCES Empresa (IdEmpresa) NOT NULL
+	IdInscricao INT FOREIGN KEY REFERENCES Inscricao (IdInscricao),
+	IdStatusEstagio INT FOREIGN KEY REFERENCES StatusEstagio (IdStatusEstagio)
 )
+
+GO
 
 CREATE TABLE Beneficio (
 	IdBeneficio INT PRIMARY KEY IDENTITY,
 	NomeBeneficio VARCHAR (255) NOT NULL
 )
+
+GO
 
 CREATE TABLE BeneficioXVaga (
 	IdBeneficioVaga INT PRIMARY KEY IDENTITY,
