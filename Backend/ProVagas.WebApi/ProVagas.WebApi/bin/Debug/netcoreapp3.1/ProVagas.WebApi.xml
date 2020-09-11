@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProVagas.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:ProVagas.Controllers.BeneficiosController.Get">
+            <summary>
+            Listar os benefícios
+            </summary>
+            <returns>Retorna uma lista e um status code 200</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficiosController.GetById(System.Int32)">
+            <summary>
+            Buscar um benefício pelo ID
+            </summary>
+            <param name="id">Id do benefício que será buscado</param>
+            <returns>Retorna um benefício específico pelo Id</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficiosController.Post(ProVagas.WebApi.Domains.Beneficio)">
+            <summary>
+            Cadastrar um novo benefício
+            </summary>
+            <param name="novoBeneficio">Objeto novoBeneficio que será cadastrado</param>
+            <returns>Retorna um status code 201</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficiosController.Put(System.Int32,ProVagas.WebApi.Domains.Beneficio)">
+            <summary>
+            Atualiza um benefício
+            </summary>
+            <param name="id">Id do benefício que será buscado</param>
+            <param name="beneficioAtualizado">Objeto beneficioAtualizado que será alterado</param>
+            <returns>Retorna um status code 204</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficiosController.Delete(System.Int32)">
+            <summary>
+            Deletar um benefício
+            </summary>
+            <param name="id">Id do benefício que será buscado</param>
+            <returns>Retorna um status code 204</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EventosController.Get">
+            <summary>
+            Listar as empresas
+            </summary>
+            <returns>Retorna uma lista e um status code 200</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EventosController.GetById(System.Int32)">
+            <summary>
+            Buscar um evento pelo ID
+            </summary>
+            <param name="id">Id da empresa que será buscado</param>
+            <returns>Retorna uma empresa específica pelo Id</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EventosController.Post(ProVagas.WebApi.Domains.Empresa)">
+            <summary>
+            Cadastrar uma nova empresa
+            </summary>
+            <param name="novaEmpresa">Objeto novaEmpresa que será cadastrado</param>
+            <returns>Retorna um status code 201</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EventosController.Put(System.Int32,ProVagas.WebApi.Domains.Empresa)">
+            <summary>
+            Atualiza uma empresa
+            </summary>
+            <param name="id">Id da empresa que será buscado</param>
+            <param name="empresaAtualizada">Objeto empresaAtualizada que será alterado</param>
+            <returns>Retorna um status code 204</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EventosController.Delete(System.Int32)">
+            <summary>
+            Deletar uma empresa
+            </summary>
+            <param name="id">Id da empresa que será buscado</param>
+            <returns>Retorna um status code 204</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EstagiosController.Get">
+            <summary>
+            Listar os estagios
+            </summary>
+            <returns>Retorna uma lista e um status code 200</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EstagiosController.GetById(System.Int32)">
+            <summary>
+            Buscar um estágio pelo ID
+            </summary>
+            <param name="id">Id do estágio que será buscado</param>
+            <returns>Retorna um estágio específico pelo Id</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EstagiosController.Post(ProVagas.WebApi.Domains.Estagio)">
+            <summary>
+            Cadastrar um novo estágio
+            </summary>
+            <param name="novoEstagio">Objeto novoEstagio que será cadastrado</param>
+            <returns>Retorna um status code 201</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EstagiosController.Put(System.Int32,ProVagas.WebApi.Domains.Estagio)">
+            <summary>
+            Atualiza um estágio
+            </summary>
+            <param name="id">Id do estágio que será buscado</param>
+            <param name="estagioAtualizado">Objeto estagioAtualizado que será alterado</param>
+            <returns>Retorna um status code 204</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EstagiosController.Delete(System.Int32)">
+            <summary>
+            Deletar um estágio
+            </summary>
+            <param name="id">Id do estágio que será buscado</param>
+            <returns>Retorna um status code 204</returns>
+        </member>
+    </members>
+</doc>

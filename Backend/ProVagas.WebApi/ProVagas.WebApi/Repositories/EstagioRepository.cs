@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ProVagas.Contexts;
-using ProVagas.Domains;
 using ProVagas.Interfaces;
+using ProVagas.WebApi.Contexts;
+using ProVagas.WebApi.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;

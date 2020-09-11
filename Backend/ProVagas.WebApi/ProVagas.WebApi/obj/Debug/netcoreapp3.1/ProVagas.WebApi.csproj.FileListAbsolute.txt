@@ -70,3 +70,5 @@ C:\Users\Bruno\Desktop\Projeto_ProVagas\Backend\ProVagas.WebApi\ProVagas.WebApi\
 C:\Users\Bruno\Desktop\Projeto_ProVagas\Backend\ProVagas.WebApi\ProVagas.WebApi\obj\Debug\netcoreapp3.1\ProVagas.WebApi.dll
 C:\Users\Bruno\Desktop\Projeto_ProVagas\Backend\ProVagas.WebApi\ProVagas.WebApi\obj\Debug\netcoreapp3.1\ProVagas.WebApi.pdb
 C:\Users\Bruno\Desktop\Projeto_ProVagas\Backend\ProVagas.WebApi\ProVagas.WebApi\obj\Debug\netcoreapp3.1\ProVagas.WebApi.genruntimeconfig.cache
+C:\Users\Bruno\Desktop\Projeto_ProVagas\Backend\ProVagas.WebApi\ProVagas.WebApi\bin\Debug\netcoreapp3.1\ProVagas.WebApi.xml
+C:\Users\Bruno\Desktop\Projeto_ProVagas\Backend\ProVagas.WebApi\ProVagas.WebApi\obj\Debug\netcoreapp3.1\ProVagas.WebApi.xml

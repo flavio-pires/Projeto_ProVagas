@@ -4,11 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ProVagas;
-using ProVagas.Domains;
 using ProVagas.Interfaces;
 using ProVagas.Repositories;
-
+using ProVagas.WebApi.Domains;
 
 namespace ProVagas.Controllers
 {

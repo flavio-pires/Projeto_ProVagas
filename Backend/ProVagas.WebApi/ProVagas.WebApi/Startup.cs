@@ -16,7 +16,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 
-namespace Provagas
+namespace Provagas.WebApi
 {
     public class Startup
     {
@@ -80,7 +80,7 @@ namespace Provagas
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProVagas", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProVagas.WebApi", Version = "v1" });
 
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
@@ -100,7 +100,7 @@ namespace Provagas
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProVagas");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProVagas.WebApi");
                 c.RoutePrefix = string.Empty;
             });
 
