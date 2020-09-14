@@ -26,6 +26,9 @@ INSERT INTO Genero VALUES (
 
 GO
 
+iNSERT INTO NivelIngles VALUES (
+'Basico')
+
 INSERT INTO Estado VALUES (
 		'São Paulo'
 	), (
@@ -112,18 +115,7 @@ INSERT INTO Cidade VALUES (
 GO
 
 INSERT INTO Usuario VALUES (
-	'a@email.com','xxx','999999999','Sauna','231','Calor','bloco x apto x','32112332',1,1
-), (
-	'b@email.com','xxx','999999998','Fogo','2314','Calor','Sem complementos','32112333',2,1
-), (
-	'c@email.com','xxx','999999997','Terra','23132','Barro','bloco x apto x','32112334',3,2
-), (
-	'd@email.com','xxx','999999996','Agua','4312','Mar','Sem complementos','32112335',4,2
-), (
-	'e@email.com','xxx','999999995','Ar','423','Vento','bloco x apto x','32112336',1,3
-), (
-	'f@email.com','xxx','999999994','Bichos','231','Natureza','bloco x apto x','32112332',2,3
-)
+
 
 GO
 

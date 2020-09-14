@@ -1,6 +1,6 @@
 -- DDL
 
-DROP DATABASE ProVagas
+CREATE DATABASE ProVagas
 
 GO
 
@@ -101,17 +101,19 @@ CREATE TABLE Candidato (
 GO
 
 
-CREATE TABLE Hablidades (
+CREATE TABLE Habilidades (
 IdHabilidades INT PRIMARY KEY IDENTITY,
 NomeHabilidade VARCHAR(80) NOT NULL
 )
+GO
 
 CREATE TABLE HabilidadeXCandidato
 (
 IdHabilidadeXCandidato INT PRIMARY KEY IDENTITY,
-IdHabilidades INT FOREIGN KEY REFERENCES Habilidades (IdHabilidades),
+IdHabilidades INT FOREIGN KEY REFERENCES HabIlidades (IdHabilidades),
 IdCandidato INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
 )
+GO
 
 CREATE TABLE Administrador (
 	IdAdministrador INT PRIMARY KEY IDENTITY,
@@ -164,6 +166,7 @@ CREATE TABLE Requisitos
 IdRequisitos INT PRIMARY KEY IDENTITY,
 NomeRequisitos VARCHAR (200) NOT NULL
 )
+GO
 
 CREATE TABLE RequisitosXVaga
 (
@@ -171,11 +174,13 @@ IdRequisitosXVaga INT PRIMARY KEY IDENTITY,
 IdRequisitos INT FOREIGN KEY REFERENCES Requisitos (IdRequisitos),
 IdVaga INT FOREIGN KEY REFERENCES Vaga (IdVaga)
 )
+GO
 
 CREATE TABLE StatusInscricao (
 	IdStatusInscricao INT PRIMARY KEY IDENTITY,
 	NomeStatus VARCHAR (255) NOT NULL
 )
+GO
 
 CREATE TABLE Inscricao (
 	IdInscricao INT PRIMARY KEY IDENTITY,

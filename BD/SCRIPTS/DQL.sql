@@ -24,6 +24,9 @@ SELECT IdNivelIngles as NivelIngles, Ingles FROM NivelIngles
 --StatusEstagio
 SELECT IdStatusEstagio as StatusEstagio, NomeStatus as Status FROM StatusEstagio
 
+select * from Usuario
+
+
 -- COM INNER JOIN
 
 -- Cidade
