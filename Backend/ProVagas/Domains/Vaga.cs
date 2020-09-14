@@ -19,10 +19,8 @@ namespace ProVagas.Domains
         public DateTime DataFinal { get; set; }
         public int? IdEmpresa { get; set; }
         public int? IdTipoVaga { get; set; }
-        public int? IdRequisitos { get; set; }
 
         public virtual Empresa IdEmpresaNavigation { get; set; }
-        public virtual Requisitos IdRequisitosNavigation { get; set; }
         public virtual TipoVaga IdTipoVagaNavigation { get; set; }
         public virtual ICollection<BeneficioXvaga> BeneficioXvaga { get; set; }
         public virtual ICollection<Inscricao> Inscricao { get; set; }

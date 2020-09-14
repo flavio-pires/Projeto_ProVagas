@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bruno\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj": {}
+    "C:\\Users\\fic\\Music\\ProVagas\\ProVagas\\ProVagas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bruno\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj": {
+    "C:\\Users\\fic\\Music\\ProVagas\\ProVagas\\ProVagas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruno\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
+        "projectUniqueName": "C:\\Users\\fic\\Music\\ProVagas\\ProVagas\\ProVagas.csproj",
         "projectName": "ProVagas",
-        "projectPath": "C:\\Users\\Bruno\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
-        "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruno\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\obj\\",
+        "projectPath": "C:\\Users\\fic\\Music\\ProVagas\\ProVagas\\ProVagas.csproj",
+        "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fic\\Music\\ProVagas\\ProVagas\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -49,10 +49,6 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[3.1.8, )"
-            },
-            "Microsoft.AspNetCore.Mvc.DataAnnotations": {
-              "target": "Package",
-              "version": "[2.2.0, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -89,10 +85,6 @@
             "Swashbuckle.AspNetCore.SwaggerUi": {
               "target": "Package",
               "version": "[5.5.1, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.2, )"
             }
           },
           "imports": [
@@ -113,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

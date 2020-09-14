@@ -80,6 +80,7 @@ namespace ProVagas.Controllers
                 {
                     IdUsuario = id,
                     Email = usuarioAtualizado.Email,
+                    Telefone = usuarioAtualizado.Telefone,
                     Senha = usuarioAtualizado.Senha,
                     IdEndereco = usuarioAtualizado.IdEndereco,
                     IdTipoUsuario = 3

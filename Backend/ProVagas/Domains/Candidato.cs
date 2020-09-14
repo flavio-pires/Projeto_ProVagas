@@ -31,10 +31,8 @@ namespace ProVagas.Domains
         public int? IdGenero { get; set; }
         public int? IdNivelIngles { get; set; }
         public int? IdNivelEscolaridade { get; set; }
-        public int? IdHabilidade { get; set; }
 
         public virtual Genero IdGeneroNavigation { get; set; }
-        public virtual Habilidades IdHabilidadeNavigation { get; set; }
         public virtual NivelEscolaridade IdNivelEscolaridadeNavigation { get; set; }
         public virtual NivelIngles IdNivelInglesNavigation { get; set; }
         public virtual Usuario IdUsuarioNavigation { get; set; }

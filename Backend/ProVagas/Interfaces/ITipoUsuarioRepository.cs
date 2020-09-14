@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProVagas.Interfaces
 {
-    public interface IGenerorepository : IRepositoryBase<Genero>
+    interface ITipoUsuarioRepository : IRepositoryBase<TipoUsuario>
     {
     }
 }
