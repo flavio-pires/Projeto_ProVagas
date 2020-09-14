@@ -94,8 +94,7 @@ CREATE TABLE Candidato (
 	IdUsuario INT FOREIGN KEY REFERENCES Usuario (IdUsuario),
 	IdGenero INT FOREIGN KEY REFERENCES Genero (IdGenero),
 	IdNivelIngles INT FOREIGN KEY REFERENCES NivelIngles (IdNivelIngles),
-	IdNivelEscolaridade INT FOREIGN KEY REFERENCES NivelEscolaridade (IdNivelEscolaridade),
-	IdHabilidade INT FOREIGN KEY REFERENCES Habilidades (IdHabilidades) 
+	IdNivelEscolaridade INT FOREIGN KEY REFERENCES NivelEscolaridade (IdNivelEscolaridade)
 )
 
 GO
@@ -155,8 +154,7 @@ CREATE TABLE Vaga (
 	DataInicio DATE NOT NULL,
 	DataFinal DATE NOT NULL,
 	IdEmpresa INT FOREIGN KEY REFERENCES Empresa (IdEmpresa),
-	IdTipoVaga INT FOREIGN KEY REFERENCES TipoVaga(IdTipoVaga), 
-	idRequisitos INT FOREIGN KEY REFERENCES Requisitos(IdRequisitos),
+	IdTipoVaga INT FOREIGN KEY REFERENCES TipoVaga(IdTipoVaga)
 )
 
 GO
