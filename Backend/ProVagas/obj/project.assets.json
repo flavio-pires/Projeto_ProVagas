@@ -8816,23 +8816,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bruno\\.nuget\\packages\\": {},
+    "C:\\Users\\cecil\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bruno\\Desktop\\Projeto_ProVagas2\\Backend\\ProVagas\\ProVagas.csproj",
+      "projectUniqueName": "C:\\Users\\cecil\\OneDrive\\Área de Trabalho\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
       "projectName": "ProVagas",
-      "projectPath": "C:\\Users\\Bruno\\Desktop\\Projeto_ProVagas2\\Backend\\ProVagas\\ProVagas.csproj",
-      "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bruno\\Desktop\\Projeto_ProVagas2\\Backend\\ProVagas\\obj\\",
+      "projectPath": "C:\\Users\\cecil\\OneDrive\\Área de Trabalho\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
+      "packagesPath": "C:\\Users\\cecil\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cecil\\OneDrive\\Área de Trabalho\\Projeto_ProVagas\\Backend\\ProVagas\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cecil\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
