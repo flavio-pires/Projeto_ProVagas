@@ -30,28 +30,26 @@ namespace ProVagas
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers().AddNewtonsoftJson(options =>
-    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-);
+            services.AddControllers();
 
 
             services
-               // Define a forma de autenticação
-               .AddAuthentication(options =>
+           // Define a forma de autenticação
+           .AddAuthentication(options =>
+           {
+               options.DefaultAuthenticateScheme = "JwtBearer";
+               options.DefaultChallengeScheme = "JwtBearer";
+           })
+
+           // Define os parâmetros de validação do token
+           .AddJwtBearer("JwtBearer", options =>
+           {
+               options.RequireHttpsMetadata = false;
+
+               options.SaveToken = true;
+
+               options.TokenValidationParameters = new TokenValidationParameters
                {
-                   options.DefaultAuthenticateScheme = "JwtBearer";
-                   options.DefaultChallengeScheme = "JwtBearer";
-               })
-
-               // Define os parâmetros de validação do token
-               .AddJwtBearer("JwtBearer", options =>
-               {
-                   options.RequireHttpsMetadata = false;
-
-                   options.SaveToken = true;
-
-                   options.TokenValidationParameters = new TokenValidationParameters
-                   {
                        // Quem está solicitando
                        ValidateIssuer = true,
 
@@ -72,9 +70,9 @@ namespace ProVagas
 
                        // Nome da audience, de onde está vindo
                        ValidAudience = "Codehunter.WebApi"
-                   };
+               };
 
-               });
+           });
 
             services.AddSwaggerGen(c =>
             {
