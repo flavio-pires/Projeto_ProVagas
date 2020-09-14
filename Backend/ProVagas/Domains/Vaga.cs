@@ -7,9 +7,9 @@ namespace ProVagas.Domains
     {
         public Vaga()
         {
-            BeneficioXvaga = new HashSet<BeneficioXvaga>();
+            BeneficioXVaga = new HashSet<BeneficioXVaga>();
             Inscricao = new HashSet<Inscricao>();
-            RequisitosXvaga = new HashSet<RequisitosXvaga>();
+            RequisitoXvaga = new HashSet<RequisitoXVaga>();
         }
 
         public int IdVaga { get; set; }
@@ -22,8 +22,8 @@ namespace ProVagas.Domains
 
         public virtual Empresa IdEmpresaNavigation { get; set; }
         public virtual TipoVaga IdTipoVagaNavigation { get; set; }
-        public virtual ICollection<BeneficioXvaga> BeneficioXvaga { get; set; }
+        public virtual ICollection<BeneficioXVaga> BeneficioXVaga { get; set; }
         public virtual ICollection<Inscricao> Inscricao { get; set; }
-        public virtual ICollection<RequisitosXvaga> RequisitosXvaga { get; set; }
+        public virtual ICollection<RequisitoXVaga> RequisitoXvaga { get; set; }
     }
 }

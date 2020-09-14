@@ -18,7 +18,7 @@ namespace ProVagas.Contexts
 
         public virtual DbSet<Administrador> Administrador { get; set; }
         public virtual DbSet<Beneficio> Beneficio { get; set; }
-        public virtual DbSet<BeneficioXvaga> BeneficioXvaga { get; set; }
+        public virtual DbSet<BeneficioXVaga> BeneficioXvaga { get; set; }
         public virtual DbSet<Candidato> Candidato { get; set; }
         public virtual DbSet<Cidade> Cidade { get; set; }
         public virtual DbSet<Empresa> Empresa { get; set; }
@@ -26,13 +26,13 @@ namespace ProVagas.Contexts
         public virtual DbSet<Estado> Estado { get; set; }
         public virtual DbSet<Estagio> Estagio { get; set; }
         public virtual DbSet<Genero> Genero { get; set; }
-        public virtual DbSet<HabilidadeXcandidato> HabilidadeXcandidato { get; set; }
-        public virtual DbSet<Habilidades> Habilidades { get; set; }
+        public virtual DbSet<HabilidadeXCandidato> HabilidadeXcandidato { get; set; }
+        public virtual DbSet<Habilidade> Habilidades { get; set; }
         public virtual DbSet<Inscricao> Inscricao { get; set; }
         public virtual DbSet<NivelEscolaridade> NivelEscolaridade { get; set; }
         public virtual DbSet<NivelIngles> NivelIngles { get; set; }
-        public virtual DbSet<Requisitos> Requisitos { get; set; }
-        public virtual DbSet<RequisitosXvaga> RequisitosXvaga { get; set; }
+        public virtual DbSet<Requisito> Requisito { get; set; }
+        public virtual DbSet<RequisitoXVaga> RequisitosXvaga { get; set; }
         public virtual DbSet<StatusEstagio> StatusEstagio { get; set; }
         public virtual DbSet<StatusInscricao> StatusInscricao { get; set; }
         public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
@@ -44,8 +44,7 @@ namespace ProVagas.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=LAB08DESK301\\SQLEXPRESS; Initial Catalog=ProVagas; Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source = BRUNO-PC; Initial Catalog=ProVagas; Integrated Security=True");
             }
         }
 
@@ -98,7 +97,7 @@ namespace ProVagas.Contexts
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<BeneficioXvaga>(entity =>
+            modelBuilder.Entity<BeneficioXVaga>(entity =>
             {
                 entity.HasKey(e => e.IdBeneficioVaga)
                     .HasName("PK__Benefici__44F955EBBEA1E041");
@@ -106,12 +105,12 @@ namespace ProVagas.Contexts
                 entity.ToTable("BeneficioXVaga");
 
                 entity.HasOne(d => d.IdBeneficioNavigation)
-                    .WithMany(p => p.BeneficioXvaga)
+                    .WithMany(p => p.BeneficioXVaga)
                     .HasForeignKey(d => d.IdBeneficio)
                     .HasConstraintName("FK__Beneficio__IdBen__7A672E12");
 
                 entity.HasOne(d => d.IdVagaNavigation)
-                    .WithMany(p => p.BeneficioXvaga)
+                    .WithMany(p => p.BeneficioXVaga)
                     .HasForeignKey(d => d.IdVaga)
                     .HasConstraintName("FK__Beneficio__IdVag__7B5B524B");
             });
@@ -346,29 +345,29 @@ namespace ProVagas.Contexts
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<HabilidadeXcandidato>(entity =>
+            modelBuilder.Entity<HabilidadeXCandidato>(entity =>
             {
-                entity.HasKey(e => e.IdHabilidadeXcandidato)
+                entity.HasKey(e => e.IdHabilidadeCandidato)
                     .HasName("PK__Habilida__DA167C55037DA9EF");
 
                 entity.ToTable("HabilidadeXCandidato");
 
-                entity.Property(e => e.IdHabilidadeXcandidato).HasColumnName("IdHabilidadeXCandidato");
+                entity.Property(e => e.IdHabilidadeCandidato).HasColumnName("IdHabilidadeCandidato");
 
                 entity.HasOne(d => d.IdCandidatoNavigation)
-                    .WithMany(p => p.HabilidadeXcandidato)
+                    .WithMany(p => p.HabilidadeXCandidato)
                     .HasForeignKey(d => d.IdCandidato)
                     .HasConstraintName("FK__Habilidad__IdCan__5535A963");
 
-                entity.HasOne(d => d.IdHabilidadesNavigation)
-                    .WithMany(p => p.HabilidadeXcandidato)
-                    .HasForeignKey(d => d.IdHabilidades)
+                entity.HasOne(d => d.IdHabilidadeNavigation)
+                    .WithMany(p => p.HabilidadeXCandidato)
+                    .HasForeignKey(d => d.IdHabilidade)
                     .HasConstraintName("FK__Habilidad__IdHab__5441852A");
             });
 
-            modelBuilder.Entity<Habilidades>(entity =>
+            modelBuilder.Entity<Habilidade>(entity =>
             {
-                entity.HasKey(e => e.IdHabilidades)
+                entity.HasKey(e => e.IdHabilidade)
                     .HasName("PK__Habilida__6E775DBBE3BAC15C");
 
                 entity.Property(e => e.NomeHabilidade)
@@ -420,33 +419,33 @@ namespace ProVagas.Contexts
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Requisitos>(entity =>
+            modelBuilder.Entity<Requisito>(entity =>
             {
-                entity.HasKey(e => e.IdRequisitos)
+                entity.HasKey(e => e.IdRequisito)
                     .HasName("PK__Requisit__BDA0C50107D4ABB3");
 
-                entity.Property(e => e.NomeRequisitos)
+                entity.Property(e => e.NomeRequisito)
                     .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<RequisitosXvaga>(entity =>
+            modelBuilder.Entity<RequisitoXVaga>(entity =>
             {
-                entity.HasKey(e => e.IdRequisitosXvaga)
+                entity.HasKey(e => e.IdRequisitoVaga)
                     .HasName("PK__Requisit__728D49DEE28FCD1F");
 
                 entity.ToTable("RequisitosXVaga");
 
-                entity.Property(e => e.IdRequisitosXvaga).HasColumnName("IdRequisitosXVaga");
+                entity.Property(e => e.IdRequisitoVaga).HasColumnName("IdRequisitoVaga");
 
-                entity.HasOne(d => d.IdRequisitosNavigation)
-                    .WithMany(p => p.RequisitosXvaga)
-                    .HasForeignKey(d => d.IdRequisitos)
+                entity.HasOne(d => d.IdRequisitoNavigation)
+                    .WithMany(p => p.RequisitoXVaga)
+                    .HasForeignKey(d => d.IdRequisito)
                     .HasConstraintName("FK__Requisito__IdReq__68487DD7");
 
                 entity.HasOne(d => d.IdVagaNavigation)
-                    .WithMany(p => p.RequisitosXvaga)
+                    .WithMany(p => p.RequisitoXvaga)
                     .HasForeignKey(d => d.IdVaga)
                     .HasConstraintName("FK__Requisito__IdVag__693CA210");
             });

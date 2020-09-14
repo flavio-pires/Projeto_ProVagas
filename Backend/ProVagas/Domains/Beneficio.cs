@@ -7,12 +7,12 @@ namespace ProVagas.Domains
     {
         public Beneficio()
         {
-            BeneficioXvaga = new HashSet<BeneficioXvaga>();
+            BeneficioXVaga = new HashSet<BeneficioXVaga>();
         }
 
         public int IdBeneficio { get; set; }
         public string NomeBeneficio { get; set; }
 
-        public virtual ICollection<BeneficioXvaga> BeneficioXvaga { get; set; }
+        public virtual ICollection<BeneficioXVaga> BeneficioXVaga { get; set; }
     }
 }

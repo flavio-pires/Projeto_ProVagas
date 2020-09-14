@@ -1,6 +1,6 @@
 -- DDL
 
-DROP DATABASE ProVagas
+CREATE DATABASE ProVagas
 
 GO
 
@@ -94,24 +94,24 @@ CREATE TABLE Candidato (
 	IdUsuario INT FOREIGN KEY REFERENCES Usuario (IdUsuario),
 	IdGenero INT FOREIGN KEY REFERENCES Genero (IdGenero),
 	IdNivelIngles INT FOREIGN KEY REFERENCES NivelIngles (IdNivelIngles),
-	IdNivelEscolaridade INT FOREIGN KEY REFERENCES NivelEscolaridade (IdNivelEscolaridade),
-	IdHabilidade INT FOREIGN KEY REFERENCES Habilidades (IdHabilidades) 
+	IdNivelEscolaridade INT FOREIGN KEY REFERENCES NivelEscolaridade (IdNivelEscolaridade)
 )
 
 GO
 
-
-CREATE TABLE Hablidades (
-IdHabilidades INT PRIMARY KEY IDENTITY,
+CREATE TABLE Habilidade (
+IdHabilidade INT PRIMARY KEY IDENTITY,
 NomeHabilidade VARCHAR(80) NOT NULL
 )
+GO
 
 CREATE TABLE HabilidadeXCandidato
 (
-IdHabilidadeXCandidato INT PRIMARY KEY IDENTITY,
-IdHabilidades INT FOREIGN KEY REFERENCES Habilidades (IdHabilidades),
+IdHabilidadeCandidato INT PRIMARY KEY IDENTITY,
+IdHabilidade INT FOREIGN KEY REFERENCES HabIlidade (IdHabilidade),
 IdCandidato INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
 )
+GO
 
 CREATE TABLE Administrador (
 	IdAdministrador INT PRIMARY KEY IDENTITY,
@@ -153,29 +153,34 @@ CREATE TABLE Vaga (
 	DataInicio DATE NOT NULL,
 	DataFinal DATE NOT NULL,
 	IdEmpresa INT FOREIGN KEY REFERENCES Empresa (IdEmpresa),
-	IdTipoVaga INT FOREIGN KEY REFERENCES TipoVaga(IdTipoVaga), 
-	idRequisitos INT FOREIGN KEY REFERENCES Requisitos(IdRequisitos),
+	IdTipoVaga INT FOREIGN KEY REFERENCES TipoVaga(IdTipoVaga)
 )
 
 GO
 
-CREATE TABLE Requisitos
+CREATE TABLE Requisito
 (
-IdRequisitos INT PRIMARY KEY IDENTITY,
-NomeRequisitos VARCHAR (200) NOT NULL
+IdRequisito INT PRIMARY KEY IDENTITY,
+NomeRequisito VARCHAR (200) NOT NULL
 )
 
-CREATE TABLE RequisitosXVaga
+GO
+
+CREATE TABLE RequisitoXVaga
 (
-IdRequisitosXVaga INT PRIMARY KEY IDENTITY,
-IdRequisitos INT FOREIGN KEY REFERENCES Requisitos (IdRequisitos),
+IdRequisitoVaga INT PRIMARY KEY IDENTITY,
+IdRequisito INT FOREIGN KEY REFERENCES Requisito (IdRequisito),
 IdVaga INT FOREIGN KEY REFERENCES Vaga (IdVaga)
 )
+
+GO
 
 CREATE TABLE StatusInscricao (
 	IdStatusInscricao INT PRIMARY KEY IDENTITY,
 	NomeStatus VARCHAR (255) NOT NULL
 )
+
+GO
 
 CREATE TABLE Inscricao (
 	IdInscricao INT PRIMARY KEY IDENTITY,
