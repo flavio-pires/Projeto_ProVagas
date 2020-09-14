@@ -8,8 +8,8 @@ namespace ProVagas.Domains
         public int IdEstagio { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataFinal { get; set; }
-        public int? IdInscricao { get; set; }
-        public int? IdStatusEstagio { get; set; }
+        public int IdInscricao { get; set; }
+        public int IdStatusEstagio { get; set; }
 
         public virtual Inscricao IdInscricaoNavigation { get; set; }
         public virtual StatusEstagio IdStatusEstagioNavigation { get; set; }

@@ -12,7 +12,7 @@ namespace ProVagas.Domains
 
         public int IdCidade { get; set; }
         public string NomeCidade { get; set; }
-        public int? IdEstado { get; set; }
+        public int IdEstado { get; set; }
 
         public virtual Estado IdEstadoNavigation { get; set; }
         public virtual ICollection<Endereco> Endereco { get; set; }
