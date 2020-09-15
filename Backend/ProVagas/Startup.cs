@@ -30,7 +30,9 @@ namespace ProVagas
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+      options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+  );
 
 
             services
@@ -50,26 +52,26 @@ namespace ProVagas
 
                options.TokenValidationParameters = new TokenValidationParameters
                {
-                       // Quem está solicitando
-                       ValidateIssuer = true,
+                   // Quem está solicitando
+                   ValidateIssuer = true,
 
-                       // Quem está validando
-                       ValidateAudience = true,
+                   // Quem está validando
+                   ValidateAudience = true,
 
-                       // Definindo o tempo de expiração
-                       ValidateLifetime = true,
+                   // Definindo o tempo de expiração
+                   ValidateLifetime = true,
 
-                       // Forma de criptografia
-                       IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("codehunter-key-auth")),
+                   // Forma de criptografia
+                   IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("codehunter-key-auth")),
 
-                       // Tempo de expiração do token
-                       ClockSkew = TimeSpan.FromMinutes(30),
+                   // Tempo de expiração do token
+                   ClockSkew = TimeSpan.FromMinutes(30),
 
-                       // Nome da issuer, de onde está vindo
-                       ValidIssuer = "Codehunter.WebApi",
+                   // Nome da issuer, de onde está vindo
+                   ValidIssuer = "Codehunter.WebApi",
 
-                       // Nome da audience, de onde está vindo
-                       ValidAudience = "Codehunter.WebApi"
+                   // Nome da audience, de onde está vindo
+                   ValidAudience = "Codehunter.WebApi"
                };
 
            });

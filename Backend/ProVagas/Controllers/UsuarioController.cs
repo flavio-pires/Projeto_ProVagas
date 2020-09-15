@@ -49,6 +49,15 @@ namespace ProVagas.Controllers
         {
             try
             {
+               TipoUsuario tipo = new TipoUsuario();
+
+                if (tipo != 3)
+                {
+                    _usuariorepository.Add(usuario);
+                     
+                    return Ok("Usuario cadastrado");
+                }
+
                 if (_usuariorepository.aluno(usuario.Email))
                 {
                     usuario.IdTipoUsuario = 3;
@@ -56,10 +65,12 @@ namespace ProVagas.Controllers
 
                     return Ok("Usuario cadastrado com sucesso"); 
                 }
+
                 else
                 {
                     return BadRequest("Não consta nenhum registro desse email no banco de dados");
                 }
+
             }
             catch (Exception e)
             {
@@ -80,6 +91,7 @@ namespace ProVagas.Controllers
                 {
                     IdUsuario = id,
                     Email = usuarioAtualizado.Email,
+                    Telefone = usuarioAtualizado.Telefone,
                     Senha = usuarioAtualizado.Senha,
                     IdEndereco = usuarioAtualizado.IdEndereco,
                     IdTipoUsuario = 3

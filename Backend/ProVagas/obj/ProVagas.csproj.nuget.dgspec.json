@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fic\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj": {}
+    "C:\\Users\\51628550813\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fic\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj": {
+    "C:\\Users\\51628550813\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fic\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
+        "projectUniqueName": "C:\\Users\\51628550813\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
         "projectName": "ProVagas",
-        "projectPath": "C:\\Users\\fic\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
-        "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fic\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\obj\\",
+        "projectPath": "C:\\Users\\51628550813\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
+        "packagesPath": "C:\\Users\\51628550813\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\51628550813\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\51628550813\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -50,9 +46,9 @@
               "target": "Package",
               "version": "[3.1.8, )"
             },
-            "Microsoft.AspNetCore.Mvc.DataAnnotations": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[3.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -78,6 +74,14 @@
               "target": "Package",
               "version": "[12.0.3, )"
             },
+            "Newtonsoft.Json.Bson": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "Newtonsoft.Json.Schema": {
+              "target": "Package",
+              "version": "[3.0.13, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.5.1, )"
@@ -93,10 +97,6 @@
             "Swashbuckle.AspNetCore.SwaggerUi": {
               "target": "Package",
               "version": "[5.5.1, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.2, )"
             }
           },
           "imports": [

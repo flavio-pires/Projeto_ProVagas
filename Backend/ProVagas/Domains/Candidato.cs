@@ -7,7 +7,7 @@ namespace ProVagas.Domains
     {
         public Candidato()
         {
-            HabilidadeXcandidato = new HashSet<HabilidadeXcandidato>();
+            HabilidadeXCandidato = new HashSet<HabilidadeXCandidato>();
             Inscricao = new HashSet<Inscricao>();
         }
 
@@ -31,14 +31,12 @@ namespace ProVagas.Domains
         public int? IdGenero { get; set; }
         public int? IdNivelIngles { get; set; }
         public int? IdNivelEscolaridade { get; set; }
-        public int? IdHabilidade { get; set; }
 
         public virtual Genero IdGeneroNavigation { get; set; }
-        public virtual Habilidades IdHabilidadeNavigation { get; set; }
         public virtual NivelEscolaridade IdNivelEscolaridadeNavigation { get; set; }
         public virtual NivelIngles IdNivelInglesNavigation { get; set; }
         public virtual Usuario IdUsuarioNavigation { get; set; }
-        public virtual ICollection<HabilidadeXcandidato> HabilidadeXcandidato { get; set; }
+        public virtual ICollection<HabilidadeXCandidato> HabilidadeXCandidato { get; set; }
         public virtual ICollection<Inscricao> Inscricao { get; set; }
     }
 }
