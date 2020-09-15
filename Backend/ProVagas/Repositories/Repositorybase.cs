@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProVagas.Repositories
 {
-    public class RepositoryBase<TEntity> : IRepositorybase<TEntity> where TEntity : class
+    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
         ProVagasContext ctx = new ProVagasContext();
         public void Add(TEntity obj)

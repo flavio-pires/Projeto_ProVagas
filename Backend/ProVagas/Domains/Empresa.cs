@@ -19,7 +19,7 @@ namespace ProVagas.Domains
         public string Website { get; set; }
         public string Cnpj { get; set; }
         public string Cnae { get; set; }
-        public int IdUsuario { get; set; }
+        public int? IdUsuario { get; set; }
 
         public virtual Usuario IdUsuarioNavigation { get; set; }
         public virtual ICollection<Vaga> Vaga { get; set; }

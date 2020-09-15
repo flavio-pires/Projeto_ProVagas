@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ProVagas.Interfaces
 {
-    public interface IRepositorybase<TEntity> where TEntity : class
+    public interface IRepositoryBase<TEntity> where TEntity : class
     {
         void Add(TEntity obj);
         void Update(TEntity obj);

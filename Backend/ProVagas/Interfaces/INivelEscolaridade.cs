@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProVagas.Interfaces
 {
-    interface IAdministradorRepository : IRepositoryBase<Administrador>
+    interface INivelEscolaridade : IRepositoryBase<NivelEscolaridade>
     {
-        
-
     }
 }

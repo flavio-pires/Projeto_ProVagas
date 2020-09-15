@@ -10,7 +10,7 @@ namespace ProVagas.Domains
         public string Nif { get; set; }
         public string UnidadeSenai { get; set; }
         public string Departamento { get; set; }
-        public int IdUsuario { get; set; }
+        public int? IdUsuario { get; set; }
 
         public virtual Usuario IdUsuarioNavigation { get; set; }
     }

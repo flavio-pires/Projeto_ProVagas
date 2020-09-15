@@ -14,9 +14,10 @@ namespace ProVagas.Domains
 
         public int IdUsuario { get; set; }
         public string Email { get; set; }
+        public string Telefone { get; set; }
         public string Senha { get; set; }
-        public int IdTipoUsuario { get; set; }
-        public int IdEndereco { get; set; }
+        public int? IdTipoUsuario { get; set; }
+        public int? IdEndereco { get; set; }
 
         public virtual Endereco IdEnderecoNavigation { get; set; }
         public virtual TipoUsuario IdTipoUsuarioNavigation { get; set; }

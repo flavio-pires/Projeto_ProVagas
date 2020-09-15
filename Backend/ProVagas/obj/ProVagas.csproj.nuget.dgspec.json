@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cecil\\OneDrive\\Área de Trabalho\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj": {}
+    "C:\\Users\\44781915817\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cecil\\OneDrive\\Área de Trabalho\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj": {
+    "C:\\Users\\44781915817\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cecil\\OneDrive\\Área de Trabalho\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
+        "projectUniqueName": "C:\\Users\\44781915817\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
         "projectName": "ProVagas",
-        "projectPath": "C:\\Users\\cecil\\OneDrive\\Área de Trabalho\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
-        "packagesPath": "C:\\Users\\cecil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cecil\\OneDrive\\Área de Trabalho\\Projeto_ProVagas\\Backend\\ProVagas\\obj\\",
+        "projectPath": "C:\\Users\\44781915817\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
+        "packagesPath": "C:\\Users\\44781915817\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\44781915817\\Desktop\\Projeto_ProVagas\\Backend\\ProVagas\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\cecil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\44781915817\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -74,9 +70,37 @@
               "target": "Package",
               "version": "[3.1.4, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Newtonsoft.Json.Bson": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "Newtonsoft.Json.Schema": {
+              "target": "Package",
+              "version": "[3.0.13, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.5.0, )"
+              "version": "[5.5.1, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[5.5.1, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[5.5.1, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUi": {
+              "target": "Package",
+              "version": "[5.5.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
             }
           },
           "imports": [
@@ -97,7 +121,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

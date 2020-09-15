@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProVagas.Interfaces
 {
-    public interface IUsuarioRepository : IRepositorybase<Usuario>
+    public interface IUsuarioRepository : IRepositoryBase<Usuario>
     {
         bool aluno(string email);
         

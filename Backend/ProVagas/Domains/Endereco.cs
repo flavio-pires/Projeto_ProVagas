@@ -11,13 +11,12 @@ namespace ProVagas.Domains
         }
 
         public int IdEndereco { get; set; }
-        public string Telefone { get; set; }
         public string Rua { get; set; }
         public string Num { get; set; }
         public string Bairro { get; set; }
         public string Complemento { get; set; }
         public string Cep { get; set; }
-        public int IdCidade { get; set; }
+        public int? IdCidade { get; set; }
 
         public virtual Cidade IdCidadeNavigation { get; set; }
         public virtual ICollection<Usuario> Usuario { get; set; }

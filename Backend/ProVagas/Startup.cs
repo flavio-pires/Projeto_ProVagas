@@ -31,50 +31,50 @@ namespace ProVagas
         {
 
             services.AddControllers().AddNewtonsoftJson(options =>
-    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-);
+      options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+  );
 
 
             services
-               // Define a forma de autenticação
-               .AddAuthentication(options =>
+           // Define a forma de autenticação
+           .AddAuthentication(options =>
+           {
+               options.DefaultAuthenticateScheme = "JwtBearer";
+               options.DefaultChallengeScheme = "JwtBearer";
+           })
+
+           // Define os parâmetros de validação do token
+           .AddJwtBearer("JwtBearer", options =>
+           {
+               options.RequireHttpsMetadata = false;
+
+               options.SaveToken = true;
+
+               options.TokenValidationParameters = new TokenValidationParameters
                {
-                   options.DefaultAuthenticateScheme = "JwtBearer";
-                   options.DefaultChallengeScheme = "JwtBearer";
-               })
+                   // Quem está solicitando
+                   ValidateIssuer = true,
 
-               // Define os parâmetros de validação do token
-               .AddJwtBearer("JwtBearer", options =>
-               {
-                   options.RequireHttpsMetadata = false;
+                   // Quem está validando
+                   ValidateAudience = true,
 
-                   options.SaveToken = true;
+                   // Definindo o tempo de expiração
+                   ValidateLifetime = true,
 
-                   options.TokenValidationParameters = new TokenValidationParameters
-                   {
-                       // Quem está solicitando
-                       ValidateIssuer = true,
+                   // Forma de criptografia
+                   IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("codehunter-key-auth")),
 
-                       // Quem está validando
-                       ValidateAudience = true,
+                   // Tempo de expiração do token
+                   ClockSkew = TimeSpan.FromMinutes(30),
 
-                       // Definindo o tempo de expiração
-                       ValidateLifetime = true,
+                   // Nome da issuer, de onde está vindo
+                   ValidIssuer = "Codehunter.WebApi",
 
-                       // Forma de criptografia
-                       IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("codehunter-key-auth")),
+                   // Nome da audience, de onde está vindo
+                   ValidAudience = "Codehunter.WebApi"
+               };
 
-                       // Tempo de expiração do token
-                       ClockSkew = TimeSpan.FromMinutes(30),
-
-                       // Nome da issuer, de onde está vindo
-                       ValidIssuer = "Codehunter.WebApi",
-
-                       // Nome da audience, de onde está vindo
-                       ValidAudience = "Codehunter.WebApi"
-                   };
-
-               });
+           });
 
             services.AddSwaggerGen(c =>
             {
