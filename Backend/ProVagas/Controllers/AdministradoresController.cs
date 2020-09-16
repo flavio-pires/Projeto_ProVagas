@@ -43,10 +43,29 @@ namespace ProVagas.Controllers
             }
         }
 
-        // PUT: api/Administradores/5
+        // Atualizar administrador
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, Administrador administradorAtualizado)
         {
+
+            try
+            {
+                Administrador UPDATE = new Administrador
+                {
+                    IdAdministrador = id,
+                    NomeCompletoAdmin = administradorAtualizado.NomeCompletoAdmin,
+                    Nif = administradorAtualizado.Nif,
+                    UnidadeSenai = administradorAtualizado.UnidadeSenai,
+                    Departamento = administradorAtualizado.Departamento,
+                    IdUsuario = 
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         // DELETE: api/ApiWithActions/5

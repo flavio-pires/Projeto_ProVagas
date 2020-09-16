@@ -44,7 +44,7 @@ namespace ProVagas.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source = DESKTOP-J1LEECK; Initial Catalog=ProVagas; Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source = DESKTOP-FG58JV4\\SQLEXPRESS2020; Initial Catalog=ProVagas; Integrated Security=True");
             }
         }
 
