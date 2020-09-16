@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t8DVNQ3syicIQZ63/RpvqYvJe4yL6WrndesJEgszGzhIGLSk/IHAoEpdoSYrqX95U+h0YqwDtUa+VFcGXFsBLw==",
+  "dgSpecHash": "5Fg6ZUtyAM/UhcucefMuPhJ7KApVoJRuYiCKk9Xx4nZF+qmhL3mFn5wnauacAryEmdOEfUQWdfnxeIYOVQj3SA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fdnpi\\Documents\\Backend\\ProVagas\\ProVagas.csproj",
+  "projectFilePath": "C:\\Users\\fdnpi\\Desktop\\3º Termo\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fdnpi\\.nuget\\packages\\lumenworkscsvreader\\4.0.0\\lumenworkscsvreader.4.0.0.nupkg.sha512",
     "C:\\Users\\fdnpi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",

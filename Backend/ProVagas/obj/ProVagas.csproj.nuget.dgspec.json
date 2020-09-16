@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fdnpi\\Documents\\Backend\\ProVagas\\ProVagas.csproj": {}
+    "C:\\Users\\fdnpi\\Desktop\\3º Termo\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fdnpi\\Documents\\Backend\\ProVagas\\ProVagas.csproj": {
+    "C:\\Users\\fdnpi\\Desktop\\3º Termo\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fdnpi\\Documents\\Backend\\ProVagas\\ProVagas.csproj",
+        "projectUniqueName": "C:\\Users\\fdnpi\\Desktop\\3º Termo\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
         "projectName": "ProVagas",
-        "projectPath": "C:\\Users\\fdnpi\\Documents\\Backend\\ProVagas\\ProVagas.csproj",
+        "projectPath": "C:\\Users\\fdnpi\\Desktop\\3º Termo\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
         "packagesPath": "C:\\Users\\fdnpi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fdnpi\\Documents\\Backend\\ProVagas\\obj\\",
+        "outputPath": "C:\\Users\\fdnpi\\Desktop\\3º Termo\\Projeto_ProVagas\\Backend\\ProVagas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fdnpi\\AppData\\Roaming\\NuGet\\NuGet.Config",
