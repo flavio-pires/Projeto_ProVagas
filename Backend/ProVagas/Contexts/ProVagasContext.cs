@@ -44,7 +44,7 @@ namespace ProVagas.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source = BRUNO-PC; Initial Catalog=ProVagas; Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source =LAPTOP-MG5LD6I4\\SQLEXPRESS; Initial Catalog=ProVagas; Integrated Security=True");
             }
         }
 
