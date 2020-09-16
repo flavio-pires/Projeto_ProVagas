@@ -109,5 +109,43 @@
             <param name="id">Id do estágio que será buscado</param>
             <returns>Retorna um status code 204</returns>
         </member>
+        <member name="M:ProVagas.Controllers.NivelInglesController.Get">
+            <summary>
+            Listar níveis de inglês
+            </summary>
+            <returns>Lista com todos os níveis de inglês</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.TipoVagaController.Get">
+            <summary>
+            Listar níveis de inglês
+            </summary>
+            <returns>Lista com todos os níveis de inglês</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.TipoVagaController.Get(System.Int32)">
+            <summary>
+            Buscar um tipo de vaga por Id
+            </summary>
+            <param name="id">Id do tipo a ser buscado</param>
+            <returns>Um tipo de Vaga</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.TipoVagaController.Post(ProVagas.Domains.TipoVaga)">
+            <summary>
+            Cadastrar um novo tipo de vaga
+            </summary>
+            <param name="tipoVaga">Novo tipo de vaga</param>
+        </member>
+        <member name="M:ProVagas.Controllers.TipoVagaController.Put(System.Int32,ProVagas.Domains.TipoVaga)">
+            <summary>
+            Atualizar um tipo de vaga
+            </summary>
+            <param name="id">Id do tipo de vaga a ser atualizado</param>
+            <param name="novoTipo">Tipo de vaga atualizado</param>
+        </member>
+        <member name="M:ProVagas.Controllers.TipoVagaController.Delete(System.Int32)">
+            <summary>
+            Deletar um tipo de vaga
+            </summary>
+            <param name="id">Id do tipo que será deletado</param>
+        </member>
     </members>
 </doc>
