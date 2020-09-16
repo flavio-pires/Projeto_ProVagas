@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProVagas.Interfaces
+namespace ProVagas.Repositories
 {
-    interface ITipoVagaRepository : IRepositoryBase<TipoVaga>
+    public class BeneficioXVagaRepository : RepositoryBase<BeneficioXVaga> , I
     {
     }
 }
