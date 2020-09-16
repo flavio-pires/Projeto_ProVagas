@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProVagas.Repositories
-{
+{ 
     public class NivelInglesRepository : RepositoryBase <NivelIngles> , INivelInglesRepository
     {
     }

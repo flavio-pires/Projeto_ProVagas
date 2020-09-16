@@ -25,6 +25,11 @@ namespace ProVagas.Controllers
         }
 
         /*Listar todos os Níveis de inglês*/
+
+        /// <summary>
+        /// Listar níveis de inglês
+        /// </summary>
+        /// <returns>Lista com todos os níveis de inglês</returns>
         [HttpGet]
         public IEnumerable<NivelIngles> Get()
         {
@@ -65,6 +70,7 @@ namespace ProVagas.Controllers
         }
 
         /*Atualizar os níveis de inglês*/
+        
         [HttpPut("{id}")]
         public IActionResult Put(int id, NivelIngles novoNivel)
         {

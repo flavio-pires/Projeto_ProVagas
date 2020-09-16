@@ -1,7 +1,4 @@
 -- DDL
-use master;
-
-drop database ProVagas;
 
 CREATE DATABASE ProVagas
 
