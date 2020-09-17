@@ -28,6 +28,12 @@ namespace ProVagas.Controllers
         {
             return _administradorRepository.GetAll();
         }
+        //Listar todos os candidatos
+        [HttpGet("Candidato")]
+        public IActionResult GetCandidato()
+        {
+            return Ok(_administradorRepository.ListarCandidato());
+        }
 
         // Listar os usuarios por id na URL 
         [HttpGet("{id}")]
@@ -45,7 +51,7 @@ namespace ProVagas.Controllers
 
         // Atualizar administrador
         [HttpPut("{id}")]
-        public void Put(int id, Administrador administradorAtualizado)
+        public IActionResult Put(int id, Administrador administradorAtualizado)
         {
 
             try
@@ -57,21 +63,36 @@ namespace ProVagas.Controllers
                     Nif = administradorAtualizado.Nif,
                     UnidadeSenai = administradorAtualizado.UnidadeSenai,
                     Departamento = administradorAtualizado.Departamento,
-                    IdUsuario = 
-                }
+                    IdUsuario = 1
+                };
 
+                _administradorRepository.Update(UPDATE);
+                return Ok("Dados atualizados com sucesso");
             }
             catch (Exception)
             {
 
-                throw;
+                return BadRequest("Não foi possível atualizar os dados");
             }
+
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            try
+            {
+                Administrador usuariobuscado = _administradorRepository.GetById(id);
+                _administradorRepository.Delete(usuariobuscado);
+
+                return Ok("Usuario deletado com sucesso");
+
+            }
+            catch (Exception)
+            {
+                return BadRequest("Não foi possivel deletar esse usuário");
+            }
         }
     }
 }
