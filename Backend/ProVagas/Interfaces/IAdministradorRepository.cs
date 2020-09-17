@@ -12,6 +12,7 @@ namespace ProVagas.Interfaces
         List<Usuario> ListarEmpresa();
         List<Usuario> ListarAdministrador();
         */
+        List<Administrador> Listar();
 
 
 

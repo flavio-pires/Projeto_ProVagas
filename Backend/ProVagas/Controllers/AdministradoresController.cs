@@ -43,9 +43,9 @@ namespace ProVagas.Controllers
          }*/
 
         [HttpGet]
-        public IEnumerable<Administrador> Get()
+        public IActionResult Get()
         {
-            return _administradorRepository.GetAll();
+            return Ok(_administradorRepository.Listar());
         }
 
         // Listar os usuarios por id na URL 
