@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d997b112-1609-4a40-bded-2947af36c1bd",
+		"_postman_id": "72a1d986-eae3-4bc0-981c-7b8c755740fe",
 		"name": "ProVagas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -332,6 +332,292 @@
 							],
 							"path": [
 								"Empresas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Candidatos",
+			"item": [
+				{
+					"name": "Candidatos.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Candidatos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Candidatos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidatos.BucarPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Candidatos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Candidatos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidatos.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NomeCompletoCandidato\" : \"Flavio Pires\",\r\n\t\"CPF\" : \"12345678900\",\r\n\t\"DataNascimento\" : \"1995-11-23\",\r\n\t\"Linkedin\" : \"http://linkedin.com/flaviopires\",\r\n\t\"FotoPerfil\" : \"\",\r\n\t\"PossuiDeficiencia\" : 0,\r\n\t\"Deficiencia\" : \"\",\r\n\t\"CursandoSENAI\" : 1,\r\n\t\"Curso\" : \"Análise e Desenvolvimento de Software\",\r\n\t\"NomeEmpresaExperienciaProfissional\" : \"Senai\",\r\n\t\"Cargo\" : \"Professor\",\r\n\t\"DataInicio\" : \"2020-09-10\",\r\n\t\"DataFim\" : \"2020-09-12\",\r\n\t\"EmpregoAtual\" : 0\r\n\t\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Candidatos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Candidatos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidatos.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Candidatos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Candidatos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidatos.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nomeCompletoCandidato\": \"Hebert richard\",\n        \"cpf\": \"51687947888\",\n        \"dataNascimento\": \"2002-02-28\",\n        \"linkedin\": \"linkedin/hebert\",\n        \"fotoPerfil\": \"\",\n        \"possuiDeficiencia\": false,\n        \"deficiencia\": \"Não possui deficiencia\",\n        \"cursandoSenai\": true,\n        \"curso\": \"Desenvolvimento de sistemas\",\n        \"nomeEmpresaExperienciaProfissional\": \"SENAI\",\n        \"cargo\": \"FULLSTACK\",\n        \"dataInicio\": \"2020-08-14\",\n        \"dataFim\": \"2022-08-14\",\n        \"empregoAtual\": false,\n        \"descriçãoAtividades\": \"Desenvolvimento\",\n        \"idUsuario\": 1,\n        \"idGenero\": 2,\n        \"idNivelIngles\": 1,\n        \"idNivelEscolaridade\": 2\n        \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Candidatos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Candidatos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Inscricoes",
+			"item": [
+				{
+					"name": "Inscricoes.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Inscricoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Inscricoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inscricoes.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"dataInscricao\": \"2020-08-02\",\r\n        \"idVaga\": 1,\r\n        \"idStatusInscricao\": 1,\r\n        \"idCandidato\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Inscricoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Inscricoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inscricoes.BucarPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Inscricoes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Inscricoes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inscricoes.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Inscricoes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Inscricoes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inscricoes.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dataInscricao\": \"2020-08-12\",\n    \"idVaga\": 1,\n    \"idStatusInscricao\": 1,\n    \"idCandidato\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Inscricoes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Inscricoes",
 								"1"
 							]
 						}
