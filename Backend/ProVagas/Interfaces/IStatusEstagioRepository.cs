@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProVagas.Interfaces
 {
-    interface IStatusEstagioRepository 
+    interface IStatusEstagioRepository { 
         List<StatusEstagio> Listar();
 
         void Cadastrar(StatusEstagio novostatusEstagio);

@@ -11,6 +11,7 @@ namespace ProVagas.Interfaces
         List<Candidato> ListarCandidato();
         List<Empresa> ListarEmpresa();
         List<Administrador> ListarAdministrador();
+        
 
 
 
