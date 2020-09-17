@@ -39,6 +39,38 @@
             <param name="id">Id do benefício que será buscado</param>
             <returns>Retorna um status code 204</returns>
         </member>
+        <member name="M:ProVagas.Controllers.BeneficioXVagaController.Get">
+            <summary>
+            Listar os benefícios de uma vaga
+            </summary>
+            <returns>Lista com todos os benefícios da vaga</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficioXVagaController.Get(System.Int32)">
+            <summary>
+            Buscar benefícios por id
+            </summary>
+            <param name="id">Id do benefício a ser buscado</param>
+            <returns>Benefício buscado</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficioXVagaController.Post(ProVagas.Domains.BeneficioXVaga)">
+            <summary>
+            Cadastrar benefícios de uma vaga
+            </summary>
+            <param name="beneficioVaga">Novos benefícios</param>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficioXVagaController.Put(System.Int32,ProVagas.Domains.BeneficioXVaga)">
+            <summary>
+            Atualizar benefícios de uma vaga
+            </summary>
+            <param name="id">Id do benefício que será atualizado</param>
+            <param name="novoTipo">Benefícos atualizados</param>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficioXVagaController.Delete(System.Int32)">
+            <summary>
+            Deletar benefícios de uma vaga
+            </summary>
+            <param name="id">Id dos benefícios que serão deletados</param>
+        </member>
         <member name="M:ProVagas.Controllers.EmpresasController.Get">
             <summary>
             Listar as empresas
@@ -146,6 +178,38 @@
             Deletar um tipo de vaga
             </summary>
             <param name="id">Id do tipo que será deletado</param>
+        </member>
+        <member name="M:ProVagas.Controllers.VagaController.Get">
+            <summary>
+            Listar todas as vagas
+            </summary>
+            <returns>Lista com todas as vagas</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.VagaController.Get(System.Int32)">
+            <summary>
+            Buscar uma vaga por id
+            </summary>
+            <param name="id">Id da vaga a ser buscada</param>
+            <returns>Vaga buscada</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.VagaController.Post(ProVagas.Domains.Vaga)">
+            <summary>
+            Cadastrar uma nova vaga
+            </summary>
+            <param name="vaga">Nova vaga</param>
+        </member>
+        <member name="M:ProVagas.Controllers.VagaController.Put(System.Int32,ProVagas.Domains.Vaga)">
+            <summary>
+            Atualizar dados da vaga
+            </summary>
+            <param name="id">Id da vaga que será atualizada</param>
+            <param name="novaVaga">Dados da atualizados da vaga</param>
+        </member>
+        <member name="M:ProVagas.Controllers.VagaController.Delete(System.Int32)">
+            <summary>
+            Deletar uma vaga
+            </summary>
+            <param name="id">Id da vaga que será deletada</param>
         </member>
     </members>
 </doc>
