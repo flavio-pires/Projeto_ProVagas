@@ -109,5 +109,8 @@
             <param name="id">Id do estágio que será buscado</param>
             <returns>Retorna um status code 204</returns>
         </member>
+        <member name="M:ProVagas.Controllers.UsuarioController.Post(ProVagas.Domains.Usuario)">
+            *Cadastrar um novo usuario*/
+        </member>
     </members>
 </doc>

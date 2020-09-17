@@ -23,6 +23,7 @@ namespace ProVagas.Controllers
 
             _usuariorepository = new UsuarioRepository();
         }
+
         /*Listar todos usuarios*/
         [HttpGet]
         public IEnumerable<Usuario> Get()
@@ -43,38 +44,46 @@ namespace ProVagas.Controllers
             }
         }
 
-        /*Cadastrar um novo usuario*/
+        ///*Cadastrar um novo usuario*/
+        //[HttpPost]
+        //public IActionResult Post(Usuario usuario)
+        //{
+        //    try
+        //    {
+        //        if (_usuariorepository.aluno(usuario.Email))
+        //        {
+        //            usuario.IdTipoUsuario = 3;
+        //            _usuariorepository.Add(usuario);
+
+        //            return Ok("Usuario cadastrado com sucesso"); 
+        //        }
+
+        //        else
+        //        {
+        //            return BadRequest("Não consta nenhum registro desse email no banco de dados");
+        //        }
+
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine(e);
+        //        return BadRequest("Usuario não cadastrado");
+        //    }
+
+        //}
+
         [HttpPost]
-        public IActionResult Post(Usuario usuario)
+        public IActionResult Post(Usuario user)
         {
             try
             {
-               TipoUsuario tipo = new TipoUsuario();
+                _usuariorepository.Add(user);
 
-                if (tipo != 3)
-                {
-                    _usuariorepository.Add(usuario);
-                     
-                    return Ok("Usuario cadastrado");
-                }
-
-                if (_usuariorepository.aluno(usuario.Email))
-                {
-                    usuario.IdTipoUsuario = 3;
-                    _usuariorepository.Add(usuario);
-
-                    return Ok("Usuario cadastrado com sucesso"); 
-                }
-
-                else
-                {
-                    return BadRequest("Não consta nenhum registro desse email no banco de dados");
-                }
-
+                return Ok("Um novo usuario foi cadastrado com sucesso");
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine(e);
+
                 return BadRequest("Usuario não cadastrado");
             }
 
@@ -94,7 +103,7 @@ namespace ProVagas.Controllers
                     Telefone = usuarioAtualizado.Telefone,
                     Senha = usuarioAtualizado.Senha,
                     IdEndereco = usuarioAtualizado.IdEndereco,
-                    IdTipoUsuario = 3
+                    IdTipoUsuario = id
                 };
 
                 _usuariorepository.Update(UPDATE);
