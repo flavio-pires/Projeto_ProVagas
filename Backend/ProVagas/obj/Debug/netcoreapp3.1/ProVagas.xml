@@ -109,10 +109,5 @@
             <param name="id">Id do estágio que será buscado</param>
             <returns>Retorna um status code 204</returns>
         </member>
-        <member name="F:ProVagas.Repositories.AdministadorRepository.ctx">
-            <summary>
-            Objeto contexto por onde serão chamados os métodos do EF Core
-            </summary>
-        </member>
     </members>
 </doc>

@@ -8,10 +8,10 @@ namespace ProVagas.Interfaces
 {
     interface IAdministradorRepository : IRepositoryBase<Administrador>
     {
-        List<Candidato> ListarCandidato();
-        List<Empresa> ListarEmpresa();
-        List<Administrador> ListarAdministrador();
-        
+        /*List<Usuario> ListarCandidato();
+        List<Usuario> ListarEmpresa();
+        List<Usuario> ListarAdministrador();
+        */
 
 
 

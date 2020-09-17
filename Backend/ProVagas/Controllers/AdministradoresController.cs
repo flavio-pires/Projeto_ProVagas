@@ -22,17 +22,30 @@ namespace ProVagas.Controllers
             _administradorRepository = new AdministadorRepository();
         }
 
-        //Listar todos os usuarios
+
+        /* //Listar todos os candidatos
+         [HttpGet("Candidato")]
+         public IActionResult GetCandidato()
+         {
+             return Ok(_administradorRepository.ListarCandidato());
+         }
+
+         [HttpGet("Empresa")]
+         public IActionResult GetEmpresa()
+         {
+             return Ok(_administradorRepository.ListarEmpresa());
+         }
+
+         [HttpGet("Administrador")]
+         public IActionResult GetAdministrador()
+         {
+             return Ok(_administradorRepository.ListarAdministrador());
+         }*/
+
         [HttpGet]
         public IEnumerable<Administrador> Get()
         {
             return _administradorRepository.GetAll();
-        }
-        //Listar todos os candidatos
-        [HttpGet("Candidato")]
-        public IActionResult GetCandidato()
-        {
-            return Ok(_administradorRepository.ListarCandidato());
         }
 
         // Listar os usuarios por id na URL 
