@@ -5,11 +5,11 @@ USE ProVagas
 GO
 
 INSERT INTO TipoUsuario VALUES (
-	'Administrador'
+	'Candidato'
 ), (
 	'Empresa'
 ), (
-	'Candidato'
+	'Administrador'
 )
 
 GO
@@ -112,121 +112,108 @@ INSERT INTO Cidade VALUES (
 
 GO
 
-INSERT INTO Endereco VALUES ('Rua narnia', '327', 'Vila nova savoia', null, '00000000', 1)
-
+INSERT INTO Usuario VALUES 
+('gugugacasco@gmail.com', '(11) 970707070', '1234', 1), ('posarle@hotmail.com', '(11) 970707070', '67567', 3)
 GO
 
-INSERT INTO Usuario VALUES ('gagag@gmail.com', null, '1234', 3, 1)
-
+INSERT INTO Endereco VALUES
+('Rua Carlos Alves',  '12', 'Vila do chaves', null, '00000000', 2,2), ('Avenida Barão de Limeira',  '539 ', 'Santa Cecilia', null, '01202001', 2,3)
 GO
 
-iNSERT INTO NivelEscolaridade VALUES (
-'Ensino medio completo'), ('Ensino superior')
-
-GO 
-
-iNSERT INTO NivelIngles VALUES (
-'Basico'), ('Intermediario'), ('Tecnico'), ('Avançado')
-
+INSERT INTO NivelEscolaridade VALUES 
+('Fundamental'), ('Médio'), ('Tecnico'), ('Graduação'), ('Pós-graduação'), ('Mestrado'), ('Doutorado')
 GO
 
 INSERT INTO Candidato VALUES 
-('Hebert richard', '51687947888', '28/02/2002', 'ydgeygdye', '', 0, 'Não possui deficiencia', 1, 'Desenvolvimento de sistemas', 'SENAI', 'FULLSTACK', '14/08/2020', '14/08/2022', 0, 'HFHFHFUERFHU',1,2,1,2)
-
+('Hebert Richard', '04533335080', '2000-10-20', 'linkedin/hebertrichard', null, 6, 1, 2)
 GO
 
-INSERT INTO Habilidade VALUES ('C#'), ('ANGULAR')
+INSERT INTO PCD VALUES 
+('Deficiência física'), ('Deficiência auditiva'), ('Deficiência visual'), ('Deficiência mental'), ('Deficiência múltipla'), ('Nenhuma')
 GO
 
-INSERT INTO HabilidadeXCandidato VALUES (1,1)
-
+INSERT INTO PcdXCandidato VALUES 
+(0, 3, 6)
 GO
 
-INSERT INTO Administrador VALUES (
-	'José Pereira','238475867','Unidade Ferrozópolis','Educação',1
-)
-
+INSERT INTO NivelIdioma VALUES 
+('Basico'), ('Tecnico'), ('Intermediario'), ('Avançado')
 GO
 
-INSERT INTO Empresa VALUES (
-	'Escola SENAI de Informática','SENAI de Informática','Médio','Lissandra Gomes','linkedin.com/senainfo',null,'74856475867475','6473875',1
-)
+INSERT INTO Idioma VALUES 
+('Inglês', 2,3)
 GO
 
-INSERT INTO TipoVaga VALUES (
-	'CLT'
-), (
-	'PJ'
-), (
-	'Estágio'
-)
-
+INSERT INTO ExperienciaProfissional VALUES 
+('Desenvolvedor junior BACK-END', 'BRQ', 'Desenvolvedor junior', '2020-08-15', '2022-08-15', 0,'IDEJFIEIEJDEDJEDEJDIEJDEIJDEI', 3)
 GO
 
-INSERT INTO Vaga VALUES ('Estagio fullstack', 'dhfgegfehgf', '31/08/2020', '18/09/2020', 1, 3)
-
+INSERT INTO CursoSENAI VALUES 
+(1, 'Tecnico em desenvolvimento de sistemas', 3)
 GO
 
-INSERT INTO Requisito VALUES ('C#')
-
+INSERT INTO CursoExtraCurricular VALUES 
+('MBA - Gesâo de projeto', 'MBA', null, '2015-08-14', '2018-12-20', 3)
 GO
 
-INSERT INTO RequisitoXVaga VALUES (1,1)
-
+INSERT INTO Habilidade VALUES 
+('C#'), ('Angular'), ('Phyton'), ('JavaScript'), ('ReactJs'), ('MongoDB'), ('SqlServer')
 GO
 
-INSERT INTO StatusInscricao VALUES (
-	'Aprovado'
-), ( 
-	'Cancelado'
-), (
-	'Reprovado'
-), (
-	'Em aguardo'
-)
-
+INSERT INTO HabilidadeXCandidato VALUES
+(2, 3), (1,3)
 GO
 
-INSERT INTO Inscricao VALUES (
-'31/08/2020',	1,1,1
-)
-
+INSERT INTO Administrador VALUES 
+('Roberto Possarle', '123456789', 'Unidade Santa Cecilia', 'Gestão de pessoas', 7)
 GO
 
-INSERT INTO StatusEstagio VALUES ('Evadido'), ('Em andamento'), ('Concluido')
-
+INSERT INTO PorteEmpresa VALUES 
+('Pequena'), ('Médio'), ('Grande')
 GO
 
-INSERT INTO Estagio VALUES (
-	'2020/09/04','2022/09/04',1,1
-)
-
+INSERT INTO Empresa VALUES 
+('BRQ SOLUCOES EM INFORMATICA S.A', 'BRQ', 'Justus', 'linkedin/BRQ', NULL, '365420250001640', '62040000', 3, 7)
 GO
 
-INSERT INTO Beneficio VALUES (
-	'Vale Refeição'
-), (
-	'Vale Alimentação'
-), (
-	'Vale Transporte'
-), (
-	'Estacionamento no local'
-), (
-	'Assistência Médica'
-), (
-	'Assistência Odontológica'
-), (
-	'Cesta Básica'
-), (
-	'Seguro de Vida'
-),  (
-	'Horário Flexível'
-), (
-	'Auxílio Creche'
-)
 
+INSERT INTO TipoVaga VALUES 
+('CLT'), ('Estagio'), ('Pj')
 GO
 
-INSERT INTO BeneficioXVaga VALUES (
-	1,1
-)
+INSERT INTO Vaga VALUES 
+('Estagio em desenvolvimento de sistemas', 'jdhihedwodwijjdwijiw','17/12/2020', '30/12/2020', 2,2)
+GO
+
+INSERT INTO Requisito VALUES 
+('C#')
+GO
+
+INSERT INTO RequisitoXVaga VALUES
+(1,3)
+GO
+
+INSERT INTO StatusInscricao VALUES
+('Aprovado'), ( 'Cancelado'), ('Reprovado'), ('Em aguardo')
+GO
+
+INSERT INTO Inscricao VALUES 
+('31/08/2020',3,1,3)
+GO
+
+INSERT INTO StatusEstagio VALUES
+('Evadido'), ('Em andamento'), ('Concluido')
+GO
+
+INSERT INTO Estagio VALUES 
+('2020/09/04','2022/09/04',2,1)
+GO
+
+INSERT INTO Beneficio VALUES
+('Vale Refeição'), ('Vale Alimentação'), ('Vale Transporte'), ('Estacionamento no local'), ('Assistência Médica'), ('Assistência Odontológica'), ('Cesta Básica'), ('Seguro de Vida'),  ('Horário Flexível'), ('Auxílio Creche')
+GO
+
+INSERT INTO BeneficioXVaga VALUES 
+(1,3)
+GO
+
