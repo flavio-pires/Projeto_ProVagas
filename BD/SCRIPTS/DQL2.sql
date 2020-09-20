@@ -69,11 +69,10 @@ INNER JOIN Candidato C on C.IdCandidato = Pcdc.IdCandidato
 INNER JOIN PCD pcd on pcd.IdPCD = pcdc.IdPCD
 
 --Administrador
-SELECT A.IdAdministrador as Administrador, NomeCompletoAdmin, NIF, UnidadeSenai, Departamento, E.IdEndereco as Endereco,
-E.IdUsuario as Usuario
+SELECT A.IdAdministrador as Administrador, NomeCompletoAdmin, NIF, UnidadeSenai, Departamento,
+U.IdUsuario as Usuario
 FROM Administrador A
-INNER JOIN Endereco E on E.IdEndereco = A.IdEndereco
-INNER JOIN Usuario U on U.IdUsuario = E.IdUsuario
+INNER JOIN Usuario U on U.IdUsuario = A.IdUsuario
 
 -- Empresa
 SELECT EM.IdEmpresa as Empresa, RazaoSocial, NomeFantasia, NomeParaContato, Linkedin, WebSite, CNPJ, CNAE,EM.IdEndereco as IdEndereco,

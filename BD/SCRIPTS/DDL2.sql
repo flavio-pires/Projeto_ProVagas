@@ -167,7 +167,7 @@ CREATE TABLE Administrador (
 	NIF CHAR(9) UNIQUE NOT NULL,
 	UnidadeSENAI VARCHAR (255),
 	Departamento VARCHAR (255),
-	IdEndereco INT FOREIGN KEY REFERENCES Endereco(IdEndereco)
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario)
 )
 
 GO
