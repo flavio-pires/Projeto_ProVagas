@@ -13,11 +13,11 @@ namespace ProVagas.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    public class StatusInscricaoController : ControllerBase
+    public class StatusInscricoesController : ControllerBase
     {
         private IStatusInscricaoRepository _statusInscricaoRepository;
 
-        public StatusInscricaoController()
+        public StatusInscricoesController()
         {
             _statusInscricaoRepository = new StatusInscricaoRepository();
         }

@@ -12,13 +12,13 @@ namespace ProVagas.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AdministardorController : ControllerBase
+    public class AdministardoresController : ControllerBase
     {
         private IAdministradorRepository _administradorRepository { get; set; }
 
         private IEmpresaRepository _empresaRepository { get; set; }
 
-        public AdministardorController()
+        public AdministardoresController()
         {
             _administradorRepository = new AdministadorRepository();
 

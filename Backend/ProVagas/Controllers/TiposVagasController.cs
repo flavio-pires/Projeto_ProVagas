@@ -13,11 +13,11 @@ namespace ProVagas.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    public class TipoVagaController : ControllerBase
+    public class TiposVagasController : ControllerBase
     {
         private ITipoVagaRepository _tipoVagaRepository { get; set; }
 
-        public TipoVagaController()
+        public TiposVagasController()
         {
 
             _tipoVagaRepository = new TipoVagaRepository();

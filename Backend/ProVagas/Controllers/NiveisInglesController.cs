@@ -14,11 +14,11 @@ namespace ProVagas.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    public class NivelInglesController : ControllerBase
+    public class NiveisInglesController : ControllerBase
     {
         private INivelInglesRepository _nivelInglesRepository { get; set; }
 
-        public NivelInglesController()
+        public NiveisInglesController()
         {
 
             _nivelInglesRepository = new NivelInglesRepository();

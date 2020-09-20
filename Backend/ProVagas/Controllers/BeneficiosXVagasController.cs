@@ -13,11 +13,11 @@ namespace ProVagas.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    public class BeneficioXVagaController : ControllerBase
+    public class BeneficiosXVagasController : ControllerBase
     {
         private IBeneficioXVagaRepository _beneficioXVagaRepository { get; set; }
 
-        public BeneficioXVagaController()
+        public BeneficiosXVagasController()
         {
 
             _beneficioXVagaRepository = new BeneficioXVagaRepository();
