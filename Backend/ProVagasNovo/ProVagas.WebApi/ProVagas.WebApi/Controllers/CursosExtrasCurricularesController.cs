@@ -24,12 +24,21 @@ namespace ProVagas.WebApi.Controllers
             _cursoextra = new CursoExtraCurricularRepository();
         }
 
+        /// <summary>
+        /// Listar todos os cursos extracurriculares
+        /// </summary>
+        /// <returns>Retorna uma lista dos cursos extracurriculares</returns>
         [HttpGet]
         public IEnumerable<CursoExtraCurricular> Get()
         {
             return _cursoextra.GetAll();
         }
 
+        /// <summary>
+        /// Listar os cursos extracurriculares pelo Id
+        /// </summary>
+        /// <param name="id">Id do curso extracurricular que será buscado</param>
+        /// <returns>Retorna um curso extracurricular pelo Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -43,6 +52,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Cadastrar um novo curso extracurricular
+        /// </summary>
+        /// <param name="curso"></param>
+        /// <returns>Retorna um cadastro de um novo curso extracurricular</returns>
         [HttpPost]
         public IActionResult Post(CursoExtraCurricular curso)
         {
@@ -60,6 +74,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// Alterar um curso extracurricular pelo Id
+        /// </summary>
+        /// <param name="id">Id do curso extracurricular que será buscado</param>
+        /// <param name="cursoadd"></param>
+        /// <returns>Retorna um curso extracurricular atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, CursoExtraCurricular cursoadd)
         {
@@ -89,7 +109,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Deletar um curso extracurricular pelo Id
+        /// </summary>
+        /// <param name="id">Id do curso extracurricular que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

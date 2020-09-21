@@ -24,14 +24,21 @@ namespace ProVagas.WebApi.Controllers
             _nivelIdioma = new NivelIdiomaRepository();
         }
 
-        /*Listar todos os generos*/
+        /// <summary>
+        /// Listar todos os niveis de idioma
+        /// </summary>
+        /// <returns>Retorna uma lista com todos os niveis de idioma</returns>
         [HttpGet]
         public IEnumerable<NivelIdioma> Get()
         {
             return _nivelIdioma.GetAll();
         }
 
-        /*Listar os generos por id*/
+        /// <summary>
+        /// Listar todos os niveis de idioma por Id
+        /// </summary>
+        /// <param name="id">Id do nivel de idioma que será buscado</param>
+        /// <returns>Retorna uma lista dos niveis de idioma por Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -45,7 +52,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Cadastrar um novo genero*/
+        /// <summary>
+        /// Cadastrar um novo nivel de idioma
+        /// </summary>
+        /// <param name="nivel"></param>
+        /// <returns>Retorna o cadastro de um novo nivel de idioma</returns>
         [HttpPost]
         public IActionResult Post(NivelIdioma nivel)
         {
@@ -63,7 +74,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
-        /*Atualizar os generos*/
+        /// <summary>
+        /// Atualizar um nivel de idioma pelo Id
+        /// </summary>
+        /// <param name="id">Id do nivel de idioma que será buscado</param>
+        /// <param name="nivelcadastrado"></param>
+        /// <returns>Retorna um nivel de idioma atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, NivelIdioma nivelcadastrado)
         {
@@ -88,7 +104,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Deletar generos*/
+        /// <summary>
+        /// Deletar um nivel de idioma pelo Id
+        /// </summary>
+        /// <param name="id">Id do nivel de idioma que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

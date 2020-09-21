@@ -24,12 +24,21 @@ namespace ProVagas.WebApi.Controllers
             _cursoSenai = new CursoSenaiRepository();
         }
 
+        /// <summary>
+        /// Listar todos os cursos do SENAI
+        /// </summary>
+        /// <returns>Retorna uma lista com todos os cursos do SENAI</returns>
         [HttpGet]
         public IEnumerable<CursoSenai> Get()
         {
             return _cursoSenai.GetAll();
         }
 
+        /// <summary>
+        /// Listar os cursos do SENAI pelo Id
+        /// </summary>
+        /// <param name="id">Id do curso do SENAI que será buscado</param>
+        /// <returns>Retorna uma lista dos cursos do SENAI pelo Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -43,6 +52,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Cadastrar um novo curso do SENAI
+        /// </summary>
+        /// <param name="curso"></param>
+        /// <returns>Retorna um cadastro de um novo curso do SENAI</returns>
         [HttpPost]
         public IActionResult Post(CursoSenai curso)
         {
@@ -60,6 +74,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// Alterar um curso do SENAI pelo Id
+        /// </summary>
+        /// <param name="id">Id do curso do SENAI que será buscado</param>
+        /// <param name="cursoadd"></param>
+        /// <returns>Retorna um curso do SENAI atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, CursoSenai cursoadd)
         {
@@ -86,7 +106,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Deletar um curso do SENAI pelo Id
+        /// </summary>
+        /// <param name="id">Id do curso do SENAI que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

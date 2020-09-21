@@ -24,13 +24,21 @@ namespace ProVagas.WebApi.Controllers
             _PcdRepository = new PcdXcandidatoRepository();
         }
 
-        /*Listar todos os generos*/
+        /// <summary>
+        /// Listar todos os gêneros
+        /// </summary>
+        /// <returns>Retorna uma lista com todos os gêneros</returns>
         [HttpGet]
         public IEnumerable<PcdXcandidato> Get()
         {
             return _PcdRepository.GetAll();
         }
-        /*Listar os generos por id*/
+        
+        /// <summary>
+        /// Retorna uma lista de gêneros por Id
+        /// </summary>
+        /// <param name="id">Id do gênero que será buscado</param>
+        /// <returns>Retorna uma lista de gêneros por Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -44,7 +52,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Cadastrar um novo genero*/
+        /// <summary>
+        /// Cadastrar um novo gênero
+        /// </summary>
+        /// <param name="pcdXcand"></param>
+        /// <returns>Retorna o cadastro finalizado de um novo gênero</returns>
         [HttpPost]
         public IActionResult Post(PcdXcandidato pcdXcand)
         {
@@ -62,7 +74,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
-        /*Atualizar os generos*/
+        /// <summary>
+        /// Atualizar um gênero por id
+        /// </summary>
+        /// <param name="id">Id do gênero que será buscado</param>
+        /// <param name="pcd"></param>
+        /// <returns>Retorna um gênero atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, PcdXcandidato pcd)
         {
@@ -88,7 +105,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Deletar generos*/
+        /// <summary>
+        /// Deletar um gênero pelo id
+        /// </summary>
+        /// <param name="id">Id do gênero que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

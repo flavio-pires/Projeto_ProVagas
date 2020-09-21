@@ -24,12 +24,21 @@ namespace ProVagas.WebApi.Controllers
             _idiomaRepository = new IdiomaRepository();
         }
 
+        /// <summary>
+        /// Listar todos os idiomas
+        /// </summary>
+        /// <returns>Retorna uma lista de idiomas</returns>
         [HttpGet]
         public IEnumerable<Idioma> Get()
         {
             return _idiomaRepository.GetAll();
         }
 
+        /// <summary>
+        /// Listar idiomas por Id
+        /// </summary>
+        /// <param name="id">Id do idioma que será buscado</param>
+        /// <returns>Retorna uma lista de idiomas por Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -43,6 +52,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Cadastrar um novo idioma
+        /// </summary>
+        /// <param name="idioma"></param>
+        /// <returns>Retorna o cadastro de um novo idioma</returns>
         [HttpPost]
         public IActionResult Post(Idioma idioma)
         {
@@ -60,6 +74,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// Atualizar um idioma pelo Id
+        /// </summary>
+        /// <param name="id">Id do idioma que será buscado</param>
+        /// <param name="idiomaatt"></param>
+        /// <returns>Retorna o idioma atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, Idioma idiomaatt)
         {
@@ -86,7 +106,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Deletar um idioma pelo Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

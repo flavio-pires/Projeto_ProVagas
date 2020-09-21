@@ -24,12 +24,21 @@ namespace ProVagas.WebApi.Controllers
             _experienciaProfissional = new ExperienciaProfissionalRepository();
         }
 
+        /// <summary>
+        /// Listar as experiencias profissionais do candidato
+        /// </summary>
+        /// <returns>Retorna uma lista das experiencias profissionais</returns>
         [HttpGet]
         public IEnumerable<ExperienciaProfissional> Get()
         {
             return _experienciaProfissional.GetAll();
         }
 
+        /// <summary>
+        /// Listar as experiencias profissionais do candidato pelo Id
+        /// </summary>
+        /// <param name="id">Id da experiencia profissional que será buscado</param>
+        /// <returns>Retorna uma lista de experiencias profissionais pelo Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -43,6 +52,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Cadastrar uma nova experiencia profissional
+        /// </summary>
+        /// <param name="exp"></param>
+        /// <returns>Retorna o cadastro de uma nova experiencia profissional</returns>
         [HttpPost]
         public IActionResult Post(ExperienciaProfissional exp)
         {
@@ -60,6 +74,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// Atualizar uma experiencia profissional pelo Id
+        /// </summary>
+        /// <param name="id">Id da experiencia profissional que será buscado</param>
+        /// <param name="experiAtt"></param>
+        /// <returns>Retorna uma experiência profissional atualizada</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, ExperienciaProfissional experiAtt)
         {
@@ -91,7 +111,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Deletar uma experiencia profissional pelo Id
+        /// </summary>
+        /// <param name="id">Id da experiencia profissional que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

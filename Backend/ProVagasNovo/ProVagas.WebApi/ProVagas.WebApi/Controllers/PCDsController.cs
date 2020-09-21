@@ -24,13 +24,21 @@ namespace ProVagas.WebApi.Controllers
             _pcd = new PcdRepository();
         }
 
-        /*Listar todos os generos*/
+        /// <summary>
+        /// Listar as pcds 
+        /// </summary>
+        /// <returns>Retorna uma lista com as pcds</returns>
         [HttpGet]
         public IEnumerable<Pcd> Get()
         {
             return _pcd.GetAll();
         }
-        /*Listar os generos por id*/
+
+        /// <summary>
+        /// Listar pcds por Id
+        /// </summary>
+        /// <param name="id">Id da pcd que será buscado</param>
+        /// <returns>Retorna uma lista de pcds por Ids</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -44,7 +52,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Cadastrar um novo genero*/
+        /// <summary>
+        /// Cadastrar uma novo pcd
+        /// </summary>
+        /// <param name="pcd"></param>
+        /// <returns>Retorna uma nova pcd cadastrada</returns>
         [HttpPost]
         public IActionResult Post(Pcd pcd)
         {
@@ -62,7 +74,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
-        /*Atualizar os generos*/
+        /// <summary>
+        /// Atualizar uma pcd pelo id
+        /// </summary>
+        /// <param name="id">Id da pcd que será buscado</param>
+        /// <param name="pcdatt"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, Pcd pcdatt)
         {
@@ -87,7 +104,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Deletar generos*/
+        /// <summary>
+        /// Deletar uma pcd pelo id
+        /// </summary>
+        /// <param name="id">Id da pcd que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

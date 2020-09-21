@@ -26,6 +26,11 @@ namespace ProVagas.WebApi.Controllers
             _usuarioRepository = new UsuarioRepsoitory();
         }
 
+        /// <summary>
+        /// Realizar login
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns>Retorna o token do login</returns>
         [HttpPost]
         public IActionResult Post(LoginViewModels login)
         {

@@ -25,14 +25,21 @@ namespace ProVagas.WebApi.Controllers
             _porteEmpresa = new PorteEmpresaRepository();
         }
 
-      
+        /// <summary>
+        /// Listar todos os portes das empresas
+        /// </summary>
+        /// <returns>Retorna uma lista dos portes das empresas</returns>
         [HttpGet]
         public IEnumerable<PorteEmpresa> Get()
         {
             return _porteEmpresa.GetAll();
         }
        
-
+        /// <summary>
+        /// Listar os portes das empresas por Id
+        /// </summary>
+        /// <param name="id">Id do porte que será buscado</param>
+        /// <returns>Retorna os portes das empresas por Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -46,7 +53,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        
+        /// <summary>
+        /// Cadastrar um novo porte
+        /// </summary>
+        /// <param name="porte"></param>
+        /// <returns>Retorna o cadastro finalizado de um novo porte</returns>
         [HttpPost]
         public IActionResult Post(PorteEmpresa porte)
         {
@@ -64,6 +75,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// Alterar um porte
+        /// </summary>
+        /// <param name="id">Id do porte que será buscado</param>
+        /// <param name="porte"></param>
+        /// <returns>Retorna o porte atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, PorteEmpresa porte)
         {
@@ -88,7 +105,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Deletar um porte
+        /// </summary>
+        /// <param name="id">Id do porte que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

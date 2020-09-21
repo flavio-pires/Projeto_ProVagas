@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\51628550813\\Pictures\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj": {}
+    "C:\\Users\\Bruno\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\51628550813\\Pictures\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj": {
+    "C:\\Users\\Bruno\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\51628550813\\Pictures\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\Bruno\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj",
         "projectName": "ProVagas.WebApi",
-        "projectPath": "C:\\Users\\51628550813\\Pictures\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj",
-        "packagesPath": "C:\\Users\\51628550813\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\51628550813\\Pictures\\ProVagas.WebApi\\ProVagas.WebApi\\obj\\",
+        "projectPath": "C:\\Users\\Bruno\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj",
+        "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bruno\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\51628550813\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -109,7 +109,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
