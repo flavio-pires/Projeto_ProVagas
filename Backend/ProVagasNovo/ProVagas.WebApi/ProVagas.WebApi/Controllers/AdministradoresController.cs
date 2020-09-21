@@ -60,7 +60,11 @@ namespace ProVagas.WebApi.Controllers
             return Ok(_candidatoRepository.GetAll());
         }
 
-        /*Listar os administrador por id*/
+        /// <summary>
+        /// Listar todos os administradores pelo Id
+        /// </summary>
+        /// <param name="id">Id do administrador que será buscado</param>
+        /// <returns>Retorna uma lista de administrador pelo Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -74,6 +78,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Listar os candidatos pelo Id através dos administradores
+        /// </summary>
+        /// <param name="id">Id do cadndaito que será buscado</param>
+        /// <returns>Retorna uma lista de candidatos pelo Id</returns>
         [HttpGet("Candidato/{id}")]
         public IActionResult GetCandidato(int id)
         {
@@ -87,7 +96,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Listar as empresas pelo Id através dos administradores
+        /// </summary>
+        /// <param name="id">Id da empresa que será buscado</param>
+        /// <returns>Retorna uma lista de empresas pelo Id</returns>
         [HttpGet("Empresa/{id}")]
         public IActionResult GetEmpresa(int id)
         {
@@ -102,7 +115,11 @@ namespace ProVagas.WebApi.Controllers
         }
 
 
-        /*Cadastrar um novo candidato*/
+        /// <summary>
+        /// Cadastrar um novo candidato pelo Id através do administrador
+        /// </summary>
+        /// <param name="cand"></param>
+        /// <returns>Retorna o cadastro de um novo candidato pelo Id</returns>
         [HttpPost("Candidato/{id}")]
         public IActionResult Post(Candidato cand)
         {
@@ -120,7 +137,11 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
-        /*Cadastrar um novo administadro*/
+        /// <summary>
+        /// Cadastrar um novo administrador
+        /// </summary>
+        /// <param name="adm"></param>
+        /// <returns>Retorna o cadastro de um novo administrador</returns>
         [HttpPost]
         public IActionResult PostAdministrador(Administrador adm)
         {
@@ -139,7 +160,11 @@ namespace ProVagas.WebApi.Controllers
         }
 
 
-        /*Cadastrar uma nova empresa*/
+        /// <summary>
+        /// Cadastrar uma nova empresa através do administrador
+        /// </summary>
+        /// <param name="emp"></param>
+        /// <returns>Retorna o cadastro de uma nova empresa</returns>
         [HttpPost("Empresa")]
         public IActionResult PostEmpresa(Empresa emp)
         {
@@ -156,7 +181,13 @@ namespace ProVagas.WebApi.Controllers
             }
 
         }
-        /*Atualizar os generos*/
+
+        /// <summary>
+        /// Atualizar o administrador pelo Id
+        /// </summary>
+        /// <param name="id">Id do administrador que será buscado</param>
+        /// <param name="administrador"></param>
+        /// <returns>Retorna o administrador atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, Administrador administrador)
         {
@@ -186,7 +217,12 @@ namespace ProVagas.WebApi.Controllers
         }
 
 
-        /*Atualizar os Candidato*/
+        /// <summary>
+        /// Atualizar os candidatos pelo Id através do administrador
+        /// </summary>
+        /// <param name="id">Id do candidato que será buscado</param>
+        /// <param name="can"></param>
+        /// <returns>Retorna o candidato atualizado</returns>
         [HttpPut("Candidato/{id}")]
         public IActionResult PutCandidato(int id, Candidato can)
         {
@@ -213,7 +249,13 @@ namespace ProVagas.WebApi.Controllers
                 return BadRequest("Não foi possivel atualizar esse candidato");
             }
         }
-        /*Atualizar os Candidato*/
+
+        /// <summary>
+        /// Atualizar a empresa pelo Id através do administrador
+        /// </summary>
+        /// <param name="id">Id da empresa que será buscado</param>
+        /// <param name="emp"></param>
+        /// <returns>Retorna a empresa atualizada</returns>
         [HttpPut("Empresa/{id}")]
         public IActionResult PutEmpresa(int id, Empresa emp)
         {
@@ -244,6 +286,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Deleta um administrador pelo Id
+        /// </summary>
+        /// <param name="id">Id do administrador que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -262,7 +309,11 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
-        /*Deletar Candidato*/
+        /// <summary>
+        /// Deletar um candidato pelo Id através do administrador
+        /// </summary>
+        /// <param name="id">Id do candidato que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("Candidato/{id}")]
         public IActionResult DeleteCandidato(int id)
         {
@@ -281,6 +332,11 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// Deletar uma empresa pelo Id através do administrador
+        /// </summary>
+        /// <param name="id">Id da empresa que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("Empresa/{id}")]
         public IActionResult DeleteEmpresa(int id)
         {
@@ -296,9 +352,6 @@ namespace ProVagas.WebApi.Controllers
             {
                 return BadRequest("Não foi possivel deletar essa empresa");
             }
-
         }
-
-
     }
 }

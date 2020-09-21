@@ -23,7 +23,10 @@ namespace ProVagas.WebApi.Controllers
         }
 
 
-        // Listar Cidades
+        /// <summary>
+        /// Listar todas as cidades
+        /// </summary>
+        /// <returns>Retorna uma lista de cidades</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -31,7 +34,11 @@ namespace ProVagas.WebApi.Controllers
         }
 
 
-        // Cadastrar Nova Cidade
+        /// <summary>
+        /// Cadastrar uma nova cidade
+        /// </summary>
+        /// <param name="novacidade"></param>
+        /// <returns>Retorna o cadastro de uma nova cidade</returns>
         [HttpPost]
         public IActionResult Post(Cidade novacidade)
         {
@@ -40,7 +47,12 @@ namespace ProVagas.WebApi.Controllers
             return StatusCode(201);
         }
 
-        // Atualizar Cidade
+        /// <summary>
+        /// Atualizar uma cidade pelo Id
+        /// </summary>
+        /// <param name="id">Id da cidade que será buscado</param>
+        /// <param name="cidadeAtualizada"></param>
+        /// <returns>Retorna uma cidade atualizada</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, Cidade cidadeAtualizada)
         {
@@ -49,7 +61,11 @@ namespace ProVagas.WebApi.Controllers
             return StatusCode(204);
         }
 
-        // Deletar Cidades
+        /// <summary>
+        /// Deletar uma cidade pelo Id
+        /// </summary>
+        /// <param name="id">Id da cidade que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

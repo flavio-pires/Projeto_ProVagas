@@ -22,7 +22,10 @@ namespace ProVagas.WebApi.Controllers
             _statusEstagioRepository = new StatusEstagioRepository();
         }
 
-        // GET: api/<StatusEstagiosController>
+        /// <summary>
+        /// Listar todos os status de estagio
+        /// </summary>
+        /// <returns>Retorna uma lista com os status de estagio</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -30,7 +33,11 @@ namespace ProVagas.WebApi.Controllers
         }
 
 
-        // POST api/<StatusEstagiosController>
+        /// <summary>
+        /// Cadastrar um novo status de estagio 
+        /// </summary>
+        /// <param name="novostatusEstagios"></param>
+        /// <returns>Retorna o cadastro de um novo status de estagio</returns>
         [HttpPost]
         public IActionResult Post(StatusEstagio novostatusEstagios)
         {
@@ -39,7 +46,12 @@ namespace ProVagas.WebApi.Controllers
             return StatusCode(201);
         }
 
-        // PUT api/<StatusEstagiosController>/5
+        /// <summary>
+        /// Atualizar um status de estagio pelo Id
+        /// </summary>
+        /// <param name="id">Id do status de estágio que será buscado</param>
+        /// <param name="statusEstagioAtualizado"></param>
+        /// <returns>Retorna o status de estagio atualizado pelo Id</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, StatusEstagio statusEstagioAtualizado)
         {
@@ -48,7 +60,11 @@ namespace ProVagas.WebApi.Controllers
             return StatusCode(204);
         }
 
-        // DELETE api/<StatusEstagiosController>/5
+        /// <summary>
+        /// Deletar o status de estágio pelo Id
+        /// </summary>
+        /// <param name="id">Id do status do estágio que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

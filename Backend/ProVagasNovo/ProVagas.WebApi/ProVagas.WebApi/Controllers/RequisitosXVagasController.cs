@@ -24,14 +24,21 @@ namespace ProVagas.WebApi.Controllers
         }
 
 
-        /*Listar todos os RequisitoXVagaBuscado junto com a vaga*/
+        /// <summary>
+        /// Listar os requisitos e as vagas
+        /// </summary>
+        /// <returns>Retorna uma lista com os requisitos e as vagas</returns>
         [HttpGet]
         public IEnumerable<RequisitoXvaga> Get()
         {
             return _requisitosxvagarepository.GetAll();
         }
 
-        /*Listar os RequisitoXVagaBuscado por id  através da url*/
+        /// <summary>
+        /// Listar os requisitos e vagas pelo Id
+        /// </summary>
+        /// <param name="id">Id do requisitoXvaga que será buscado</param>
+        /// <returns>Retorna uma lista com os requisitosXvagas pelo Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -45,7 +52,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Cadastrar um novo RequisitoXVagaBuscado*/
+        /// <summary>
+        /// Cadastrar um novo requisitoXvaga
+        /// </summary>
+        /// <param name="requisitoxvaga"></param>
+        /// <returns>Retorna o cadastro de um novo requisitoXvaga</returns>
         [HttpPost]
         public IActionResult Post(RequisitoXvaga requisitoxvaga)
         {
@@ -63,7 +74,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
-        /*Atualizar os RequisitoXVagaBuscado*/
+        /// <summary>
+        /// Atualizar um requisitoXvaga pelo Id
+        /// </summary>
+        /// <param name="id">Id do requisitoXvaga que será buscado</param>
+        /// <param name="requisitoxvagaCadastrado"></param>
+        /// <returns>Retorna o requisitoXvaga atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, RequisitoXvaga requisitoxvagaCadastrado)
         {
@@ -89,7 +105,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Deletar RequisitoXVagaBuscado*/
+        /// <summary>
+        /// Deletar um requisitoXvaga pelo Id
+        /// </summary>
+        /// <param name="id">Id do requisitoXvaga que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

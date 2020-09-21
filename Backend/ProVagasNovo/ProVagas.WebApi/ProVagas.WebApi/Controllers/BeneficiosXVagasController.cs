@@ -23,8 +23,6 @@ namespace ProVagas.WebApi.Controllers
             _beneficioXVagaRepository = new BeneficioXVagaRepository();
         }
 
-        /*Listar todos os benefício de uma vaga*/
-
         /// <summary>
         /// Listar os benefícios de uma vaga
         /// </summary>
@@ -34,9 +32,6 @@ namespace ProVagas.WebApi.Controllers
         {
             return _beneficioXVagaRepository.GetAll();
         }
-
-
-        /*Listar um tipo de vaga buscando por id*/
 
         /// <summary>
         /// Buscar benefícios por id
@@ -56,7 +51,6 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Cadastrar um novo tipo de vaga*/
         /// <summary>
         /// Cadastrar benefícios de uma vaga
         /// </summary>
@@ -109,8 +103,6 @@ namespace ProVagas.WebApi.Controllers
                 return BadRequest("Não foi possivel atualizar os benefícios da vaga");
             }
         }
-
-        /*Deletar Tipo de vaga*/
 
         /// <summary>
         /// Deletar benefícios de uma vaga

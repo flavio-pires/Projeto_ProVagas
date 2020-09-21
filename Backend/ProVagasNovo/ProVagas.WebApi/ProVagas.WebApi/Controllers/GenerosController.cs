@@ -24,13 +24,21 @@ namespace ProVagas.WebApi.Controllers
             _generorepository = new GeneroRepository();
         }
 
-        /*Listar todos os generos*/
+        /// <summary>
+        /// Listar todos os generos
+        /// </summary>
+        /// <returns>Retorna uma lista com os generos</returns>
         [HttpGet]
         public IEnumerable<Genero> Get()
         {
             return _generorepository.GetAll();
         }
-        /*Listar os generos por id*/
+        
+        /// <summary>
+        /// Retorna uma lista de generos por Id
+        /// </summary>
+        /// <param name="id">Id do genero que será buscado</param>
+        /// <returns>Retorna uma lista de generos por Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -44,7 +52,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Cadastrar um novo genero*/
+        /// <summary>
+        /// Cadastrar um novo genero
+        /// </summary>
+        /// <param name="genero"></param>
+        /// <returns>Retorna o cadastro de um novo genero</returns>
         [HttpPost]
         public IActionResult Post(Genero genero)
         {
@@ -62,7 +74,12 @@ namespace ProVagas.WebApi.Controllers
         
         }
 
-        /*Atualizar os generos*/
+        /// <summary>
+        /// Atualizar um genero pelo Id
+        /// </summary>
+        /// <param name="id">Id do genero que será buscado</param>
+        /// <param name="generocadastrado"></param>
+        /// <returns>Retorna o genero atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, Genero generocadastrado)
         {
@@ -87,7 +104,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-       /*Deletar generos*/
+        /// <summary>
+        /// Deletar um genero pelo Id
+        /// </summary>
+        /// <param name="id">Id do genero que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

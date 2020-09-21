@@ -23,14 +23,21 @@ namespace ProVagas.WebApi.Controllers
             _tipouserrepository = new TipoUsuarioRepository();
         }
 
-        /*Listar todos os generos*/
+        /// <summary>
+        /// Listar todos os tipos de usuario
+        /// </summary>
+        /// <returns>Retorna uma lista com os tipos de usuario</returns>
         [HttpGet]
         public IEnumerable<TipoUsuario> Get()
         {
             return _tipouserrepository.GetAll();
         }
 
-        /*Listar os generos por id*/
+        /// <summary>
+        /// Listar os tipos de usuario pelo Id
+        /// </summary>
+        /// <param name="id">Id do tipo de usuario que será buscado</param>
+        /// <returns>Retorna uma lista de tipos de usuario pelo Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -44,7 +51,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Cadastrar um novo genero*/
+        /// <summary>
+        /// Cadastrar um novo tipo de usuario
+        /// </summary>
+        /// <param name="tipouser"></param>
+        /// <returns>Retorna o cadastro de um novo tipo de usuario</returns>
         [HttpPost]
         public IActionResult Post(TipoUsuario tipouser)
         {
@@ -62,7 +73,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
-        /*Atualizar os generos*/
+        /// <summary>
+        /// Atualizar um tipo de usuario pelo Id
+        /// </summary>
+        /// <param name="id">Id do tipo de usuario que será buscado</param>
+        /// <param name="tipoUsercadastrado"></param>
+        /// <returns>Retorna o tipo de usuario atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, TipoUsuario tipoUsercadastrado)
         {
@@ -87,7 +103,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Deletar generos*/
+        /// <summary>
+        /// Deletar um tipo de usuario pelo Id
+        /// </summary>
+        /// <param name="id">Id do tipo de usuario que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

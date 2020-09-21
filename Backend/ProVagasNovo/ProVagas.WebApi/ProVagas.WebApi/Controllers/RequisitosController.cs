@@ -23,14 +23,21 @@ namespace ProVagas.WebApi.Controllers
             _requisitosrepository = new RequisitosRepository();
         }
 
-        /*Listar todos os requisitos*/
+        /// <summary>
+        /// Lsitar todos os requisitos
+        /// </summary>
+        /// <returns>Retorna uma lista com os requisitos</returns>
         [HttpGet]
         public IEnumerable<Requisito> Get()
         {
             return _requisitosrepository.GetAll();
         }
 
-        /*Listar os resquisitos por id  através da url*/
+        /// <summary>
+        /// Listar os requisitos pelo Id
+        /// </summary>
+        /// <param name="id">Id do requisito que será buscado</param>
+        /// <returns>Retorna uma lista com os requisitos pelo Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -44,7 +51,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Cadastrar um novo requisito*/
+        /// <summary>
+        /// Cadastrar um novo requisito
+        /// </summary>
+        /// <param name="requisito"></param>
+        /// <returns>Retorna o cadastro de um novo requisito</returns>
         [HttpPost]
         public IActionResult Post(Requisito requisito)
         {
@@ -62,7 +73,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
-        /*Atualizar os requisitos*/
+        /// <summary>
+        /// Atualizar um requisito pelo Id
+        /// </summary>
+        /// <param name="id">Id do requisito que será buscado</param>
+        /// <param name="requisitocadastrado"></param>
+        /// <returns>Retorna um requisito atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, Requisito requisitocadastrado)
         {
@@ -87,7 +103,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Deletar requisitos*/
+        /// <summary>
+        /// Deletar um requisito pelo Id
+        /// </summary>
+        /// <param name="id">Id do requisito que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

@@ -23,8 +23,6 @@ namespace ProVagas.WebApi.Controllers
             _vagaRepository = new VagaRepository();
         }
 
-        /*Listar todas as vagas*/
-
         /// <summary>
         /// Listar todas as vagas
         /// </summary>
@@ -34,9 +32,6 @@ namespace ProVagas.WebApi.Controllers
         {
             return _vagaRepository.GetAll();
         }
-
-
-        /*Listar uma vaga buscando por id*/
 
         /// <summary>
         /// Buscar uma vaga por id
@@ -55,8 +50,6 @@ namespace ProVagas.WebApi.Controllers
                 return BadRequest("Vaga não encontrada.");
             }
         }
-
-        /*Cadastrar uma nova vaga*/
 
         /// <summary>
         /// Cadastrar uma nova vaga
@@ -117,8 +110,6 @@ namespace ProVagas.WebApi.Controllers
                 return BadRequest("Não foi possivel atualizar os dados da vaga");
             }
         }
-
-        /*Deletar uma vaga*/
 
         /// <summary>
         /// Deletar uma vaga

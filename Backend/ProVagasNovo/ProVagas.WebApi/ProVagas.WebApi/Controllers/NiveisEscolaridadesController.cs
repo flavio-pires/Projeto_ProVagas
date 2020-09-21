@@ -24,14 +24,21 @@ namespace ProVagas.WebApi.Controllers
             _nivelescolaridaderepository = new NivelEscolaridadeRepository();
         }
 
-        /*Listar todos os generos*/
+        /// <summary>
+        /// Listar todos os niveis de escolaridade
+        /// </summary>
+        /// <returns>Retorna uma lista com os niveis de escolaridade</returns>
         [HttpGet]
         public IEnumerable<NivelEscolaridade> Get()
         {
             return _nivelescolaridaderepository.GetAll();
         }
 
-        /*Listar os generos por id*/
+        /// <summary>
+        /// Listar uma lista de niveis de escolaridade pelo Id
+        /// </summary>
+        /// <param name="id">Id dos niveis de escolaridade que será buscado</param>
+        /// <returns>Retorna uma lista de niveis de escolaridade pelo Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -45,7 +52,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Cadastrar um novo genero*/
+        /// <summary>
+        /// Cadastrar um novo nivel de escolaridade
+        /// </summary>
+        /// <param name="nivel"></param>
+        /// <returns>Retorna o cadastro de um novo nivel de escolaridade</returns>
         [HttpPost]
         public IActionResult Post(NivelEscolaridade nivel)
         {
@@ -63,7 +74,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
-        /*Atualizar os generos*/
+        /// <summary>
+        /// Atualizar um nivel de escolaridade pelo Id
+        /// </summary>
+        /// <param name="id">Id dos niveis de escolaridade que será buscado</param>
+        /// <param name="nivelcadastrado"></param>
+        /// <returns>Retorna um nivel de escolaridade atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, NivelEscolaridade nivelcadastrado)
         {
@@ -88,7 +104,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Deletar generos*/
+        /// <summary>
+        /// Deletar um nivel de escolaridade pelo Id
+        /// </summary>
+        /// <param name="id">Id dos niveis de escolaridade que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

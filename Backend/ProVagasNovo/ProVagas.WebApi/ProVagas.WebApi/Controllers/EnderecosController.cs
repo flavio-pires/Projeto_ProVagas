@@ -24,12 +24,21 @@ namespace ProVagas.WebApi.Controllers
             _enderecorepository = new EnderecoRepository();
         }
 
+        /// <summary>
+        /// Listar todos os endereços 
+        /// </summary>
+        /// <returns>Retorna uma lista com os endereços</returns>
         [HttpGet]
         public IEnumerable<Endereco> Get()
         {
             return _enderecorepository.GetAll();
         }
 
+        /// <summary>
+        /// Listar endereços pelo Id
+        /// </summary>
+        /// <param name="id">Id do endereço que será buscado</param>
+        /// <returns>Retorna uma lista de endereços pelo Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -43,6 +52,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Cadastrar um novo endereço
+        /// </summary>
+        /// <param name="ende"></param>
+        /// <returns>Retorna o cadastro de um novo endereço</returns>
         [HttpPost]
         public IActionResult Post(Endereco ende)
         {
@@ -60,6 +74,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// Atualizar um endereço pelo Id
+        /// </summary>
+        /// <param name="id">Id do endereço que será buscado</param>
+        /// <param name="enderecoatt"></param>
+        /// <returns>Retorna o endereço atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, Endereco enderecoatt)
         {
@@ -90,7 +110,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Deletar um endereço pelo Id
+        /// </summary>
+        /// <param name="id">Id do endereço que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

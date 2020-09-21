@@ -23,13 +23,22 @@ namespace ProVagas.WebApi.Controllers
 
             _usuariorepository = new UsuarioRepsoitory();
         }
-        /*Listar todos usuarios*/
+       
+        /// <summary>
+        /// Listar todos os usuarios
+        /// </summary>
+        /// <returns>Retorna uma lista com os usuarios</returns>
         [HttpGet]
         public IEnumerable<Usuario> Get()
         {
             return _usuariorepository.GetAll();
         }
-        /*Listar os usuario por id*/
+
+        /// <summary>
+        /// Listar todos os usuarios pelo Id
+        /// </summary>
+        /// <param name="id">Id do usuario que será buscado</param>
+        /// <returns>Retorna uma lista de usuarios pelo Id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -43,7 +52,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Cadastrar um novo usuario*/
+        /// <summary>
+        /// Cadastrar um novo usuario
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns>Retorna o cadastro de um novo usuario</returns>
         [HttpPost]
         public IActionResult Post(Usuario usuario)
         {
@@ -61,7 +74,12 @@ namespace ProVagas.WebApi.Controllers
 
         }
 
-        /*Atualizar os usuario*/
+        /// <summary>
+        /// Atualizar um usuario pelo Id
+        /// </summary>
+        /// <param name="id">Id do usuario que será buscado</param>
+        /// <param name="usuarioAtualizado"></param>
+        /// <returns>Retorna o usuario atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, Usuario usuarioAtualizado)
         {
@@ -89,7 +107,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Deletar Usuario*/
+        /// <summary>
+        /// Deletar um usuario pelo Id
+        /// </summary>
+        /// <param name="id">Id do usuario que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

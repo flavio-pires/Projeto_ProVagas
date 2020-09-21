@@ -23,8 +23,6 @@ namespace ProVagas.WebApi.Controllers
             _candidatoRepository = new CandidatoRepository();
         }
 
-        /*Listar todos os benefício de uma vaga*/
-
         /// <summary>
         /// Listar os candidatos
         /// </summary>
@@ -34,9 +32,6 @@ namespace ProVagas.WebApi.Controllers
         {
             return _candidatoRepository.GetAll();
         }
-
-
-        /*Listar um tipo de vaga buscando por id*/
 
         /// <summary>
         /// Buscar candidatos por id
@@ -56,10 +51,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Cadastrar um novo tipo de vaga*/
         /// <summary>
         /// Cadastrar um novo candidato
         /// </summary>
+        /// <param name="candidato"></param>
+        /// <returns>Retorna o cadastro de um novo candidato</returns>
         [HttpPost]
         public IActionResult Post(Candidato candidato)
         {
@@ -78,9 +74,11 @@ namespace ProVagas.WebApi.Controllers
         }
 
         /// <summary>
-        /// Atualizar candidato
+        /// Atualizar um candidato pelo Id
         /// </summary>
-     
+        /// <param name="id">Id do candidato que será buscado</param>
+        /// <param name="Candidatoatt"></param>
+        /// <returns>Retorna o candidato atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, Candidato Candidatoatt)
         {
@@ -109,11 +107,11 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Deletar Tipo de vaga*/
-
         /// <summary>
-        /// Deletar candidato
+        /// Deletar um candidato pelo Id
         /// </summary>
+        /// <param name="id">Id do candidato que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

@@ -23,20 +23,15 @@ namespace ProVagas.WebApi.Controllers
             _tipoVagaRepository = new TipoVagaRepository();
         }
 
-        /*Listar todos os tipos de de vaga*/
-
         /// <summary>
-        /// Listar níveis de inglês
+        /// Listar todos os tipos de vagas
         /// </summary>
-        /// <returns>Lista com todos os níveis de inglês</returns>
+        /// <returns>Lista com todos os tipos de vagas</returns>
         [HttpGet]
         public IEnumerable<TipoVaga> Get()
         {
             return _tipoVagaRepository.GetAll();
         }
-
-
-        /*Listar um tipo de vaga buscando por id*/
 
         /// <summary>
         /// Buscar um tipo de vaga por Id
@@ -56,7 +51,6 @@ namespace ProVagas.WebApi.Controllers
             }
         }
 
-        /*Cadastrar um novo tipo de vaga*/
         /// <summary>
         /// Cadastrar um novo tipo de vaga
         /// </summary>

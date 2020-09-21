@@ -22,16 +22,21 @@ namespace ProVagas.WebApi.Controllers
             _estadoRepository = new EstadoRepository();
         }
 
-        // Listar Estados
+        /// <summary>
+        /// Listar todos os estados
+        /// </summary>
+        /// <returns>Retorna uma lista com os estados</returns>
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(_estadoRepository.Listar());
         }
 
- 
-
-        // Cadastrar novo estado
+        /// <summary>
+        /// Cadastrar um novo estado
+        /// </summary>
+        /// <param name="novoestado"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Estado novoestado)
         {
@@ -40,7 +45,12 @@ namespace ProVagas.WebApi.Controllers
             return StatusCode(201);
         }
 
-        // Atualizar Estado
+        /// <summary>
+        /// Atualizar um estado pelo Id
+        /// </summary>
+        /// <param name="id">Id do estado que será buscado</param>
+        /// <param name="estadoAtualizado"></param>
+        /// <returns>Retorna o estado atualizado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, Estado estadoAtualizado)
         {
@@ -49,7 +59,11 @@ namespace ProVagas.WebApi.Controllers
             return StatusCode(204);
         }
 
-        //Deletar Estados
+        /// <summary>
+        /// Deletar um estado pelo Id
+        /// </summary>
+        /// <param name="id">Id do estado que será buscado</param>
+        /// <returns>Retorna vazio</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
