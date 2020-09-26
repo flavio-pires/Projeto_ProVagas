@@ -1,0 +1,598 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProVagas</name>
+    </assembly>
+    <members>
+        <member name="M:ProVagas.Controllers.BeneficiosController.Get">
+            <summary>
+            Listar os benefícios
+            </summary>
+            <returns>Retorna uma lista e um status code 200</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficiosController.GetById(System.Int32)">
+            <summary>
+            Buscar um benefício pelo ID
+            </summary>
+            <param name="id">Id do benefício que será buscado</param>
+            <returns>Retorna um benefício específico pelo Id</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficiosController.Post(ProVagas.Domains.Beneficio)">
+            <summary>
+            Cadastrar um novo benefício
+            </summary>
+            <param name="novoBeneficio">Objeto novoBeneficio que será cadastrado</param>
+            <returns>Retorna um status code 201</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficiosController.Put(System.Int32,ProVagas.Domains.Beneficio)">
+            <summary>
+            Atualiza um benefício
+            </summary>
+            <param name="id">Id do benefício que será buscado</param>
+            <param name="beneficioAtualizado">Objeto beneficioAtualizado que será alterado</param>
+            <returns>Retorna um status code 204</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficiosController.Delete(System.Int32)">
+            <summary>
+            Deletar um benefício
+            </summary>
+            <param name="id">Id do benefício que será buscado</param>
+            <returns>Retorna um status code 204</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficioXVagaController.Get">
+            <summary>
+            Listar os benefícios de uma vaga
+            </summary>
+            <returns>Lista com todos os benefícios da vaga</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficioXVagaController.Get(System.Int32)">
+            <summary>
+            Buscar benefícios por id
+            </summary>
+            <param name="id">Id do benefício a ser buscado</param>
+            <returns>Benefício buscado</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficioXVagaController.Post(ProVagas.Domains.BeneficioXVaga)">
+            <summary>
+            Cadastrar benefícios de uma vaga
+            </summary>
+            <param name="beneficioVaga">Novos benefícios</param>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficioXVagaController.Put(System.Int32,ProVagas.Domains.BeneficioXVaga)">
+            <summary>
+            Atualizar benefícios de uma vaga
+            </summary>
+            <param name="id">Id do benefício que será atualizado</param>
+            <param name="novoTipo">Benefícos atualizados</param>
+        </member>
+        <member name="M:ProVagas.Controllers.BeneficioXVagaController.Delete(System.Int32)">
+            <summary>
+            Deletar benefícios de uma vaga
+            </summary>
+            <param name="id">Id dos benefícios que serão deletados</param>
+        </member>
+        <member name="M:ProVagas.Controllers.CandidatosController.Get">
+            <summary>
+            Lista todos os candidatos
+            </summary>
+            <returns>Uma lista de candidatos e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.CandidatosController.GetById(System.Int32)">
+            <summary>
+            Busca um candidato através do Id
+            </summary>
+            <param name="id">Id do candidato que será buscado</param>
+            <returns>O candidato buscado e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.CandidatosController.Post(ProVagas.Domains.Candidato)">
+            <summary>
+            Cadastra um novo candidato
+            </summary>
+            <param name="novoCandidato">Objeto contendo as informações do novo candidato</param>
+            <returns>Um status code Ok e uma mensagem personalizada</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.CandidatosController.Put(System.Int32,ProVagas.Domains.Candidato)">
+            <summary>
+            Atualiza as informações de um candidato existente 
+            </summary>
+            <param name="id">Id do candidato que será atualizado</param>
+            <param name="candidatoAtualizado">Objeto contendo as novas informações do candidato</param>
+            <returns>Um status code Ok e uma mensagem personalizada</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.CandidatosController.Delete(System.Int32)">
+            <summary>
+            Deleta um candidato existente
+            </summary>
+            <param name="id">Id do candidato que será deletado</param>
+            <returns>Um status code 202 - Accepted</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EmpresasController.Get">
+            <summary>
+            Listar as empresas
+            </summary>
+            <returns>Retorna uma lista e um status code 200</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EmpresasController.GetById(System.Int32)">
+            <summary>
+            Buscar um evento pelo ID
+            </summary>
+            <param name="id">Id da empresa que será buscado</param>
+            <returns>Retorna uma empresa específica pelo Id</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EmpresasController.Post(ProVagas.Domains.Empresa)">
+            <summary>
+            Cadastrar uma nova empresa
+            </summary>
+            <param name="novaEmpresa">Objeto novaEmpresa que será cadastrado</param>
+            <returns>Retorna um status code 201</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EmpresasController.Put(System.Int32,ProVagas.Domains.Empresa)">
+            <summary>
+            Atualiza uma empresa
+            </summary>
+            <param name="id">Id da empresa que será buscado</param>
+            <param name="empresaAtualizada">Objeto empresaAtualizada que será alterado</param>
+            <returns>Retorna um status code 204</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EmpresasController.Delete(System.Int32)">
+            <summary>
+            Deletar uma empresa
+            </summary>
+            <param name="id">Id da empresa que será buscado</param>
+            <returns>Retorna um status code 204</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EstagiosController.Get">
+            <summary>
+            Listar os estagios
+            </summary>
+            <returns>Retorna uma lista e um status code 200</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EstagiosController.GetById(System.Int32)">
+            <summary>
+            Buscar um estágio pelo ID
+            </summary>
+            <param name="id">Id do estágio que será buscado</param>
+            <returns>Retorna um estágio específico pelo Id</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EstagiosController.Post(ProVagas.Domains.Estagio)">
+            <summary>
+            Cadastrar um novo estágio
+            </summary>
+            <param name="novoEstagio">Objeto novoEstagio que será cadastrado</param>
+            <returns>Retorna um status code 201</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EstagiosController.Put(System.Int32,ProVagas.Domains.Estagio)">
+            <summary>
+            Atualiza um estágio
+            </summary>
+            <param name="id">Id do estágio que será buscado</param>
+            <param name="estagioAtualizado">Objeto estagioAtualizado que será alterado</param>
+            <returns>Retorna um status code 204</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.EstagiosController.Delete(System.Int32)">
+            <summary>
+            Deletar um estágio
+            </summary>
+            <param name="id">Id do estágio que será buscado</param>
+            <returns>Retorna um status code 204</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.HabilidadesController.Get">
+            <summary>
+            Lista todas as habilidades
+            </summary>
+            <returns>Uma lista de habilidades</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.HabilidadesController.GetById(System.Int32)">
+            <summary>
+            Busca uma habilidade através do ID
+            </summary>
+            <param name="id">ID da habilidade que será buscada</param>
+            <returns>A habilidade buscada e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.HabilidadesController.Post(ProVagas.Domains.Habilidade)">
+            <summary>
+            Cadastra uma nova habilidade
+            </summary>
+            <param name="novaHabilidade">Objeto contendo as informações da nova habilidade</param>
+            <returns>Um status code Ok e uma mensagem personalizada</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.HabilidadesController.Put(System.Int32,ProVagas.Domains.Habilidade)">
+            <summary>
+            Atualiza uma habilidade existente
+            </summary>
+            <param name="id">ID da habilidade que será atualizada</param>
+            <param name="habilidadeAtualizada">Objeto contendo as novas informações da habilidade</param>
+            <returns>Um status code Ok e uma mensagem personalizada</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.HabilidadesController.Delete(System.Int32)">
+            <summary>
+            Deleta uma habilidade existente
+            </summary>
+            <param name="id">ID da habilidade que será deletada</param>
+            <returns>Um status code 202 - Accepted</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.HabilidadesXCandidatosController.Get">
+            <summary>
+            Lista todas as habilidades do candidato
+            </summary>
+            <returns>Uma lista de habilidades do candidato</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.HabilidadesXCandidatosController.GetById(System.Int32)">
+            <summary>
+            Busca uma habilidade de um candidato através do ID
+            </summary>
+            <param name="id">ID da habilidadeXcandidato que será buscada</param>
+            <returns>A habilidade buscada e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.HabilidadesXCandidatosController.Put(System.Int32,ProVagas.Domains.HabilidadeXCandidato)">
+            <summary>
+            Atualiza uma habilidadeXcandidato existente
+            </summary>
+            <param name="id">ID da habilidade que será atualizada</param>
+            <param name="habilidadeXCandidatoAtualizada">Objeto contendo as novas informações da habilidade</param>
+            <returns>Um status code Ok e uma mensagem personalizada</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.HabilidadesXCandidatosController.Delete(System.Int32)">
+            <summary>
+            Deleta uma habilidadeXcandidato existente
+            </summary>
+            <param name="id">ID da habilidade que será deletada</param>
+            <returns>Um status code 202 - Accepted</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.InscricoesController.Get">
+            <summary>
+            Lista todas as inscrições
+            </summary>
+            <returns>Uma lista de inscrições e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.InscricoesController.GetById(System.Int32)">
+            <summary>
+            Busca uma inscrição através do ID
+            </summary>
+            <param name="id">ID da inscrição que será buscada</param>
+            <returns>A inscrição buscada e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.InscricoesController.Post(ProVagas.Domains.Inscricao)">
+            <summary>
+            Cadastra uma nova inscrição
+            </summary>
+            <param name="novaInscricao">Objeto contendo as informações da nova inscrição</param>
+            <returns>Um status code Ok e uma mensagem personalizada</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.InscricoesController.Put(System.Int32,ProVagas.Domains.Inscricao)">
+            <summary>
+            Atualiza uma inscrição existente
+            </summary>
+            <param name="id">ID da inscrição que será atualizada</param>
+            <param name="inscricaoAtualizada">Objeto com as informações atualizadas da inscrição</param>
+            <returns>Um status code Ok e uma mensagem personalizada</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.InscricoesController.Delete(System.Int32)">
+            <summary>
+            Deleta uma inscrição existente
+            </summary>
+            <param name="id">ID da inscrição que será deletada</param>
+            <returns>Um status code 202 - Accepted</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.NivelInglesController.Get">
+            <summary>
+            Listar níveis de inglês
+            </summary>
+            <returns>Lista com todos os níveis de inglês</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.StatusInscricaoController.Get">
+            <summary>
+            Lista todos os status de inscrição
+            </summary>
+            <returns>Uma lista de status de inscrições e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.StatusInscricaoController.GetById(System.Int32)">
+            <summary>
+            Busca um status de inscrição através do ID
+            </summary>
+            <param name="id">ID do status de inscrição que será buscado</param>
+            <returns>O status de inscrição buscado e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.StatusInscricaoController.Post(ProVagas.Domains.StatusInscricao)">
+            <summary>
+            Cadastra um novo status de inscrição
+            </summary>
+            <param name="novoStatusInscricao">Objeto contendo as informações do novo status de inscrição</param>
+            <returns>Um status code Ok e uma mensagem personalizada</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.StatusInscricaoController.Delete(System.Int32)">
+            <summary>
+            Deleta um status de inscrição existente
+            </summary>
+            <param name="id">ID do status de inscrição que será deletado</param>
+            <returns>Um status code 202 - Accepted</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.TipoVagaController.Get">
+            <summary>
+            Listar níveis de inglês
+            </summary>
+            <returns>Lista com todos os níveis de inglês</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.TipoVagaController.Get(System.Int32)">
+            <summary>
+            Buscar um tipo de vaga por Id
+            </summary>
+            <param name="id">Id do tipo a ser buscado</param>
+            <returns>Um tipo de Vaga</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.TipoVagaController.Post(ProVagas.Domains.TipoVaga)">
+            <summary>
+            Cadastrar um novo tipo de vaga
+            </summary>
+            <param name="tipoVaga">Novo tipo de vaga</param>
+        </member>
+        <member name="M:ProVagas.Controllers.TipoVagaController.Put(System.Int32,ProVagas.Domains.TipoVaga)">
+            <summary>
+            Atualizar um tipo de vaga
+            </summary>
+            <param name="id">Id do tipo de vaga a ser atualizado</param>
+            <param name="novoTipo">Tipo de vaga atualizado</param>
+        </member>
+        <member name="M:ProVagas.Controllers.TipoVagaController.Delete(System.Int32)">
+            <summary>
+            Deletar um tipo de vaga
+            </summary>
+            <param name="id">Id do tipo que será deletado</param>
+        </member>
+        <member name="M:ProVagas.Controllers.VagaController.Get">
+            <summary>
+            Listar todas as vagas
+            </summary>
+            <returns>Lista com todas as vagas</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.VagaController.Get(System.Int32)">
+            <summary>
+            Buscar uma vaga por id
+            </summary>
+            <param name="id">Id da vaga a ser buscada</param>
+            <returns>Vaga buscada</returns>
+        </member>
+        <member name="M:ProVagas.Controllers.VagaController.Post(ProVagas.Domains.Vaga)">
+            <summary>
+            Cadastrar uma nova vaga
+            </summary>
+            <param name="vaga">Nova vaga</param>
+        </member>
+        <member name="M:ProVagas.Controllers.VagaController.Put(System.Int32,ProVagas.Domains.Vaga)">
+            <summary>
+            Atualizar dados da vaga
+            </summary>
+            <param name="id">Id da vaga que será atualizada</param>
+            <param name="novaVaga">Dados da atualizados da vaga</param>
+        </member>
+        <member name="M:ProVagas.Controllers.VagaController.Delete(System.Int32)">
+            <summary>
+            Deletar uma vaga
+            </summary>
+            <param name="id">Id da vaga que será deletada</param>
+        </member>
+        <member name="T:ProVagas.Interfaces.ICandidatoRepository">
+            <summary>
+            Interface responsável pelo CandidatoRepository
+            </summary>
+        </member>
+        <member name="M:ProVagas.Interfaces.ICandidatoRepository.Listar">
+            <summary>
+            Lista todos os candidatos
+            </summary>
+            <returns>Retorna uma lista de candidatos</returns>
+        </member>
+        <member name="M:ProVagas.Interfaces.ICandidatoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um candidato através do ID
+            </summary>
+            <param name="id">ID do candidato que será buscado</param>
+            <returns>Retorna o candidato buscado</returns>
+        </member>
+        <member name="M:ProVagas.Interfaces.ICandidatoRepository.Cadastrar(ProVagas.Domains.Candidato)">
+            <summary>
+            Cadastra um novo candidato
+            </summary>
+            <param name="novoCandidato">Objeto contendo as informações do novo candidato</param>
+        </member>
+        <member name="M:ProVagas.Interfaces.ICandidatoRepository.Atualizar(System.Int32,ProVagas.Domains.Candidato)">
+            <summary>
+            Atualiza um candidato existente
+            </summary>
+            <param name="id">ID do candidato que será atualizado</param>
+            <param name="candidatoAtualizado">Objeto com as informações atualizadas</param>
+        </member>
+        <member name="M:ProVagas.Interfaces.ICandidatoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um candidato existente
+            </summary>
+            <param name="id">ID do candidato que será deletado</param>
+        </member>
+        <member name="T:ProVagas.Interfaces.IInscricaoRepository">
+            <summary>
+            Interface responsável pelo InscricaoRepository
+            </summary>
+        </member>
+        <member name="M:ProVagas.Interfaces.IInscricaoRepository.Listar">
+            <summary>
+            Lista todas as inscrições
+            </summary>
+            <returns>Uma lista de inscrições</returns>
+        </member>
+        <member name="M:ProVagas.Interfaces.IInscricaoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma inscrição através do Id
+            </summary>
+            <param name="id">Id da inscrição que será buscada</param>
+            <returns>Uma inscrição buscada</returns>
+        </member>
+        <member name="M:ProVagas.Interfaces.IInscricaoRepository.Cadastrar(ProVagas.Domains.Inscricao)">
+            <summary>
+            Cadastra uma nova inscrição
+            </summary>
+            <param name="novaInscricao">Objeto contendo as informações da nova inscrição</param>
+        </member>
+        <member name="M:ProVagas.Interfaces.IInscricaoRepository.Atualizar(System.Int32,ProVagas.Domains.Inscricao)">
+            <summary>
+            Atualiza uma inscrição
+            </summary>
+            <param name="id">Id da inscrição que será atualizada</param>
+            <param name="inscricaoAtualizada">Objeto com as informações atualizadas</param>
+        </member>
+        <member name="M:ProVagas.Interfaces.IInscricaoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma incrição existente
+            </summary>
+            <param name="id">Id da inscrição que será deletada</param>
+        </member>
+        <member name="T:ProVagas.Interfaces.IStatusInscricaoRepository">
+            <summary>
+            Interface responsável pelo StatusInscricaoRepository
+            </summary>
+        </member>
+        <member name="M:ProVagas.Interfaces.IStatusInscricaoRepository.Listar">
+            <summary>
+            Lista todos os status de inscrição
+            </summary>
+            <returns>Uma lista de status de inscrição</returns>
+        </member>
+        <member name="M:ProVagas.Interfaces.IStatusInscricaoRepository.Cadastrar(ProVagas.Domains.StatusInscricao)">
+            <summary>
+            Cadastra um novo Status de inscrição
+            </summary>
+            <param name="novoStatusInscricao">Objeto contendo as informações do novo status de inscrição</param>
+        </member>
+        <member name="M:ProVagas.Interfaces.IStatusInscricaoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um status de inscrição existente
+            </summary>
+            <param name="id">Id do status de inscrição que será deletado</param>
+        </member>
+        <member name="M:ProVagas.Interfaces.IStatusInscricaoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um status de inscrição através do ID
+            </summary>
+            <param name="id">ID do status de inscrição que será buscado</param>
+            <returns>O status de inscrição buscado</returns>
+        </member>
+        <member name="T:ProVagas.Repositories.CandidatoRepository">
+            <summary>
+            Repositório dos candidatos
+            </summary>
+        </member>
+        <member name="F:ProVagas.Repositories.CandidatoRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:ProVagas.Repositories.CandidatoRepository.Atualizar(System.Int32,ProVagas.Domains.Candidato)">
+            <summary>
+            Atualiza um candidato existente
+            </summary>
+            <param name="id">ID do candidato que será atualizado</param>
+            <param name="candidatoAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:ProVagas.Repositories.CandidatoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um candidato através do Id
+            </summary>
+            <param name="id">Id do candidato que será buscado</param>
+            <returns>O candidato buscado</returns>
+        </member>
+        <member name="M:ProVagas.Repositories.CandidatoRepository.Cadastrar(ProVagas.Domains.Candidato)">
+            <summary>
+            Cadastra um novo candidato
+            </summary>
+            <param name="novoCandidato">Objeto contendo as informações do novo candidato</param>
+        </member>
+        <member name="M:ProVagas.Repositories.CandidatoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um candidato existente
+            </summary>
+            <param name="id">Id do candidato que será deletado</param>
+        </member>
+        <member name="M:ProVagas.Repositories.CandidatoRepository.Listar">
+            <summary>
+            Lista todos os candidatos
+            </summary>
+            <returns>Uma lista de candidatos</returns>
+        </member>
+        <member name="T:ProVagas.Repositories.InscricaoRepository">
+            <summary>
+            Repositório responsável pelas inscrições
+            </summary>
+        </member>
+        <member name="F:ProVagas.Repositories.InscricaoRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:ProVagas.Repositories.InscricaoRepository.Atualizar(System.Int32,ProVagas.Domains.Inscricao)">
+            <summary>
+            Atualiza uma inscrição existente
+            </summary>
+            <param name="id">Id da inscrição que será atualizada</param>
+            <param name="inscricaoAtualizada">Objeto com as novas informações</param>
+        </member>
+        <member name="M:ProVagas.Repositories.InscricaoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma inscrição através do Id
+            </summary>
+            <param name="id">Id da inscrição que será buscada</param>
+            <returns>A inscrição buscada</returns>
+        </member>
+        <member name="M:ProVagas.Repositories.InscricaoRepository.Cadastrar(ProVagas.Domains.Inscricao)">
+            <summary>
+            Cadastra uma nova inscrição
+            </summary>
+            <param name="novaInscricao">Objeto contendo as informações da nova inscrição</param>
+        </member>
+        <member name="M:ProVagas.Repositories.InscricaoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma inscrição existente
+            </summary>
+            <param name="id">Id da inscrição que será deletada</param>
+        </member>
+        <member name="M:ProVagas.Repositories.InscricaoRepository.Listar">
+            <summary>
+            Lista todas as inscrições
+            </summary>
+            <returns>Uma lista de inscrições</returns>
+        </member>
+        <member name="T:ProVagas.Repositories.StatusInscricaoRepository">
+            <summary>
+            Repositório responsável pelo StatusInscricaoRepository
+            </summary>
+        </member>
+        <member name="F:ProVagas.Repositories.StatusInscricaoRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:ProVagas.Repositories.StatusInscricaoRepository.Cadastrar(ProVagas.Domains.StatusInscricao)">
+            <summary>
+            Cadastra um novo status de inscrição
+            </summary>
+            <param name="novoStatusInscricao">Objeto contendo as informações do novo status de inscrição</param>
+        </member>
+        <member name="M:ProVagas.Repositories.StatusInscricaoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um status de inscrição existente
+            </summary>
+            <param name="id">Id do status de inscrição que será deletado</param>
+        </member>
+        <member name="M:ProVagas.Repositories.StatusInscricaoRepository.Listar">
+            <summary>
+            Lista todos os status de inscrição
+            </summary>
+            <returns>Uma lista com os status de inscrição</returns>
+        </member>
+        <member name="M:ProVagas.Repositories.StatusInscricaoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um status de inscrição através do ID
+            </summary>
+            <param name="id">ID do status de inscrição quer será buscada</param>
+            <returns>O status de inscrição buscado</returns>
+        </member>
+    </members>
+</doc>
