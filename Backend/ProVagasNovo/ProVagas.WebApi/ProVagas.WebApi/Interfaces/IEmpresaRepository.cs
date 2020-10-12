@@ -8,5 +8,7 @@ namespace ProVagas.WebApi.Interfaces
 {
     interface IEmpresaRepository : IRepositoryBase<Empresa>
     {
+
+        Empresa Login(string email, string senha);
     }
 }

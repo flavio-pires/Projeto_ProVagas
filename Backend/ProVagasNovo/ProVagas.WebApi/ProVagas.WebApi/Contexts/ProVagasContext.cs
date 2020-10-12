@@ -35,6 +35,7 @@ namespace ProVagas.WebApi.Contexts
         public virtual DbSet<Inscricao> Inscricao { get; set; }
         public virtual DbSet<NivelEscolaridade> NivelEscolaridade { get; set; }
         public virtual DbSet<NivelIdioma> NivelIdioma { get; set; }
+        public virtual DbSet<NivelVaga> NivelVaga { get; set; }
         public virtual DbSet<Pcd> Pcd { get; set; }
         public virtual DbSet<PcdXcandidato> PcdXcandidato { get; set; }
         public virtual DbSet<PorteEmpresa> PorteEmpresa { get; set; }
@@ -60,10 +61,10 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Administrador>(entity =>
             {
                 entity.HasKey(e => e.IdAdministrador)
-                    .HasName("PK__Administ__2B3E34A8E0CF57CD");
+                    .HasName("PK__Administ__2B3E34A8281799DF");
 
                 entity.HasIndex(e => e.Nif)
-                    .HasName("UQ__Administ__C7DEC33072BCA24D")
+                    .HasName("UQ__Administ__C7DEC3302455CBFF")
                     .IsUnique();
 
                 entity.Property(e => e.Departamento)
@@ -96,7 +97,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Beneficio>(entity =>
             {
                 entity.HasKey(e => e.IdBeneficio)
-                    .HasName("PK__Benefici__14B7CA0C789D63F7");
+                    .HasName("PK__Benefici__14B7CA0CC86A2D85");
 
                 entity.Property(e => e.NomeBeneficio)
                     .IsRequired()
@@ -107,28 +108,28 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<BeneficioXvaga>(entity =>
             {
                 entity.HasKey(e => e.IdBeneficioVaga)
-                    .HasName("PK__Benefici__44F955EBE2B35836");
+                    .HasName("PK__Benefici__44F955EBDA019ED2");
 
                 entity.ToTable("BeneficioXVaga");
 
                 entity.HasOne(d => d.IdBeneficioNavigation)
                     .WithMany(p => p.BeneficioXvaga)
                     .HasForeignKey(d => d.IdBeneficio)
-                    .HasConstraintName("FK__Beneficio__IdBen__0E6E26BF");
+                    .HasConstraintName("FK__Beneficio__IdBen__114A936A");
 
                 entity.HasOne(d => d.IdVagaNavigation)
                     .WithMany(p => p.BeneficioXvaga)
                     .HasForeignKey(d => d.IdVaga)
-                    .HasConstraintName("FK__Beneficio__IdVag__0F624AF8");
+                    .HasConstraintName("FK__Beneficio__IdVag__123EB7A3");
             });
 
             modelBuilder.Entity<Candidato>(entity =>
             {
                 entity.HasKey(e => e.IdCandidato)
-                    .HasName("PK__Candidat__D559890510B7C9FC");
+                    .HasName("PK__Candidat__D5598905EE66EA73");
 
                 entity.HasIndex(e => e.Cpf)
-                    .HasName("UQ__Candidat__C1F8973158293EB5")
+                    .HasName("UQ__Candidat__C1F89731A240DB43")
                     .IsUnique();
 
                 entity.Property(e => e.Cpf)
@@ -136,6 +137,10 @@ namespace ProVagas.WebApi.Contexts
                     .HasColumnName("CPF")
                     .HasMaxLength(11)
                     .IsUnicode(false)
+                    .IsFixedLength();
+
+                entity.Property(e => e.Curriculo)
+                    .HasMaxLength(1)
                     .IsFixedLength();
 
                 entity.Property(e => e.DataNascimento).HasColumnType("date");
@@ -148,6 +153,10 @@ namespace ProVagas.WebApi.Contexts
 
                 entity.Property(e => e.NomeCompletoCandidato)
                     .IsRequired()
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.TesteDePersonalidade)
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
@@ -170,7 +179,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Cidade>(entity =>
             {
                 entity.HasKey(e => e.IdCidade)
-                    .HasName("PK__Cidade__160879A339DA19BE");
+                    .HasName("PK__Cidade__160879A392D7E619");
 
                 entity.Property(e => e.NomeCidade)
                     .IsRequired()
@@ -186,7 +195,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<CursoExtraCurricular>(entity =>
             {
                 entity.HasKey(e => e.IdCursoExtraCurricular)
-                    .HasName("PK__CursoExt__B9EEEFD2D3A30876");
+                    .HasName("PK__CursoExt__B9EEEFD2633EDF11");
 
                 entity.Property(e => e.DataFim).HasColumnType("date");
 
@@ -213,7 +222,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<CursoSenai>(entity =>
             {
                 entity.HasKey(e => e.IdCursoSenai)
-                    .HasName("PK__CursoSEN__50BD1AC3A2D7FA60");
+                    .HasName("PK__CursoSEN__50BD1AC3131D2264");
 
                 entity.ToTable("CursoSENAI");
 
@@ -235,14 +244,14 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Empresa>(entity =>
             {
                 entity.HasKey(e => e.IdEmpresa)
-                    .HasName("PK__Empresa__5EF4033EBCDB256F");
+                    .HasName("PK__Empresa__5EF4033E3F66413C");
 
                 entity.HasIndex(e => e.Cnae)
-                    .HasName("UQ__Empresa__AA5E6DE474A32DF2")
+                    .HasName("UQ__Empresa__AA5E6DE47CA692E7")
                     .IsUnique();
 
                 entity.HasIndex(e => e.Cnpj)
-                    .HasName("UQ__Empresa__AA57D6B437B62621")
+                    .HasName("UQ__Empresa__AA57D6B4610D2A7F")
                     .IsUnique();
 
                 entity.Property(e => e.Cnae)
@@ -295,7 +304,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Endereco>(entity =>
             {
                 entity.HasKey(e => e.IdEndereco)
-                    .HasName("PK__Endereco__0B7C7F17185D2FEF");
+                    .HasName("PK__Endereco__0B7C7F17BF3943C6");
 
                 entity.Property(e => e.Bairro)
                     .IsRequired()
@@ -337,7 +346,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Estado>(entity =>
             {
                 entity.HasKey(e => e.IdEstado)
-                    .HasName("PK__Estado__FBB0EDC1F5A1E4F5");
+                    .HasName("PK__Estado__FBB0EDC136B15ABA");
 
                 entity.Property(e => e.NomeEstado)
                     .IsRequired()
@@ -348,7 +357,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Estagio>(entity =>
             {
                 entity.HasKey(e => e.IdEstagio)
-                    .HasName("PK__Estagio__C70AD76CAFE096E8");
+                    .HasName("PK__Estagio__C70AD76CAE09C41A");
 
                 entity.Property(e => e.DataFinal).HasColumnType("date");
 
@@ -357,18 +366,18 @@ namespace ProVagas.WebApi.Contexts
                 entity.HasOne(d => d.IdInscricaoNavigation)
                     .WithMany(p => p.Estagio)
                     .HasForeignKey(d => d.IdInscricao)
-                    .HasConstraintName("FK__Estagio__IdInscr__08B54D69");
+                    .HasConstraintName("FK__Estagio__IdInscr__0B91BA14");
 
                 entity.HasOne(d => d.IdStatusEstagioNavigation)
                     .WithMany(p => p.Estagio)
                     .HasForeignKey(d => d.IdStatusEstagio)
-                    .HasConstraintName("FK__Estagio__IdStatu__09A971A2");
+                    .HasConstraintName("FK__Estagio__IdStatu__0C85DE4D");
             });
 
             modelBuilder.Entity<ExperienciaProfissional>(entity =>
             {
                 entity.HasKey(e => e.IdExperienciaProfissional)
-                    .HasName("PK__Experien__7772B9DE0C10D40C");
+                    .HasName("PK__Experien__7772B9DEFD80E44F");
 
                 entity.Property(e => e.Cargo)
                     .HasMaxLength(100)
@@ -397,7 +406,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Genero>(entity =>
             {
                 entity.HasKey(e => e.IdGenero)
-                    .HasName("PK__Genero__0F834988B50FAA81");
+                    .HasName("PK__Genero__0F834988F09FCDF7");
 
                 entity.Property(e => e.NomeGenero)
                     .IsRequired()
@@ -408,7 +417,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Habilidade>(entity =>
             {
                 entity.HasKey(e => e.IdHabilidade)
-                    .HasName("PK__Habilida__0DD4B30D94664117");
+                    .HasName("PK__Habilida__0DD4B30D267F7872");
 
                 entity.Property(e => e.NomeHabilidade)
                     .IsRequired()
@@ -419,7 +428,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<HabilidadeXcandidato>(entity =>
             {
                 entity.HasKey(e => e.IdHabilidadeCandidato)
-                    .HasName("PK__Habilida__F8880B5E14E9CD72");
+                    .HasName("PK__Habilida__F8880B5EEB8C0FB6");
 
                 entity.ToTable("HabilidadeXCandidato");
 
@@ -437,7 +446,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Idioma>(entity =>
             {
                 entity.HasKey(e => e.IdIdioma)
-                    .HasName("PK__Idioma__C867BD36C7EFC78C");
+                    .HasName("PK__Idioma__C867BD36DC14E0D7");
 
                 entity.Property(e => e.NomeIdioma)
                     .HasMaxLength(50)
@@ -457,30 +466,30 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Inscricao>(entity =>
             {
                 entity.HasKey(e => e.IdInscricao)
-                    .HasName("PK__Inscrica__6209444B2E00C7F9");
+                    .HasName("PK__Inscrica__6209444B4012AD1D");
 
                 entity.Property(e => e.DataInscricao).HasColumnType("date");
 
                 entity.HasOne(d => d.IdCandidatoNavigation)
                     .WithMany(p => p.Inscricao)
                     .HasForeignKey(d => d.IdCandidato)
-                    .HasConstraintName("FK__Inscricao__IdCan__03F0984C");
+                    .HasConstraintName("FK__Inscricao__IdCan__06CD04F7");
 
                 entity.HasOne(d => d.IdStatusInscricaoNavigation)
                     .WithMany(p => p.Inscricao)
                     .HasForeignKey(d => d.IdStatusInscricao)
-                    .HasConstraintName("FK__Inscricao__IdSta__02FC7413");
+                    .HasConstraintName("FK__Inscricao__IdSta__05D8E0BE");
 
                 entity.HasOne(d => d.IdVagaNavigation)
                     .WithMany(p => p.Inscricao)
                     .HasForeignKey(d => d.IdVaga)
-                    .HasConstraintName("FK__Inscricao__IdVag__02084FDA");
+                    .HasConstraintName("FK__Inscricao__IdVag__04E4BC85");
             });
 
             modelBuilder.Entity<NivelEscolaridade>(entity =>
             {
                 entity.HasKey(e => e.IdNivelEscolaridade)
-                    .HasName("PK__NivelEsc__8D474527C465D81D");
+                    .HasName("PK__NivelEsc__8D4745278F187571");
 
                 entity.Property(e => e.Escolaridade)
                     .HasMaxLength(60)
@@ -490,9 +499,20 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<NivelIdioma>(entity =>
             {
                 entity.HasKey(e => e.IdNivelIdioma)
-                    .HasName("PK__NivelIdi__CC7EE080422CDA66");
+                    .HasName("PK__NivelIdi__CC7EE080C3BC0850");
 
                 entity.Property(e => e.NomeNivel)
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<NivelVaga>(entity =>
+            {
+                entity.HasKey(e => e.IdNivelVaga)
+                    .HasName("PK__NivelVag__465CED7E73656A81");
+
+                entity.Property(e => e.NomeNivelVaga)
+                    .IsRequired()
                     .HasMaxLength(255)
                     .IsUnicode(false);
             });
@@ -500,7 +520,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Pcd>(entity =>
             {
                 entity.HasKey(e => e.IdPcd)
-                    .HasName("PK__PCD__2ACD55CD058111D8");
+                    .HasName("PK__PCD__2ACD55CD297C6D26");
 
                 entity.ToTable("PCD");
 
@@ -514,7 +534,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<PcdXcandidato>(entity =>
             {
                 entity.HasKey(e => e.IdPcdCandidato)
-                    .HasName("PK__PcdXCand__388A24AA3178C6A5");
+                    .HasName("PK__PcdXCand__388A24AAED292CC7");
 
                 entity.ToTable("PcdXCandidato");
 
@@ -534,7 +554,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<PorteEmpresa>(entity =>
             {
                 entity.HasKey(e => e.IdPorteEmpresa)
-                    .HasName("PK__PorteEmp__3E45791396948B79");
+                    .HasName("PK__PorteEmp__3E4579138DD24D87");
 
                 entity.Property(e => e.NomePorte)
                     .HasMaxLength(20)
@@ -544,7 +564,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Requisito>(entity =>
             {
                 entity.HasKey(e => e.IdRequisito)
-                    .HasName("PK__Requisit__661FC7C295FC0E5C");
+                    .HasName("PK__Requisit__661FC7C23499E29D");
 
                 entity.Property(e => e.NomeRequisito)
                     .IsRequired()
@@ -555,25 +575,25 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<RequisitoXvaga>(entity =>
             {
                 entity.HasKey(e => e.IdRequisitoVaga)
-                    .HasName("PK__Requisit__A350B023E0120ADD");
+                    .HasName("PK__Requisit__A350B02344BA4D47");
 
                 entity.ToTable("RequisitoXVaga");
 
                 entity.HasOne(d => d.IdRequisitoNavigation)
                     .WithMany(p => p.RequisitoXvaga)
                     .HasForeignKey(d => d.IdRequisito)
-                    .HasConstraintName("FK__Requisito__IdReq__7C4F7684");
+                    .HasConstraintName("FK__Requisito__IdReq__7F2BE32F");
 
                 entity.HasOne(d => d.IdVagaNavigation)
                     .WithMany(p => p.RequisitoXvaga)
                     .HasForeignKey(d => d.IdVaga)
-                    .HasConstraintName("FK__Requisito__IdVag__7D439ABD");
+                    .HasConstraintName("FK__Requisito__IdVag__00200768");
             });
 
             modelBuilder.Entity<StatusEstagio>(entity =>
             {
                 entity.HasKey(e => e.IdStatusEstagio)
-                    .HasName("PK__StatusEs__A18FA5E7654C2B69");
+                    .HasName("PK__StatusEs__A18FA5E78C45C913");
 
                 entity.Property(e => e.NomeStatus)
                     .IsRequired()
@@ -584,7 +604,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<StatusInscricao>(entity =>
             {
                 entity.HasKey(e => e.IdStatusInscricao)
-                    .HasName("PK__StatusIn__4F419FD74EA516BC");
+                    .HasName("PK__StatusIn__4F419FD7D324CEB2");
 
                 entity.Property(e => e.NomeStatus)
                     .IsRequired()
@@ -595,7 +615,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<TipoUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__TipoUsua__CA04062B7FB6F3B6");
+                    .HasName("PK__TipoUsua__CA04062BDADB6257");
 
                 entity.Property(e => e.NomeTipoUsuario)
                     .IsRequired()
@@ -606,7 +626,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<TipoVaga>(entity =>
             {
                 entity.HasKey(e => e.IdTipoVaga)
-                    .HasName("PK__TipoVaga__763461BC77C1998D");
+                    .HasName("PK__TipoVaga__763461BCE8B3246F");
 
                 entity.Property(e => e.NomeTipoVaga)
                     .IsRequired()
@@ -617,10 +637,10 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__Usuario__5B65BF97438FFC1B");
+                    .HasName("PK__Usuario__5B65BF97C5262E15");
 
                 entity.HasIndex(e => e.Email)
-                    .HasName("UQ__Usuario__A9D105346F18856E")
+                    .HasName("UQ__Usuario__A9D10534A0D9743F")
                     .IsUnique();
 
                 entity.Property(e => e.Email)
@@ -646,7 +666,7 @@ namespace ProVagas.WebApi.Contexts
             modelBuilder.Entity<Vaga>(entity =>
             {
                 entity.HasKey(e => e.IdVaga)
-                    .HasName("PK__Vaga__A848DC3E41984FB5");
+                    .HasName("PK__Vaga__A848DC3E13D0A528");
 
                 entity.Property(e => e.DataFinal).HasColumnType("date");
 
@@ -664,12 +684,17 @@ namespace ProVagas.WebApi.Contexts
                 entity.HasOne(d => d.IdEmpresaNavigation)
                     .WithMany(p => p.Vaga)
                     .HasForeignKey(d => d.IdEmpresa)
-                    .HasConstraintName("FK__Vaga__IdEmpresa__76969D2E");
+                    .HasConstraintName("FK__Vaga__IdEmpresa__787EE5A0");
+
+                entity.HasOne(d => d.IdNivelVagaNavigation)
+                    .WithMany(p => p.Vaga)
+                    .HasForeignKey(d => d.IdNivelVaga)
+                    .HasConstraintName("FK__Vaga__IdNivelVag__7A672E12");
 
                 entity.HasOne(d => d.IdTipoVagaNavigation)
                     .WithMany(p => p.Vaga)
                     .HasForeignKey(d => d.IdTipoVaga)
-                    .HasConstraintName("FK__Vaga__IdTipoVaga__778AC167");
+                    .HasConstraintName("FK__Vaga__IdTipoVaga__797309D9");
             });
 
             OnModelCreatingPartial(modelBuilder);

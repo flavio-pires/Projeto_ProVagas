@@ -9,5 +9,6 @@ namespace ProVagas.WebApi.Repositories
 {
     public class VagaRepository : RepositoryBase<Vaga>, IVagaRepository
     {
+
     }
 }

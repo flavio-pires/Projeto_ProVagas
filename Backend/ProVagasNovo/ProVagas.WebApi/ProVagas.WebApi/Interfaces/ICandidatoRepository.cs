@@ -8,5 +8,7 @@ namespace ProVagas.WebApi.Interfaces
 {
     interface ICandidatoRepository : IRepositoryBase<Candidato>
     {
+
+        Candidato Login(string email, string senha);
     }
 }

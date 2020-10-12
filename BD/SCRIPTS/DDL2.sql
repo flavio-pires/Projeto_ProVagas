@@ -1,5 +1,4 @@
 -- DDL
-
 CREATE DATABASE ProVagas
 
 GO
@@ -74,6 +73,8 @@ CREATE TABLE Candidato (
 	DataNascimento DATE NOT NULL,
 	Linkedin VARCHAR (200),
 	FotoPerfil IMAGE,
+	Curriculo BINARY,
+	TesteDePersonalidade VARCHAR (255), 
 	IdEndereco INT FOREIGN KEY REFERENCES Endereco (IdEndereco),
 	IdGenero INT FOREIGN KEY REFERENCES Genero (IdGenero),
 	IdNivelEscolaridade INT FOREIGN KEY REFERENCES NivelEscolaridade (IdNivelEscolaridade)
@@ -201,14 +202,22 @@ CREATE TABLE TipoVaga (
 
 GO
 
+CREATE TABLE NivelVaga (
+IdNivelVaga INT PRIMARY KEY IDENTITY,
+NomeNivelVaga VARCHAR (255) NOT NULL
+)
+
 CREATE TABLE Vaga (
 	IdVaga INT PRIMARY KEY IDENTITY,
 	NomeVaga VARCHAR (255) NOT NULL,
 	DescricaoAtividade TEXT NOT NULL,
 	DataInicio DATE NOT NULL,
 	DataFinal DATE NOT NULL,
+	LimiteDeInscricao INT,
+	AceitaTrabalhoRemoto BIT,
 	IdEmpresa INT FOREIGN KEY REFERENCES Empresa (IdEmpresa),
-	IdTipoVaga INT FOREIGN KEY REFERENCES TipoVaga(IdTipoVaga)
+	IdTipoVaga INT FOREIGN KEY REFERENCES TipoVaga(IdTipoVaga),
+	IdNivelVaga INT FOREIGN KEY REFERENCES NivelVaga(IdNivelVaga)
 )
 
 GO

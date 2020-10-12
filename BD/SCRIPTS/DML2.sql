@@ -127,7 +127,7 @@ INSERT INTO NivelEscolaridade VALUES
 GO
 
 INSERT INTO Candidato VALUES 
-('Hebert Richard', '04533335080', '2000-10-20', 'linkedin/hebertrichard', null, 6, 1, 2)
+('Hebert Richard', '04533335080', '2000-10-20', 'linkedin/hebertrichard', null, null, null, 1, 1, 2)
 GO
 
 INSERT INTO PCD VALUES 
@@ -175,7 +175,7 @@ INSERT INTO PorteEmpresa VALUES
 GO
 
 INSERT INTO Empresa VALUES 
-('BRQ SOLUCOES EM INFORMATICA S.A', 'BRQ', 'Justus', 'linkedin/BRQ', NULL, '365420250001640', '62040000', 3, 6)
+('BRQ SOLUCOES EM INFORMATICA S.A', 'BRQ', 'Justus', 'linkedin/BRQ', NULL, '365420250001640', '62040000', 3, 2)
 GO
 
 
@@ -183,9 +183,13 @@ INSERT INTO TipoVaga VALUES
 ('CLT'), ('Estagio'), ('Pj')
 GO
 
-INSERT INTO Vaga VALUES 
-('Estagio em desenvolvimento de sistemas', 'jdhihedwodwijjdwijiw','17/12/2020', '30/12/2020', 1,2)
+INSERT INTO NIvelVaga VALUES  ('Junior'), ('Pleno'), ('Senior')
 GO
+
+INSERT INTO Vaga VALUES 
+('Estagio em desenvolvimento de sistemas', 'jdhihedwodwijjdwijiw','17/12/2020', '30/12/2020', 40, 0, 1,2,null)
+GO
+
 
 INSERT INTO Requisito VALUES 
 ('C#')

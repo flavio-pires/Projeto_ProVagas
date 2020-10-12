@@ -22,6 +22,8 @@ namespace ProVagas.WebApi.Domains
         public DateTime DataNascimento { get; set; }
         public string Linkedin { get; set; }
         public byte[] FotoPerfil { get; set; }
+        public byte[] Curriculo { get; set; }
+        public string TesteDePersonalidade { get; set; }
         public int? IdEndereco { get; set; }
         public int? IdGenero { get; set; }
         public int? IdNivelEscolaridade { get; set; }

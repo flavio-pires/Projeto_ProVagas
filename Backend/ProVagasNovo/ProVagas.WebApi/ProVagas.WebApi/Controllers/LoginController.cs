@@ -19,11 +19,17 @@ namespace ProVagas.WebApi.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private IUsuarioRepository _usuarioRepository { get; set; }
+        private ICandidatoRepository _candidatoRepository { get; set; }
+        private IEmpresaRepository _empresRepository { get; set; }
+        private IAdministradorRepository _administradorRepository { get; set; }
 
         public LoginController()
         {
-            _usuarioRepository = new UsuarioRepsoitory();
+            _candidatoRepository = new CandidatoRepository();
+
+            _empresRepository = new EmpresaRepository();
+
+            _administradorRepository = new AdministradorRepository();
         }
 
         /// <summary>
@@ -32,20 +38,25 @@ namespace ProVagas.WebApi.Controllers
         /// <param name="login"></param>
         /// <returns>Retorna o token do login</returns>
         [HttpPost]
-        public IActionResult Post(LoginViewModels login)
+        public IActionResult Post(string logintipo, LoginViewModels login)
         {
-            Usuario usuarioBuscado = _usuarioRepository.BuscarSenhaEmail(login.Email, login.Senha);
 
-            if (usuarioBuscado == null)
+            switch (logintipo)
+            {
+                case "Candidato":
+                  
+            Candidato candidatoBuscado = _candidatoRepository.Login(login.Email, login.Senha);
+
+            if (candidatoBuscado == null)
             {
                 return NotFound("E-mail ou senha inválido!");
             }
 
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
-                new Claim(ClaimTypes.Role, usuarioBuscado.IdTipoUsuario.ToString())
+                new Claim(JwtRegisteredClaimNames.Email, candidatoBuscado.IdEnderecoNavigation.IdUsuarioNavigation.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, candidatoBuscado.IdCandidato.ToString()),
+                new Claim(ClaimTypes.Role, candidatoBuscado.IdEnderecoNavigation.IdUsuarioNavigation.IdTipoUsuarioNavigation.IdTipoUsuario.ToString())
             };
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("ProVagas-chave-autenticacao"));
@@ -64,6 +75,76 @@ namespace ProVagas.WebApi.Controllers
             {
                 token = new JwtSecurityTokenHandler().WriteToken(token)
             });
+
+                case "Empresa":
+
+                    Empresa empresaBuscado = _empresRepository.Login(login.Email, login.Senha);
+
+                    if (empresaBuscado == null)
+                    {
+                        return BadRequest("E-mail ou senha incorreta");
+                    }
+
+                     claims = new[]
+                    {
+                new Claim(JwtRegisteredClaimNames.Email, empresaBuscado.IdEnderecoNavigation.IdUsuarioNavigation.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, empresaBuscado.IdEmpresa.ToString()),
+                new Claim(ClaimTypes.Role, empresaBuscado.IdEnderecoNavigation.IdUsuarioNavigation.IdTipoUsuarioNavigation.IdTipoUsuario.ToString())
+                    };
+
+                     key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("ProVagas-chave-autenticacao"));
+
+                     creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+                     token = new JwtSecurityToken(
+                        issuer: "ProVagas",
+                        audience: "ProVagas",
+                        claims: claims,
+                        expires: DateTime.Now.AddMinutes(6400),
+                        signingCredentials: creds
+                    );
+
+                    return Ok(new
+                    {
+                        token = new JwtSecurityTokenHandler().WriteToken(token)
+                    });
+
+                case "Administrador":
+
+                    Administrador admBuscado = _administradorRepository.Login(login.Email, login.Senha);
+
+                    if (admBuscado == null)
+                    {
+                        return BadRequest("E-mail ou senha incorreta");
+                    }
+
+                    claims = new[]
+                   {
+                new Claim(JwtRegisteredClaimNames.Email, admBuscado.IdUsuarioNavigation.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, admBuscado.IdAdministrador.ToString()),
+                new Claim(ClaimTypes.Role, admBuscado.IdUsuarioNavigation.IdTipoUsuarioNavigation.IdTipoUsuario.ToString())
+                    };
+
+                    key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("ProVagas-chave-autenticacao"));
+
+                    creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+                    token = new JwtSecurityToken(
+                       issuer: "ProVagas",
+                       audience: "ProVagas",
+                       claims: claims,
+                       expires: DateTime.Now.AddMinutes(6400),
+                       signingCredentials: creds
+                   );
+
+                    return Ok(new
+                    {
+                        token = new JwtSecurityTokenHandler().WriteToken(token)
+                    });
+
+                default: return BadRequest("Erro no login");
+
+            }
         }
     }
 }

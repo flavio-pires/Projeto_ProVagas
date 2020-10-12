@@ -8,5 +8,6 @@ namespace ProVagas.WebApi.Interfaces
 {
     interface IVagaRepository : IRepositoryBase<Vaga>
     {
+       
     }
 }
