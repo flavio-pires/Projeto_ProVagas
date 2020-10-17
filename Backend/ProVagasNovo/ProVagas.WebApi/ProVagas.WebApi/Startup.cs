@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -12,26 +13,31 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 
 namespace ProVagas.WebApi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-
-        }
-
-        public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        readonly string MyAllowSpecificOrigins = "react.front"; 
+  
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers().AddNewtonsoftJson(options =>
-            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-    );
 
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            });
+
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins, builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                });
+            });
 
             services
            // Define a forma de autenticação
@@ -44,35 +50,36 @@ namespace ProVagas.WebApi
            // Define os parâmetros de validação do token
            .AddJwtBearer("JwtBearer", options =>
            {
-               options.RequireHttpsMetadata = false;
+                options.RequireHttpsMetadata = false;
 
-               options.SaveToken = true;
+                options.SaveToken = true;
 
-               options.TokenValidationParameters = new TokenValidationParameters
-               {
-                   // Quem está solicitando
-                   ValidateIssuer = true,
+                options.TokenValidationParameters = new TokenValidationParameters
 
-                   // Quem está validando
-                   ValidateAudience = true,
+           {
+            // Quem está solicitando
+            ValidateIssuer = true,
 
-                   // Definindo o tempo de expiração
-                   ValidateLifetime = true,
+            // Quem está validando
+            ValidateAudience = true,
 
-                   // Forma de criptografia
-                   IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("ProVagas-key-auth")),
+            // Definindo o tempo de expiração
+            ValidateLifetime = true,
 
-                   // Tempo de expiração do token
-                   ClockSkew = TimeSpan.FromMinutes(30),
+            // Forma de criptografia
+            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("ProVagas-key-auth")),
 
-                   // Nome da issuer, de onde está vindo
-                   ValidIssuer = "ProVagas",
+            // Tempo de expiração do token
+            ClockSkew = TimeSpan.FromMinutes(30),
 
-                   // Nome da audience, de onde está vindo
-                   ValidAudience = "ProVagas"
-               };
+            // Nome da issuer, de onde está vindo
+            ValidIssuer = "ProVagas",
 
-           });
+            // Nome da audience, de onde está vindo
+            ValidAudience = "ProVagas"
+            };
+
+         });
 
             services.AddSwaggerGen(c =>
             {
@@ -87,31 +94,31 @@ namespace ProVagas.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+                if (env.IsDevelopment())
+                {
+                    app.UseDeveloperExceptionPage();
+                }
 
 
 
-            app.UseAuthentication();
+                app.UseAuthentication();
 
-            app.UseRouting();
+                app.UseRouting();
 
-            app.UseAuthorization();
+                app.UseAuthorization();
 
-            app.UseSwagger();
+                app.UseSwagger();
 
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProVagas");
-                c.RoutePrefix = string.Empty;
-            });
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProVagas");
+                    c.RoutePrefix = string.Empty;
+                });
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllers();
+                });
         }
     }
 }

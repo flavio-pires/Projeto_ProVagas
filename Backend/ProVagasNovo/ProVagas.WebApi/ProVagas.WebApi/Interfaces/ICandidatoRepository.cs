@@ -1,4 +1,5 @@
 ﻿using ProVagas.WebApi.Domains;
+using ProVagas.WebApi.ViewsModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,7 @@ namespace ProVagas.WebApi.Interfaces
     {
 
         Candidato Login(string email, string senha);
+        IEnumerable<matchviewmodel> match(int id);
+
     }
 }

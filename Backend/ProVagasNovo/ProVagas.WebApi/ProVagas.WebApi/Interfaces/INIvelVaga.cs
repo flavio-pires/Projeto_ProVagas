@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProVagas.WebApi.Interfaces
 {
-    interface IVagaRepository : IRepositoryBase<Vaga>
+    interface INIvelVaga : IRepositoryBase<NivelVaga>
     {
-       
     }
 }

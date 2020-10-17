@@ -2,6 +2,7 @@
 using ProVagas.WebApi.Contexts;
 using ProVagas.WebApi.Domains;
 using ProVagas.WebApi.Interfaces;
+using ProVagas.WebApi.ViewsModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,35 @@ namespace ProVagas.WebApi.Repositories
             }
 
             return null;
+        }
+
+        public IEnumerable<matchviewmodel> match (int id)
+        {
+            var habilidade = ctx.HabilidadeXcandidato.Include(c => c.IdHabilidadeNavigation.NomeHabilidade)
+                .Include(c => c.IdCandidatoNavigation.IdEnderecoNavigation.Cep)
+                .Include(c => c.IdCandidatoNavigation.IdNivelEscolaridadeNavigation.Escolaridade)
+                .FirstOrDefault(u => u.IdCandidato == id);
+
+            List<Vaga> vagas = ctx.Vaga
+                .Include(v => v.NomeVaga)
+                .Include(v => v.IdTipoVagaNavigation.NomeTipoVaga)
+                .Include(v => v.IdNivelVagaNavigation.NomeNivelVaga)
+                .ToList();
+
+
+            List<matchviewmodel> mat = new List<matchviewmodel>();
+            var count = 0;
+
+            foreach (var item in vagas)
+            {
+                if (habilidade.IdHabilidadeNavigation.NomeHabilidade.ToLower() == item.RequisitoXvaga. ToString());
+                count++;
+
+                if (habilidade.IdCandidatoNavigation.IdEnderecoNavigation.Cep.ToLower() == item.IdEmpresaNavigation.IdEnderecoNavigation.Cep.ToLower());
+                count++;
+
+            }
+            return mat;
         }
     }
 }
