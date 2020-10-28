@@ -32,20 +32,19 @@ GO
 CREATE TABLE  Cidade (
 	IdCidade INT PRIMARY KEY IDENTITY,
 	NomeCidade VARCHAR (255) NOT NULL,
-	IdEstado INT FOREIGN KEY REFERENCES Estado(IdEstado)
+	IdEstado INT FOREIGN KEY REFERENCES Estado(IdEstado) 
 )
 
 GO
 
 CREATE TABLE Endereco (
 	IdEndereco INT PRIMARY KEY IDENTITY,
-	Telefone VARCHAR (20),
 	Rua VARCHAR (255) NOT NULL,
 	Num VARCHAR (10) NOT NULL,
 	Bairro VARCHAR (100) NOT NULL,
 	Complemento VARCHAR (20),
 	CEP CHAR(8) NOT NULL,
-	IdCidade INT FOREIGN KEY REFERENCES Cidade(IdCIdade) NOT NULL,
+	IdCidade INT FOREIGN KEY REFERENCES Cidade(IdCIdade)
 )
 
 GO
@@ -53,23 +52,24 @@ GO
 CREATE TABLE Usuario (
 	IdUsuario INT PRIMARY KEY IDENTITY,
 	Email VARCHAR (255) NOT NULL UNIQUE,
+	Telefone VARCHAR (20),
 	Senha VARCHAR (64) NOT NULL,
-	IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(IdTIpoUsuario)NOT NULL,
-	IdEndereco INT FOREIGN KEY REFERENCES Endereco(IdEndereco) NOT NULL
+	IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(IdTIpoUsuario),
+	IdEndereco INT FOREIGN KEY REFERENCES Endereco(IdEndereco) 
 )
 
 GO
 
 CREATE TABLE NivelEscolaridade (
 	IdNivelEscolaridade INT PRIMARY KEY IDENTITY,
-	Escolaridade VARCHAR
+	Escolaridade VARCHAR (60) 
 )
 
 GO
 
 CREATE TABLE NivelIngles (
 	IdNivelIngles INT PRIMARY KEY IDENTITY,
-	Ingles VARCHAR
+	Ingles VARCHAR (30)
 )
 
 GO
@@ -77,34 +77,49 @@ GO
 CREATE TABLE Candidato (
 	IdCandidato INT PRIMARY KEY IDENTITY,
 	NomeCompletoCandidato VARCHAR (255) NOT NULL,
-	CPF CHAR (11) UNIQUE,
+	CPF CHAR (11) UNIQUE NOT NULL,
 	DataNascimento DATE NOT NULL,
 	Linkedin VARCHAR (200),
 	FotoPerfil IMAGE,
 	PossuiDeficiencia BIT NOT NULL,
 	Deficiencia VARCHAR (255),
 	CursandoSENAI BIT NOT NULL,
-	Curso VARCHAR(255),
-	Habilidades VARCHAR (255) NOT NULL,
-	NomeEmpresaExperienciaProfissional VARCHAR (50),
+	Curso VARCHAR(255) not null,
+	NomeEmpresaExperienciaProfissional VARCHAR (255),
 	Cargo VARCHAR (50),
+	DataInicio DATE,
+	DataFim DATE,
 	EmpregoAtual BIT,
-	Atividades VARCHAR (255),
-	IdUsuario INT FOREIGN KEY REFERENCES Usuario (IdUsuario) NOT NULL,
-	IdGenero INT FOREIGN KEY REFERENCES Genero (IdGenero) NOT NULL,
-	IdNivelIngles INT FOREIGN KEY REFERENCES NivelIngles (IdNivelIngles) NOT NULL,
-	IdNivelEscolaridade INT FOREIGN KEY REFERENCES NivelEscolaridade (IdNivelEscolaridade) NOT NULL
+	DescriçãoAtividades TEXT,
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario (IdUsuario),
+	IdGenero INT FOREIGN KEY REFERENCES Genero (IdGenero),
+	IdNivelIngles INT FOREIGN KEY REFERENCES NivelIngles (IdNivelIngles),
+	IdNivelEscolaridade INT FOREIGN KEY REFERENCES NivelEscolaridade (IdNivelEscolaridade)
 )
 
+GO
+
+CREATE TABLE Habilidade (
+IdHabilidade INT PRIMARY KEY IDENTITY,
+NomeHabilidade VARCHAR(80) NOT NULL
+)
+GO
+
+CREATE TABLE HabilidadeXCandidato
+(
+IdHabilidadeCandidato INT PRIMARY KEY IDENTITY,
+IdHabilidade INT FOREIGN KEY REFERENCES HabIlidade (IdHabilidade),
+IdCandidato INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
+)
 GO
 
 CREATE TABLE Administrador (
 	IdAdministrador INT PRIMARY KEY IDENTITY,
 	NomeCompletoAdmin VARCHAR (255) NOT NULL,
-	NIF CHAR(9) UNIQUE,
-	UnidadeSENAI VARCHAR (255) NOT NULL,
-	Departamento VARCHAR (255) NOT NULL,
-	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL,
+	NIF CHAR(9) UNIQUE NOT NULL,
+	UnidadeSENAI VARCHAR (255),
+	Departamento VARCHAR (255),
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario)
 )
 
 GO
@@ -114,12 +129,12 @@ CREATE TABLE Empresa (
 	RazaoSocial VARCHAR (255) NOT NULL,
 	NomeFantasia VARCHAR (255) NOT NULL,
 	PorteEmpresa VARCHAR (255) NOT NULL,
-	NomeParaContato VARCHAR (255) NOT NULL,
+	NomeParaContato VARCHAR (255),
 	Linkedin VARCHAR (255),
 	Website VARCHAR (255),
-	CNPJ CHAR (14) NOT NULL UNIQUE,
-	CNAE CHAR (7) NOT NULL UNIQUE,
-	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL
+	CNPJ CHAR (15) NOT NULL UNIQUE,
+	CNAE CHAR (8) NOT NULL UNIQUE,
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) 
 )
 
 GO
@@ -134,12 +149,28 @@ GO
 CREATE TABLE Vaga (
 	IdVaga INT PRIMARY KEY IDENTITY,
 	NomeVaga VARCHAR (255) NOT NULL,
-	DescricaoAtividade VARCHAR (255) NOT NULL,
-	DescricaoRequisito VARCHAR (255) NOT NULL,
-	DataInicio DATETIME NOT NULL,
-	DataFinal DATETIME NOT NULL,
-	IdEmpresa INT FOREIGN KEY REFERENCES Empresa (IdEmpresa) NOT NULL,
-	IdTipoVaga INT FOREIGN KEY REFERENCES TipoVaga(IdTipoVaga) NOT NULL
+	DescricaoAtividade TEXT NOT NULL,
+	DataInicio DATE NOT NULL,
+	DataFinal DATE NOT NULL,
+	IdEmpresa INT FOREIGN KEY REFERENCES Empresa (IdEmpresa),
+	IdTipoVaga INT FOREIGN KEY REFERENCES TipoVaga(IdTipoVaga)
+)
+
+GO
+
+CREATE TABLE Requisito
+(
+IdRequisito INT PRIMARY KEY IDENTITY,
+NomeRequisito VARCHAR (200) NOT NULL
+)
+
+GO
+
+CREATE TABLE RequisitoXVaga
+(
+IdRequisitoVaga INT PRIMARY KEY IDENTITY,
+IdRequisito INT FOREIGN KEY REFERENCES Requisito (IdRequisito),
+IdVaga INT FOREIGN KEY REFERENCES Vaga (IdVaga)
 )
 
 GO
@@ -149,12 +180,14 @@ CREATE TABLE StatusInscricao (
 	NomeStatus VARCHAR (255) NOT NULL
 )
 
+GO
+
 CREATE TABLE Inscricao (
 	IdInscricao INT PRIMARY KEY IDENTITY,
 	DataInscricao DATE NOT NULL,
-	IdVaga INT FOREIGN KEY REFERENCES Vaga(IdVaga) NOT NULL,
-	IdStatusInscricao INT FOREIGN KEY REFERENCES StatusInscricao(IdStatusInscricao) NOT NULL,
-	IdCandidato INT FOREIGN KEY REFERENCES Candidato(IdCandidato) NOT NULL
+	IdVaga INT FOREIGN KEY REFERENCES Vaga(IdVaga),
+	IdStatusInscricao INT FOREIGN KEY REFERENCES StatusInscricao(IdStatusInscricao),
+	IdCandidato INT FOREIGN KEY REFERENCES Candidato(IdCandidato)
 )
 
 GO
@@ -169,7 +202,7 @@ GO
 CREATE TABLE Estagio (
 	IdEstagio INT PRIMARY KEY IDENTITY,
 	DataInicio DATE NOT NULL,
-	DataFinal DATE NOT NULL,
+	DataFinal DATE,
 	IdInscricao INT FOREIGN KEY REFERENCES Inscricao (IdInscricao),
 	IdStatusEstagio INT FOREIGN KEY REFERENCES StatusEstagio (IdStatusEstagio)
 )
@@ -185,7 +218,7 @@ GO
 
 CREATE TABLE BeneficioXVaga (
 	IdBeneficioVaga INT PRIMARY KEY IDENTITY,
-	IdBeneficio INT FOREIGN KEY REFERENCES Beneficio (IdBeneficio) NOT NULL,
-	IdVaga INT FOREIGN KEY REFERENCES Vaga (IdVaga) NOT NULL
+	IdBeneficio INT FOREIGN KEY REFERENCES Beneficio (IdBeneficio),
+	IdVaga INT FOREIGN KEY REFERENCES Vaga (IdVaga)
 )
 
