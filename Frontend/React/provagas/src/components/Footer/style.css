@@ -1,3 +1,33 @@
 .footer{
-    background-color: #464646 ;
+    background-color: rgba(70, 70, 70, 0.76) ;
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logoFooter{
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+hr{
+    width: 100px;
+    border: 1px solid #fff;
+    transform: rotate(90deg);
+  }
+
+.iconsFooter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.iconsFooter img + img{
+    margin-left: 10px ;
+
 }
