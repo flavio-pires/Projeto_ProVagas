@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import '../../assets/global.css';
 import {Link} from 'react-router-dom';
-import logoSenai from '../../assets/images/logo-senai.png';
+import logoSenai from '../../assets/images/logoSenai.png';
 import logoProVagas from '../../assets/images/logoProVagas.png';
 
 

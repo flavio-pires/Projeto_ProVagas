@@ -1,9 +1,9 @@
 import React from 'react';
-import logosenai from './../../assets/Image/logo-senai.png';
-import facebook from './../../assets/Image/face-icon.png';
-import instagram from './../../assets/Image/insta-icon.png';
-import twitter from './../../assets/Image/twit-icon.png';
-import linkedin from './../../assets/Image/link-icon.png';
+import logosenai from './../../assets/images/logo-senai.png';
+import facebook from './../../assets/images/face-icon.png';
+import instagram from './../../assets/images/insta-icon.png';
+import twitter from './../../assets/images/twit-icon.png';
+import linkedin from './../../assets/images/link-icon.png';
 import './style.css';
 
 
