@@ -10,6 +10,9 @@ import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
 import Collapse from '@material-ui/core/Collapse'
 
+import IconExpandLess from '@material-ui/icons/ExpandLess'
+import IconExpandMore from '@material-ui/icons/ExpandMore'
+
 import AppMenuItemComponent from './AppMenuItemComponent'
 
 // React runtime PropTypes
@@ -48,15 +51,28 @@ const AppMenuItem: React.FC<AppMenuItemProps> = props => {
                     <Icon />
                 </ListItemIcon>
             )}
-
+            <ListItemText primary={name} inset={!Icon} />
+            {/* Display the expand menu if the item has children */}
+            {isExpandable && !open && <IconExpandMore />}
+            {isExpandable && open && <IconExpandLess />}
         </AppMenuItemComponent>
     )
 
-
+    const MenuItemChildren = isExpandable ? (
+        <Collapse in={open} timeout="auto" unmountOnExit>
+            <Divider />
+            <List component="div" disablePadding>
+                {items.map((item, index) => (
+                    <AppMenuItem {...item} key={index} />
+                ))}
+            </List>
+        </Collapse>
+    ) : null
 
     return (
         <>
             {MenuItemRoot}
+            {MenuItemChildren}
         </>
     )
 }
@@ -68,10 +84,10 @@ const useStyles = makeStyles(theme =>
             '&.active': {
                 background: 'rgba(0, 0, 0, 0.08)',
                 '& .MuiListItemIcon-root': { 
-                    color: '#4BB3EE'
+                    color: '#4BB3EE'  //COR AZUL BEBE DA LETRA QUANDO ESTIVER ATIVO
                 },
                 '& .MuiListItemText-root': { 
-                    color: '#4BB3EE'
+                    color: '#4BB3EE' //COR AZUL BEBE DA LETRA QUANDO ESTIVER ATIVO
                 },
 
             }

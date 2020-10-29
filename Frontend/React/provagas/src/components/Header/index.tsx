@@ -1,15 +1,14 @@
 import React from 'react';
 import './style.css';
 import '../../assets/global.css';
-import {Link} from 'react-router-dom';
 import logoSenai from '../../assets/images/logoSenai.png';
 import logoProVagas from '../../assets/images/logoProVagas.png';
 
 
-interface HeaderProps{
-}
+// interface HeaderProps{
+// }
 
-const Header:React.FC<HeaderProps> = (props) => {
+const Header = () => {
     return(
         <div className="container-principal center">
             <div className="container-principal-header">

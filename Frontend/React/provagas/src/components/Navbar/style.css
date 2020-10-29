@@ -6,6 +6,7 @@
     align-items: center;
 }
 
+
 .menu-bars {
     margin-left: 2rem;
     font-size: 2rem;
@@ -18,8 +19,8 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    position: fixed;
     top: 0;
+    position: fixed;
 }
 
 .nav-menu-active {}

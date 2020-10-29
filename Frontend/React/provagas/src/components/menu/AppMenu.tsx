@@ -8,65 +8,82 @@ import logo from '../../assets/images/logoProVagas.png';
 import AppMenuItem from './AppMenuItem'
 import { Link } from 'react-router-dom'
 
-let token = "empresa"; //adm user empresa
+
+import IconDashboard from '@material-ui/icons/Dashboard'
+import IconPeople from '@material-ui/icons/People'
+import IconBarChart from '@material-ui/icons/BarChart'
+import IconLibraryBooks from '@material-ui/icons/LibraryBooks'
+import { Work } from '@material-ui/icons';
+
+let token = "user"; //adm user empresa
 
 
 //ARRAY DA SIDEBAR
 const appMenuItemsUser = [
   {
     name: 'Dashboard',
-    link: '/dashboard'
+    link: '/dashboarduser',
+    Icon: IconDashboard
   },
   {
     name: 'Teste de Personalidade',
-    link: '/user/testepersonalidade'
+    link: '/dashboarduser/testepersonalidade',
+    Icon: IconPeople,
   }
 ]
 
 const appMenuItemsAdm = [
   {
     name: 'Dashboard',
-    link: '/dashboard'
+    link: '/adm/dashboard',
+    Icon: IconDashboard,
   },
   {
     name: 'Estágios',
-    link: '/adm/estagios'
+    link: '/adm/estagios',
+    Icon: IconLibraryBooks,
   },
   {
     name: 'Empresas',
-    link: '/adm/empresas'
+    link: '/adm/empresas',
+    Icon: IconBarChart,
   },
   {
     name: 'Vagas',
-    link: '/adm/vagas'
+    link: '/adm/vagas',
+    Icon: Work,
   },
   {
     name: 'Usuários',
-    link: '/adm/usuarios'
+    link: '/adm/usuarios',
+    Icon: IconPeople,
   }
 ]
 
 const appMenuItemsEmpresa = [
   {
     name: 'Dashboard',
-    link: '/dashboard'
+    link: '/empresa/dashboard',
+    Icon: IconDashboard,
   },
   {
     name: 'Vagas',
+    Icon: Work,
     items: [
       {
         name: 'Cadastrar Vaga',
-        link: '/empresa/vagas',
+        link: '/empresa/vagas/cadastro',
 
       },
     ],
   },
   {
     name: 'Filial',
+    Icon: IconBarChart,
     items: [
       {
         name: 'Cadastrar Filial',
-        link: '/empresa/cadastrarfilial',
+        link: '/empresa/filial/cadastro',
 
       },
     ],
