@@ -5,7 +5,8 @@ import Cadastro from './pages/Cadastro';
 import telauser from './pages/DashboardUser';
 import perfiluser from './pages/perfilcandidato';
 import candidaturas from './pages/Candidaturas';
-import dashemp from './pages/dashboardEmpresa'
+import dashemp from './pages/dashboardEmpresa';
+import perfilemp from './pages/perfilempresa';
 
 
 function Routers() {
@@ -17,6 +18,7 @@ function Routers() {
          <Route path="/dashboarduser/perfil" exact component={perfiluser}/> 
          <Route path="/dashboarduser/candidaturas" exact component={candidaturas}/> 
          <Route path="/dashboarempresa" exact component={dashemp}/> 
+         <Route path="/dashboarempresa/perfil" exact component={perfilemp}/> 
         </BrowserRouter>
     );
 }

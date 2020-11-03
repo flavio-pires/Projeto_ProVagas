@@ -37,14 +37,14 @@ export const SidebarEmpresa = [
 
     {
         title:'Perfil',
-        path: '/dashboarduser/perfil',
+        path: '/dashboarempresa/perfil',
         icon: <IoIcons.IoMdPerson/>,
         cName: 'nav-text'
     },
 
     {
         title:'Candidaturas',
-        path: '/dashboarduser/candidaturas',
+        path: '/dashboarempresa/candidaturas',
         icon: <MdIcons.MdWork/>,
         cName: 'nav-text'
     }

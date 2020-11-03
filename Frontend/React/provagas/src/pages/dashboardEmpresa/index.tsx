@@ -5,8 +5,6 @@ import imghiring from '../../assets/images/undraw_hiring_cyhs.png';
 import Button from '../../components/Button/index';
 import './style.css'
 
-
-
 export default function dashboard() {
     return (
         <div>

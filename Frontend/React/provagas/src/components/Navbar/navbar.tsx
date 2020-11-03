@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
-import {SidebarData} from './sidebarData'
+import {SidebarEmpresa} from './sidebarData'
 import './style.css'
 import Header from '../../components/Header';
 
@@ -16,7 +16,7 @@ const showSidebar = () => setSidebar(!sidebar)
         </div>
             <nav  className='nav-menu'>
                 <ul className='nav-menu-items'>
-                    {SidebarData.map((item, index) => {
+                    {SidebarEmpresa.map((item, index) => {
                         return (
                             <li key={index} className={item.cName}>
                                 <Link to={item.path}>
