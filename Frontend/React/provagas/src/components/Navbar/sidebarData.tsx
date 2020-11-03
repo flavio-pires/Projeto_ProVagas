@@ -14,14 +14,37 @@ export const SidebarData = [
 
     {
         title:'Perfil',
-        path: '/cadastro',
+        path: '/dashboarduser/perfil',
         icon: <IoIcons.IoMdPerson/>,
         cName: 'nav-text'
     },
 
     {
-        title:'Vagas',
-        path: '/',
+        title:'Candidaturas',
+        path: '/dashboarduser/candidaturas',
+        icon: <MdIcons.MdWork/>,
+        cName: 'nav-text'
+    }
+]
+
+export const SidebarEmpresa = [
+    {
+        title:'Dashboard',
+        path: '/dashboarempresa',
+        icon: <AiIcons.AiFillHome/>,
+        cName: 'nav-text'
+    },
+
+    {
+        title:'Perfil',
+        path: '/dashboarduser/perfil',
+        icon: <IoIcons.IoMdPerson/>,
+        cName: 'nav-text'
+    },
+
+    {
+        title:'Candidaturas',
+        path: '/dashboarduser/candidaturas',
         icon: <MdIcons.MdWork/>,
         cName: 'nav-text'
     }

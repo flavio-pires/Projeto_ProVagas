@@ -1,9 +1,8 @@
 .button {
-    width: 180px;
-    height: 58px;
-    font-weight: bold;
+    width: 170px;
+    height: 60px;
+    font-size: 1em;
     border: none;
-    margin: 24px 24px 100px 24px;
     border-radius: 10px;
 }
 
@@ -11,4 +10,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btn input {
+    background-color: #ED1F24;
+    color: white;
 }

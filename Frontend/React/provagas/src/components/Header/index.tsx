@@ -5,10 +5,10 @@ import logoSenai from '../../assets/images/logoSenai.png';
 import logoProVagas from '../../assets/images/logoProVagas.png';
 
 
-// interface HeaderProps{
-// }
+interface HeaderProps{
+}
 
-const Header = () => {
+const Header:React.FC<HeaderProps> = (props) => {
     return(
         <div className="container-principal center">
             <div className="container-principal-header">

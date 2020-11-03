@@ -1,11 +1,4 @@
-.navbar {
-    background-color: #060b20;
-    height: 80px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
-
+.navbar {}
 
 .menu-bars {
     margin-left: 2rem;
@@ -16,14 +9,10 @@
 .nav-menu {
     background-color: #060b20;
     width: 250px;
-    height: 100vh;
+    height: 150vh;
     display: flex;
     justify-content: center;
-    top: 0;
-    position: fixed;
 }
-
-.nav-menu-active {}
 
 .nav-text {
     display: flex;
