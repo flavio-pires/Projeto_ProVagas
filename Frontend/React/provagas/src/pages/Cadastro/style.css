@@ -1,5 +1,108 @@
-.cadastro h1{
+.cadastro{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.cadastro h1, h4{
+    margin: 1rem 0;
+}
+.box-banner-candidato{
+    display:flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.input-duplo{
+    display: flex;
+    /* background-color: lightgreen; */
+    width: 40vw;
+    height: 12vh;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+}
+
+.text-experiencias-atividades{
+    width: 40vw;
+    height: 20vh;
+    resize: vertical;
+    border-radius: .3rem;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+.box-experiencias-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.box-experiencias{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: greenyellow; */
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.btn-add-experiencia{
+    width: 12vw;
+    height: 6vh;
+    background-color: #E4E4E4;
+    border: .1rem solid gray;
+}
+
+
+/* estilização do input rádio */
+
+.group-radio-label{
+    display: flex;
+    justify-content: space-around;
+}
+
+.box-radio-label{
+    display: flex;
+    /* background-color:#ffa07a; */
+    flex-direction: column;
+    width:20vw ;
+}
+
+.box-input-file{
+    width: 40vw;
+    height: 16vh;
+}
+
+.group-radio {
+    display: block;
+    position: relative;
+  }
+  
+  .group-radio input[type='radio'] {
+    display: none;
+  }
+  
+  .group-radio input[type='radio']:checked + label::before{
+    color: #ED1F24;
+    content: "✓";
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 26px;
+    align-self: center;
+  }
+  
+  .group-radio label,  .group-radio label::before{
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  
+  .group-radio label::before {
+    border-radius: 5px;
+    border: 1px solid #333;
+    content: '';
+    height: 25px;
+    width: 25px;
+  }
+  
