@@ -52,6 +52,41 @@
     background-color: #E4E4E4;
     border: .1rem solid gray;
 }
+/*Input file */
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    height: 4.5vh;
+    width: 12vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: lighter;
+    color: #000000;
+    background-color: lightgrey; 
+    cursor: pointer; /* "hand" cursor */
+    border: none;
+    border-radius: .2rem;
+    outline: #ED1F24 5px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color:  #ED1F24;
+    color: #ffffff;
+}
+
+/*Input file */
+
 
 
 /* estilização do input rádio */
