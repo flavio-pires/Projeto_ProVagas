@@ -1,19 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './style.css';
 
 
 function Menu(){
     return(
-        <div>
-            <ul>
-                <li>Perfil</li>
-                <li>Empresas</li>
-                <li>Alunos</li>
-                <li>Administradores</li>
-                <li>Alerta</li>
-            </ul>
-        </div>
-          
+            <div className='menuAdm'>
+                <ul>
+                    <li>Perfil</li>
+                    <hr/>
+                    <li>Empresas</li>
+                    <hr/>
+                    <li>Alunos</li>
+                    <hr/>
+                    <li>Administradores</li>
+                    <hr/>
+                    <li>Alerta</li>
+                    <hr/>
+                </ul>
+            </div>
     )
 }
 

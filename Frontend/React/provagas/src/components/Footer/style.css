@@ -15,7 +15,7 @@
     color: #fff;
 }
 
-hr{
+hr .ft{
     width: 100px;
     border: 1px solid #fff;
     transform: rotate(90deg);

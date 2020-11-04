@@ -5,11 +5,11 @@ import Header from '../../components/Header';
 
 function Home(){
     return(
-        <div className="centro">
-            <div className="home">
-                <Header/>
-                <Footer/>
-            </div>
+        <div className="home">
+            <Header/>
+                <div className="centro">
+                </div>
+            <Footer/>
         </div>
     );
 }

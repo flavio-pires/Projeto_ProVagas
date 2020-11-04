@@ -14,7 +14,7 @@ function Footer() {
     <div className="footer">
       <div className="logoFooter">
         <img src={logosenai} alt="Logotipo do Senai, vermelho e branco." />
-        <hr/>
+        <hr className="ft"/>
           <div>
             <p>Escola SENAI de informatica</p>
             <p>Avenida Alameda Barâo de Limeira</p>
