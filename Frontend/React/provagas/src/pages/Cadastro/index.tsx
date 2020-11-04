@@ -61,7 +61,7 @@ function Cadastro() {
 
       if (request.status === 200) {
         const data = await request.json()
-        const { bairro, logradouro, localidade, uf} = data
+        const { bairro, logradouro, localidade, uf } = data
         setAddressViaCep({
           bairro, logradouro, localidade, uf
         });
@@ -71,27 +71,30 @@ function Cadastro() {
   }
 
   const [newCandidato, setNewCandidato] = useState({
-    NomeCompletoCandidato: null,
-    CPF: null,
-    DataNascimento: null,
-    Linkedin: null,
-    FotoPerfil: null,
-    PossuiDeficiencia: null,
-    Deficiencia: null,
-    CursandoSENAI: null,
-    Curso: null,
-    NomeEmpresaExperienciaProfissional: null,
-    Cargo: null,
-    DataInicio: null,
-    DataFim: null,
-    EmpregoAtual: null,
-    DescriçãoAtividades: null,
-    IdUsuario: null,
-    IdGenero: null,
-    IdNivelIngles: null,
-    IdNivelEscolaridade: null,
+    nomeCandidato: null,
+    cpf: null,
+    dataNascimento: null,
+    linkedin: null,
+    fotoPerfil: null,
+    possuiDeficiencia: null,
+    deficiencia: null,
+    cursandoSENAI: null,
+    curso: null,
+    nomeEmpresaExperienciaProfissional: null,
+    cargo: null,
+    dataInicio: null,
+    dataFim: null,
+    empregoAtual: null,
+    descriçãoAtividades: null,
+    idUsuario: null,
+    idGenero: null,
+    idNivelIngles: null,
+    idNivelEscolaridade: null,
 
   });
+
+  const functionSetCandidatoState = (key: any, value: any) => setNewCandidato({ ...newCandidato, [key]: value })
+
 
   const [newHabilidadesState, setNewHabilidadesState] = useState('');
 
@@ -107,16 +110,16 @@ function Cadastro() {
           <h1>Cadastro de candidato</h1>
           <h4>Dados de acesso</h4>
           <Input type="email" label="E-mail" name="email" onChange={event => functionSetNewUserState("email", event.target.value)} />
-          <Input type="password" label="Senha" name="senha" placeholder="A senha deve conter no mínimo 8 caracteres" />
+          <Input type="password" label="Senha" name="senha" placeholder="A senha deve conter no mínimo 8 caracteres" onChange={event => functionSetNewUserState("senha", event.target.value)} />
           <h4>Informações pessoais</h4>
-          <Input type="text" label="Nome completo" name="nome" />
+          <Input type="text" label="Nome completo" name="nome" onChange={event => functionSetCandidatoState("nomeCandidato", event.target.value)} />
           <div className="input-duplo">
-            <InputSmaller type="text" label="CPF" name="cpf" />
-            <InputSmaller type="text" label="RG" name="rg" />
+            <InputSmaller type="text" label="CPF" name="cpf" onChange={event => functionSetCandidatoState("cpf", event.target.value)} />
+            <InputSmaller type="text" label="RG" name="rg" onChange={event => functionSetCandidatoState("rg", event.target.value)} />
           </div>
           <div className="input-duplo">
-            <InputSmaller type="date" label="Data de nascimento" name="nascimento" />
-            <InputSmaller type="text" label="Telefone" name="telefone " />
+            <InputSmaller type="date" label="Data de nascimento" name="nascimento" onChange={event => functionSetCandidatoState("dataNascimento", event.target.value)} />
+            <InputSmaller type="text" label="Telefone" name="telefone" onChange={event => functionSetCandidatoState("telefone", event.target.value)} />
           </div>
           <div className="input-duplo">
             <InputSmaller type="text" label="CEP" name="cep"
@@ -126,23 +129,45 @@ function Cadastro() {
                 requestApiViaCep(value)
               }}
             />
-            <InputSmaller type="text" label="Bairro" name="bairro"  value={addressViaCep.bairro} disabled/>
+            <InputSmaller type="text" label="Bairro" name="bairro" value={addressViaCep.bairro} disabled />
           </div>
-          <Input type="tex" label="Logradouro" name="logradouro" value={addressViaCep.logradouro} disabled/>
+          <Input
+            type="tex" label="Logradouro" name="logradouro" value={addressViaCep.logradouro} disabled />
           <div className="input-duplo">
             <InputSmaller type="text" label="Cidade" name="cidade" value={addressViaCep.localidade} disabled />
             <InputSmaller type="text" label="Estado" name="estado" value={addressViaCep.uf} disabled />
           </div>
           <div className="input-duplo">
             <SelectInput
-                labelText="Gênero"
-                name="genero"
-                options={["Feminino", "Masculino", "Outro"]}
-                callbackChangedValue={value => setGenero(value)}
+              labelText="Gênero"
+              name="genero"
+              options={["Feminino", "Masculino", "Outro"]}
+              callbackChangedValue={value => setGenero(value)}
             />
-            <InputSmaller type="text" label="Nível de inglês" name="ingles" />
           </div>
-          <Input type="tex" label="LinkedIn" name="linkedin" placeholder="Adicione aqui o link do seu LindekIn" />
+          <div className="input-duplo">
+            <SelectInput
+              labelText="Nivel inglês"
+              name="ingles"
+              options={["Básico", "Técnico", "Intermediário", "Avançado"]}
+              callbackChangedValue={value => setNivelIngles(value)}
+            />
+            <SelectInput
+              labelText="Nivel de escolaridade"
+              name="escolaridade"
+              options={[
+                "Ensino fundamental incompleto",
+                "Ensino fundamental completo",
+                "Ensino médio incompleto",
+                "Ensino médio completo",
+                "Ensino superior incompleto",
+                "Ensino superior completo"
+              ]}
+              callbackChangedValue={value => setNivelIngles(value)}
+            />
+
+          </div>
+          <Input type="tex" label="LinkedIn" name="linkedin" placeholder="Adicione aqui o link do seu LindekIn" onChange={event => functionSetCandidatoState("linkedin", event.target.value)} />
           <div className="box-input-file">
             <label htmlFor="file">Selecione uma foto de perfil:</label>
             <input type="file" name="file" id="file" className="inputfile" />
@@ -189,9 +214,14 @@ function Cadastro() {
               </div>
 
             </div>
-            <InputSmaller type="text" label="Informe o curso" name="deficiencia" />
+            <InputSmaller type="text" label="Informe o curso" name="cursoSenai" onChange={event => functionSetCandidatoState("curso", event.target.value)} />
           </div>
-          <Input type="text" label="Informe suas habilidades" name="habilidades" placeholder="Ex: Conhecimento em HTML, CSS, JavaScript" />
+          <Input type="text" label="Informe suas habilidades"
+            name="habilidades"
+            placeholder="Ex: Conhecimento em HTML, CSS, JavaScript"
+            onChange={event => setNewHabilidadesState(event.target.value)}
+          />
+
           <h4>Experiências profissionais</h4>
           <div className="box-experiencias">
             <div className="input-duplo">
