@@ -1,9 +1,10 @@
 import React from 'react';
+import './style.css';
 
 function Lista(){
     return(
 
-    <table>
+    <table className="lista">
         <tr>
             <td></td>
             <td></td>
