@@ -7,15 +7,15 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
   name: string;
 }
 
-const Input: React.FunctionComponent<InputProps> = ({label, name, ...rest}) => {
+const InputSmaller: React.FunctionComponent<InputProps> = ({label, name, ...rest}) => {
   return (
     <div>
-      <div className="box-input">
+      <div className="box-input-smaller">
         <label htmlFor={name}>{label}</label>
-        <input type="text" id={name} {...rest}/>
+        <input className="smaller-input" type="text" id={name} {...rest}/>
       </div>
     </div>
   );
 }
 
-export default Input;
+export default InputSmaller;
