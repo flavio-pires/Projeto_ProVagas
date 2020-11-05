@@ -21,7 +21,7 @@ function CadastroAdm(){
     const [telefone, settelefone] = useState('');
 
     const salvarUsuario = () =>{
-        fetch('http://localhost:5000/api/Usuarios',{
+        fetch('http://localhost:5001/api/Usuarios',{
             method: 'POST',
             body: JSON.stringify({Email:email, Telefone:telefone, Senha:senha, IdTipoUsuario:3})
             /*headers:{
@@ -46,13 +46,12 @@ function CadastroAdm(){
             Departamento:departamento,
             IdUsuario:id
         };
-        fetch('http://localhost:5000/api/Administradores',{
+        fetch('http://localhost:5001/api/Administradores',{
             method: 'POST',
             body: JSON.stringify(novoAdm)
             /*headers:{
                 authorization : 'Bearer' + localStorage.getItem('token-provagas')
             }*/
-            
         },
         
         )
@@ -69,7 +68,8 @@ function CadastroAdm(){
     return(
         <div className="prcp">
             <Header/>
-            <form>
+            <form onSubmit= {event=>{ event.preventDefault();
+            salvarUsuario();}}>
                 <div className="cadastro">
                     <div className="box-banner-colaborador">
                         <img src={imgcolaborador} alt='desenho de duas pessoas frente a frente e cada uma mexendo em um computador'/>
@@ -95,7 +95,7 @@ function CadastroAdm(){
                             <InputSmaller type="tel" label="Tel/Cel" name="Contato" value={telefone} onChange={e => settelefone(e.target.value)}/>
                         </div>
 
-                        <Button value="Finalizar Cadastro"/>
+                        <Button value="Finalizar Cadastro" />
 
                 </div>
             </form>

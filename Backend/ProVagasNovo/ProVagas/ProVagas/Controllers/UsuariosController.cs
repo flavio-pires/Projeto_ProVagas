@@ -8,13 +8,14 @@ using Microsoft.AspNetCore.Mvc;
 using ProVagas.Domains;
 using ProVagas.Interfaces;
 using ProVagas.Repositories;
+using ProVagas.ViewsModels;
 
 namespace ProVagas.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class UsuariosController : ControllerBase
     {
 
@@ -30,7 +31,7 @@ namespace ProVagas.Controllers
         /// Listar todos os usuarios
         /// </summary>
         /// <returns>Retorna uma lista com os usuarios</returns>
-        [Authorize(Roles = "3")]
+        //[Authorize(Roles = "3")]
         [HttpGet]
         public IEnumerable<Usuario> Get()
         {
@@ -43,7 +44,7 @@ namespace ProVagas.Controllers
         /// <param name="id">Id do usuario que será buscado</param>
         /// <returns>Retorna uma lista de usuarios pelo Id</returns>
 
-        [Authorize(Roles = "3")]
+        //[Authorize(Roles = "3")]
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -67,9 +68,9 @@ namespace ProVagas.Controllers
         {
             try
             {
-               int id =_usuariorepository.Add(usuario);
+                int id = _usuariorepository.Add(usuario);
 
-                return StatusCode (201, id);
+                return StatusCode(201, id);
             }
             catch (Exception)
             {
@@ -85,8 +86,8 @@ namespace ProVagas.Controllers
         /// <param name="id">Id do usuario que será buscado</param>
         /// <param name="usuarioAtualizado"></param>
         /// <returns>Retorna o usuario atualizado</returns>
-       
-        
+
+
         [HttpPut("{id}")]
         public IActionResult Put(int id, Usuario usuarioAtualizado)
         {
@@ -120,7 +121,7 @@ namespace ProVagas.Controllers
         /// <param name="id">Id do usuario que será buscado</param>
         /// <returns>Retorna vazio</returns>
 
-        [Authorize(Roles = "3")]
+        //[Authorize(Roles = "3")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -137,6 +138,27 @@ namespace ProVagas.Controllers
                 return BadRequest("Não foi possivel deletar esse atualizado");
             }
 
+        }
+
+        [HttpPost]
+        public IActionResult CadastrarAdm(CadastrarAdmViewModels NovoAdm)
+        {
+            try
+            {
+                if (_usuariorepository.CadastrarAdm(NovoAdm))
+                {
+                    return Ok("Novo Administrador inserido com sucesso!");
+                }
+                else
+                {
+                    return BadRequest("Um erro ocorreu ao receber a sua requisição.");
+                }
+
+            }
+            catch (Exception)
+            {
+                return BadRequest("Uma exceção ocorreu. Tente novamente.");
+            }
         }
     }
 }

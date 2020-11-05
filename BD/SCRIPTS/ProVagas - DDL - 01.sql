@@ -14,6 +14,9 @@ CREATE TABLE TipoUsuario (
 
 GO
 
+select * from TipoUsuario;
+go
+
 CREATE TABLE Genero (
 	IdGenero INT PRIMARY KEY IDENTITY,
 	NomeGenero VARCHAR (255) NOT NULL

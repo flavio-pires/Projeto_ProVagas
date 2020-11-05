@@ -9,5 +9,7 @@ namespace ProVagas.Interfaces
     interface IAdministradorRepository : IRepositoryBase<Administrador>
     {
         Administrador Login(string email, string senha);
+
+        bool CadastrarCandidato(CadastrarCandidatoViewModel);
     }
 }

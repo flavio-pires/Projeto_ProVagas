@@ -16,8 +16,7 @@ namespace ProVagas.Repositories
             try
             {
                 ctx.Set<TEntity>().Add(obj);
-               return ctx.SaveChanges();
-                
+                return ctx.SaveChanges();
             }
             catch (Exception ex)
             {

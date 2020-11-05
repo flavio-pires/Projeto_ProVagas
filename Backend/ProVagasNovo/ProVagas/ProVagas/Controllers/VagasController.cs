@@ -57,7 +57,7 @@ namespace ProVagas.Controllers
         /// </summary>
         /// <param name="vaga">Nova vaga</param>
 
-        [Authorize(Roles = "2")]
+        //[Authorize(Roles = "2")]
         [HttpPost]
         public IActionResult Post(Vaga vaga)
         {
@@ -81,7 +81,7 @@ namespace ProVagas.Controllers
         /// <param name="id">Id da vaga que será atualizada</param>
         /// <param name="novaVaga">Dados da atualizados da vaga</param>
 
-        [Authorize(Roles = "2")]
+        //[Authorize(Roles = "2")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, Vaga novaVaga)
         {
@@ -122,8 +122,8 @@ namespace ProVagas.Controllers
         /// </summary>
         /// <param name="id">Id da vaga que será deletada</param>
 
-        [Authorize(Roles = "2")]
-        [Authorize(Roles = "3")]
+        //[Authorize(Roles = "2")]
+        //[Authorize(Roles = "3")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
