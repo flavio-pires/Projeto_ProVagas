@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fic\\Desktop\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj": {}
+    "C:\\Users\\daniel\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fic\\Desktop\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj": {
+    "C:\\Users\\daniel\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fic\\Desktop\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\daniel\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj",
         "projectName": "ProVagas.WebApi",
-        "projectPath": "C:\\Users\\fic\\Desktop\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj",
-        "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fic\\Desktop\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\obj\\",
+        "projectPath": "C:\\Users\\daniel\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\ProVagas.WebApi.csproj",
+        "packagesPath": "C:\\Users\\daniel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daniel\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas.WebApi\\ProVagas.WebApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -113,7 +109,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
