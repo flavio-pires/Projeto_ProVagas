@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using ProVagas.Domains;
 using ProVagas.Interfaces;
 using ProVagas.Repositories;
+using ProVagas.WebApi.Repositories;
 
 namespace ProVagas.Controllers
 {
