@@ -7,6 +7,7 @@ import perfiluser from './pages/perfilcandidato';
 import candidaturas from './pages/Candidaturas';
 import dashemp from './pages/dashboardEmpresa';
 import perfilemp from './pages/perfilempresa';
+import cadasvaga from './pages/cadastrarvaga';
 
 
 function Routers() {
@@ -19,6 +20,7 @@ function Routers() {
          <Route path="/dashboarduser/candidaturas" exact component={candidaturas}/> 
          <Route path="/dashboarempresa" exact component={dashemp}/> 
          <Route path="/dashboarempresa/perfil" exact component={perfilemp}/> 
+         <Route path="/dashboarempresa/vaga" exact component={cadasvaga}/> 
         </BrowserRouter>
     );
 }

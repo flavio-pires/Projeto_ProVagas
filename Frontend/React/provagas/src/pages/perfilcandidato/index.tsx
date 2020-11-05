@@ -9,40 +9,40 @@ import {parseJWT} from '../../services/auth';
 
 export default function perfil (){
 
-    const [nome, setNome] = useState('');
-    const [sobrenome, setsobrenome] = useState('');
-    const [email, setemail] = useState('');
-    const [cpf, setcpf] = useState('');
-    const [telefone, settelefone] = useState('');
-    const [cidade, setcidade] = useState('');
-    const [github, setgithub] = useState('');
-    const [trabremoto, settrabremoto] = useState('');
+    // // const [nome, setNome] = useState('');
+    // // const [sobrenome, setsobrenome] = useState('');
+    // // const [email, setemail] = useState('');
+    // // const [cpf, setcpf] = useState('');
+    // // const [telefone, settelefone] = useState('');
+    // // const [cidade, setcidade] = useState('');
+    // // const [github, setgithub] = useState('');
+    // // const [trabremoto, settrabremoto] = useState('');
 
-    useEffect (() => {
-        listar();
-    })
-
-
+    // // useEffect (() => {
+    // //     listar();
+    // // })
 
 
-    const listar = () => {
-        fetch('http://localhost:5000/api/candidatos', {
-            method: 'GET',
-            headers: {
-                authorization: 'Bearer ' + localStorage.getItem('token')
-            }
-        })
-            .then(response => response.json())
-            .then(dados => {
-                setNome(dados.NomeCompletoCandidato);
-                setcpf(dados.Cpf)
-                setemail(dados.IdEnderecoNavigation.IdUsuarioNavigation.Email);
-                settelefone(dados.IdEnderecoNavigation.IdUsuarioNavigation.Telefone);
-                setcidade(dados.IdEnderecoNavigation.IdCidadeNavigation.NomeCidade);
-                setgithub(dados.Linkedin);
-            })
-            .catch(erro => console.error(erro))
-    }
+
+
+    // const listar = () => {
+    //     fetch('http://localhost:5000/api/candidatos', {
+    //         method: 'GET',
+    //         headers: {
+    //             authorization: 'Bearer ' + localStorage.getItem('token')
+    //         }
+    //     })
+    //         .then(response => response.json())
+    //         .then(dados => {
+    //             setNome(dados.NomeCompletoCandidato);
+    //             setcpf(dados.Cpf)
+    //             setemail(dados.IdEnderecoNavigation.IdUsuarioNavigation.Email);
+    //             settelefone(dados.IdEnderecoNavigation.IdUsuarioNavigation.Telefone);
+    //             setcidade(dados.IdEnderecoNavigation.IdCidadeNavigation.NomeCidade);
+    //             setgithub(dados.Linkedin);
+    //         })
+    //         .catch(erro => console.error(erro))
+    // }
 
     return (
         <>
@@ -66,26 +66,26 @@ export default function perfil (){
                 <div className='left'>
                     <form >
                         <div className='hb'>
-                            <Input name='Nome' label='Nome' placeholder={nome}/>
+                            <Input name='Nome' label='Nome' />
                         </div>
                         <div className='hb'>
-                            <Input name='CPF' label='CPF' placeholder={cpf}/>
+                            <Input name='CPF' label='CPF' />
                         </div>
                         <div className='hb'>
-                            <Input name='E-mail' label='E-mail' placeholder={parseJWT.name}/>
+                            <Input name='E-mail' label='E-mail'/>
                         </div>
                     </form>                 
                 </div>
                 <div className='right'>
                 <form>
                     <div className='bh'>
-                    <Input name='Telefone' label='Telefone' placeholder={telefone}/>
+                    <Input name='Telefone' label='Telefone' />
                     </div>
                     <div className='bh'>
-                    <Input name='Cidade' label='Cidade' placeholder={cidade}/>
+                    <Input name='Cidade' label='Cidade'/>
                     </div>
                     <div className='bh'>
-                    <Input name='Github' label='Github' placeholder={github}/>
+                    <Input name='Github' label='Github'/>
                     </div>
                 </form>
                 </div>
