@@ -69,3 +69,11 @@ C:\Users\fic\Desktop\Projeto_ProVagas\Backend\ProVagas\ProVagas\obj\Debug\netcor
 C:\Users\fic\Desktop\Projeto_ProVagas\Backend\ProVagas\ProVagas\obj\Debug\netcoreapp3.1\ProVagas.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\fic\Desktop\Projeto_ProVagas\Backend\ProVagas\ProVagas\obj\Debug\netcoreapp3.1\ProVagas.dll
 C:\Users\fic\Desktop\Projeto_ProVagas\Backend\ProVagas\ProVagas\obj\Debug\netcoreapp3.1\ProVagas.pdb
+C:\Users\daniel\Desktop\Projeto_ProVagas\Backend\ProVagasNovo\ProVagas\ProVagas\obj\Debug\netcoreapp3.1\ProVagas.csprojAssemblyReference.cache
+C:\Users\daniel\Desktop\Projeto_ProVagas\Backend\ProVagasNovo\ProVagas\ProVagas\obj\Debug\netcoreapp3.1\ProVagas.AssemblyInfoInputs.cache
+C:\Users\daniel\Desktop\Projeto_ProVagas\Backend\ProVagasNovo\ProVagas\ProVagas\obj\Debug\netcoreapp3.1\ProVagas.AssemblyInfo.cs
+C:\Users\daniel\Desktop\Projeto_ProVagas\Backend\ProVagasNovo\ProVagas\ProVagas\obj\Debug\netcoreapp3.1\ProVagas.csproj.CoreCompileInputs.cache
+C:\Users\daniel\Desktop\Projeto_ProVagas\Backend\ProVagasNovo\ProVagas\ProVagas\obj\Debug\netcoreapp3.1\ProVagas.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\daniel\Desktop\Projeto_ProVagas\Backend\ProVagasNovo\ProVagas\ProVagas\obj\Debug\netcoreapp3.1\ProVagas.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\daniel\Desktop\Projeto_ProVagas\Backend\ProVagasNovo\ProVagas\ProVagas\obj\Debug\netcoreapp3.1\ProVagas.dll
+C:\Users\daniel\Desktop\Projeto_ProVagas\Backend\ProVagasNovo\ProVagas\ProVagas\obj\Debug\netcoreapp3.1\ProVagas.pdb
