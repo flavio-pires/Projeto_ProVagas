@@ -11,12 +11,13 @@ namespace ProVagas.Repositories
     public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
         ProVagasContext ctx = new ProVagasContext();
-        public void Add(TEntity obj)
+        public int Add(TEntity obj)
         {
             try
             {
                 ctx.Set<TEntity>().Add(obj);
-                ctx.SaveChanges();
+               return ctx.SaveChanges();
+                
             }
             catch (Exception ex)
             {

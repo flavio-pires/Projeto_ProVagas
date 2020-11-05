@@ -67,9 +67,9 @@ namespace ProVagas.Controllers
         {
             try
             {
-                _usuariorepository.Add(usuario);
+               int id =_usuariorepository.Add(usuario);
 
-                return Ok("Usuario cadastrado com sucesso");
+                return StatusCode (201, id);
             }
             catch (Exception)
             {
