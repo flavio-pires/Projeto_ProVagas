@@ -1,4 +1,5 @@
 ﻿using ProVagas.Domains;
+using ProVagas.ViewsModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,5 @@ namespace ProVagas.Interfaces
     {
         Administrador Login(string email, string senha);
 
-        bool CadastrarCandidato(CadastrarCandidatoViewModel);
     }
 }

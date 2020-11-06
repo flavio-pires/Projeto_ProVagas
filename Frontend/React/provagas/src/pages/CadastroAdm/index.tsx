@@ -33,7 +33,7 @@ function CadastroAdm(){
             IdTipoUsuario:3
             
         };
-        fetch('http://localhost:5000/api/Usuarios',{
+        fetch('http://localhost:5001/api/Usuarios/CadastrarAdm',{
             method: 'POST',
             body:JSON.stringify(novoAdm)
         })
@@ -47,48 +47,48 @@ function CadastroAdm(){
         });
     }
 
-    /*const salvarUsuario = () =>{
-        fetch('http://localhost:5000/api/Usuarios',{
-            method: 'POST',
-            body: JSON.stringify({Email:email, Telefone:telefone, Senha:senha, IdTipoUsuario:3})
-            /*headers:{
-                authorization : 'Bearer' + localStorage.getItem('token-provagas')
-            }
-        },
-        )
+    // /*const salvarUsuario = () =>{
+    //     fetch('http://localhost:5000/api/Usuarios',{
+    //         method: 'POST',
+    //         body: JSON.stringify({Email:email, Telefone:telefone, Senha:senha, IdTipoUsuario:3})
+    //         /*headers:{
+    //             authorization : 'Bearer' + localStorage.getItem('token-provagas')
+    //         }*/
+    //     },
+    //     )
 
-        .then (response => response.json())
-        .then(id=>{
-            salvarAdm(id);
-        })
-    }
+    //     .then (response => response.json())
+    //     .then(id=>{
+    //         salvarAdm(id);
+    //     })
+    // }
 
-    const salvarAdm = (id:BigInteger) =>{
-        const novoAdm={
-            NomeCompletoAdmin:nomeAdm,
-            Nif:nif,
-            UnidadeSenai:unisenai,
-            Departamento:departamento,
-            IdUsuario:id
-        };
-        fetch('http://localhost:5000/api/Administradores',{
-            method: 'POST',
-            body: JSON.stringify(novoAdm)
-            /*headers:{
-                authorization : 'Bearer' + localStorage.getItem('token-provagas')
-            }
-        },
+    // const salvarAdm = (id:BigInteger) =>{
+    //     const novoAdm={
+    //         NomeCompletoAdmin:nomeAdm,
+    //         Nif:nif,
+    //         UnidadeSenai:unisenai,
+    //         Departamento:departamento,
+    //         IdUsuario:id
+    //     };
+    //     fetch('http://localhost:5000/api/Administradores',{
+    //         method: 'POST',
+    //         body: JSON.stringify(novoAdm)
+    //         /*headers:{
+    //             authorization : 'Bearer' + localStorage.getItem('token-provagas')
+    //         }*/
+    //     },
         
-        )
-        .then(() => {
-            alert("Cadastro concluido com sucesso");
-        })
-        .catch(error=> {
-            console.error(error);
-            alert("Erro ao cadastrar usuario.");
-        });
+    //     )
+    //     .then(() => {
+    //         alert("Cadastro concluido com sucesso");
+    //     })
+    //     .catch(error=> {
+    //         console.error(error);
+    //         alert("Erro ao cadastrar usuario.");
+    //     });
 
-    }*/
+    // }/*
 
     return(
         <div className="prcp">

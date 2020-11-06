@@ -2,6 +2,7 @@
 using ProVagas.Contexts;
 using ProVagas.Domains;
 using ProVagas.Interfaces;
+using ProVagas.ViewsModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace ProVagas.Repositories
     public class AdministradorRepository : RepositoryBase<Administrador>, IAdministradorRepository
     {
         ProVagasContext ctx = new ProVagasContext();
+
 
         public Administrador Login(string email, string senha)
         {

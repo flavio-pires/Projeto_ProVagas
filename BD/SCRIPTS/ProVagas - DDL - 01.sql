@@ -1,4 +1,6 @@
 -- DDL
+
+
 Create DATABASE ProVagas
 
 GO
@@ -168,7 +170,7 @@ GO
 CREATE TABLE Administrador (
 	IdAdministrador INT PRIMARY KEY IDENTITY,
 	NomeCompletoAdmin VARCHAR (255) NOT NULL,
-	NIF CHAR(9) UNIQUE NOT NULL,
+	NIF VARCHAR(15) UNIQUE NOT NULL,
 	UnidadeSENAI VARCHAR (255),
 	Departamento VARCHAR (255),
 	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario)
