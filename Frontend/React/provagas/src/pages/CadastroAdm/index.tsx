@@ -10,6 +10,7 @@ import { parse } from 'path';
 
 
 
+
 function CadastroAdm(){
 
     const [nomeAdm, setnomeAdm] = useState('');
@@ -20,16 +21,40 @@ function CadastroAdm(){
     const [senha, setsenha] = useState('');
     const [telefone, settelefone] = useState('');
 
-    const salvarUsuario = () =>{
-        fetch('http://localhost:5001/api/Usuarios',{
+    const salvarAdm = () => {
+        const novoAdm={
+            NomeCompletoAdmin:nomeAdm,
+            Nif:nif,
+            UnidadeSenai:unisenai,
+            Departamento:departamento,
+            Email:email,
+            Telefone:telefone,
+            Senha:senha,
+            IdTipoUsuario:3
+            
+        };
+        fetch('http://localhost:5000/api/Usuarios',{
+            method: 'POST',
+            body:JSON.stringify(novoAdm)
+        })
+
+        .then(() => {
+            alert("Cadastro concluido com sucesso");
+        })
+        .catch(error=> {
+            console.error(error);
+            alert("Erro ao cadastrar usuario.");
+        });
+    }
+
+    /*const salvarUsuario = () =>{
+        fetch('http://localhost:5000/api/Usuarios',{
             method: 'POST',
             body: JSON.stringify({Email:email, Telefone:telefone, Senha:senha, IdTipoUsuario:3})
             /*headers:{
                 authorization : 'Bearer' + localStorage.getItem('token-provagas')
-            }*/
-            
+            }
         },
-        
         )
 
         .then (response => response.json())
@@ -46,12 +71,12 @@ function CadastroAdm(){
             Departamento:departamento,
             IdUsuario:id
         };
-        fetch('http://localhost:5001/api/Administradores',{
+        fetch('http://localhost:5000/api/Administradores',{
             method: 'POST',
             body: JSON.stringify(novoAdm)
             /*headers:{
                 authorization : 'Bearer' + localStorage.getItem('token-provagas')
-            }*/
+            }
         },
         
         )
@@ -63,13 +88,13 @@ function CadastroAdm(){
             alert("Erro ao cadastrar usuario.");
         });
 
-    }
+    }*/
 
     return(
         <div className="prcp">
             <Header/>
-            <form onSubmit= {event=>{ event.preventDefault();
-            salvarUsuario();}}>
+            <form action="/" method="post" encType="multipart/form-data" onSubmit= {event=>{ event.preventDefault();
+            salvarAdm();}}>
                 <div className="cadastro">
                     <div className="box-banner-colaborador">
                         <img src={imgcolaborador} alt='desenho de duas pessoas frente a frente e cada uma mexendo em um computador'/>
