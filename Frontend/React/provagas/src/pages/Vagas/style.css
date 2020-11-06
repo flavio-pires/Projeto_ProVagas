@@ -15,12 +15,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 3em;
-}
-
-.telavagas #btnvaga1{
-    background-color:  #ED1F24;
-    color: #ffffff;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
 }
 
 .vaga1 li, img{
@@ -33,7 +29,7 @@
 }
 
 .buscarvaga img{
-    margin-top: 2.2em;
+    margin-top: 1.2em;
     margin-right: 1em;
     width: 30px;
     height: 30px;
@@ -71,4 +67,10 @@
 .vagas2{
     display: flex;
     justify-content: space-between;
+}
+
+.telavagas .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

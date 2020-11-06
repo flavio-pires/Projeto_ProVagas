@@ -16,11 +16,10 @@
     margin-bottom: 2vh;
 }
 
-.detalhe #btnvaga1{
-    background-color:  #ED1F24;
-    color: #ffffff;
-    font-size: 20px;
-    width: 14em;
+.detalhe .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .vaga1 li, img{
@@ -45,6 +44,7 @@
 .detalhe .detalhesvaga p, .detalhesvaga li{
     width: 70%;
     font-size: 1.2em;
+    margin-bottom: 3vh;
 }
 
 

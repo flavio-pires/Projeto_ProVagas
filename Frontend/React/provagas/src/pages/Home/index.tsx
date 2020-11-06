@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../components/Footer';
 import Header from '../../components/Header/index';
 import Button from '../../components/Button';
 import {Link} from 'react-router-dom';
@@ -84,7 +85,8 @@ function Home(){
                         </div>
                         <Link to="/vagas" className="mudabotao"><Button value="Ver mais"/></Link>
                     </div>
-                </div>       
+                </div>
+                <Footer/>
             </div>
     );
 }

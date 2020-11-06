@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ActiveDebugProfile>ProVagas</ActiveDebugProfile>
+<<<<<<< HEAD:Backend/ProVagasNovo/ProVagas.WebApi/ProVagas.WebApi/ProVagas.WebApi.csproj.user
+    <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
+    <Controller_SelectedScaffolderCategoryPath>root/Controller</Controller_SelectedScaffolderCategoryPath>
+=======
+>>>>>>> 26b5045f7f2dda96ab835f8d54c87288a40ddbdb:Backend/ProVagasNovo/ProVagas/ProVagas/ProVagas.csproj.user
+  </PropertyGroup>
+</Project>

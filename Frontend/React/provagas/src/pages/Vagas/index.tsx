@@ -11,6 +11,7 @@ import iconeporte from '../../assets/images/porte.png';
 import iconecontrato from '../../assets/images/tipo-contrato.png';
 import logo_brq from '../../assets/images/logo_brq.png';
 import imgfiltro from '../../assets/images/filtro.png';
+import Footer from '../../components/Footer';
 
 function Vagas() {
   return (
@@ -46,6 +47,7 @@ function Vagas() {
               </ul>
           </div>
         </div>
+        <Footer/>
       </div>
   );
 }

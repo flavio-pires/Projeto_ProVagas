@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
-import Input from '../../components/Input';
 import Button from '../../components/Button';
 import imglogin from '../../assets/images/img_login.png'
 import './style.css';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import InputSmaller from '../../components/InputSmaller';
 
 function Login() {
 
@@ -53,12 +54,13 @@ function Login() {
                   event.preventDefault();
                   login();
                 }}>
-                  <Input type="email" label="" name="email" placeholder="Digite seu e-mail" onChange={e => setEmail(e.target.value)}/>
-                  <Input type="password" label="" name="senha" placeholder="Digite sua senha" onChange={e => setSenha(e.target.value)}/>
+                  <InputSmaller type="email" label="" name="email" placeholder="Digite seu e-mail" onChange={e => setEmail(e.target.value)}/>
+                  <InputSmaller type="password" label="" name="senha" placeholder="Digite sua senha" onChange={e => setSenha(e.target.value)}/>
                   <Button value="Entrar"/>
                 </form>
             </div>
         </div>
+        <Footer/>
       </div>
   );
 }

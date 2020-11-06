@@ -1,0 +1,30 @@
+.footer{
+    background-color: rgba(70, 70, 70, 0.76) ;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logoFooter{
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.footer hr{
+    width: 100px;
+    border: 1px solid #fff;
+    transform: rotate(90deg);
+  }
+
+.iconsFooter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.iconsFooter img + img{
+    margin-left: 10px ;
+
+}

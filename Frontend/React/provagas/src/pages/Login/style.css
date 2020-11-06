@@ -1,7 +1,8 @@
 .login{
     display: flex;
     justify-content: space-around;
-    margin-top: 15vh;
+    margin-top: 8.4vh;
+    margin-bottom: 8.4vh;
 }
 
 .login-dados{
@@ -21,4 +22,17 @@
 
 .login-dados h1{
     margin-bottom: 5vh;
+}
+
+.login .button {
+    width: 180px;
+    height: 58px;
+    font-weight: bold;
+    border: none;
+}
+
+.login .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

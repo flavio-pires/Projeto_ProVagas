@@ -8,6 +8,7 @@ import iconelocal from '../../assets/images/local.png';
 import iconeporte from '../../assets/images/porte.png';
 import iconecontrato from '../../assets/images/tipo-contrato.png';
 import logo_brq from '../../assets/images/logo_brq.png';
+import Footer from '../../components/Footer';
 
 function DetalheVaga() {
   return (
@@ -71,6 +72,7 @@ function DetalheVaga() {
               </div>
           </div>
         </body>
+        <Footer/>
       </div>
   );
 }

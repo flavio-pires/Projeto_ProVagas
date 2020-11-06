@@ -10,9 +10,10 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
 const Input: React.FunctionComponent<InputProps> = ({label, name, ...rest}) => {
   return (
     <div>
+      <div className="box-input">
         <label htmlFor={name}>{label}</label>
-        <br/>
         <input type="text" id={name} {...rest}/>
+      </div>
     </div>
   );
 }
