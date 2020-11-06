@@ -5,7 +5,6 @@ import Input from '../../components/Input';
 import InputSmaller from '../../components/InputSmaller';
 import Button from '../../components/Button';
 import './style.css';
-import { parse } from 'path';
 
 
 
@@ -27,20 +26,27 @@ function CadastroAdm(){
             Nif:nif,
             UnidadeSenai:unisenai,
             Departamento:departamento,
-            Email:email,
-            Telefone:telefone,
-            Senha:senha,
-            IdTipoUsuario:3
+                IdUsuarioNavegation:{
+                Email:email,
+                Telefone:telefone,
+                Senha:senha,
+                IdTipoUsuario:3
+                }
+            
+            
             
         };
-        fetch('http://localhost:5001/api/Usuarios/CadastrarAdm',{
+        fetch('http://localhost:5000/api/Administradores',{
             method: 'POST',
             body:JSON.stringify(novoAdm)
         })
 
-        .then(() => {
-            alert("Cadastro concluido com sucesso");
+        .then((response) => {
+            return response.json()
+            
         })
+        .then (data => console.log(data))
+        .catch(err => console.error(err))
         .catch(error=> {
             console.error(error);
             alert("Erro ao cadastrar usuario.");
