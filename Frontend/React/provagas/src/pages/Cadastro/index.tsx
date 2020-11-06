@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Input from '../../components/Input';
 import SelectInput from '../../components/SelectInput';
 import InputSmaller from '../../components/InputSmaller'
@@ -9,15 +9,102 @@ import Header from '../../components/Header';
 
 function Cadastro() {
 
-  const [newUserState, setNewUserState] = useState({
-    email: null,
-    senha: null,
-    idTipoUsuario: 1,
-    idEndereco: null,
-  });
+  const [namePCD, setNamePCD] = useState('')
+  const [nameGenero, setNameGenero] = useState('')
+  const [educationLevel, setEducationLevel] = useState('')
+  const [language, setLanguage] = useState('')
+  const [languageLevel, setLanguageLevel] = useState('')
+  const [courseSenai, setCourseSenai] = useState('')
 
+  
+  useEffect(() => {
+
+    fetch('https://localhost:5001/api/PCDs')
+    .then(data => data.json())
+    .then(json => setNewPcd(json))
+    console.log('retorno do banco, pcd ', newPcd);
+
+    fetch('https://localhost:5001/api/NiveisEscolaridades')
+    .then(data => data.json())
+    .then(json => setEscolaridade(json))
+    console.log('retorno da escolaridade ', newEscolaridade);
+  
+    fetch('https://localhost:5001/api/Generos')
+    .then(data => data.json())
+    .then(json => setnewGenderState(json))
+    console.log('retorno do gênero ', newGender);
+
+    fetch('https://localhost:5001/api/CursosSenai')
+    .then(data => data.json())
+    .then(json => setnewCourseSenaiState(json))
+    console.log('retorno do curso senai ', newCourseSenai);
+
+    fetch('https://localhost:5001/api/Idiomas')
+    .then(data => data.json())
+    .then(json => setNewLanguageState(json))
+    console.log('retorno do idioma ', newLanguage);
+
+    fetch('https://localhost:5001/api/NiveisIdiomas')
+    .then(data => data.json())
+    .then(json => setNewLevelLanguageState(json))
+    console.log('retorno do nivel idioma ', newLevelLanguage);
+
+  },[]);
+
+
+  const [newCourseSenai, setnewCourseSenaiState] = useState([{
+    curso: null,
+  }]);
+
+  const [newLanguage, setNewLanguageState] = useState([{
+    nomeIdioma: null,
+  }]);
+
+   const [newLevelLanguage, setNewLevelLanguageState] = useState([{
+    nomeNivel: null,
+  }])
+
+  const [newPcd, setNewPcd] = useState([{
+    idDeficiencia: null,
+    nomeDeficiencia: null
+  }]);
+
+  const [radioDeficiencia, setRadioDeficiencia] = useState(2);
+
+  const [newPcdCandidate, setNewPcdCandidate] = useState([{
+	  possuiDeficiencia: radioDeficiencia,
+	  idCandidato: null,
+	  idPCD: null,
+  }]);
+
+  useEffect(() => {
+    console.log('radio pcd',radioDeficiencia)
+  },[radioDeficiencia]);
+
+ 
+
+  const [newEscolaridade, setEscolaridade] = useState([{
+    escolaridade: null,
+  }])
+
+  
+  const [newGender, setnewGenderState] = useState([{
+    nomeGenero: null,
+  }]);
+
+  const [newCountry, setNewCountry] = useState('')
+
+  const [newLocality, setnewLocalityState] = useState({
+    nomeEstado: null,
+  }) 
+
+  const [newCity, setNewCity] = useState({
+    nomeCidade: null,
+    idEstado: null,
+  })
+  
   const [newAddress, setNewAddress] = useState({
-
+    
     rua: null,
     num: null,
     bairro: null,
@@ -25,22 +112,27 @@ function Cadastro() {
     cep: null,
     idCidade: null,
   });
+  
+  const [newUserState, setNewUserState] = useState({
+    email: null,
+    senha: null,
+    telefone: null,
+    idTipoUsuario: 1,
+    idEndereco: null,
+  });
 
-  const [newCity, setNewCity] = useState({
+  const [newExperience, setNewExperienceState] = useState({
+	nomeExperiencia: null,
+	nomeEmpresa: null,
+	cargo: null,
+	dataInicio: null,
+	dataFim: null,
+	empregoAtual: null,
+	descricaoAtividade: null,
+	IdCandidato: null,
+  });
 
-    nomeCidade: null,
-    idEstado: null,
-
-  })
-
-  const [newCountry, setNewCountry] = useState('')
-
-  const [newEscolarida, setEscolaridade] = useState('')
-
-  const [newNivelIngles, setNivelIngles] = useState('')
-
-  const [newGenero, setGenero] = useState('')
-
+  const functionSetNewExperienceState = (key: any, value: any) => setNewExperienceState({ ...newExperience, [key]: value })
 
 
   const functionSetNewUserState = (key: any, value: any) => setNewUserState({ ...newUserState, [key]: value })
@@ -71,25 +163,6 @@ function Cadastro() {
   }
 
   const [newCandidato, setNewCandidato] = useState({
-    nomeCandidato: null,
-    cpf: null,
-    dataNascimento: null,
-    linkedin: null,
-    fotoPerfil: null,
-    possuiDeficiencia: null,
-    deficiencia: null,
-    cursandoSENAI: null,
-    curso: null,
-    nomeEmpresaExperienciaProfissional: null,
-    cargo: null,
-    dataInicio: null,
-    dataFim: null,
-    empregoAtual: null,
-    descriçãoAtividades: null,
-    idUsuario: null,
-    idGenero: null,
-    idNivelIngles: null,
-    idNivelEscolaridade: null,
 
   });
 
@@ -133,6 +206,7 @@ function Cadastro() {
           </div>
           <Input
             type="tex" label="Logradouro" name="logradouro" value={addressViaCep.logradouro} disabled />
+          <Input type="tex" label="Complemento" name="complemento"/>
           <div className="input-duplo">
             <InputSmaller type="text" label="Cidade" name="cidade" value={addressViaCep.localidade} disabled />
             <InputSmaller type="text" label="Estado" name="estado" value={addressViaCep.uf} disabled />
@@ -141,32 +215,32 @@ function Cadastro() {
             <SelectInput
               labelText="Gênero"
               name="genero"
-              options={["Feminino", "Masculino", "Outro"]}
-              callbackChangedValue={value => setGenero(value)}
-            />
-          </div>
-          <div className="input-duplo">
-            <SelectInput
-              labelText="Nivel inglês"
-              name="ingles"
-              options={["Básico", "Técnico", "Intermediário", "Avançado"]}
-              callbackChangedValue={value => setNivelIngles(value)}
+              options={newGender.map((item) => item.nomeGenero)}
+              callbackChangedValue={ value => setNameGenero(value) }
             />
             <SelectInput
               labelText="Nivel de escolaridade"
               name="escolaridade"
-              options={[
-                "Ensino fundamental incompleto",
-                "Ensino fundamental completo",
-                "Ensino médio incompleto",
-                "Ensino médio completo",
-                "Ensino superior incompleto",
-                "Ensino superior completo"
-              ]}
-              callbackChangedValue={value => setNivelIngles(value)}
+              options={newEscolaridade.map((item) => item.escolaridade)}
+              callbackChangedValue={ value => setEducationLevel(value)}
             />
+          </div>
+          <div className="input-duplo">
+             <SelectInput
+              labelText="Idioma"
+              name="idioma"
+              options={newLanguage.map((item) => item.nomeIdioma)}
+              callbackChangedValue={ value => setLanguage(value)}
+            />
+            <SelectInput
+              labelText="Nivel idioma"
+              name="nivelIdioma"
+              options={newLevelLanguage.map((item) => item.nomeNivel)}
+              callbackChangedValue={ value => setLanguageLevel(value)}
+            />          
 
           </div>
+
           <Input type="tex" label="LinkedIn" name="linkedin" placeholder="Adicione aqui o link do seu LindekIn" onChange={event => functionSetCandidatoState("linkedin", event.target.value)} />
           <div className="box-input-file">
             <label htmlFor="file">Selecione uma foto de perfil:</label>
@@ -183,18 +257,23 @@ function Cadastro() {
 
               <div className="group-radio-label">
                 <div className="group-radio">
-                  <input id="sem" type="radio" name="radio1" value="sem" />
+                  <input id="sem" type="radio" name="radio1" value={1} onChange={()=> {setRadioDeficiencia(1)}} checked={radioDeficiencia === 1 } />
                   <label htmlFor="sem">Sim</label>
                 </div>
-
+                                                                                              
                 <div className="group-radio">
-                  <input id="com" type="radio" name="radio1" />
+                  <input id="com" type="radio" name="radio1" value={0} onChange={()=> {setRadioDeficiencia(0)}} checked={radioDeficiencia === 0 }/>
                   <label htmlFor="com">Não</label>
                 </div>
               </div>
 
             </div>
-            <InputSmaller type="text" label="Se sim, qual?" name="deficiencia" />
+            <SelectInput
+              labelText="Se sim, qual?"
+              name="pcd"
+              options={newPcd.map((item) =>  item.nomeDeficiencia )}
+              callbackChangedValue={ value => setNamePCD(value) }
+            />
           </div>
           <div className="input-duplo">
             <div className="box-radio-label">
@@ -214,7 +293,12 @@ function Cadastro() {
               </div>
 
             </div>
-            <InputSmaller type="text" label="Informe o curso" name="cursoSenai" onChange={event => functionSetCandidatoState("curso", event.target.value)} />
+            <SelectInput
+              labelText="Curso"
+              name="genero"
+              options={newCourseSenai.map((item) => item.curso )}
+              callbackChangedValue={ value => setCourseSenai(value) }
+            />
           </div>
           <Input type="text" label="Informe suas habilidades"
             name="habilidades"
@@ -225,16 +309,16 @@ function Cadastro() {
           <h4>Experiências profissionais</h4>
           <div className="box-experiencias">
             <div className="input-duplo">
-              <InputSmaller type="text" label="Nome da Empresa" name="empresa" />
-              <InputSmaller type="text" label="Cargo" name="cargo" />
+              <InputSmaller type="text" label="Nome da Empresa" name="empresa" onChange={event => functionSetNewExperienceState("nomeEmpresa", event.target.value)} />
+              <InputSmaller type="text" label="Cargo" name="cargo" onChange={event => functionSetNewExperienceState("cargo", event.target.value)} />
             </div>
             <div className="input-duplo">
-              <InputSmaller type="date" label="Data de início" name="dataInicio" />
-              <InputSmaller type="date" label="Data término" name="dataTermino" />
+              <InputSmaller type="date" label="Data de início" name="dataInicio" onChange={event => functionSetNewExperienceState("dataInicio", event.target.value)}/>
+              <InputSmaller type="date" label="Data término" name="dataTermino" onChange={event => functionSetNewExperienceState("dataTermino", event.target.value)}/>
             </div>
             <div className="box-experiencias-text">
               <label htmlFor="atividades">Descreva suas atividades</label>
-              <textarea className="text-experiencias-atividades" name="atividades" />
+              <textarea className="text-experiencias-atividades" name="atividades" onChange={event => functionSetNewExperienceState("", event.target.value)}/>
             </div>
             <input type="submit" className="btn-add-experiencia" value="Adicionar experiência" />
 
@@ -249,3 +333,4 @@ function Cadastro() {
 }
 
 export default Cadastro;
+
