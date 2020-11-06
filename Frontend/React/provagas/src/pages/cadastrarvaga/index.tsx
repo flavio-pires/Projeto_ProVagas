@@ -7,80 +7,49 @@ import ImageCandidato from '../../assets/images/logoSenai.png';
 import './style.css';
 import Navleft from '../../components/Navbar/navbar';
 import moment from 'moment';
+import TextField from '@material-ui/core/TextField/TextField';
 
-function Cadastro() {
+function CadastroVAGA() {
 
   const [nomevaga, setnomevaga] = useState('');
   const [localizacao, setlocalizacao] = useState('');
-  const [limite,setlimite] =useState('');
-  const [datavalidade, setdata] = useState('')
+  const [limite,setlimite] = useState('');
+  const [datalimite, setdata] = useState('')
   const [datainitial, setdateinitial] = useState('')
   const [descricao, setdescricao] = useState('');
-  const [remoto, setremoto] = useState('');
   const [salario, setsalario] = useState('');
-  const [beneficios,setbeneficios] = useState([]);
-  const [nivelvaga, setnivelvaga] = useState('');
-  const [tipovaga, settipovaga] = useState('');
   
-//   useEffect( () => {
-//     listar();
-//   }, []);
 
-//   const listar = () => {
-//     fetch('http://localhost:5001/api/beneficios', {
-//         method: 'GET',
-//     })
-//         .then(response => response.json())
-//         .then(dados => {
-//             // setBeneficios(dados);
-//             setbeneficios(dados);
-
-//         })
-//         .catch(erro => console.error(erro))
-// }
-
-const vaga = async () => {
+const cadvaga =  () => {
     const novavaga = {
-      NomeVaga:nomevaga,
-      DescricaoAtividade:descricao,
-      LimiteDeInscricao: limite,
-      DataInicio: datainitial,
-      DataFinal: datavalidade,
-      AceitaTrabalhoRemoto: remoto,
-      Localizacao:localizacao,
-      Salario:salario,
-      IdNivelVagaNavigation: {
-        NomeNivelVaga: nivelvaga
-      },
-      IdTipoVagaNavigation: {
-        NomeTipoVaga: tipovaga
-      }
+      nomeVaga: nomevaga,
+      descricaoAtividade: descricao,
+      limiteDeInscricao: limite,
+      dataInicio: datainitial,
+      dataFinal: datalimite,
+      ['localização']: localizacao,
+      salario: salario
     }
+    
+      const urlRequest = "http://localhost:5000/api/vagas";
 
-    try {
-    const URL =  "http://localhost:5000/api/vagas"
-     const request = fetch(URL, {
-        method: "post",
-        headers: {
-            'Content-Type': 'application/json',
-            authorization: 'Bearer ' + localStorage.getItem('token')
-        },
-        body: JSON.stringify(novavaga)
-    })
-    const response = await (await request).json()
+      console.log(novavaga)
 
-    if (response === 'Erro ao cadastrar vaga') {
-        alert(response);
-    }
-    else {
-        alert(response);
-        window.location.reload();
-    }
+      fetch(urlRequest, {
+          method: "POST",
+          body: JSON.stringify(novavaga),
+          headers: {
+              'Content-Type': 'application/json;charset=utf-8',
+          }
+      })
 
-  } catch (error) {
-    throw new Error(error)
-}
-}
+          .then((response) => {
+              return response.json()
+              
+          })
+          .then (data => console.log(data))
+          .catch(err => console.error(err));
+  }
 
   return (
     <div className='ol'>
@@ -88,7 +57,7 @@ const vaga = async () => {
       <form onSubmit={event => {
 
         event.preventDefault();
-        vaga();
+        cadvaga();
       }
        }>
         <div className="cadastro">
@@ -97,17 +66,13 @@ const vaga = async () => {
           </div>
           <h1>Cadastro de vagas</h1>
           <h4>Dados da vaga</h4>
-          {/* <Input type="text" label="Nome Vaga" name="vaga"
+          <Input type="text" label="Nome Vaga" name="vaga"
            onChange={e => setnomevaga(e.target.value)} 
-            /> */}
-          
-        <label htmlFor=''>Nome Vaga</label>
-        <br/>
-        <input type="text" id='nomevaga' onChange={e => setnomevaga(e.target.value)}/>
+            />
 
-          <Input type="text" label="Cidade" name="localizacao" placeholder="Ex: Sâo Paulo" 
-          onChange={e => setlocalizacao(e.target.value)} 
-          />
+            <Input type="text" label="Cidade" name="cidade"
+           onChange={e => setlocalizacao(e.target.value)} 
+            />
 
           <div className="box-experiencias">           
             <div className="box-experiencias-text">
@@ -121,30 +86,46 @@ const vaga = async () => {
             <InputSmaller type="text" label="Salário" name="salario" 
             onChange={e => setsalario(e.target.value)} 
             />
-            <InputSmaller type="text" label="Tipo da vaga" name="vaga" 
+            {/* <InputSmaller type="text" label="Tipo da vaga" name="vaga" 
             onChange={e => settipovaga(e.target.value)}
+             /> */}
+              <InputSmaller type="text" label="Limite de inscrição" name="limite" 
+            onChange={e => setlimite(e.target.value)}
              />
           </div>
 
           <div className='input-duplo'>
-              <InputSmaller type="text" label="Limite de inscrição" name="limite" 
-            onChange={e => setlimite(e.target.value)}
-             />
-                <label htmlFor="Trabalho Remoto" className='label-edit'>Aceita trabalho remoto ?</label> <br />
+                {/* <label htmlFor="Trabalho Remoto" className='label-edit'>Aceita trabalho remoto ?</label> <br />
                     <select onChange={e => setremoto(e.target.value)} className="select-box" name="remoto" id="remoto">
                         <option disabled selected>Selecione uma opção</option>
                         <option value="SIM">SIM</option>
                         <option value="NÃO">NÃO</option>
-                    </select>
+                    </select> */}
           </div>
 
-          <div className='input-duplo'>
-            <InputSmaller type="text" label="Data inial" name="limite" 
-            onChange={e => setdateinitial(e.target.value)}
-             />
-              <InputSmaller type="text" label="Data Limite" name="limite" 
-            onChange={e => setdata(e.target.value)}
-             />
+          <div className='dat-duplo'>
+
+               <TextField
+                        id="dtValidade"
+                        label="Data Inicial"
+                        type="date"
+                        defaultValue=''
+                        onChange={e => setdateinitial(e.target.value)}
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                        />
+
+                         <TextField
+                        id="dtValidade"
+                        label="Data de Validade"
+                        type="date"
+                        defaultValue=''
+                        onChange={e => setdata(e.target.value)}
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                        />
           </div>
 
           <Button value="Finalizar cadastro" />
@@ -153,4 +134,4 @@ const vaga = async () => {
     </div>
   );
 }
-export default Cadastro;
+export default CadastroVAGA;

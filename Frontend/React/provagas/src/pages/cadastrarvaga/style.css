@@ -23,6 +23,15 @@
     justify-content: space-between;
 }
 
+.dat-duplo{
+    display: flex;
+    /* background-color: lightgreen; */
+    width: 40vw;
+    height: 12vh;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+}
+
 .text-experiencias-atividades{
     width: 40vw;
     height: 20vh;
