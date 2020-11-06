@@ -1,0 +1,74 @@
+.telavagas .vaga1{
+    border: solid 0.2em;
+    border-color: #C4C4C4;
+    border-radius: 10px;
+    width: 800px;
+    padding: 4em;
+    list-style: none;
+    margin-top: 6vh;
+    margin-right: 8vh;
+    margin-bottom: 10vh;
+}
+
+.telavagas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+}
+
+.telavagas #btnvaga1{
+    background-color:  #ED1F24;
+    color: #ffffff;
+}
+
+.vaga1 li, img{
+    margin-top: 1em;
+}
+
+.buscarvaga{
+    margin-top: 2em;
+    display: flex;
+}
+
+.buscarvaga img{
+    margin-top: 2.2em;
+    margin-right: 1em;
+    width: 30px;
+    height: 30px;
+}
+
+.topicovaga, .topicos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.topicos li{
+    margin-right: 2vw;
+}
+
+.filtrar{
+    display: flex;
+}
+
+.filtrar img{
+    width: 25px;
+    height: 25px;
+    margin-top: 0.1vh;
+    margin-right: 1vh;
+}
+
+.filtros{
+    border: solid 0.2em;
+    border-color: #C4C4C4;
+    border-radius: 10px;
+    padding: 2em;
+    margin-top: 6vh;
+    margin-right: 10vw;
+}
+
+.vagas2{
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,10 +1,13 @@
 import React from 'react';
 import Header from '../../components/Header/index';
 import Button from '../../components/Button';
-import Card from '../../components/Card';
+import {Link} from 'react-router-dom';
 import imgprincipal from '../../assets/images/imgprincipal_home.png';
 import imgcandidato from '../../assets/images/imgcandidato_home.png';
 import imgempresa from '../../assets/images/imgempresa_home.png';
+import iconelocal from '../../assets/images/local.png';
+import iconeporte from '../../assets/images/porte.png';
+import iconecontrato from '../../assets/images/tipo-contrato.png';
 import './style.css';
 
 function Home(){
@@ -15,41 +18,71 @@ function Home(){
                     <div className="slogan">
                         <div className="texto-slogan">
                             <h1>Pensado para empresas, pensado para candidatos!</h1>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                                    the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                                    of type and scrambled it to make a type specimen book.
+                                <p>Uma plataforma de emprego dedicada ao Senai, onde os alunos encontram vagas selecionadas
+                                    de empresas conceituadas e parceiras, capazes de proporcionar um ambiente adequado aos 
+                                    que estão ingressando na área. Disponibilizando todo o apoio e conteúdo necessário para 
+                                    que o aluno coloque em prática tudo o que foi aprendido no curso e consiga ter um 
+                                    crescimento profissional.
                                 </p>
                             <div className="botao-slogan">
                                 <div className="btn1home">
-                                <Button value="Encontrar uma vaga"/>
+                                <Link to="/vagas" className="mudabotao"><Button value="Encontrar uma vaga"/></Link>
                                 </div>
                                 <div className="btn2home">
-                                <Button value="Publicar uma vaga"/>
+                                <Link to="/login" className="mudabotao"><Button value="Publicar uma vaga" id="bt2"/></Link>
                                 </div>
                             </div>
                         </div>
                         <img id="imgprincipal" src={imgprincipal} alt="Imagem principal ProVagas"/>
                     </div>
-                    <div className="candidato">
-                        <img src={imgcandidato} alt="Imagem candidato"/>
-                        <h2>Candidato</h2>
-                        <p>Candidatura simplificada</p>
-                        <p>Plataforma segura</p>
-                        <p>Vagas direcionadas ao seu perfil</p>
-                    </div>
-                    <div className="empresa">
-                        <img src={imgempresa} alt="Imagem candidato"/>
-                        <h2>Empresa</h2>
-                        <p>Candidatos qualificados</p>
-                        <p>Plataforma gratuita</p>
-                        <p>Acompanhamento do processo</p>
+                    <div className="vantagens">
+                        <ul className="candidato">
+                            <img src={imgcandidato} alt="Imagem candidato"/>
+                            <h2>Candidato</h2>
+                            <li>Candidatura simplificada</li>
+                            <li>Plataforma segura</li>
+                            <li>Vagas direcionadas ao seu perfil</li>
+                        </ul>
+                        <ul className="empresa">
+                            <img src={imgempresa} alt="Imagem empresa"/>
+                            <h2>Empresa</h2>
+                            <li>Candidatos qualificados</li>
+                            <li>Plataforma gratuita</li>
+                            <li>Acompanhamento do processo</li>
+                        </ul>
                     </div>
                     <div className="ultimasvagas">
                         <h2>Nossas últimas vagas</h2>
-                        <Card descricao="Vaga" titulo="empresa" local="São Paulo" porte="Grande" tipo="Junior" contrato="CLT"/>
-                        <Card descricao="Vaga" titulo="empresa" local="São Paulo" porte="Grande" tipo="Junior" contrato="CLT"/>
-                        <Card descricao="Vaga" titulo="empresa" local="São Paulo" porte="Grande" tipo="Junior" contrato="CLT"/>
-                        <Button value="Ver mais"/>
+                        <div className="algumasvagas">
+                            <ul className="vaga">
+                                <h3>Estágio em Desenvolvimento de Sistemas</h3>
+                                <hr/>
+                                <h4>BRQ</h4>
+                                <li><img src={iconelocal} alt="Ícone de local"/>São Paulo</li>
+                                <li><img src={iconeporte} alt="Ícone de porte da empresa"/>Grande</li>
+                                <li><img src={iconecontrato} alt="Ícone de contrato"/>Estagiário</li>
+                                <Link to="/detalhevaga" className="mudabotao"><Button value="Saiba mais" id="btnvaga1"/></Link>
+                            </ul>
+                            <ul className="vaga">
+                                <h3>Estágio em Desenvolvimento de Sistemas</h3>
+                                <hr/>
+                                <h4>BRQ</h4>
+                                <li><img src={iconelocal} alt="Ícone de local"/>São Paulo</li>
+                                <li><img src={iconeporte} alt="Ícone de porte da empresa"/>Grande</li>
+                                <li><img src={iconecontrato} alt="Ícone de contrato"/>Estagiário</li>
+                                <Link to="/detalhevaga" className="mudabotao"><Button value="Saiba mais" id="btnvaga1"/></Link>
+                            </ul>
+                            <ul className="vaga">
+                                <h3>Estágio em Desenvolvimento de Sistemas</h3>
+                                <hr/>
+                                <h4>BRQ</h4>
+                                <li><img src={iconelocal} alt="Ícone de local"/>São Paulo</li>
+                                <li><img src={iconeporte} alt="Ícone de porte da empresa"/>Grande</li>
+                                <li><img src={iconecontrato} alt="Ícone de contrato"/>Estagiário</li>
+                                <Link to="/detalhevaga" className="mudabotao"><Button value="Saiba mais" id="btnvaga1"/></Link>
+                            </ul>
+                        </div>
+                        <Link to="/vagas" className="mudabotao"><Button value="Ver mais"/></Link>
                     </div>
                 </div>       
             </div>

@@ -1,14 +1,7 @@
-.home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
 .slogan{
     display: flex;
     justify-content: space-around;
-    margin-top: 50px;
+    margin-top: 10vh;
 }
 
 .botao-slogan{
@@ -18,13 +11,13 @@
 }
 
 .slogan img{
-    height: 300px;
+    height: 400px;
 }
 
 .texto-slogan{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     width: 800px;
 }
 
@@ -33,9 +26,86 @@
     justify-content: center;
 }
 
+.texto-slogan p{
+    font-size: 1.2em;
+}
+
 .home .button{
     background-color: #ED1F24;
     color: white;
     font-size: 15px;
     font-weight: 500;
+}
+
+.home #bt2{
+    background-color: #592926;
+}
+
+.vantagens{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8em;
+}
+
+.candidato, .empresa, .vaga{
+    border: solid 0.2em;
+    border-color: #C4C4C4;
+    border-radius: 10px;
+    width: 400px;
+    padding: 4em;
+}
+
+.vantagens h2, .ultimasvagas h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    color: #ED1F24;
+}
+
+.vantagens li{
+    margin-top: 2vh;
+    color: #000000;
+}
+
+.vantagens img{
+    width: 280px;
+}
+
+.ultimasvagas{
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.vaga{
+    list-style: none;
+    margin-top: 6vh;
+    margin-right: 8vh;
+    margin-bottom: 10vh;
+}
+
+.algumasvagas{
+    display: flex;
+}
+
+.ultimasvagas li, h4, #btnvaga1{
+    margin-top: 4vh;
+}
+
+.ultimasvagas h3, h4{
+    margin-bottom: 4vh;
+    display: flex;
+    justify-content: center;
+}
+
+.ultimasvagas img{
+    margin-right: 3vh;
+}
+
+.mudabotao{
+    text-decoration: none;
+
 }

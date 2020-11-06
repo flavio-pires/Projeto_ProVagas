@@ -1,10 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
 
 .container-principal-header{
     width: 100%;
@@ -62,7 +55,13 @@
 
 .menu-link{
     padding: .3rem;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-top: -0.4em;
 }
+
+
 .link-login{
     border: 2px solid white;
     border-radius: .3rem;
@@ -73,3 +72,4 @@
     justify-content: center;
     width: 5vw;
 }
+
