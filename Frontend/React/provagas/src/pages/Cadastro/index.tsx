@@ -123,7 +123,8 @@ function Cadastro() {
       if (request.status === 200) {
         const data = await request.json()
         const { bairro, logradouro, cep } = data
-        setAddressViaCep({ bairro, logradouro, cep })
+        const newCep = cep.replace("-", "")
+        setAddressViaCep({ bairro, logradouro, cep: newCep })
         setNewAddress({...newAddress, bairro, cep, rua: logradouro})
       }
     }
@@ -131,9 +132,36 @@ function Cadastro() {
 
   const dataToJsonStringfy = (data: any) => JSON.stringify(data)
 
+  const postCandidato = async () => {
+    const requestCandidato = await fetch("https://localhost:5001/api/candidatos", {
+      body: dataToJsonStringfy(newCandidato),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+
+    console.log(requestCandidato)
+  }
+
+  const postAddress = async () => {
+    // const requestAddress = await fetch("http://localhost:5000/api/endereco", {
+    //   body: dataToJsonStringfy(newAddress),
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   }
+    // })
+    // console.log(requestAddress)
+    // const responseAddress = await requestAddress.json()
+    // const idAddress = responseAddress
+    // await setNewCandidato({ ...newCandidato, idEndereco: idAddress})
+    setNewCandidato({ ...newCandidato, idEndereco: 1 })
+    await postCandidato()
+  }
+
   const postUser = async (event: any) => {
     event.preventDefault()
-    console.log('Clicou')
     const requestUser = await fetch('https://localhost:5001/api/usuarios', {
       body: dataToJsonStringfy(newUserState),
       method: "POST",
@@ -141,29 +169,14 @@ function Cadastro() {
         "Content-Type": "application/json"
       }
     })
+    console.log(requestUser)
     const responseUser = await requestUser.json()
-    console.log(responseUser)
-    const idUser = responseUser
-    setNewAddress({...newAddress, idUsuario: idUser})
+    const idUser = await responseUser
+    await setNewAddress({...newAddress, idUsuario: idUser})
 
-    const responseAddress = await (await fetch("https://localhost:5001/api/enderecos", {
-      body: dataToJsonStringfy(newAddress),
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })).json()
-    const idAddress = responseAddress
-    setNewCandidato({ ...newCandidato, idEndereco: idAddress})
-    console.log(responseAddress)
-    const requestCandidato =  await fetch("https://localhost:5001/api/candidatos", {
-      body: dataToJsonStringfy(newCandidato),
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    console.log(requestCandidato)
+    setTimeout(() => {
+      postAddress()
+    }, 2000);
   }
 
   return (
