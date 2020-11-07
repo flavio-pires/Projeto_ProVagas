@@ -14,7 +14,6 @@ namespace ProVagas.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class UsuariosController : ControllerBase
     {
 
@@ -65,15 +64,14 @@ namespace ProVagas.Controllers
         [HttpPost]
         public IActionResult Post(Usuario usuario)
         {
+            UsuarioRepsoitory repository = new UsuarioRepsoitory();
             try
             {
-                _usuariorepository.Add(usuario);
-
-                return Ok("Usuario cadastrado com sucesso");
+                return Ok(repository.CadastrarUsuario(usuario));
             }
-            catch (Exception)
+            catch (Exception error)
             {
-
+                Console.WriteLine(error);
                 return BadRequest("Usuario não cadastrado");
             }
 
@@ -84,9 +82,7 @@ namespace ProVagas.Controllers
         /// </summary>
         /// <param name="id">Id do usuario que será buscado</param>
         /// <param name="usuarioAtualizado"></param>
-        /// <returns>Retorna o usuario atualizado</returns>
-       
-        
+        /// <returns>Retorna o usuario atualizado</returns> 
         [HttpPut("{id}")]
         public IActionResult Put(int id, Usuario usuarioAtualizado)
         {
@@ -119,7 +115,6 @@ namespace ProVagas.Controllers
         /// </summary>
         /// <param name="id">Id do usuario que será buscado</param>
         /// <returns>Retorna vazio</returns>
-
         [Authorize(Roles = "3")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

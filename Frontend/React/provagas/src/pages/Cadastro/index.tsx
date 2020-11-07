@@ -56,7 +56,7 @@ function Cadastro() {
   });
 
   // POST -  Usuario
-  const [newUserState, setNewUserState] = useState({
+  const [newUserState, setNewUserState] = useState<any>({
     email: null,
     senha: null,
     telefone: null,
@@ -64,7 +64,7 @@ function Cadastro() {
   });
 
   // POST - Candidato
-  const [newCandidato, setNewCandidato] = useState({
+  const [newCandidato, setNewCandidato] = useState<any>({
     nomeCompletoCandidato: null,
     cpf: null,
     dataNascimento: null,
@@ -129,6 +129,43 @@ function Cadastro() {
     }
   }
 
+  const dataToJsonStringfy = (data: any) => JSON.stringify(data)
+
+  const postUser = async (event: any) => {
+    event.preventDefault()
+    console.log('Clicou')
+    const requestUser = await fetch('https://localhost:5001/api/usuarios', {
+      body: dataToJsonStringfy(newUserState),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    const responseUser = await requestUser.json()
+    console.log(responseUser)
+    const idUser = responseUser
+    setNewAddress({...newAddress, idUsuario: idUser})
+
+    const responseAddress = await (await fetch("https://localhost:5001/api/enderecos", {
+      body: dataToJsonStringfy(newAddress),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })).json()
+    const idAddress = responseAddress
+    setNewCandidato({ ...newCandidato, idEndereco: idAddress})
+    console.log(responseAddress)
+    const requestCandidato =  await fetch("https://localhost:5001/api/candidatos", {
+      body: dataToJsonStringfy(newCandidato),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    console.log(requestCandidato)
+  }
+
   return (
     <div className='ol'>
       <Header />
@@ -184,7 +221,7 @@ function Cadastro() {
               type="text" 
               label="Telefone" 
               name="telefone" 
-              onChange={event => functionSetCandidatoState("telefone", event.target.value)} 
+              onChange={event => functionSetNewUserState("telefone", event.target.value)} 
             />
           </div>
           <div className="input-duplo">
@@ -344,14 +381,7 @@ function Cadastro() {
 
         <Button 
           value="Finalizar cadastro" 
-          onclick={(event: any) => {
-            event.preventDefault()
-            console.log({
-              novoEndereco: newAddress,
-              novoUsuario: newUserState,
-              novoCandidato: newCandidato
-            })
-          }}
+          onclick={(event: any) => postUser(event)}
         />
 
         {/* </div> */}
