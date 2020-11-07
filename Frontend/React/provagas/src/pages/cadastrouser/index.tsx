@@ -359,7 +359,6 @@ function Cadastro() {
                 <label htmlFor="nao">Não</label>
               </div>
             </div>
-
           </div>
         </div> */}
         {/* <SelectInput
@@ -394,7 +393,7 @@ function Cadastro() {
 
         <Button 
           value="Finalizar cadastro" 
-          onclick={(event: any) => postUser(event)}
+          onClick={(event: any) => postUser(event)}
         />
 
         {/* </div> */}
