@@ -16,6 +16,12 @@ function Cadastro() {
   const [languageLevel, setLanguageLevel] = useState('')
   const [courseSenai, setCourseSenai] = useState('')
 
+
+  const [newEscolaridade, setEscolaridade] = useState<any>([{
+    idPropriedade: null,
+    nomePropriedade: null,
+  }])
+
   
   useEffect(() => {
 
@@ -26,7 +32,11 @@ function Cadastro() {
 
     fetch('https://localhost:5001/api/NiveisEscolaridades')
     .then(data => data.json())
-    .then(json => setEscolaridade(json))
+    .then(json =>{
+      console.log(json)
+      json.map(( e : any)  => setEscolaridade([...newEscolaridade, {idPropriedade: e.idEscolaridade, nomePropriedade: e.escolaridade}])) 
+      
+    })
     console.log('retorno da escolaridade ', newEscolaridade);
   
     fetch('https://localhost:5001/api/Generos')
@@ -57,6 +67,7 @@ function Cadastro() {
   }]);
 
   const [newLanguage, setNewLanguageState] = useState([{
+    idIdioma:null,
     nomeIdioma: null,
   }]);
 
@@ -82,11 +93,6 @@ function Cadastro() {
   },[radioDeficiencia]);
 
  
-
-  const [newEscolaridade, setEscolaridade] = useState([{
-    escolaridade: null,
-  }])
-
   
   const [newGender, setnewGenderState] = useState([{
     nomeGenero: null,
@@ -212,21 +218,21 @@ function Cadastro() {
             <InputSmaller type="text" label="Estado" name="estado" value={addressViaCep.uf} disabled />
           </div>
           <div className="input-duplo">
-            <SelectInput
+            {/* <SelectInput
               labelText="Gênero"
               name="genero"
               options={newGender.map((item) => item.nomeGenero)}
               callbackChangedValue={ value => setNameGenero(value) }
-            />
+            /> */}
             <SelectInput
               labelText="Nivel de escolaridade"
               name="escolaridade"
-              options={newEscolaridade.map((item) => item.escolaridade)}
-              callbackChangedValue={ value => setEducationLevel(value)}
+              options={newEscolaridade}
+              callbackChangedValue={ value => console.log(value)}
             />
           </div>
           <div className="input-duplo">
-             <SelectInput
+             {/* <SelectInput
               labelText="Idioma"
               name="idioma"
               options={newLanguage.map((item) => item.nomeIdioma)}
@@ -237,7 +243,7 @@ function Cadastro() {
               name="nivelIdioma"
               options={newLevelLanguage.map((item) => item.nomeNivel)}
               callbackChangedValue={ value => setLanguageLevel(value)}
-            />          
+            />           */}
 
           </div>
 
@@ -268,12 +274,12 @@ function Cadastro() {
               </div>
 
             </div>
-            <SelectInput
+            {/* <SelectInput
               labelText="Se sim, qual?"
               name="pcd"
               options={newPcd.map((item) =>  item.nomeDeficiencia )}
               callbackChangedValue={ value => setNamePCD(value) }
-            />
+            /> */}
           </div>
           <div className="input-duplo">
             <div className="box-radio-label">
@@ -293,12 +299,12 @@ function Cadastro() {
               </div>
 
             </div>
-            <SelectInput
+            {/* <SelectInput
               labelText="Curso"
               name="genero"
               options={newCourseSenai.map((item) => item.curso )}
               callbackChangedValue={ value => setCourseSenai(value) }
-            />
+            /> */}
           </div>
           <Input type="text" label="Informe suas habilidades"
             name="habilidades"
