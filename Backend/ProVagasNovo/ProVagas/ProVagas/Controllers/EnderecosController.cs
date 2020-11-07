@@ -63,9 +63,7 @@ namespace ProVagas.Controllers
             EnderecoRepository repository = new EnderecoRepository();
             try
             {
-                repository.CadastrarEndereco(ende);
-
-                return Ok("Endereco cadastrado com sucesso");
+                return Ok(repository.CadastrarEndereco(ende));
             }
             catch (Exception)
             {
