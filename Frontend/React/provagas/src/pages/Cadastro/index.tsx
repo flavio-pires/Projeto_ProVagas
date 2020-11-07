@@ -9,174 +9,125 @@ import Header from '../../components/Header';
 
 function Cadastro() {
 
-  const [namePCD, setNamePCD] = useState('')
-  const [nameGenero, setNameGenero] = useState('')
-  const [educationLevel, setEducationLevel] = useState('')
-  const [language, setLanguage] = useState('')
-  const [languageLevel, setLanguageLevel] = useState('')
-  const [courseSenai, setCourseSenai] = useState('')
-
-
-  const [newEscolaridade, setEscolaridade] = useState<any>([{
-    idPropriedade: null,
-    nomePropriedade: null,
-  }])
-
-  
-  useEffect(() => {
-
-    fetch('https://localhost:5001/api/PCDs')
-    .then(data => data.json())
-    .then(json => setNewPcd(json))
-    console.log('retorno do banco, pcd ', newPcd);
-
-    fetch('https://localhost:5001/api/NiveisEscolaridades')
-    .then(data => data.json())
-    .then(json =>{
-      console.log(json)
-      json.map(( e : any)  => setEscolaridade([...newEscolaridade, {idPropriedade: e.idEscolaridade, nomePropriedade: e.escolaridade}])) 
-      
-    })
-    console.log('retorno da escolaridade ', newEscolaridade);
-  
-    fetch('https://localhost:5001/api/Generos')
-    .then(data => data.json())
-    .then(json => setnewGenderState(json))
-    console.log('retorno do gênero ', newGender);
-
-    fetch('https://localhost:5001/api/CursosSenai')
-    .then(data => data.json())
-    .then(json => setnewCourseSenaiState(json))
-    console.log('retorno do curso senai ', newCourseSenai);
-
-    fetch('https://localhost:5001/api/Idiomas')
-    .then(data => data.json())
-    .then(json => setNewLanguageState(json))
-    console.log('retorno do idioma ', newLanguage);
-
-    fetch('https://localhost:5001/api/NiveisIdiomas')
-    .then(data => data.json())
-    .then(json => setNewLevelLanguageState(json))
-    console.log('retorno do nivel idioma ', newLevelLanguage);
-
-  },[]);
-
+  // const [namePCD, setNamePCD] = useState('')
+  // const [language, setLanguage] = useState('')
+  // const [languageLevel, setLanguageLevel] = useState('')
+  // const [courseSenai, setCourseSenai] = useState('')
+  // const [newHabilidadesState, setNewHabilidadesState] = useState('');
 
   const [newCourseSenai, setnewCourseSenaiState] = useState([{
     curso: null,
   }]);
 
-  const [newLanguage, setNewLanguageState] = useState([{
-    idIdioma:null,
-    nomeIdioma: null,
-  }]);
-
-   const [newLevelLanguage, setNewLevelLanguageState] = useState([{
-    nomeNivel: null,
+  // GET -  Nivel Escolaridade
+  const [escolaridadesDatabase, setEscolaridade] = useState<any>([{
+    idPropriedade: null,
+    nomePropriedade: null,
   }])
 
-  const [newPcd, setNewPcd] = useState([{
-    idDeficiencia: null,
-    nomeDeficiencia: null
+  // GET - Genero
+  const [generosDatabase, setGenerosDatabase] = useState<any>([{
+    idPropriedade: null,
+    nomePropriedade: null,
   }]);
 
-  const [radioDeficiencia, setRadioDeficiencia] = useState(2);
+  // GET - Cidade
+  const [cidadesDatabase, setCidadesDatabase] = useState([{
+    idPropriedade: null,
+    nomePropriedade: null,
+  }])
 
-  const [newPcdCandidate, setNewPcdCandidate] = useState([{
-	  possuiDeficiencia: radioDeficiencia,
-	  idCandidato: null,
-	  idPCD: null,
-  }]);
-
-  useEffect(() => {
-    console.log('radio pcd',radioDeficiencia)
-  },[radioDeficiencia]);
-
- 
-  
-  const [newGender, setnewGenderState] = useState([{
-    nomeGenero: null,
-  }]);
-
-  const [newCountry, setNewCountry] = useState('')
-
-  const [newLocality, setnewLocalityState] = useState({
-    nomeEstado: null,
-  }) 
-
-  const [newCity, setNewCity] = useState({
-    nomeCidade: null,
-    idEstado: null,
+  // VIACEP STATE
+  const [addressViaCep, setAddressViaCep] = useState({
+    bairro: '',
+    logradouro: '',
+    cep: ''
   })
-  
-  const [newAddress, setNewAddress] = useState({
-    
+
+  // POST - Endereco
+  const [newAddress, setNewAddress] = useState<any>({
     rua: null,
     num: null,
     bairro: null,
     complemento: null,
-    cep: null,
+    cep: addressViaCep.cep,
     idCidade: null,
+    idUsuario: null
   });
-  
+
+  // POST -  Usuario
   const [newUserState, setNewUserState] = useState({
     email: null,
     senha: null,
     telefone: null,
     idTipoUsuario: 1,
+  });
+
+  // POST - Candidato
+  const [newCandidato, setNewCandidato] = useState({
+    nomeCompletoCandidato: null,
+    cpf: null,
+    dataNascimento: null,
+    linkedin: null,
     idEndereco: null,
+    idGenero: null,
+    idNivelEscolaridade: null,
+    telefone: null
   });
 
-  const [newExperience, setNewExperienceState] = useState({
-	nomeExperiencia: null,
-	nomeEmpresa: null,
-	cargo: null,
-	dataInicio: null,
-	dataFim: null,
-	empregoAtual: null,
-	descricaoAtividade: null,
-	IdCandidato: null,
-  });
+  // SET Candidate
+  const functionSetCandidatoState = (key: any, value: any) => setNewCandidato({ ...newCandidato, [key]: value })
 
-  const functionSetNewExperienceState = (key: any, value: any) => setNewExperienceState({ ...newExperience, [key]: value })
-
-
+  // SET User
   const functionSetNewUserState = (key: any, value: any) => setNewUserState({ ...newUserState, [key]: value })
 
-  const [addressViaCep, setAddressViaCep] = useState({
-    bairro: '',
-    logradouro: '',
-    localidade: '',
-    uf: '',
-  })
+  useEffect(() => {
+    fetch('https://localhost:5001/api/NiveisEscolaridades')
+      .then(data => data.json())
+      .then(json => {
+        json.map((item: any) => setEscolaridade((itens: any) => {
+          return [...itens, {
+            nomePropriedade: item.escolaridade,
+            idPropriedade: item.idNivelEscolaridade
+          }]
+        }))
+      })
+
+    fetch('https://localhost:5001/api/Generos')
+      .then(data => data.json())
+      .then(json => {
+        json.map((item: any) => setGenerosDatabase((itens: any) => {
+          return [...itens, {
+            nomePropriedade: item.nomeGenero,
+            idPropriedade: item.idGenero
+          }]
+        }))
+      })
+
+    fetch("https://localhost:5001/api/Cidades")
+      .then(data => data.json())
+      .then(json => {
+        json.map((item: any) => setCidadesDatabase((itens: any) => {
+          return [...itens, {
+            nomePropriedade: item.nomeCidade,
+            idPropriedade: item.idCidade
+          }]
+        }))
+      })
+  }, []);
 
   const requestApiViaCep = async (value: any) => {
-
     value.replace('-', '')
-
     if (value.length === 8) {
       const request = await fetch(`https://viacep.com.br/ws/${value}/json/`)
-
       if (request.status === 200) {
         const data = await request.json()
-        const { bairro, logradouro, localidade, uf } = data
-        setAddressViaCep({
-          bairro, logradouro, localidade, uf
-        });
-
+        const { bairro, logradouro, cep } = data
+        setAddressViaCep({ bairro, logradouro, cep })
+        setNewAddress({...newAddress, bairro, cep, rua: logradouro})
       }
     }
   }
-
-  const [newCandidato, setNewCandidato] = useState({
-
-  });
-
-  const functionSetCandidatoState = (key: any, value: any) => setNewCandidato({ ...newCandidato, [key]: value })
-
-
-  const [newHabilidadesState, setNewHabilidadesState] = useState('');
-
 
   return (
     <div className='ol'>
@@ -188,51 +139,111 @@ function Cadastro() {
           </div>
           <h1>Cadastro de candidato</h1>
           <h4>Dados de acesso</h4>
-          <Input type="email" label="E-mail" name="email" onChange={event => functionSetNewUserState("email", event.target.value)} />
-          <Input type="password" label="Senha" name="senha" placeholder="A senha deve conter no mínimo 8 caracteres" onChange={event => functionSetNewUserState("senha", event.target.value)} />
+          <Input 
+            type="email" 
+            label="E-mail" 
+            name="email" 
+            onChange={event => functionSetNewUserState("email", event.target.value)} 
+          />
+          <Input 
+            type="password" 
+            label="Senha" 
+            name="senha" 
+            placeholder="A senha deve conter no mínimo 8 caracteres" 
+            onChange={event => functionSetNewUserState("senha", event.target.value)} 
+          />
           <h4>Informações pessoais</h4>
-          <Input type="text" label="Nome completo" name="nome" onChange={event => functionSetCandidatoState("nomeCandidato", event.target.value)} />
+          <Input 
+            type="text" 
+            label="Nome completo" 
+            name="nome" 
+            onChange={event => functionSetCandidatoState("nomeCompletoCandidato", event.target.value)} 
+          />
           <div className="input-duplo">
-            <InputSmaller type="text" label="CPF" name="cpf" onChange={event => functionSetCandidatoState("cpf", event.target.value)} />
-            <InputSmaller type="text" label="RG" name="rg" onChange={event => functionSetCandidatoState("rg", event.target.value)} />
-          </div>
-          <div className="input-duplo">
-            <InputSmaller type="date" label="Data de nascimento" name="nascimento" onChange={event => functionSetCandidatoState("dataNascimento", event.target.value)} />
-            <InputSmaller type="text" label="Telefone" name="telefone" onChange={event => functionSetCandidatoState("telefone", event.target.value)} />
-          </div>
-          <div className="input-duplo">
-            <InputSmaller type="text" label="CEP" name="cep"
-              onChange={event => {
-
-                const { value } = event.target
-                requestApiViaCep(value)
-              }}
+            <InputSmaller 
+              type="text" 
+              label="CPF" 
+              name="cpf" 
+              onChange={event => functionSetCandidatoState("cpf", event.target.value)} 
             />
-            <InputSmaller type="text" label="Bairro" name="bairro" value={addressViaCep.bairro} disabled />
+            <InputSmaller 
+              type="text" 
+              label="RG" 
+              name="rg" 
+              onChange={event => functionSetCandidatoState("rg", event.target.value)} 
+            />
+          </div>
+          <div className="input-duplo">
+            <InputSmaller 
+              type="date" 
+              label="Data de nascimento" 
+              name="nascimento" 
+              onChange={event => functionSetCandidatoState("dataNascimento", event.target.value)} 
+            />
+            <InputSmaller 
+              type="text" 
+              label="Telefone" 
+              name="telefone" 
+              onChange={event => functionSetCandidatoState("telefone", event.target.value)} 
+            />
+          </div>
+          <div className="input-duplo">
+            <InputSmaller 
+              type="text" 
+              label="CEP" 
+              name="cep" 
+              onChange={event => requestApiViaCep(event.target.value)}   
+            />
+            <InputSmaller 
+              type="text" 
+              label="Bairro" 
+              name="bairro" 
+              value={addressViaCep.bairro} disabled
+            />
           </div>
           <Input
-            type="tex" label="Logradouro" name="logradouro" value={addressViaCep.logradouro} disabled />
-          <Input type="tex" label="Complemento" name="complemento"/>
+            type="text" 
+            label="Logradouro" 
+            name="logradouro" 
+            value={addressViaCep.logradouro} 
+            disabled 
+          />
+          <Input 
+            type="text" 
+            label="Complemento" 
+            name="complemento"
+            onChange={(event: any) => setNewAddress({ ...newAddress, complemento: event.target.value})}
+          />
+          <Input 
+            type="text" 
+            label="Número" 
+            name="numero" 
+            onChange={(event: any) => setNewAddress({ ...newAddress, num: event.target.value})}
+          />
           <div className="input-duplo">
-            <InputSmaller type="text" label="Cidade" name="cidade" value={addressViaCep.localidade} disabled />
-            <InputSmaller type="text" label="Estado" name="estado" value={addressViaCep.uf} disabled />
+            <SelectInput
+              labelText="Cidade"
+              name="cityInput"
+              options={cidadesDatabase}
+              callbackChangedValue={value => setNewAddress({ ...newAddress, idCidade: value })}
+            />
           </div>
           <div className="input-duplo">
-            {/* <SelectInput
+            <SelectInput
               labelText="Gênero"
               name="genero"
-              options={newGender.map((item) => item.nomeGenero)}
-              callbackChangedValue={ value => setNameGenero(value) }
-            /> */}
+              options={generosDatabase}
+              callbackChangedValue={value => functionSetCandidatoState("idGenero", value)}
+            />
             <SelectInput
               labelText="Nivel de escolaridade"
               name="escolaridade"
-              options={newEscolaridade}
-              callbackChangedValue={ value => console.log(value)}
+              options={escolaridadesDatabase}
+              callbackChangedValue={value => functionSetCandidatoState("idNivelEscolaridade", value)}
             />
           </div>
           <div className="input-duplo">
-             {/* <SelectInput
+            {/* <SelectInput
               labelText="Idioma"
               name="idioma"
               options={newLanguage.map((item) => item.nomeIdioma)}
@@ -243,20 +254,22 @@ function Cadastro() {
               name="nivelIdioma"
               options={newLevelLanguage.map((item) => item.nomeNivel)}
               callbackChangedValue={ value => setLanguageLevel(value)}
-            />           */}
-
+            /> */}
           </div>
-
-          <Input type="tex" label="LinkedIn" name="linkedin" placeholder="Adicione aqui o link do seu LindekIn" onChange={event => functionSetCandidatoState("linkedin", event.target.value)} />
-          <div className="box-input-file">
+          <Input 
+            type="tex" 
+            label="LinkedIn" 
+            name="linkedin" 
+            placeholder="Adicione aqui o link do seu LindekIn" 
+            onChange={event => functionSetCandidatoState("linkedin", event.target.value)} 
+          />
+        </div>
+        {/* <div className="box-input-file">
             <label htmlFor="file">Selecione uma foto de perfil:</label>
             <input type="file" name="file" id="file" className="inputfile" />
             <label htmlFor="file">Selecione um arquivo</label>
-          </div>
-
-
-
-          <div className="input-duplo">
+          </div> */}
+        {/* <div className="input-duplo">
             <div className="box-radio-label">
 
               <label>Possui alguma deficiência?</label>
@@ -274,45 +287,44 @@ function Cadastro() {
               </div>
 
             </div>
-            {/* <SelectInput
+            <SelectInput
               labelText="Se sim, qual?"
               name="pcd"
               options={newPcd.map((item) =>  item.nomeDeficiencia )}
               callbackChangedValue={ value => setNamePCD(value) }
             /> */}
-          </div>
-          <div className="input-duplo">
-            <div className="box-radio-label">
+        {/* <div className="input-duplo">
+          <div className="box-radio-label">
 
-              <label>Atualmente está cursando SENAI?</label>
+            <label>Atualmente está cursando SENAI?</label>
 
-              <div className="group-radio-label">
-                <div className="group-radio">
-                  <input id="sim" type="radio" name="radio" value="sem" />
-                  <label htmlFor="sim">Sim</label>
-                </div>
-
-                <div className="group-radio">
-                  <input id="nao" type="radio" name="radio" />
-                  <label htmlFor="nao">Não</label>
-                </div>
+            <div className="group-radio-label">
+              <div className="group-radio">
+                <input id="sim" type="radio" name="radio" value="sem" />
+                <label htmlFor="sim">Sim</label>
               </div>
 
+              <div className="group-radio">
+                <input id="nao" type="radio" name="radio" />
+                <label htmlFor="nao">Não</label>
+              </div>
             </div>
-            {/* <SelectInput
+
+          </div>
+        </div> */}
+        {/* <SelectInput
               labelText="Curso"
               name="genero"
               options={newCourseSenai.map((item) => item.curso )}
               callbackChangedValue={ value => setCourseSenai(value) }
             /> */}
-          </div>
-          <Input type="text" label="Informe suas habilidades"
+        {/* <Input type="text" label="Informe suas habilidades"
             name="habilidades"
             placeholder="Ex: Conhecimento em HTML, CSS, JavaScript"
             onChange={event => setNewHabilidadesState(event.target.value)}
-          />
+          /> */}
 
-          <h4>Experiências profissionais</h4>
+        {/* <h4>Experiências profissionais</h4>
           <div className="box-experiencias">
             <div className="input-duplo">
               <InputSmaller type="text" label="Nome da Empresa" name="empresa" onChange={event => functionSetNewExperienceState("nomeEmpresa", event.target.value)} />
@@ -328,15 +340,24 @@ function Cadastro() {
             </div>
             <input type="submit" className="btn-add-experiencia" value="Adicionar experiência" />
 
-          </div>
+          </div> */}
 
-          <Button value="Finalizar cadastro" />
+        <Button 
+          value="Finalizar cadastro" 
+          onclick={(event: any) => {
+            event.preventDefault()
+            console.log({
+              novoEndereco: newAddress,
+              novoUsuario: newUserState,
+              novoCandidato: newCandidato
+            })
+          }}
+        />
 
-        </div>
+        {/* </div> */}
       </form>
     </div>
   );
 }
 
 export default Cadastro;
-

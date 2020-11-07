@@ -14,19 +14,19 @@ export default function Select(props: SelectProps){
 
     const {name, options, labelText, callbackChangedValue} = props;
 
-    
-    console.log("Optios aqui: ", options)
     return (
         <div className="">
             <div className="box-select-label">
             <label htmlFor={name}>{labelText}</label>
             <select className="select-input" id={name} onChange={(event) => {
-                // callbackChangedValue(event.target)
-                // console.log(event.target.enterKeyHint)
-                console.log(event)
+                callbackChangedValue(event.target.value)
             }}>
                 <option defaultValue="selected">Selecione</option>
-                {options.map((o) => <option key={o.idPropriedade} value={o.nomePropriedade}>{o.nomePropriedade}</option>)
+                {options.map((o, i) => {
+                    if(o.nomePropriedade) {
+                        return <option key={i} value={o.idPropriedade}>{o.nomePropriedade}</option>
+                    }
+                })
                 }
             </select>
             </div>
