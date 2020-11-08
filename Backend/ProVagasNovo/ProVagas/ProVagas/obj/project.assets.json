@@ -6132,12 +6132,20 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
+    "C:\\Users\\carll\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+=======
     "C:\\Users\\44781915817\\.nuget\\packages\\": {}
 >>>>>>> 26b5045f7f2dda96ab835f8d54c87288a40ddbdb:Backend/ProVagasNovo/ProVagas/ProVagas/obj/project.assets.json
+>>>>>>> 4ec6e982850d69229699c005fcbc9b45912ff13a
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\carll\\OneDrive\\Ambiente de Trabalho\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\ProVagas.csproj",
+=======
 <<<<<<< HEAD:Backend/ProVagasNovo/ProVagas.WebApi/ProVagas.WebApi/obj/project.assets.json
 <<<<<<< HEAD:Backend/ProVagas/obj/project.assets.json
       "projectUniqueName": "C:\\Users\\fdnpi\\Desktop\\3º Termo\\Projeto_ProVagas\\Backend\\ProVagas\\ProVagas.csproj",
@@ -6157,15 +6165,25 @@
         "C:\\Users\\fdnpi\\AppData\\Roaming\\NuGet\\NuGet.Config",
 =======
       "projectUniqueName": "C:\\Users\\44781915817\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\ProVagas.csproj",
+>>>>>>> 4ec6e982850d69229699c005fcbc9b45912ff13a
       "projectName": "ProVagas",
-      "projectPath": "C:\\Users\\44781915817\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\ProVagas.csproj",
-      "packagesPath": "C:\\Users\\44781915817\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\44781915817\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\obj\\",
+      "projectPath": "C:\\Users\\carll\\OneDrive\\Ambiente de Trabalho\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\ProVagas.csproj",
+      "packagesPath": "C:\\Users\\carll\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\carll\\OneDrive\\Ambiente de Trabalho\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
+<<<<<<< HEAD
+        "C:\\Users\\carll\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+=======
         "C:\\Users\\44781915817\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> 26b5045f7f2dda96ab835f8d54c87288a40ddbdb:Backend/ProVagasNovo/ProVagas/ProVagas/obj/project.assets.json
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> 4ec6e982850d69229699c005fcbc9b45912ff13a
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -6296,6 +6314,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.2, 3.1.2]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -6304,7 +6328,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+=======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+>>>>>>> 4ec6e982850d69229699c005fcbc9b45912ff13a
       }
     }
   }

@@ -97,7 +97,7 @@ namespace ProVagas
                 app.UseDeveloperExceptionPage();
             }
 
-
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthentication();
 

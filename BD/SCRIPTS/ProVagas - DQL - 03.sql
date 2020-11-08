@@ -76,11 +76,11 @@ INNER JOIN Usuario U on U.IdUsuario = A.IdUsuario
 
 -- Empresa
 SELECT EM.IdEmpresa as Empresa, RazaoSocial, NomeFantasia, NomeParaContato, Linkedin, WebSite, CNPJ, CNAE,EM.IdEndereco as IdEndereco,
-E.IdUsuario as Usuario, EM.IdPorte as Porte, NomePorte
+E.IdUsuario as Usuario
 FROM Empresa EM
 INNER JOIN Endereco E on E.IdEndereco = EM.IdEndereco
 INNER JOIN Usuario U on U.IdUsuario = E.IdUsuario
-INNER JOIN PorteEmpresa PE on PE.IdPorteEmpresa = EM.IdPorte
+I
 
 -- Vaga
 SELECT V.IdVaga as Vaga, NomeVaga, DescricaoAtividade, DataInicio, DataFinal, V.IdEmpresa as Empresa, V.IdTipoVaga as TipoVaga, NomeTipoVaga
@@ -143,3 +143,7 @@ INNER JOIN Candidato C on C.IdCandidato = CS.IdCandidato
 SELECT IdCursoExtraCurricular as CursoExtraCurricular, NomeCurso, Instituicao, Nivel, DataInicio, DataFim, Cec.IdCandidato as Candidato, NomeCompletoCandidato
 FROM CursoExtraCurricular Cec
 INNER JOIN Candidato C on C.IdCandidato = Cec.IdCandidato
+
+Select * from Empresa
+
+select * from Usuario
