@@ -3,17 +3,8 @@
     "windowsAuthentication": false, 
     "anonymousAuthentication": true, 
     "iisExpress": {
-<<<<<<< HEAD:Backend/ProVagasNovo/ProVagas.WebApi/ProVagas.WebApi/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
-<<<<<<< HEAD:Backend/ProVagas/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
-      "applicationUrl": "http://localhost:58824",
-=======
-      "applicationUrl": "http://localhost:54251",
->>>>>>> fbb80b285682ca3eda397ff93749bf150e1ecdec:Backend/ProVagasNovo/ProVagas.WebApi/ProVagas.WebApi/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
-      "sslPort": 0
-=======
       "applicationUrl": "http://localhost:49808",
       "sslPort": 44336
->>>>>>> 26b5045f7f2dda96ab835f8d54c87288a40ddbdb:Backend/ProVagasNovo/ProVagas/ProVagas/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
     }
   },
   "profiles": {
@@ -27,7 +18,7 @@
     "ProVagas": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

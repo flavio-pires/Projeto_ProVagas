@@ -15,13 +15,5 @@ namespace ProVagas.Repositories
         {
             return ctx.Usuario.FirstOrDefault(user => user.Email == email && user.Senha == senha);
         }
-
-        public int CadastrarUsuario(Usuario usuario)
-        {
-            ctx.Usuario.Add(usuario);
-            ctx.SaveChanges();
-
-            return usuario.IdUsuario;
-        }
     }
 }

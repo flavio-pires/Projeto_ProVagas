@@ -59,6 +59,7 @@ namespace ProVagas.Controllers
         [HttpPost]
         public IActionResult Post(Empresa empre)
         {
+            Console.WriteLine(empre);
             try
             {
                 _empresaRepository.Add(empre);

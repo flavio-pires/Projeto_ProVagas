@@ -17,7 +17,6 @@ namespace ProVagas
 {
     public class Startup
     {
-        readonly string MyAllowSpecificOrigins = "react.front";
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -26,15 +25,6 @@ namespace ProVagas
             {
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                 options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-            });
-
-
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: MyAllowSpecificOrigins, builder =>
-                {
-                    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-                });
             });
 
             services
@@ -97,8 +87,8 @@ namespace ProVagas
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors(MyAllowSpecificOrigins);
-
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            
             app.UseAuthentication();
 
             app.UseRouting();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProVagas.Domains
 {
-    public partial class BeneficioXVaga
+    public partial class BeneficioXvaga
     {
         public int IdBeneficioVaga { get; set; }
         public int? IdBeneficio { get; set; }

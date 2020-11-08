@@ -60,10 +60,11 @@ namespace ProVagas.Controllers
         [HttpPost]
         public IActionResult Post(Endereco ende)
         {
-            EnderecoRepository repository = new EnderecoRepository();
             try
             {
-                return Ok(repository.CadastrarEndereco(ende));
+                _enderecorepository.Add(ende);
+
+                return Ok("Endereco cadastrado com sucesso");
             }
             catch (Exception)
             {
