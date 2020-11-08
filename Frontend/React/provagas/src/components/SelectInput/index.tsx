@@ -1,4 +1,3 @@
-import React, { InputHTMLAttributes } from 'react'
 import './style.css'
 
 
@@ -25,7 +24,9 @@ export default function Select(props: SelectProps){
                 {options.map((o, i) => {
                     if(o.nomePropriedade) {
                         return <option key={i} value={o.idPropriedade}>{o.nomePropriedade}</option>
-                    }})}
+                    }
+                })
+                }
             </select>
             </div>
         </div>

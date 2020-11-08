@@ -16,13 +16,13 @@ const Header:React.FC<HeaderProps> = (props) => {
             <div className="container-central">
                 <nav className="navigation-header">
                     <div className="box-logos">
-                        <Link to="/"><img className="logoSenai" src={logoSenai} alt="Logo do Senai" /></Link>
-                        <Link to="/"><img className="logoProVagas" src={logoProVagas} alt="Logo ProVagas"/></Link>
+                        <img className="logoSenai" src={logoSenai} alt=""/>
+                        <img className="logoProVagas" src={logoProVagas} alt=""/>
                     </div>
                     <ul className="menu">
-                        <li><Link to="/vagas" className="menu-link">Vagas</Link></li>
-                        <li><Link to="/cadastro" className="menu-link">Cadastro</Link></li>
-                        <li><Link to="/login" className="menu-link link-login">Login</Link></li>
+                        <li className="menu-link">Vagas</li>
+                        <li className="menu-link">Cadastro</li>
+                        <li className="menu-link link-login">Login</li>
                     </ul>
                 </nav>
             </div>

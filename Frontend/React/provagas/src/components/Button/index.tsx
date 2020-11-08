@@ -1,17 +1,15 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import '../../assets/global.css';
 import './style.css';
 
 interface ButtonProps {
   value: string;
-  id?: string;
-  onClick?: any
 }
 
-const Button: React.FunctionComponent<ButtonProps> = ({value, id, onClick}) => {
+const Button: React.FunctionComponent<ButtonProps> = ({value}) => {
   return (
     <div className="btn">
-      <input className="button" type="submit" value={value} id={id} onClick={(event: any) => onClick(event)}/>
+      <input className="button" type="submit" value={value}/>
     </div>
   );
 }
