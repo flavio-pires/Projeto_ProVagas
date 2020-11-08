@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EB8A6c6wE5juri7o/HP/eV6CItE7eQyR2fy8gr4wfriofEw3u9LKbwLWjiJuu821l+5koyjbwaq5mIOdrp4Kew==",
+  "dgSpecHash": "hJj//rR4AiD2Avsn6N2tuBIO7TTCkLZrRhcER+8PZptL+6Sfktk7n43B86X7cIvq1UZUyi7xSj1HafuFn85opQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\daniel\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\ProVagas.csproj",
+  "projectFilePath": "C:\\Users\\daniel\\Desktop\\Nova pasta (2)\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\ProVagas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\daniel\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.9\\microsoft.aspnetcore.authentication.jwtbearer.3.1.9.nupkg.sha512",
     "C:\\Users\\daniel\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.9\\microsoft.aspnetcore.jsonpatch.3.1.9.nupkg.sha512",
