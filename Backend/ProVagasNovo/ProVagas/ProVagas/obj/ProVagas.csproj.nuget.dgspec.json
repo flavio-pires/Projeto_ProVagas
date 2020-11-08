@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\daniel\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\ProVagas.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\daniel\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\ProVagas.csproj",
         "packagesPath": "C:\\Users\\daniel\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\daniel\\Desktop\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\obj\\",
+=======
+    "C:\\Users\\daniel\\Desktop\\Nova pasta (2)\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\ProVagas.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\daniel\\Desktop\\Nova pasta (2)\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\ProVagas.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\daniel\\Desktop\\Nova pasta (2)\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\ProVagas.csproj",
+        "projectName": "ProVagas",
+        "projectPath": "C:\\Users\\daniel\\Desktop\\Nova pasta (2)\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\ProVagas.csproj",
+        "packagesPath": "C:\\Users\\daniel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daniel\\Desktop\\Nova pasta (2)\\Projeto_ProVagas\\Backend\\ProVagasNovo\\ProVagas\\ProVagas\\obj\\",
+>>>>>>> 3b06fb624e41138b78aa4b1c9fdbf79ea4187362
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
