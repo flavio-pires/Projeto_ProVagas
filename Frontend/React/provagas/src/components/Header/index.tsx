@@ -21,7 +21,7 @@ const Header:React.FC<HeaderProps> = (props) => {
                     </div>
                     <ul className="menu">
                         <li><Link to="/vagas" className="menu-link linkheader"> Vagas</Link></li>
-                        <li><Link to="/cadastro" className="menu-link linkheader">Cadastro</Link></li>
+                        <li><Link to="/tipoCadastro" className="menu-link linkheader">Cadastro</Link></li>
                         <li><Link to="/login" className="menu-link link-login">Login</Link></li>
                     </ul>
                 </nav>

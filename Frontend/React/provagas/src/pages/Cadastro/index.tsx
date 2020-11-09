@@ -161,7 +161,7 @@ function Cadastro() {
     setNewCandidato({ ...newCandidato, idEndereco: 1 })
     await postCandidato()
     alert("Candidato cadastrado com sucesso")
-    history.push('/login')
+    history.push('/vagas')
   }
 
 
