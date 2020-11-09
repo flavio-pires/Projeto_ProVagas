@@ -4,6 +4,7 @@ import facebook from './../../assets/images/face-icon.png';
 import instagram from './../../assets/images/insta-icon.png';
 import twitter from './../../assets/images/twit-icon.png';
 import linkedin from './../../assets/images/link-icon.png';
+
 import './style.css';
 
 

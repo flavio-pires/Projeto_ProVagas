@@ -8,6 +8,6 @@ namespace ProVagas.Interfaces
 {
     interface IUsuarioRepository : IRepositoryBase<Usuario>
     {
-        Usuario BuscarSenhaEmail(string email, string senha);
+        Usuario Login(string email, string senha);
     }
 }

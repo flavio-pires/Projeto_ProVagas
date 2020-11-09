@@ -3,7 +3,7 @@ import Input from '../../components/inputPerfil/inputperfil';
 import SelectInput from '../../components/SelectInput';
 import InputSmaller from '../../components/InputSmaller'
 import Button from '../../components/Button';
-import ImageCandidato from '../../assets/images/logoSenai.png';
+import ImageCandidato from '../../assets/images/undraw_Documents_re_isxv.png';
 import './style.css';
 import Navleft from '../../components/Navbar/navbar';
 import moment from 'moment';
@@ -49,6 +49,7 @@ const cadvaga =  () => {
           })
           .then (data => console.log(data))
           .catch(err => console.error(err));
+          alert('Vaga Cadastrada com sucesso')
   }
 
   return (
@@ -60,9 +61,9 @@ const cadvaga =  () => {
         cadvaga();
       }
        }>
-        <div className="cadastro">
-          <div className="box-banner-candidato">
-            <img className="imagem-candidato" src={ImageCandidato} alt="desenho de duas pessoas escrevendo" />
+        <div className="cadas">
+          <div className="box-banner-vaga">
+            <img className="imagem-vaga" src={ImageCandidato} alt="desenho de duas pessoas escrevendo" />
           </div>
           <h1>Cadastro de vagas</h1>
           <h4>Dados da vaga</h4>
@@ -94,39 +95,18 @@ const cadvaga =  () => {
              />
           </div>
 
-          <div className='input-duplo'>
-                {/* <label htmlFor="Trabalho Remoto" className='label-edit'>Aceita trabalho remoto ?</label> <br />
-                    <select onChange={e => setremoto(e.target.value)} className="select-box" name="remoto" id="remoto">
-                        <option disabled selected>Selecione uma opção</option>
-                        <option value="SIM">SIM</option>
-                        <option value="NÃO">NÃO</option>
-                    </select> */}
+          <div className="input-duplo">
+            <InputSmaller type="date" label="Data Inicial" name="date" 
+            onChange={e => setdateinitial(e.target.value)} 
+            />
+            {/* <InputSmaller type="text" label="Tipo da vaga" name="vaga" 
+            onChange={e => settipovaga(e.target.value)}
+             /> */}
+              <InputSmaller type="date" label="Data Final" name="limite" 
+            onChange={e => setdata(e.target.value)}
+             />
           </div>
 
-          <div className='dat-duplo'>
-
-               <TextField
-                        id="dtValidade"
-                        label="Data Inicial"
-                        type="date"
-                        defaultValue=''
-                        onChange={e => setdateinitial(e.target.value)}
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                        />
-
-                         <TextField
-                        id="dtValidade"
-                        label="Data de Validade"
-                        type="date"
-                        defaultValue=''
-                        onChange={e => setdata(e.target.value)}
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                        />
-          </div>
 
           <Button value="Finalizar cadastro" />
         </div>

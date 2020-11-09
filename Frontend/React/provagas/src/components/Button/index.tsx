@@ -1,10 +1,10 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import '../../assets/global.css';
 import './style.css';
 
 interface ButtonProps {
   value: string;
-  id?: string;
+  id?:string;
 }
 
 const Button: React.FunctionComponent<ButtonProps> = ({value, id}) => {

@@ -21,7 +21,7 @@ function Login() {
     }
   
 
-    fetch('http://localhost:5000/api/conta/login', {
+    fetch('http://localhost:5000/api/login', {
       method: 'POST',
       body: JSON.stringify(login),
       headers: {
@@ -32,8 +32,8 @@ function Login() {
     .then (response => response.json())
     .then (dados => {
       if (dados.token !== undefined) {
-        localStorage.setItem('token-provagas', dados.token)
-        history.push('/')
+        localStorage.setItem('provagas-chave-autenticacao', dados.token)
+        history.push('/dashboarempresa/vaga')
       }
       else{
         alert('Senha ou e-mail inválido');

@@ -57,7 +57,7 @@ namespace ProVagas.Controllers
         /// </summary>
         /// <param name="vaga">Nova vaga</param>
 
-        [Authorize(Roles = "2")]
+        //[Authorize(Roles = "2")]
         [HttpPost]
         public IActionResult Post(Vaga vaga)
         {

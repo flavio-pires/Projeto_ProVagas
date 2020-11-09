@@ -636,7 +636,7 @@
             <param name="id">ID da inscrição que será deletada</param>
             <returns>Um status code 202 - Accepted</returns>
         </member>
-        <member name="M:ProVagas.Controllers.LoginController.Post(System.String,ProVagas.ViewModels.LoginViewModels)">
+        <member name="M:ProVagas.Controllers.LoginController.Post(ProVagas.ViewModels.LoginViewModels)">
             <summary>
             Realizar login
             </summary>

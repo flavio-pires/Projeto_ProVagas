@@ -53,3 +53,12 @@
 .card-image{
     width: 9vw;
 }
+
+.ftr .footer {
+    margin-top: 8%;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}

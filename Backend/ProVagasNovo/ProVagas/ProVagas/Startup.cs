@@ -55,7 +55,7 @@ namespace ProVagas
                    ValidateLifetime = true,
 
                    // Forma de criptografia
-                   IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("ProVagas-key-auth")),
+                   IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("provagas-chave-autenticacao")),
 
                    // Tempo de expiração do token
                    ClockSkew = TimeSpan.FromMinutes(30),

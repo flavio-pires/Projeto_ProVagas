@@ -1,10 +1,11 @@
-import React, { InputHTMLAttributes } from 'react'
 import './style.css'
+import React from 'react';
+import { InputHTMLAttributes } from 'react';
 
 
 interface SelectProps extends InputHTMLAttributes<HTMLInputElement>{
     name: string;
-    options: string[], 
+    options: Array<any>, 
     labelText: string,
     callbackChangedValue:(value: any) => void
 }
@@ -16,13 +17,20 @@ export default function Select(props: SelectProps){
 
     return (
         <div className="">
+            <div className="box-select-label">
             <label htmlFor={name}>{labelText}</label>
-            <select id={name} onChange={(event) => {
+            <select className="select-input" id={name} onChange={(event) => {
                 callbackChangedValue(event.target.value)
             }}>
                 <option defaultValue="selected">Selecione</option>
-                {options.map((o, i) => <option key={i} value={o}>{o}</option>)}
+                {options.map((o, i) => {
+                    if(o.nomePropriedade) {
+                        return <option key={i} value={o.idPropriedade}>{o.nomePropriedade}</option>
+                    }
+                })
+                }
             </select>
+            </div>
         </div>
     )
 }

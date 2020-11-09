@@ -19,7 +19,7 @@ namespace ProVagas.ViewModels
         [Required(ErrorMessage = "Informe a senha")]
         // Define o tipo do dado
         [DataType(DataType.Password)]
-        [StringLength(32, MinimumLength = 8, ErrorMessage = "Sua senha deve conter no mínimo 5 e no máximo 32 caracteres")]
+        [StringLength(32, MinimumLength = 8, ErrorMessage = "Sua senha deve conter no mínimo 8 e no máximo 32 caracteres")]
         public string Senha { get; set; }
     }
 }

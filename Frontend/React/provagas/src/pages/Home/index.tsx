@@ -5,7 +5,7 @@ import Button from '../../components/Button';
 import {Link} from 'react-router-dom';
 import imgprincipal from '../../assets/images/imgprincipal_home.png';
 import imgcandidato from '../../assets/images/imgcandidato_home.png';
-import imgempresa from '../../assets/images/imgempresa_home.png';
+import imgempresa from '../../assets/images/undraw_business_deal_cpi9.png';
 import iconelocal from '../../assets/images/local.png';
 import iconeporte from '../../assets/images/porte.png';
 import iconecontrato from '../../assets/images/tipo-contrato.png';

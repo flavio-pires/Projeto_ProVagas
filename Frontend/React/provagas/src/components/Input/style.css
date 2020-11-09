@@ -1,34 +1,12 @@
 input {
-    width: 40vw;
-    height: 35px;
-    border: .1rem solid lightslategrey;
+    width: 750px;
+    height: 50px;
+    border: 1px solid white;
     box-sizing: border-box;
-    border-radius: .3rem;
-    padding: 0 .4rem;
+    margin: 20px 0px;
 }
 
 label {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: normal;
-    margin: .5rem 0;
-    align-self: flex-start;
-}
-
-.imagem-candidato{
-  width: 10vw;
-}
-
-.box-input{
-    display: flex;
-    flex-direction: column;
-    /* background-color: hotpink; */
-    align-items: center;
-    width: 40vw;
-    height: 12vh;
-    margin-bottom: 1rem;
-}
-
-.box-group-radio{
-    display: flex;
-
 }

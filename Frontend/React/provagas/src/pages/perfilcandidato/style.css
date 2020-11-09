@@ -1,0 +1,58 @@
+/* * {
+    padding: 0%;
+    margin: 0%;
+}
+
+.foto {
+    border-radius: 100px;
+    border: 1px solid black;
+    margin-top: 2%;
+    margin-left: 55%;
+    width: 125px;
+    height: 125px;
+}
+
+.centra {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.centra {
+    margin-left: 20%;
+}
+
+.hs p {
+    margin-left: 56.8%;
+}
+
+.btnao {
+    margin-left: 20.5%;
+    margin-top: 8%;
+}
+
+.habilidades select {
+    width: 180px;
+    height: 50px;
+    border: 1px solid #dcdcdc;
+    box-shadow: 5px 5px 5px 5px #dcdcdc;
+}
+
+.aceita select {
+    width: 180px;
+    height: 50px;
+    border: 1px solid #dcdcdc;
+    box-shadow: 5px 5px 5px 5px #dcdcdc;
+
+}
+
+.circulo {
+    margin-left: 63%;
+    margin-top: -1%;
+}
+
+h2 {
+    margin-top: -75%;
+    margin-left: 57%;
+} */
