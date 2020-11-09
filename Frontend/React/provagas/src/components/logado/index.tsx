@@ -16,7 +16,7 @@ const logado:React.FC<HeaderProps> = (props) => {
             <div className="container-central">
                 <nav className="navigation-header">
                 <div className="box-logos">
-                        <Link to="/"><img className="logoSenai" src={logoSenai} alt="Logo do Senai" /></Link>
+                        <Link to="/"><img className="LOGO" src={logoSenai} alt="Logo do Senai" /></Link>
                         <Link to="/"><img className="logoProVagas" src={logoProVagas} alt="Logo ProVagas"/></Link>
                     </div>
                     <ul className="menu">
