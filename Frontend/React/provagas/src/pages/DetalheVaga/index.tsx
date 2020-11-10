@@ -11,7 +11,9 @@ import logo_brq from '../../assets/images/logo_brq.png';
 import Footer from '../../components/Footer';
 import * as GrIcons from 'react-icons/gr'
 
+
 function DetalheVaga() {
+ 
   return (
       <div>
         <Header/>
@@ -33,7 +35,7 @@ function DetalheVaga() {
                   </div>
                 </div>
               </ul>
-              <Button value="Quero me candidatar" id="btnvaga1"/>
+              <Button value="Quero me candidatar" id="btnvaga1" />
             </div>
             <div className="detalhesvaga">
               <h1>Descrição da empresa</h1>

@@ -8,6 +8,8 @@
     margin-top: 6vh;
     margin-right: 8vh;
     margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .telavagas{
@@ -25,13 +27,15 @@
 .buscarvaga{
     margin-top: 2em;
     display: flex;
+    align-items: center;
 }
 
 .buscarvaga img{
     margin-top: 1.2em;
-    margin-right: 1em;
     width: 30px;
     height: 30px;
+    z-index: 6;
+    margin-right: 40%;
 }
 
 .topicovaga, .topicos{
@@ -66,6 +70,7 @@
 .vagas2{
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 .telavagas .btn {
@@ -73,3 +78,4 @@
     justify-content: center;
     align-items: center;
 }
+

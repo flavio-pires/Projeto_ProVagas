@@ -20,18 +20,71 @@ function Vagas() {
           <div className="telavagas">
             <img src={imgvaga} alt="Imagem da página de vagas"/>
               <div className="buscarvaga">
-                <img src={imglupa} alt="Lupa"/>
-                <Input type="text" name="buscar" label="" placeholder="Buscar"/>
+                <Input className='pesquisarvaga' type="text" name="buscar" label="" placeholder="Buscar" />
               </div>
             <div className="vagas2">
-              <div className="filtros">
-                <ul className="filtrar">
-                  <img src={imgfiltro} alt="Imagem de filtro"/>
-                  <h2>Filtrar</h2>
-                </ul>
-              </div>
               <ul className="vaga1">
                 <h3>Estágio em Desenvolvimento de Sistemas</h3>
+                <hr/>
+                <div className="topicovaga">
+                  <div className="imgtopico">
+                    <img src={logo_brq} alt="Logo da empresa"/>
+                  </div>
+                  <div className="topicos">
+                    <li><img src={iconelocal} alt="Ícone de local"/>São Paulo</li>
+                    <li><img src={iconeporte} alt="Ícone de porte da empresa"/>Grande</li>
+                    <li><img src={iconecontrato} alt="Ícone de contrato"/>Estagiário</li>
+                  </div>
+                </div>
+                <Link to="/detalhevaga" className="mudabotao"><Button value="Saiba mais" id="btnvaga1"/></Link>
+              </ul>
+              <ul className="vaga1">
+                <h3>Desenvolvedor Angular</h3>
+                <hr/>
+                <div className="topicovaga">
+                  <div className="imgtopico">
+                    <img src={logo_brq} alt="Logo da empresa"/>
+                  </div>
+                  <div className="topicos">
+                    <li><img src={iconelocal} alt="Ícone de local"/>São Paulo</li>
+                    <li><img src={iconeporte} alt="Ícone de porte da empresa"/>Grande</li>
+                    <li><img src={iconecontrato} alt="Ícone de contrato"/>Estagiário</li>
+                  </div>
+                </div>
+                <Link to="/detalhevaga" className="mudabotao"><Button value="Saiba mais" id="btnvaga1"/></Link>
+              </ul>
+              <ul className="vaga1">
+                <h3>Estágio em Desenvolvimento de Sistemas C#</h3>
+                <hr/>
+                <div className="topicovaga">
+                  <div className="imgtopico">
+                    <img src={logo_brq} alt="Logo da empresa"/>
+                  </div>
+                  <div className="topicos">
+                    <li><img src={iconelocal} alt="Ícone de local"/>São Paulo</li>
+                    <li><img src={iconeporte} alt="Ícone de porte da empresa"/>Grande</li>
+                    <li><img src={iconecontrato} alt="Ícone de contrato"/>Estagiário</li>
+                  </div>
+                </div>
+                <Link to="/detalhevaga" className="mudabotao"><Button value="Saiba mais" id="btnvaga1"/></Link>
+              </ul>
+              <ul className="vaga1">
+                <h3>Desenvolvedor Javascript</h3>
+                <hr/>
+                <div className="topicovaga">
+                  <div className="imgtopico">
+                    <img src={logo_brq} alt="Logo da empresa"/>
+                  </div>
+                  <div className="topicos">
+                    <li><img src={iconelocal} alt="Ícone de local"/>São Paulo</li>
+                    <li><img src={iconeporte} alt="Ícone de porte da empresa"/>Grande</li>
+                    <li><img src={iconecontrato} alt="Ícone de contrato"/>Estagiário</li>
+                  </div>
+                </div>
+                <Link to="/detalhevaga" className="mudabotao"><Button value="Saiba mais" id="btnvaga1"/></Link>
+              </ul>
+              <ul className="vaga1">
+                <h3>Desenvolvedor FullStack</h3>
                 <hr/>
                 <div className="topicovaga">
                   <div className="imgtopico">
