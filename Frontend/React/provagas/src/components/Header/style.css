@@ -5,22 +5,24 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.container-principal-header{
+.container-principal-header {
     width: 100%;
     height: 10vh;
     background-color: #ED1F24;
     display: flex;
     justify-content: center;
+    /* position: fixed;
+    z-index: 4; */
 }
 
-.container-central{
+.container-central {
     width: 90%;
     height: 10vh;
     /* background-color: aquamarine; */
     display: flex;
 }
 
-.box-logos{
+.box-logos {
     width: 30%;
     height: 10vh;
     /* background-color: darkgray; */
@@ -29,20 +31,20 @@
     align-items: center;
 }
 
-.LOGO{
+.LOGO {
     width: 10vw;
     height: 5vh;
     margin-top: 8px;
 }
 
-.logoProVagas{
+.logoProVagas {
     width: 14vw;
     height: 7vh;
     margin-bottom: 5px;
     margin-top: -2px;
 }
 
-.navigation-header{
+.navigation-header {
     width: 100%;
     height: 10vh;
     display: flex;
@@ -51,7 +53,7 @@
     /* background-color: coral; */
 }
 
-.menu{
+.menu {
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -60,7 +62,7 @@
     color: white;
 }
 
-.menu-link{
+.menu-link {
     padding: .3rem;
     text-decoration: none;
     color: white;
@@ -68,8 +70,7 @@
     margin-top: -0.4em;
 }
 
-
-.link-login{
+.link-login {
     border: 2px solid white;
     border-radius: .3rem;
     background-color: white;
@@ -80,9 +81,7 @@
     width: 5vw;
 }
 
-
-
 .linkheader {
     text-decoration: none;
-color: white;
+    color: white;
 }

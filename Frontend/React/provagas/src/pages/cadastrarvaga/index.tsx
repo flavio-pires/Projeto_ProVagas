@@ -14,6 +14,8 @@ function CadastroVAGA() {
   const [nomevaga, setnomevaga] = useState('');
   const [localizacao, setlocalizacao] = useState('');
   const [limite,setlimite] = useState('');
+  const [tipovaga, settipovaga] = useState('');
+  const [nivelvaga, setnivelvaga] = useState('');
   const [datalimite, setdata] = useState('')
   const [datainitial, setdateinitial] = useState('')
   const [descricao, setdescricao] = useState('');
@@ -27,8 +29,14 @@ const cadvaga =  () => {
       limiteDeInscricao: limite,
       dataInicio: datainitial,
       dataFinal: datalimite,
-      ['localização']: localizacao,
-      salario: salario
+      localizacao: localizacao,
+      salario: salario,
+      idTipoVagaNavigation: {
+        nomeNivelVaga:  nivelvaga
+      },
+      idNivelVagaNavigation: {
+        nomeTipoVaga: tipovaga
+      }
     }
     
       const urlRequest = "http://localhost:5000/api/vagas";
@@ -84,26 +92,45 @@ const cadvaga =  () => {
           </div>
           
           <div className="input-duplo">
-            <InputSmaller type="text" label="Salário" name="salario" 
+            <InputSmaller type="text" 
+            label="Salário" 
+            name="salario" 
             onChange={e => setsalario(e.target.value)} 
             />
-            {/* <InputSmaller type="text" label="Tipo da vaga" name="vaga" 
-            onChange={e => settipovaga(e.target.value)}
-             /> */}
-              <InputSmaller type="text" label="Limite de inscrição" name="limite" 
+            
+              <InputSmaller type="text" 
+              label="Limite de inscrição" 
+              name="limite" 
             onChange={e => setlimite(e.target.value)}
              />
           </div>
 
           <div className="input-duplo">
-            <InputSmaller type="date" label="Data Inicial" name="date" 
-            onChange={e => setdateinitial(e.target.value)} 
+            <InputSmaller type="date" 
+            label="Data Inicial"
+             name="date" 
+             onChange={e => setdateinitial(e.target.value)} 
             />
-            {/* <InputSmaller type="text" label="Tipo da vaga" name="vaga" 
-            onChange={e => settipovaga(e.target.value)}
-             /> */}
-              <InputSmaller type="date" label="Data Final" name="limite" 
-            onChange={e => setdata(e.target.value)}
+            
+              <InputSmaller 
+              type="date" 
+              label="Data Final" 
+              name="limite" 
+             onChange={e => setdata(e.target.value)}
+             />
+          </div>
+
+          <div className="input-duplo">
+             <InputSmaller type="text" 
+             label="Tipo da vaga" 
+             name="vaga" 
+             onChange={e => settipovaga(e.target.value)}
+             />
+
+              <InputSmaller type="text" 
+              label="Tipo da vaga" 
+              name="vaga" 
+              onChange={e => settipovaga(e.target.value)}
              />
           </div>
 

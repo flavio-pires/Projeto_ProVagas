@@ -26,7 +26,7 @@ export default function perfil (){
 
 
     // const listar = () => {
-    //     fetch('http://localhost:5000/api/candidatos', {
+    //     fetch('http://localhost:5000/api/candidatos/buscarporid', {
     //         method: 'GET',
     //         headers: {
     //             authorization: 'Bearer ' + localStorage.getItem('token')
@@ -47,49 +47,46 @@ export default function perfil (){
     return (
         <>
             <Navleft/>
-            <h2>Perfil</h2>
-                <div className='hs'>
-                    <div className='foto'>
-                    </div>
-                    <div className='circulo'>
-                        <IconContext.Provider value ={{color: "#ED1F24" , size: "1.5em"}}>
-                           <AiIcons.AiFillPlusCircle/>
-                        </IconContext.Provider>
-                    </div>
-                    
-                    <br/>
-                    <p>Editar foto</p>              
-                </div>
-
+            <h2>Perfil do candidato</h2>
                 <br/>
-            <div className='centra'>
+             <form >
+            <div className='hebert'>
                 <div className='left'>
-                    <form >
                         <div className='hb'>
-                            <Input name='Nome' label='Nome' />
+                            <Input name='Nome' 
+                            label='Nome Completo' 
+                            />
                         </div>
                         <div className='hb'>
-                            <Input name='CPF' label='CPF' />
+                            <Input name='CPF' 
+                            label='CPF'
+                             />
                         </div>
                         <div className='hb'>
-                            <Input name='E-mail' label='E-mail'/>
+                            <Input name='E-mail'
+                             label='E-mail'
+                             />
                         </div>
-                    </form>                 
                 </div>
                 <div className='right'>
-                <form>
                     <div className='bh'>
-                    <Input name='Telefone' label='Telefone' />
+                    <Input name='Telefone'
+                     label='Telefone' 
+                     />
                     </div>
                     <div className='bh'>
-                    <Input name='Cidade' label='Cidade'/>
+                    <Input name='Cidade' 
+                    label='Cidade'
+                    />
                     </div>
                     <div className='bh'>
-                    <Input name='Github' label='Github'/>
+                    <Input name='Github'
+                     label='Github'
+                     />
                     </div>
-                </form>
                 </div>
             </div>
+         </form>                 
                 <div className='btnao'> 
                 <Button value='Enviar'/>
                 </div>

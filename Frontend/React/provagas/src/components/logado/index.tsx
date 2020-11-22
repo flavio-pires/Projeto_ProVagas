@@ -12,7 +12,7 @@ interface HeaderProps{
 const logado:React.FC<HeaderProps> = (props) => {
     return(
         <div className="container-principal center">
-            <div className="container-principal-header">
+            <div className="container-principal-h">
             <div className="container-central">
                 <nav className="navigation-header">
                 <div className="box-logos">

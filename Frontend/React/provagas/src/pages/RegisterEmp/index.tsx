@@ -20,6 +20,8 @@ export default function Business() {
     const [cnae, setcnae] = useState('');
     const [email,setemail] = useState('');
     const [telefone,settelefone] = useState('');
+    const [descricao, setdescricao] = useState('');
+    const [ porte,setport] = useState('');
     const [senha, setsenha] = useState('');
     const [cep, setCep] = useState('');
     const [rua, setRua] = useState('');
@@ -38,18 +40,16 @@ export default function Business() {
             website: Website,
             cnpj: Cnpj,
             cnae: cnae,
+            descricaoEmpresa: descricao,
+            porteEmpresa: porte,
             idEnderecoNavigation: {
                 rua: rua,
                 num: numero,
                 bairro: bairro,
                 complemento: complemento,
                 cep: cep,
-               idCidadeNavigation: {
                 nomeCidade: localidade,
-                    IdEstadoNavigation: {
-                        nomeEstado: uf
-                    }
-                },
+                nomeEstado: uf,
                         idUsuarioNavigation: {
                             email: email,
                             senha: senha,
@@ -89,24 +89,24 @@ export default function Business() {
 
 
 
-    //  const listcep = (valor: string) => {
-    //     fetch(`https://viacep.com.br/ws/${valor}/json/`, {
-    //         method: 'GET',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         }
-    //     })
-    //         .then(response => response.json())
-    //         .then(dados => {
-    //             setCep(dados.cep);
-    //             setRua(dados.logradouro);
-    //             setBairro(dados.bairro);
-    //             setLocalidade(dados.localidade)
-    //             setUf(dados.uf)
+     const listcep = (valor: string) => {
+        fetch(`https://viacep.com.br/ws/${valor}/json/`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(dados => {
+                setCep(dados.cep);
+                setRua(dados.logradouro);
+                setBairro(dados.bairro);
+                setLocalidade(dados.localidade)
+                setUf(dados.uf)
 
-    //         })
-    //         .catch(erro => console.error(erro))
-    // }
+            })
+            .catch(erro => console.error(erro))
+    }
 
     return (
        <div className="prcp">
@@ -126,6 +126,7 @@ export default function Business() {
                             <Input type="email" 
                             label ="E-mail" 
                             name="email" 
+                            placeholder={"Ex: gugugacasco@gmail.com"}
                             onChange={e => setemail(e.target.value)}/>
                             </div>
 
@@ -137,48 +138,97 @@ export default function Business() {
                              onChange={e => setsenha(e.target.value)}/>
                             </div>
 
-                        <h4>Informações do Colaborador</h4>
-
-                            <div className="input-duplo">
-                            <Input type="text"
-                             label="Nome Fantasia"
-                              name="nome" 
-                              onChange={e => setnomefantasia(e.target.value)}/>
-                            </div>
+                        <h4>Informações da Empresa</h4>
 
                             <div className="input-duplo">
 
                             <Input type="text"
                              label="Razão Social" 
                              name="senai"  
+                             placeholder={"Ex: BRQ Digital Soluções "}
                              onChange={e => setrazaosocial(e.target.value)}/>
+                             
+                            </div>
+
+                            <div className="input-duplo">                      
+                            <Input type="text"
+                             label="Nome Fantasia"
+                              name="nome" 
+                              placeholder={"Ex: BRQ"}
+                              onChange={e => setnomefantasia(e.target.value)}/>
                             </div>
 
                         <div className="input-duplo">
+                        <Input type="text" 
+                            label="CNPJ" 
+                            name="cnpj"
+                            placeholder={"Ex: 01.222.333/0001-20"}
+                             maxLength={15}  
+                             onChange={e => setcnpj(e.target.value)}/>
 
-                            <InputSmaller type="text"
+                       
+                        </div>
+
+                            <div className="input-duplo">
+
+                            <Input type="text"
+                             label="Linkedin ou GitHub" 
+                             name="linkedin" 
+                             placeholder={"Ex: https://www.linkedin.com/in/martinlutherc ou https://github.com/filipedeschamps"}
+                             onChange={e => setlinkedin(e.target.value)}/>
+                            </div>
+
+                        <div className="input-duplo">
+                        <Input type="text"
                              label="Nome Para Contato" 
                              name="nc" 
+                             placeholder={"Ex: Gabriel Espirito Santo"}
                              onChange={e => setnomecontato(e.target.value)}/>
-
-                            <InputSmaller type="text"
-                             label="Linkedin" 
-                             name="linkedin" 
-                             onChange={e => setlinkedin(e.target.value)}/>
+                       
 
                         </div>
+
+                        <div className="box-experiencias-text">
+                             <label htmlFor="atividades">Descrição da empresa</label><br/>
+                             <textarea className="text-experiencias-atividades" name="atividades" 
+                             onChange={e => setdescricao(e.target.value)} 
+                             placeholder={"Ex: Somos uma rede de franquias sendo a primeira empresa brasileira dedicada exclusivamente ao desenvolvimento das capacidades do cérebro e a saúde mental"}/>
+                        </div>
+
                         <div className="input-duplo">
-                            <InputSmaller type="text" 
-                            label="CEP"
-                             name="cep" 
-                             onChange={e => setCep(e.target.value)}
-                             />
+
+                            <Input type="text"
+                             label="Website" 
+                             name="web"  
+                             placeholder={"Ex: http://www.brq.com/"}
+                             onChange={e => setWebsite(e.target.value)}/>
+                        </div>
+
+                        <div className="input-duplo">
 
                             <InputSmaller type="text" 
-                            label="Bairro"
-                             name="bairro"
-                            onChange={e => setBairro(e.target.value)} 
-                              />
+                            label="CNAE" 
+                            name="cnae"
+                            maxLength={8}  
+                            onChange={e => setcnae(e.target.value)}/>
+
+                            <InputSmaller type="tel" 
+                            label="Tel/Cel"
+                             name="Contato" 
+                             placeholder={"Ex: (11) 97070-7070"}
+                             onChange={e => settelefone(e.target.value)}/>
+
+                        </div>
+
+                        <h4>Endereço da Empresa</h4>
+
+                        <div className="input-duplo">
+                            <Input type="text" 
+                            label="CEP"
+                             name="cep" 
+                             placeholder={"Ex: 03531-010"}
+                             onChange={e => listcep(e.target.value)}
+                             />
 
                         </div>
 
@@ -186,32 +236,36 @@ export default function Business() {
                             <Input type="text" 
                             label="Rua"
                              name="Rua" 
-                             onChange={e => setRua(e.target.value)}
+                             placeholder={"Avenida Amador Bueno"}
+                            value={rua}
                             />
 
                         </div>
 
-                        <div className="input-duplo">
-                        
-                            <Input type="text" 
-                            label="Complemento"
-                             name="compl"
-                            onChange={e => setComplemento(e.target.value)}/>
-
-                        </div>
 
                         <div className="input-duplo">
                             <InputSmaller type="text" 
                             label="Estado"
                              name="esta" 
-                            onChange={e => setUf(e.target.value)}
+                             placeholder={"Ex: São Paulo"}
+                           value={uf}
                             />
 
                             <InputSmaller type="text" 
                             label="Cidade"
                              name="Cidade"
-                            onChange={e => setLocalidade(e.target.value)}
+                             placeholder={"Ex: São Paulo"}
+                             value={localidade}
                            />
+
+                        </div>
+                        <div className="input-duplo">
+                        
+                            <Input type="text" 
+                            label="Complemento"
+                             name="compl"
+                             placeholder={"Ex: Ao lado da padaria"}
+                            onChange={e => setComplemento(e.target.value)}/>
 
                         </div>
 
@@ -220,38 +274,18 @@ export default function Business() {
                             <InputSmaller type="text" 
                             label="Numero"
                              name="num"
+                             placeholder={"Ex: 347"}
                             onChange={e => setNumero(e.target.value)}/>
 
-                        </div>
-
-                        <div className="input-duplo">
-
                             <InputSmaller type="text" 
-                            label="CNPJ" 
-                            name="cnpj"
-                             maxLength={15}  
-                             onChange={e => setcnpj(e.target.value)}/>
-
-                            <InputSmaller type="text" 
-                            label="CNAE" 
-                            name="cnae"
-                            maxLength={8}  
-                            onChange={e => setcnae(e.target.value)}/>
+                            label="Bairro"
+                             name="bairro"
+                             placeholder={"Ex: Vila Campos de Jordão"}
+                            value={bairro} 
+                              />
 
                         </div>
-                        <div className="input-duplo">
 
-                            <InputSmaller type="text"
-                             label="Website" 
-                             name="web"  
-                             onChange={e => setWebsite(e.target.value)}/>
-
-                            <InputSmaller type="tel" 
-                            label="Tel/Cel"
-                             name="Contato" 
-                             onChange={e => settelefone(e.target.value)}/>
-
-                        </div>
 
                         <Button value="Finalizar Cadastro" />
                 </div>

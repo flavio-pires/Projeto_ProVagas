@@ -4,6 +4,7 @@ import * as AiIcons from 'react-icons/ai'
 import * as IoIcons from 'react-icons/io'
 import * as MdIcons from 'react-icons/md'
 
+
 export const SidebarData = [
     {
         title:'Dashboard',
@@ -43,9 +44,16 @@ export const SidebarEmpresa = [
     },
 
     {
-        title:'Cadastrar Vagas',
+        title:'Minhas Vagas',
         path: '/dashboarempresa/vaga',
         icon: <MdIcons.MdWork/>,
+        cName: 'nav-text'
+    },
+
+    {
+        title:'Cadastrar Vagas',
+        path: '/dashboarempresa/vaga',
+        icon: <FaIcons.FaHandshake/>,
         cName: 'nav-text'
     }
 ]

@@ -1,10 +1,10 @@
 .smaller-input {
-    width: 18.3vw;
-    height: 35px;
-    border: .7px solid #dcdcdc;
+    width: 19.5vw;
+    height: 40px;
+    border: .7px solid #a9a9a9;
     box-sizing: border-box;
     border-radius: .3rem;
-    padding: 0 .4rem;
+    padding: 0.5rem;
 }
 
 label {
@@ -14,18 +14,16 @@ label {
     align-self: flex-start;
 }
 
-.box-input-smaller{
+.box-input-smaller {
     display: flex;
     flex-direction: column;
     /* background-color: khaki; */
-    width:40vh;
+    width: 40vh;
     justify-content: space-between;
-    height: 11vh;
     align-items: flex-start;
-    
 }
 
-.input-duplo{
+.input-duplo {
     display: flex;
     justify-content: space-between;
 }

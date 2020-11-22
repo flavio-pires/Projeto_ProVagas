@@ -6,11 +6,13 @@ import Grafico from '../../components/grafico'
 export default function candidaturas () {
   return (
     <>
-    <Navleft/>
-      <h1>Candidaturas</h1>
-    <br/>
-    <br/>
-    <div className='center'>
+    <aside>
+    <Navleft/> 
+    </aside>
+    <div className='candidaturacenter'>
+      <h1 className="candidaturash1">Candidaturas</h1>
+      <br/>
+      <br/>
       <div className='box-shadows'>
         <div className='rowa'>
         <Grafico/>

@@ -7,14 +7,14 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
   name: string;
 }
 
-const Input: React.FunctionComponent<InputProps> = ({label, name, ...rest}) => {
+const Inputperfil: React.FunctionComponent<InputProps> = ({label, name, ...rest}) => {
   return (
     <div>
         <label htmlFor={name}>{label}</label>
         <br/>
-        <input type="text" id={name} {...rest}/>
+        <input className='per' type="text" id={name} {...rest}/>
     </div>
   );
 }
 
-export default Input;
+export default Inputperfil;

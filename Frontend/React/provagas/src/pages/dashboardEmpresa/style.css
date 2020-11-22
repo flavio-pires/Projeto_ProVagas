@@ -1,10 +1,9 @@
-/* .conteudo1 {
+.conteudo1 {
     border: 1px solid #dcdcdc;
     width: 400px;
     height: 260px;
     -webkit-box-shadow: 5px 5px 15px 5px #000000;
     box-shadow: 5px 5px 15px 5px #dcdcdc;
-    margin-top: 10%;
     text-align: center;
     display: grid;
     justify-content: center;
@@ -18,7 +17,6 @@
 
 .divhf4 img {
     width: 25%;
-    margin-top: -20%;
 }
 
 .gc {
@@ -26,4 +24,4 @@
     flex-direction: row;
     justify-content: space-evenly;
     margin-left: 19%;
-} */
+}
