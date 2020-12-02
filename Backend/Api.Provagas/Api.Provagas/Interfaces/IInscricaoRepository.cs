@@ -1,4 +1,5 @@
 ﻿using Api.Provagas.Domains;
+using Api.Provagas.ViewsModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,5 +43,7 @@ namespace Api.Provagas.Interfaces
         /// </summary>
         /// <param name="id">Id da inscrição que será deletada</param>
         void Deletar(int id);
+        IEnumerable<InscricaoViewModels> GetInscricoesByid(int id);
+
     }
 }

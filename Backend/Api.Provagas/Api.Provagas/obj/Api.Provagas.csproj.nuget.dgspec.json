@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Guilherme Casco\\Desktop\\Projeto_ProVagas\\Backend\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj": {}
+    "C:\\Users\\51628550813\\Desktop\\backup-provagas\\ProVagas\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Guilherme Casco\\Desktop\\Projeto_ProVagas\\Backend\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj": {
+    "C:\\Users\\51628550813\\Desktop\\backup-provagas\\ProVagas\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Guilherme Casco\\Desktop\\Projeto_ProVagas\\Backend\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj",
+        "projectUniqueName": "C:\\Users\\51628550813\\Desktop\\backup-provagas\\ProVagas\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj",
         "projectName": "Api.Provagas",
-        "projectPath": "C:\\Users\\Guilherme Casco\\Desktop\\Projeto_ProVagas\\Backend\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj",
-        "packagesPath": "C:\\Users\\Guilherme Casco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Guilherme Casco\\Desktop\\Projeto_ProVagas\\Backend\\Api.Provagas\\Api.Provagas\\obj\\",
+        "projectPath": "C:\\Users\\51628550813\\Desktop\\backup-provagas\\ProVagas\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj",
+        "packagesPath": "C:\\Users\\51628550813\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\51628550813\\Desktop\\backup-provagas\\ProVagas\\Api.Provagas\\Api.Provagas\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Guilherme Casco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\51628550813\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -106,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

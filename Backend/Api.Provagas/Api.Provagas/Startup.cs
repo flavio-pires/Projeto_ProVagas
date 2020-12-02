@@ -61,10 +61,10 @@ namespace Api.Provagas
                        ClockSkew = TimeSpan.FromMinutes(30),
 
                        // Nome da issuer, de onde está vindo
-                       ValidIssuer = "ProVagas",
+                       ValidIssuer = "Api.Provagas",
 
                        // Nome da audience, de onde está vindo
-                       ValidAudience = "ProVagas"
+                       ValidAudience = "Api.Provagas"
                };
 
            });

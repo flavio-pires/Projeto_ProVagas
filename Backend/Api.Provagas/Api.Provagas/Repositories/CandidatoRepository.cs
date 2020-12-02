@@ -63,8 +63,19 @@ namespace Api.Provagas.Repositories
             }
             return mat;
         }
-       
-       
+
+        public bool EmailExist(string email)
+        {
+            var acesso = ctx.Usuarios.FirstOrDefault(u => u.Email == email);
+
+
+            if (acesso != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
 
     }
 }

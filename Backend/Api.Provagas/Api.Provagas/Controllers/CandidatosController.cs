@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Api.Provagas.Domains;
 using Api.Provagas.Interfaces;
 using Api.Provagas.Repositories;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace Api.Provagas.Controllers
 {
@@ -16,11 +17,15 @@ namespace Api.Provagas.Controllers
     public class CandidatosController : ControllerBase
     {
         private ICandidatoRepository _candidatoRepository { get; set; }
+        private IInscricaoRepository _inscricaoRepository { get; set; }
 
         public CandidatosController()
         {
 
             _candidatoRepository = new CandidatoRepository();
+
+            _inscricaoRepository = new InscricaoRepository();
+
         }
 
         /// <summary>
@@ -48,6 +53,24 @@ namespace Api.Provagas.Controllers
             else
             {
                 return BadRequest("Candidato não encontrados.");
+            }
+        }
+
+
+        [HttpGet("Inscricao")]
+        public IActionResult GetInscricaoByUser()
+        {
+            var id = Convert.ToInt32(HttpContext.User.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+            var lista = _inscricaoRepository.GetInscricoesByid(id);
+
+            if (lista.Count() != 0)
+            {
+                return Ok(lista);
+            }
+            else
+            {
+                return NotFound("Candidato não possui inscrições.");
             }
         }
 
@@ -91,8 +114,14 @@ namespace Api.Provagas.Controllers
                     NomeCompletoCandidato = Candidatoatt.NomeCompletoCandidato,
                     Cpf = Candidatoatt.Cpf,
                     DataNascimento = Candidatoatt.DataNascimento,
-                    Linkedin = Candidatoatt.Linkedin
-
+                    Linkedin = Candidatoatt.Linkedin,
+                    FotoPerfil = Candidatoatt.FotoPerfil,
+                    NomeGenero = Candidatoatt.NomeGenero,
+                    NomeIdioma = Candidatoatt.NomeIdioma,
+                    NomeNivel = Candidatoatt.NomeNivel,
+                    CursandoSenai  = Candidatoatt.CursandoSenai,
+                    Curso = Candidatoatt.Curso,
+                    TesteDePersonalidade = Candidatoatt.TesteDePersonalidade
                 };
 
                 _candidatoRepository.Update(UPDATE);

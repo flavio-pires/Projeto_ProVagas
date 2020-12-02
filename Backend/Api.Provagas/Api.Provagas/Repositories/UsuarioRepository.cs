@@ -12,9 +12,7 @@ namespace Api.Provagas.Repositories
     public class UsuarioRepository : RepositoryBase<Usuario>, IUsuarioRepository
     {
         ProVagasContext ctx = new ProVagasContext();
-        AdministradorRepository _administradorRepository = new AdministradorRepository();
-        CandidatoRepository _candidatoRepository = new CandidatoRepository();
-        EmpresaRepository _empresaRepository = new EmpresaRepository();
+       
 
 
         public Usuario Login(string email, string senha)
@@ -47,9 +45,9 @@ namespace Api.Provagas.Repositories
         public Object VerificarTipoUsuario(string email, string senha)
         {
             Usuario usuarioBuscado = ctx.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
-            IEnumerable<Administrador> administradores = _administradorRepository.GetAll();
-            IEnumerable<Candidato> alunos = _candidatoRepository.GetAll();
-            IEnumerable<Empresa> empresas = _empresaRepository.GetAll();
+            IEnumerable<Administrador> administradores = ctx.Administrador.Include(a => a.IdUsuarioNavigation).ToList();
+            IEnumerable<Candidato> candidatos = ctx.Candidato.Include(a => a.IdEnderecoNavigation.IdUsuarioNavigation).ToList();
+            IEnumerable<Empresa> empresas = ctx.Empresa.Include(a => a.IdEnderecoNavigation.IdUsuarioNavigation).ToList();
 
             if (usuarioBuscado != null)
             {
@@ -62,7 +60,7 @@ namespace Api.Provagas.Repositories
                     }
                 }
 
-                foreach (var tipoUsuario in alunos)
+                foreach (var tipoUsuario in candidatos)
                 {
                     if (usuarioBuscado.Email == tipoUsuario.IdEnderecoNavigation.IdUsuarioNavigation.Email &&
                         usuarioBuscado.Senha == tipoUsuario.IdEnderecoNavigation.IdUsuarioNavigation.Senha)
@@ -83,5 +81,7 @@ namespace Api.Provagas.Repositories
 
             return null;
         }
+
+  
     }
 }

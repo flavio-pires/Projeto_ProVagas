@@ -447,6 +447,33 @@
             <param name="login"></param>
             <returns>Retorna o token do login</returns>
         </member>
+        <member name="M:Api.Provagas.Controllers.StatusInscricoesController.Get">
+            <summary>
+            Lista todos os status de inscrição
+            </summary>
+            <returns>Uma lista de status de inscrições e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:Api.Provagas.Controllers.StatusInscricoesController.GetById(System.Int32)">
+            <summary>
+            Busca um status de inscrição através do ID
+            </summary>
+            <param name="id">ID do status de inscrição que será buscado</param>
+            <returns>O status de inscrição buscado e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:Api.Provagas.Controllers.StatusInscricoesController.Post(Api.Provagas.Domains.StatusInscricao)">
+            <summary>
+            Cadastra um novo status de inscrição
+            </summary>
+            <param name="novoStatusInscricao">Objeto contendo as informações do novo status de inscrição</param>
+            <returns>Um status code Ok e uma mensagem personalizada</returns>
+        </member>
+        <member name="M:Api.Provagas.Controllers.StatusInscricoesController.Delete(System.Int32)">
+            <summary>
+            Deleta um status de inscrição existente
+            </summary>
+            <param name="id">ID do status de inscrição que será deletado</param>
+            <returns>Um status code 202 - Accepted</returns>
+        </member>
         <member name="M:Api.Provagas.Controllers.TiposVagasController.Get">
             <summary>
             Listar todos os tipos de vagas
@@ -794,33 +821,6 @@
             </summary>
             <param name="id">Id do requisitoXvaga que será buscado</param>
             <returns>Retorna vazio</returns>
-        </member>
-        <member name="M:ProVagas.Controllers.StatusInscricoesController.Get">
-            <summary>
-            Lista todos os status de inscrição
-            </summary>
-            <returns>Uma lista de status de inscrições e um status code 200 - Ok</returns>
-        </member>
-        <member name="M:ProVagas.Controllers.StatusInscricoesController.GetById(System.Int32)">
-            <summary>
-            Busca um status de inscrição através do ID
-            </summary>
-            <param name="id">ID do status de inscrição que será buscado</param>
-            <returns>O status de inscrição buscado e um status code 200 - Ok</returns>
-        </member>
-        <member name="M:ProVagas.Controllers.StatusInscricoesController.Post(Api.Provagas.Domains.StatusInscricao)">
-            <summary>
-            Cadastra um novo status de inscrição
-            </summary>
-            <param name="novoStatusInscricao">Objeto contendo as informações do novo status de inscrição</param>
-            <returns>Um status code Ok e uma mensagem personalizada</returns>
-        </member>
-        <member name="M:ProVagas.Controllers.StatusInscricoesController.Delete(System.Int32)">
-            <summary>
-            Deleta um status de inscrição existente
-            </summary>
-            <param name="id">ID do status de inscrição que será deletado</param>
-            <returns>Um status code 202 - Accepted</returns>
         </member>
         <member name="M:ProVagas.Controllers.TiposUsuariosController.Get">
             <summary>

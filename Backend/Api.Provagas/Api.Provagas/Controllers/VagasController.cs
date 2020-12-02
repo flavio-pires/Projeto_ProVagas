@@ -14,6 +14,7 @@ namespace Api.Provagas.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
+    //
     public class VagasController : ControllerBase
     {
         private IVagaRepository _vagaRepository { get; set; }

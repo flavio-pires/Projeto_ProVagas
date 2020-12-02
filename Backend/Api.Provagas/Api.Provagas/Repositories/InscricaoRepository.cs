@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Api.Provagas.ViewsModels;
 
 namespace Api.Provagas.Repositories
 {
@@ -112,5 +113,49 @@ namespace Api.Provagas.Repositories
 
                 .ToList();
         }
+
+
+        public IEnumerable<InscricaoViewModels> GetInscricoesByid (int id)
+        {
+            List<InscricaoViewModels> get = new List<InscricaoViewModels>();
+
+            foreach (var item in ctx.Inscricao
+                .Include(i => i.IdVagaNavigation)
+                .Include(i => i.IdVagaNavigation.AceitaTrabalhoRemoto)
+                .Include(i => i.IdVagaNavigation.DescricaoAtividade)
+                .Include(i => i.IdVagaNavigation.Salario)
+                .Include(i => i.IdVagaNavigation.Localizacao)
+                .Where(i => i.IdCandidato == id)
+                .ToList()
+                )
+            {
+
+                List<string> beneficiosName = new List<string>();
+
+                foreach (var beneficios in ctx.BeneficioXvaga)
+                {
+                    beneficiosName.Add(beneficios.IdBeneficioNavigation.NomeBeneficio);
+                }
+
+                InscricaoViewModels inscricaoViewModel = new InscricaoViewModels
+                {
+                    NomeVaga = item.IdVagaNavigation.NomeVaga,
+                    DescricaoAtividade = item.IdVagaNavigation.DescricaoAtividade,
+                    Salario = item.IdVagaNavigation.Salario,
+                    Localizacao = item.IdVagaNavigation.Localizacao,
+                    AceitaTrabalhoRemoto = item.IdVagaNavigation.AceitaTrabalhoRemoto,
+                    DataInicio = item.IdVagaNavigation.DataInicio,
+                    DataFinal = item.IdVagaNavigation.DataFinal,
+                    Beneficios = beneficiosName
+                };
+
+                get.Add(inscricaoViewModel);
+
+            }
+
+            return get;
+        }
+
+        
     }
 }

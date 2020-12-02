@@ -10,5 +10,6 @@ namespace Api.Provagas.Interfaces
     {
 
         Candidato Login(string email, string senha);
+        bool EmailExist(string email);
     }
 }

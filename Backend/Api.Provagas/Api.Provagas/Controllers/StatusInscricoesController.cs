@@ -8,7 +8,7 @@ using Api.Provagas.Domains;
 using Api.Provagas.Interfaces;
 using Api.Provagas.Repositories;
 
-namespace ProVagas.Controllers
+namespace Api.Provagas.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
