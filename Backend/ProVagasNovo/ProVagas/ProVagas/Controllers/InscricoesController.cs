@@ -28,7 +28,7 @@ namespace ProVagas.Controllers
         /// </summary>
         /// <returns>Uma lista de inscrições e um status code 200 - Ok</returns>
 
-        [Authorize(Roles = "2")]
+       // [Authorize(Roles = "2")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -47,7 +47,7 @@ namespace ProVagas.Controllers
         /// </summary>
         /// <param name="id">ID da inscrição que será buscada</param>
         /// <returns>A inscrição buscada e um status code 200 - Ok</returns>
-        [Authorize(Roles = "2")]
+        //[Authorize(Roles = "2")]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {

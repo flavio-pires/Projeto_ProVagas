@@ -5719,23 +5719,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\51628550813\\.nuget\\packages\\": {},
+    "C:\\Users\\44781915817\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\51628550813\\Desktop\\backup-provagas\\ProVagas\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj",
+      "projectUniqueName": "C:\\Users\\44781915817\\Desktop\\Projeto_ProVagas\\Backend\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj",
       "projectName": "Api.Provagas",
-      "projectPath": "C:\\Users\\51628550813\\Desktop\\backup-provagas\\ProVagas\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj",
-      "packagesPath": "C:\\Users\\51628550813\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\51628550813\\Desktop\\backup-provagas\\ProVagas\\Api.Provagas\\Api.Provagas\\obj\\",
+      "projectPath": "C:\\Users\\44781915817\\Desktop\\Projeto_ProVagas\\Backend\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj",
+      "packagesPath": "C:\\Users\\44781915817\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\44781915817\\Desktop\\Projeto_ProVagas\\Backend\\Api.Provagas\\Api.Provagas\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\51628550813\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\44781915817\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
