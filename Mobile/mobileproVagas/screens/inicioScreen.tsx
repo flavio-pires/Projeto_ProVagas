@@ -1,7 +1,6 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
-import { View, Image, StyleSheet, Text } from 'react-native';
+import { View, Image, StyleSheet, Text, TouchableOpacity  } from 'react-native';
 import { RootStackParamList } from '../types';
 
 export default function Inicio({
@@ -11,7 +10,10 @@ export default function Inicio({
 
   
     return (
-        <View style={styles.container}>
+        <View >
+          <View style={styles.container}>
+
+          </View>
             <View style={styles.card}>
                 <View  style={styles.center}>
 
@@ -29,7 +31,7 @@ export default function Inicio({
 
                 <View >
                 <Image
-                   style={{ width: 250, height: 150, marginBottom: '15%', marginTop: 50}}
+                   style={{ width: 260, height: 150, marginBottom: '15%',marginLeft:7, marginTop: 50, justifyContent: 'center', alignItems: 'center'}}
                    source={require('../assets/images/work.png')}
 
                 />
@@ -37,7 +39,7 @@ export default function Inicio({
 
                     <TouchableOpacity
                      style={styles.btnEntar}
-                    onPress={ () => navigation.navigate('Login') }
+                    onPress={ () => navigation.replace('Login') }
                       >
                      <Text style={styles.textBtnEntrar}>Entrar</Text>
                     </TouchableOpacity>
@@ -49,21 +51,26 @@ export default function Inicio({
 }
 
 const styles = StyleSheet.create({
+  
     container: {
-       flex: 0.3,
+      flex: 2,
     backgroundColor: '#ED1F24',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
+    padding: 10,
+    paddingTop: 200
      } ,
      card:{
         height:570,
         width:"87%",
+        alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor:"white",
         borderRadius:15,
         elevation:10,
         padding:10,
-        marginTop: 580,
+        marginTop: -80,
+        marginLeft: 25
       },
       center: {
         alignItems: 'center',
@@ -84,10 +91,10 @@ const styles = StyleSheet.create({
         height: 40,
         backgroundColor: "#ED1F24",
         marginTop: 60,
-        marginLeft: 35,
+        marginLeft: 10,
         borderRadius: 4,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
       
       },
 

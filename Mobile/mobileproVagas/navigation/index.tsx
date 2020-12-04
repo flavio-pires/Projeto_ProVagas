@@ -6,7 +6,10 @@ import { ColorSchemeName } from 'react-native';
 import SplashScreen from '../screens/splash';
 import LoginScreen from '../screens/login';
 import InicioScreen from '../screens/inicioScreen';
+import NotFoundScreen from '../screens/notfound'
 import DashBoardScreen from '../screens/dashboarduser';
+import TipoScreen from '../screens/tipouser';
+import LoginEmpresaScreen from '../screens/loginempresa'
 import { RootStackParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -30,9 +33,13 @@ function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Splash" component={SplashScreen} options={{ title: 'Splash' }} />
+      <Stack.Screen name="Tipo" component={TipoScreen} options={{ title: 'Tipo de Usuario' }} />
       <Stack.Screen name="Inicio" component={InicioScreen} options={{ title: 'Inicio' }} />
       <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
+      <Stack.Screen name="LoginEmpresa" component={LoginEmpresaScreen} options={{ title: 'Login' }} />
       <Stack.Screen name="dashboarduser" component={DashBoardScreen} options={{ title: 'Dashboard' }} />
+      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'NotFound' }} />
+
     </Stack.Navigator>
   );
 }

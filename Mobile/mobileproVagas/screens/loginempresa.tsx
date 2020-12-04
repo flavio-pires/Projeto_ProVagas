@@ -10,7 +10,7 @@ import jwtDecode from 'jwt-decode';
 
 
 
-export default function LoginCandidato({
+export default function TabOneScreen({
   navigation,
 }: StackScreenProps<RootStackParamList, 'NotFound'>) {
 
@@ -63,7 +63,7 @@ export default function LoginCandidato({
   return (
     <View style={styles.container}>
 
-      <Text style={styles.titleLogin}>Olá candidato(a), seja bem-vindo(a)!</Text>
+      <Text style={styles.titleLogin}>Olá empresa, seja bem-vinda!</Text>
         {/* { !!state.errorMessage && <Text>{state.errorMessage}</Text>} */}
       <Image 
       source={require('../assets/images/img_login.png')}
