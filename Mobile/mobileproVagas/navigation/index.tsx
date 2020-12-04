@@ -9,7 +9,9 @@ import InicioScreen from '../screens/inicioScreen';
 import NotFoundScreen from '../screens/notfound'
 import DashBoardScreen from '../screens/dashboarduser';
 import TipoScreen from '../screens/tipouser';
-import LoginEmpresaScreen from '../screens/loginempresa'
+import LoginEmpresaScreen from '../screens/loginempresa';
+import Candidato from'../screens/candidato';
+import Empresa from '../screens/empresa';
 import { RootStackParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -39,6 +41,8 @@ function RootNavigator() {
       <Stack.Screen name="LoginEmpresa" component={LoginEmpresaScreen} options={{ title: 'Login' }} />
       <Stack.Screen name="dashboarduser" component={DashBoardScreen} options={{ title: 'Dashboard' }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'NotFound' }} />
+      <Stack.Screen name="Candidato" component={Candidato} options={{ title: 'Candidato' }} />
+      <Stack.Screen name="Empresa" component={Empresa} options={{ title: 'Empresa' }} />
 
     </Stack.Navigator>
   );

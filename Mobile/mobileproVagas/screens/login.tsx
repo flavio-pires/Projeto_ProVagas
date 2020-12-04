@@ -83,7 +83,7 @@ export default function LoginCandidato({
       />
       <TouchableOpacity
         style={styles.btnLogin}
-        onPress={ () =>navigation.navigate('NotFound') }
+        onPress={ () =>navigation.replace('Candidato') }
       >
       <Text style={styles.textBtnLogin}>Login</Text>
       </TouchableOpacity>

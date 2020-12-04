@@ -39,7 +39,7 @@ export default function Inicio({
 
                     <TouchableOpacity
                      style={styles.btnEntar}
-                    onPress={ () => navigation.replace('Login') }
+                    onPress={ () => navigation.replace('Tipo') }
                       >
                      <Text style={styles.textBtnEntrar}>Entrar</Text>
                     </TouchableOpacity>

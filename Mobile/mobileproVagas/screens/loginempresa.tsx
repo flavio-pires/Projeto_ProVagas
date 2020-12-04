@@ -83,7 +83,7 @@ export default function TabOneScreen({
       />
       <TouchableOpacity
         style={styles.btnLogin}
-        onPress={ () =>navigation.navigate('NotFound') }
+        onPress={ () =>navigation.navigate('Empresa') }
       >
       <Text style={styles.textBtnLogin}>Login</Text>
       </TouchableOpacity>

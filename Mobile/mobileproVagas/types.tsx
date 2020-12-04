@@ -6,6 +6,8 @@ export type RootStackParamList = {
   Login: undefined;
   dashboarduser: undefined;
   NotFound: undefined;
+  Candidato:undefined;
+  Empresa:undefined;
 };
 
 export type BottomTabParamList = {
