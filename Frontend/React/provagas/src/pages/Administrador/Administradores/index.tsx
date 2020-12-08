@@ -1,18 +1,20 @@
 import React from 'react';
-import Header from '../../../components/Header';
 import Lista from '../../../components/Lista';
-import Menu from '../../../components/MenuLateral';
 import InputSearch from '../../../components/InputSearch';
-import './style.css';
+//import './style.css';
+import Navbar from '../../../components/Navbar/navbar';
+
 
 
 function Administradores(){
     return(
         <div className="cabeçalho">
-            <Header/>
-                <InputSearch/>
-                <Menu/>
-                <Lista/>
+            <aside>
+                <Navbar/>
+            </aside>
+            <InputSearch/>
+            <Lista/>
+                
         </div>
                 
     );
