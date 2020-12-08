@@ -32,10 +32,7 @@ CREATE TABLE Endereco (
 	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario)
 )
 GO
-INSERT INTO Endereco VALUES
-('Rua Carlos Alves',  '12', 'Vila do chaves', 123, '000000000', 'São Paulo','São Paulo',1), 
-('Avenida Barão de Limeira',  '539 ', 'Santa Cecilia', null, '01202001', 2,2)
-GO
+
 
 CREATE TABLE NivelEscolaridade (
 	IdNivelEscolaridade INT PRIMARY KEY IDENTITY,
@@ -63,11 +60,7 @@ CREATE TABLE Candidato (
 	IdNivelEscolaridade INT FOREIGN KEY REFERENCES NivelEscolaridade (IdNivelEscolaridade)
 )
 GO
-select *from NivelEscolaridade
-SELECT * FROM Candidato
-INSERT INTO Candidato VALUES 
-('Hebert Richard', '04533335080', '2000-10-20', 'linkedin/hebertrichard', null, null, 'Masculino', 1, null, null, null, 1,'Devops',null,1, 2)
-GO
+
 
 CREATE TABLE ExperienciaProfissional (
 	IdExperienciaProfissional INT PRIMARY KEY IDENTITY,
@@ -105,7 +98,7 @@ CREATE TABLE Administrador (
 	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario)
 )
 GO
-Select * from Empresa
+
 CREATE TABLE Empresa (
 	IdEmpresa INT PRIMARY KEY IDENTITY,
 	RazaoSocial VARCHAR (255) NOT NULL,
@@ -120,12 +113,7 @@ CREATE TABLE Empresa (
 	IdEndereco INT FOREIGN KEY REFERENCES Endereco(IdEndereco)
 )
 GO
-select * from Endereco
 
-select * from Empresa
-INSERT INTO Empresa VALUES 
-('BRQ SOLUCOES EM INFORMATICA S.A', 'BRQ', 'Justus','Admin', 'linkedin/BRQ', NULL, '365420250001640', '62040000', 3, 1)
-GO
 
 CREATE TABLE TipoVaga (
 	IdTipoVaga INT PRIMARY KEY IDENTITY,
@@ -153,10 +141,6 @@ CREATE TABLE Vaga (
 	IdTipoVaga INT FOREIGN KEY REFERENCES TipoVaga(IdTipoVaga),
 	IdNivelVaga INT FOREIGN KEY REFERENCES NivelVaga(IdNivelVaga)
 )
-GO
-select * from Vaga
-INSERT INTO Vaga VALUES 
-('Estagio em desenvolvimento de sistemas', 'jdhihedwodwijjdwijiw','17/12/2020', '30/12/2020', 40, 'Sâo Paulo', 'R$ 1080,00', 0, 3,2,null)
 GO
 
 CREATE TABLE Requisito
@@ -189,30 +173,6 @@ CREATE TABLE Inscricao (
 )
 GO
 
-
-
-SELECT * FROM Inscricao
-go
-INSERT INTO Inscricao VALUES 
-('31/08/2020',7,4,1)
-GO
-
-
-SELECT * FROM StatusInscricao
-
-SELECT * FROM Vaga
-INSERT INTO Vaga VALUES 
-('Estagio em desenvolvimento de sistemas', 'jdhihedwodwijjdwijiw','17/12/2020', '30/12/2020', 40, 'Sâo Paulo', 'R$ 1080,00', 0, 1,2,null)
-GO
-
-SELECT * FROM Empresa
-
-SELECT * FROM Candidato
-INSERT INTO Candidato VALUES 
-('Hebert Richard', '04533335080', '2000-10-20', 'linkedin/hebertrichard', null, null, null, 1, 1, 2)
-GO
-
-
 CREATE TABLE Estagio (
 	IdEstagio INT PRIMARY KEY IDENTITY,
 	DataInicio DATE NOT NULL,
@@ -234,3 +194,5 @@ CREATE TABLE BeneficioXVaga (
 	IdVaga INT FOREIGN KEY REFERENCES Vaga (IdVaga)
 )
 GO
+
+
