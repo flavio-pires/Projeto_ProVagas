@@ -7,7 +7,7 @@ import * as MdIcons from 'react-icons/md';
 export const SidebarData = [
     {
         title:'Dashboard',
-        path: '/dashboardadm/administrador',
+        path: '/administrador',
         icon: <AiIcons.AiFillHome/>,
         cName: 'nav-text'
     },
@@ -35,7 +35,7 @@ export const SidebarData = [
 
     {
         title:'Administradores',
-        path: '/dashboaradm/adm',
+        path: '/dashboardadm/administrador',
         icon: <MdIcons.MdWork/>,
         cName: 'nav-text'
     },
@@ -52,7 +52,7 @@ export const SidebarData = [
 export const SidebarAdm = [
     {
         title:'Dashboard',
-        path: '/dashboardadm/administrador',
+        path: '/administrador',
         icon: <AiIcons.AiFillHome/>,
         cName: 'nav-text'
     },
@@ -80,7 +80,7 @@ export const SidebarAdm = [
 
     {
         title:'Administradores',
-        path: '/dashboaradm/adm',
+        path: '/dashboardadm/administrador',
         icon: <MdIcons.MdWork/>,
         cName: 'nav-text'
     },

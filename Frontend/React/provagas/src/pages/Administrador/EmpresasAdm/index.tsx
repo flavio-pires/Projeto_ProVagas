@@ -1,23 +1,22 @@
 import React from 'react';
-import Lista from '../../../components/Lista';
 import InputSearch from '../../../components/InputSearch';
+import ListaEmpresa from '../../../components/ListaEmpresa';
 //import './style.css';
 import Navbar from '../../../components/Navbar/navbar';
 
 
 
-function Administradores(){
+function EmpresaAdm(){
     return(
         <div className="cabeçalho">
             <aside>
                 <Navbar/>
             </aside>
             <InputSearch/>
-            <Lista/>
-                
+            <ListaEmpresa/>                
         </div>
                 
     );
 }
 
-export default Administradores;
+export default EmpresaAdm;

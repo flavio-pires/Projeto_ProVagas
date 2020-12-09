@@ -1,5 +1,3 @@
-.navbar {}
-
 .menu-bars {
     margin-left: 2rem;
     font-size: 2rem;
@@ -12,6 +10,8 @@
     height: 150vh;
     display: flex;
     justify-content: center;
+    position: fixed;
+    Padding-top: 5rem
 }
 
 .nav-text {

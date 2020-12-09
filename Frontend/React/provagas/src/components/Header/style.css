@@ -12,6 +12,8 @@
     background-color: #ED1F24;
     display: flex;
     justify-content: center;
+    Position: fixed; 
+    z-index: 4;
 }
 
 .container-central{
