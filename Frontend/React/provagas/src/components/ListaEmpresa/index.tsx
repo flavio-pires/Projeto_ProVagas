@@ -14,7 +14,7 @@ function ListarEmpresa(){
     fetch('http://localhost:5000/api/administradores/empresa',{
       method: 'GET',
       headers:{
-        authorization: 'Bearer' + localStorage.getItem('provagas-chave-autenticacao, token')
+        // authorization: 'Bearer' + localStorage.getItem('provagas-chave-autenticacao, token')
       }
     })
 
@@ -28,13 +28,14 @@ function ListarEmpresa(){
   return(
     <div>
       <table>
+        <h1>Vagas</h1>
         <tbody>
           {
             empresas.map((item:any) => {
               return(
                 <tr key={item.idEmpresa}>
-                  <td>{item.idEmpresa}</td>
-                  <td>{item.nome}</td>
+                  <td>{item.razaoSocial}</td>
+                  <td>{item.nomeFantasia}</td>
                 </tr>
               )
             })
