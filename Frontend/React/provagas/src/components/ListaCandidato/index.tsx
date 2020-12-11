@@ -14,6 +14,8 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
 import './style.css';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const useStyles1 = makeStyles((theme: Theme) =>
   createStyles({
@@ -86,6 +88,23 @@ function createData(name: string,  time: string) {
   return { name, time };
 }
 
+
+const [candidato, setCandidato] = useState([])
+
+useEffect(() =>{
+  fetch('http://localhost:5000/api/administradores/candidato',{
+    method: 'GET',
+    headers:{
+      // authorization: 'Bearer' + localStorage.getItem('provagas-chave-autenticacao, token')
+    }
+  })
+  .then(response => response.json())
+  .then(dados =>{
+    setCandidato(dados);
+  })
+  .catch(err => console.error(err));
+})
+
 const rows = [
   createData('Flavio acabou de se cadastrar', '18:13'),
   createData('Flavio acabou de se cadastrar', '18:13'),
@@ -116,6 +135,7 @@ export default function CustomPaginationActionsTable() {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
+
 
   return (
   <div className="tdlista">

@@ -26,7 +26,7 @@ function ListarEmpresa(){
 
   }
   return(
-    <div>
+    <div className='tdlista'>
       <table>
         <h1>Vagas</h1>
         <tbody>
@@ -34,8 +34,8 @@ function ListarEmpresa(){
             empresas.map((item:any) => {
               return(
                 <tr key={item.idEmpresa}>
-                  <td>{item.razaoSocial}</td>
-                  <td>{item.nomeFantasia}</td>
+                  <td>{item.razaoSocial} Está cadastrada no sistema {item.nomeFantasia}</td>
+                  <td></td>
                 </tr>
               )
             })
