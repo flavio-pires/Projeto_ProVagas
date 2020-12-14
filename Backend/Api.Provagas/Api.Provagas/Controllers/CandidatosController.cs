@@ -8,6 +8,7 @@ using Api.Provagas.Domains;
 using Api.Provagas.Interfaces;
 using Api.Provagas.Repositories;
 using System.IdentityModel.Tokens.Jwt;
+using Api.Provagas.Contexts;
 
 namespace Api.Provagas.Controllers
 {
@@ -16,6 +17,7 @@ namespace Api.Provagas.Controllers
     [ApiController]
     public class CandidatosController : ControllerBase
     {
+        ProVagasContext ctx = new ProVagasContext();
         private ICandidatoRepository _candidatoRepository { get; set; }
         private IInscricaoRepository _inscricaoRepository { get; set; }
 
@@ -57,10 +59,9 @@ namespace Api.Provagas.Controllers
         }
 
 
-        [HttpGet("Inscricao")]
-        public IActionResult GetInscricaoByUser()
-        {
-            var id = Convert.ToInt32(HttpContext.User.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+        [HttpGet("Inscricao/{id}")]
+        public IActionResult GetInscricaoByUser(int id)
+        { 
 
             var lista = _inscricaoRepository.GetInscricoesByid(id);
 
@@ -86,7 +87,24 @@ namespace Api.Provagas.Controllers
             {
                 _candidatoRepository.Add(candidato);
 
+                //var experiencia = ctx.ExperienciaProfissional.Where(e => e.IdCandidato == candidato.IdCandidato).ToList();
+
+                //foreach (var item in experiencia)
+                //{
+                //    ExperienciaProfissional exper = new ExperienciaProfissional
+                //    {
+                //        NomeExperiencia = item.NomeExperiencia,
+                //        NomeEmpresa = item.NomeEmpresa,
+                //        DataFim = item.DataFim,
+                //        DataInicio = item.DataInicio,
+                //        DescricaoAtividade = item.DescricaoAtividade,
+                //        IdCandidato = candidato.IdCandidato
+                //    };
+                //    ctx.ExperienciaProfissional.Add(exper);
+                //    ctx.SaveChanges();
+                //}
                 return Ok("Candidato cadastrados com sucesso");
+
             }
             catch (Exception)
             {

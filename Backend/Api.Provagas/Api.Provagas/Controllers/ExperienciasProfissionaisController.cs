@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Api.Provagas.Domains;
 using Api.Provagas.Interfaces;
 using Api.Provagas.Repositories;
+using Api.Provagas.Contexts;
 
 namespace Api.Provagas.Controllers
 {
@@ -16,7 +17,7 @@ namespace Api.Provagas.Controllers
     [ApiController]
     public class ExperienciasProfissionaisController : ControllerBase
     {
-
+        ProVagasContext ctx = new ProVagasContext();
         private IExperienciaProfissional _experienciaProfissional { get; set; }
 
         public ExperienciasProfissionaisController()
@@ -58,12 +59,14 @@ namespace Api.Provagas.Controllers
         /// </summary>
         /// <param name="exp"></param>
         /// <returns>Retorna o cadastro de uma nova experiencia profissional</returns>
-        [Authorize(Roles = "1")]
+       
         [HttpPost]
         public IActionResult Post(ExperienciaProfissional exp)
         {
             try
             {
+             
+
                 _experienciaProfissional.Add(exp);
 
                 return Ok("Experiencia cadastrada com sucesso");

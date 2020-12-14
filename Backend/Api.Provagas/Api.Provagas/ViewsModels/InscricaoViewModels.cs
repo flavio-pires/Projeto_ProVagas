@@ -24,5 +24,6 @@ namespace Api.Provagas.ViewsModels
         public string nomeBeneficio { get; set; }
 
         public int IdVaga { get; set; }
+        public int id { get; set; }
     }
 }

@@ -82,7 +82,7 @@ namespace Api.Provagas.Controllers
         /// </summary>
         /// <param name="novaInscricao">Objeto contendo as informações da nova inscrição</param>
         /// <returns>Um status code Ok e uma mensagem personalizada</returns>
-        [Authorize(Roles = "1")]
+        
         [HttpPost]
         public IActionResult Post (Inscricao novaInscricao)
         {
@@ -94,6 +94,7 @@ namespace Api.Provagas.Controllers
             }
             catch (Exception error)
             {
+                Console.WriteLine(error);
                 return BadRequest(error);
             }
         }
