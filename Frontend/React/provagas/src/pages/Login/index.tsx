@@ -6,6 +6,7 @@ import './style.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import InputSmaller from '../../components/InputSmaller';
+import {parseJWT} from '../../services/auth';
 
 function Login() {
 
@@ -20,31 +21,42 @@ function Login() {
       senha: senha
     }
   
-
-    fetch('http://localhost:5000/api/login', {
-      method: 'POST',
-      body: JSON.stringify(login),
-      headers: {
-        'content-type': 'application/json'
-      },
+      fetch('http://localhost:5000/api/login', {
+        method: 'POST',
+        body: JSON.stringify(login),
+        headers: {
+            'content-type':'application/json'
+        }
     })
-
-    .then (response => response.json())
-    .then (dados => {
-      if (dados.token !== undefined) {
-        localStorage.setItem('provagas-chave-autenticacao', dados.token)
-        history.push('/dashboarempresa/vaga')
-      }
-      else{
-        alert('Senha ou e-mail inválido');
-      }
-    })
-    .catch(erro => console.error(erro))
+        .then(resp => resp.json())
+        .then(data =>{
+            if (data.value.token != undefined) 
+            {
+                localStorage.setItem('provagas-chave-autenticacao', data.value.token)
+                
+                if (parseJWT().Role === 'Administrador')
+                {
+                    history.push('/');
+                }
+                if (parseJWT().Role === 'Empresa') 
+                {
+                    history.push('/dashboardempresa');
+                }  
+                if (parseJWT().Role === 'Candidato') 
+                {
+                    history.push('/dashboarduser');
+                }
+            }
+            else {
+                alert('Email ou senha incorretos');
+            }
+        })
+        .catch(e => console.error(e));
   }
 
   return (
       <div>
-        <Header/>
+        <Header />
         <div className="login">
           <img src={imglogin} alt="Imagem principal da tela de login"/>
             <hr/>

@@ -8,15 +8,11 @@
     display: grid;
     justify-content: center;
     align-items: center;
-}
-
-.divhf4 {
-    display: flex;
-    justify-content: flex-end;
+    padding: 1rem;
 }
 
 .divhf4 img {
-    width: 25%;
+    width: 60%;
 }
 
 .gc {

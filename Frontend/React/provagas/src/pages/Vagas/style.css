@@ -1,4 +1,4 @@
-.telavagas .vaga1{
+.telavagas .vaga1 {
     border: solid 0.2em;
     border-color: #C4C4C4;
     border-radius: 10px;
@@ -12,7 +12,7 @@
     flex-direction: column;
 }
 
-.telavagas{
+.telavagas {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,17 +20,19 @@
     margin-top: 3vh;
     margin-bottom: 3vh;
 }
+
+
 /* .vagas1 li, img{
     margin-top: 1em;
 } */
 
-.buscarvaga{
+.buscarvaga {
     margin-top: 2em;
     display: flex;
     align-items: center;
 }
 
-.buscarvaga img{
+.buscarvaga img {
     margin-top: 1.2em;
     width: 30px;
     height: 30px;
@@ -38,27 +40,28 @@
     margin-right: 40%;
 }
 
-.topicovaga, .topicos{
+.topicovaga,
+.topicos {
     display: flex;
     justify-content: space-around;
 }
 
-.topicos li{
+.topicos li {
     margin-right: 2vw;
 }
 
-.filtrar{
+.filtrar {
     display: flex;
 }
 
-.filtrar img{
+.filtrar img {
     width: 25px;
     height: 25px;
     margin-top: 0.1vh;
     margin-right: 1vh;
 }
 
-.filtros{
+.filtros {
     border: solid 0.2em;
     border-color: #C4C4C4;
     border-radius: 10px;
@@ -67,7 +70,7 @@
     margin-right: 10vw;
 }
 
-.vagas2{
+.vagas2 {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -79,3 +82,32 @@
     align-items: center;
 }
 
+.rowasde {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.box-vagas {
+    border: 1px solid #dcdcdc;
+    width: 700px;
+    height: 250px;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #dcdcdc;
+    margin-left: 53%;
+    margin-top: -23%;
+    z-index: 6;
+}
+
+.filter {
+    width: 300px;
+    height: 450px;
+    border-style: 1px solid;
+    background-color: #808080;
+    /* position: fixed; */
+    margin-left: -50rem;
+}
+
+.quadrado {
+    padding: 1.5rem;
+}

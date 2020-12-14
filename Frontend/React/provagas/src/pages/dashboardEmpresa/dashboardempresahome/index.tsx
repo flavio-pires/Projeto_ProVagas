@@ -1,8 +1,8 @@
 import React from 'react';
-import Navleft from '../../components/Navbar/navbar';
+import Navleft from '../../../components/Navbar/navbar';
 import './style.css'
-import imghiring from '../../assets/images/undraw_hiring_cyhs.png';
-import Button from '../../components/Button/index';
+import imghiring from '../../../assets/images/undraw_hiring_cyhs.png';
+import Button from '../../../components/Button/index';
 
 export default function dashboard() {
     return (
@@ -11,7 +11,7 @@ export default function dashboard() {
               <Navleft/>  
 
               </aside>
-                <div className='row'>              
+                <div className='conteudo'>              
                <div className='box-shadow'>
                    <p>0</p>   
                    <hr/>
@@ -37,6 +37,8 @@ export default function dashboard() {
                 <Button value='Clique aqui'/>
                </div>
                </div>
+               <br/>
+               <br/>
         </div>
     )
 }

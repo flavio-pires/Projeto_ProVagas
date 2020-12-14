@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -14,10 +15,10 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: '2px 4px',
       display: 'flex',
       alignItems: 'center',
-      width: 400,
+      width: 600,
       marginLeft: 'auto',
       marginRight: 'auto',
-      backgroundColor: '#E4E4E4',
+      backgroundColor: '#dcdcdc',
       marginTop: '2%',
 
     },
@@ -40,7 +41,7 @@ export default function CustomizedInputBase() {
     <Paper component="form" className={classes.root}>
       <InputBase
         className={classes.input}
-        placeholder="Pesquisar notifiações"
+        placeholder="Pesquisar Vagas"
         inputProps={{ 'aria-label': 'search google maps' }}
       />
       <IconButton type="submit" className={classes.iconButton} aria-label="search">

@@ -6,6 +6,9 @@ import InputSmaller from '../../components/InputSmaller';
 import imgcolaborador from '../../assets/images/imgEmpresa.png';
 import './style.css';
 import { useHistory } from 'react-router-dom';
+import InputMask from '../../components/InputMask';
+import InputSmallerMask from '../../components/MaskTel'
+
 
 export default function Business() {
 
@@ -41,10 +44,10 @@ export default function Business() {
             cnpj: Cnpj,
             cnae: cnae,
             descricaoEmpresa: descricao,
-            porteEmpresa: porte,
+            nomePorte: porte,
             idEnderecoNavigation: {
                 rua: rua,
-                num: numero,
+                numero: numero,
                 bairro: bairro,
                 complemento: complemento,
                 cep: cep,
@@ -68,7 +71,7 @@ export default function Business() {
             body: JSON.stringify(newbusi),
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
-                authorization: 'Bearer' + localStorage.getItem('token-provagas')
+                authorization: 'Bearer' + localStorage.getItem('provagas-chave-autenticacao')
             }
         })
             .then((response) => {
@@ -76,8 +79,7 @@ export default function Business() {
             })
             .then (data => {
                 if (data !== undefined) {
-                   alert('Cadastrado') 
-                   history.push('/Login')
+                   alert('Cadastrado')
                   }
                   else{
                     alert('Cadastro inválido');
@@ -124,7 +126,7 @@ export default function Business() {
                             <div className="input-duplo">
 
                             <Input type="email" 
-                            label ="E-mail" 
+                            label ="E-mail *"  
                             name="email" 
                             placeholder={"Ex: gugugacasco@gmail.com"}
                             onChange={e => setemail(e.target.value)}/>
@@ -133,9 +135,11 @@ export default function Business() {
                             <div className="input-duplo">
 
                             <Input type="password" 
-                            label="Senha"
-                             name="senha" 
-                             onChange={e => setsenha(e.target.value)}/>
+                            label="Senha *"
+                            name="senha"    
+                            minLength={8} 
+                            maxLength={32}                       
+                            onChange={e => setsenha(e.target.value)}/>
                             </div>
 
                         <h4>Informações da Empresa</h4>
@@ -143,7 +147,7 @@ export default function Business() {
                             <div className="input-duplo">
 
                             <Input type="text"
-                             label="Razão Social" 
+                             label="Razão Social *" 
                              name="senai"  
                              placeholder={"Ex: BRQ Digital Soluções "}
                              onChange={e => setrazaosocial(e.target.value)}/>
@@ -152,19 +156,20 @@ export default function Business() {
 
                             <div className="input-duplo">                      
                             <Input type="text"
-                             label="Nome Fantasia"
+                             label="Nome Fantasia *"
                               name="nome" 
                               placeholder={"Ex: BRQ"}
                               onChange={e => setnomefantasia(e.target.value)}/>
                             </div>
 
                         <div className="input-duplo">
-                        <Input type="text" 
-                            label="CNPJ" 
-                            name="cnpj"
-                            placeholder={"Ex: 01.222.333/0001-20"}
-                             maxLength={15}  
-                             onChange={e => setcnpj(e.target.value)}/>
+                        <Input type="text"
+                        label="CNPJ *" 
+                        name="cnpj"
+                        maxLength={14}
+                        minLength={14}
+                        placeholder={"Ex: 01.222.333/0001-20"}
+                        onChange={e => setcnpj(e.target.value)}/>
 
                        
                         </div>
@@ -197,33 +202,42 @@ export default function Business() {
 
                         <div className="input-duplo">
 
-                            <Input type="text"
+                            <InputSmaller type="text"
                              label="Website" 
                              name="web"  
                              placeholder={"Ex: http://www.brq.com/"}
                              onChange={e => setWebsite(e.target.value)}/>
+
+                             <InputSmaller type="text"
+                             label="Porte da Empresa" 
+                             name="porte"  
+                             placeholder={"Ex: Grande"}
+                             onChange={e => setport(e.target.value)}/>
+
                         </div>
 
                         <div className="input-duplo">
 
                             <InputSmaller type="text" 
                             label="CNAE" 
-                            name="cnae"
-                            maxLength={8}  
+                            name="cnae" 
+                            placeholder={"Ex: 9999-9/99"} 
                             onChange={e => setcnae(e.target.value)}/>
 
-                            <InputSmaller type="tel" 
+                            <InputSmallerMask type="tel" 
+                            mask="(99) 99999-9999"
                             label="Tel/Cel"
-                             name="Contato" 
-                             placeholder={"Ex: (11) 97070-7070"}
-                             onChange={e => settelefone(e.target.value)}/>
+                            name="Contato" 
+                            placeholder={"Ex: (11) 97070-7070"}
+                            onChange={e => settelefone(e.target.value)}/>
 
                         </div>
 
                         <h4>Endereço da Empresa</h4>
 
                         <div className="input-duplo">
-                            <Input type="text" 
+                            <InputMask type="text"
+                            mask="99999-999" 
                             label="CEP"
                              name="cep" 
                              placeholder={"Ex: 03531-010"}
@@ -257,10 +271,9 @@ export default function Business() {
                              placeholder={"Ex: São Paulo"}
                              value={localidade}
                            />
-
                         </div>
-                        <div className="input-duplo">
-                        
+
+                        <div className="input-duplo">                       
                             <Input type="text" 
                             label="Complemento"
                              name="compl"

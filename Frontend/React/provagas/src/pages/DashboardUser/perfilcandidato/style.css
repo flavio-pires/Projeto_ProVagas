@@ -3,14 +3,16 @@
     margin: 0%;
 }
 
-.hebert {
+.rowlin {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
-.hebert {
+.bh {}
+
+.rowlin {
     margin-left: 19.6%;
 }
 
@@ -36,7 +38,9 @@
     box-shadow: 5px 5px 5px 5px #dcdcdc;
 }
 
-h2 {
+.h234 {
     margin-left: 52%;
-    padding-top: 8rem;
+    align-content: center;
+    display: flex;
+    padding-top: 10%;
 }

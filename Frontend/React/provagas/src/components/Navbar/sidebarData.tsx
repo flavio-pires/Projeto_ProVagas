@@ -31,28 +31,28 @@ export const SidebarData = [
 export const SidebarEmpresa = [
     {
         title:'Dashboard',
-        path: '/dashboarempresa',
+        path: '/dashboardempresa',
         icon: <AiIcons.AiFillHome/>,
         cName: 'nav-text'
     },
 
     {
         title:'Perfil',
-        path: '/dashboarempresa/perfil',
+        path: '/dashboardempresa/perfil',
         icon: <IoIcons.IoMdPerson/>,
         cName: 'nav-text'
     },
 
     {
         title:'Minhas Vagas',
-        path: '/dashboarempresa/vaga',
+        path: '/dashboardempresa/minhasvagas',
         icon: <MdIcons.MdWork/>,
         cName: 'nav-text'
     },
 
     {
         title:'Cadastrar Vagas',
-        path: '/dashboarempresa/vaga',
+        path: '/dashboardempresa/vaga',
         icon: <FaIcons.FaHandshake/>,
         cName: 'nav-text'
     }

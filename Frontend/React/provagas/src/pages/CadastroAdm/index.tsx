@@ -6,11 +6,11 @@ import InputSmaller from '../../components/InputSmaller';
 import Button from '../../components/Button';
 import './style.css';
 import { parse } from 'path';
-
-
-
+import { useHistory } from 'react-router-dom';
 
 function CadastroAdm(){
+
+    let history = useHistory();
 
     const [nomeAdm, setnomeAdm] = useState('');
     const [nif, setnif] = useState(0);
@@ -20,56 +20,48 @@ function CadastroAdm(){
     const [senha, setsenha] = useState('');
     const [telefone, settelefone] = useState('');
 
-    const salvarUsuario = () =>{
-        fetch('http://localhost:5001/api/Usuarios',{
-            method: 'POST',
-            body: JSON.stringify({Email:email, Telefone:telefone, Senha:senha, IdTipoUsuario:3})
-            /*headers:{
-                authorization : 'Bearer' + localStorage.getItem('token-provagas')
-            }*/
-            
-        },
-        
-        )
 
-        .then (response => response.json())
-        .then(id=>{
-            salvarAdm(id);
-        })
-    }
 
-    const salvarAdm = (id:BigInteger) =>{
-        const novoAdm={
-            NomeCompletoAdmin:nomeAdm,
-            Nif:nif,
-            UnidadeSenai:unisenai,
-            Departamento:departamento,
-            IdUsuario:id
-        };
-        fetch('http://localhost:5001/api/Administradores',{
+    const cadastrarAdm = () => {
+        const cadadm = {
+            NomeCompletoAdmin: nomeAdm,
+            Nif: nif,
+            UnidadeSenai: unisenai,
+            Departamento: departamento,
+            idUsuarioNavigation: {
+                Email:email,
+                Telefone:telefone,
+                Senha:senha,
+                IdTipoUsuario:3
+            }
+        }
+
+        fetch('http://localhost:5000/api/Administradores',{
             method: 'POST',
-            body: JSON.stringify(novoAdm)
-            /*headers:{
-                authorization : 'Bearer' + localStorage.getItem('token-provagas')
-            }*/
+            body: JSON.stringify(cadadm),
+            headers:{
+                'Content-Type': 'application/json;charset=utf-8'
+            }
         },
         
         )
         .then(() => {
             alert("Cadastro concluido com sucesso");
+            history.push('/login')
         })
         .catch(error=> {
             console.error(error);
             alert("Erro ao cadastrar usuario.");
         });
-
+    
     }
+
 
     return(
         <div className="prcp">
             <Header/>
             <form onSubmit= {event=>{ event.preventDefault();
-            salvarUsuario();}}>
+            cadastrarAdm();}}>
                 <div className="cadastro">
                     <div className="box-banner-colaborador">
                         <img src={imgcolaborador} alt='desenho de duas pessoas frente a frente e cada uma mexendo em um computador'/>
@@ -82,16 +74,10 @@ function CadastroAdm(){
                         <h4>Informações do Colaborador</h4>
                         <Input type="text" label="Nome Completo" name="nome" value={nomeAdm} onChange={e => setnomeAdm(e.target.value)}/>
                         <Input type="text" label="Unidade Senai" name="senai" value={unisenai} onChange={e => setunisenai(e.target.value)}/>
+
+                            <Input type="text" label="Departamento" name="departamento" value={departamento} onChange={e => setdepartamento(e.target.value)}/>
                         <div className="input-duplo">
-                            <InputSmaller type="text" label="CPF" name="cpf"/>
-                            <InputSmaller type="text" label="RG" name="rg"/>
-                        </div>
-                        <div className="input-duplo">
-                            <InputSmaller type="text" label="Departamento" name="departamento" value={departamento} onChange={e => setdepartamento(e.target.value)}/>
-                            <InputSmaller type="text" label="Numero do NIF" name="nif" value={nif} onChange={e => setnif (parseInt(e.target.value))}/>
-                        </div>
-                        <div className="input-duplo">
-                            <InputSmaller type="date" label="Data de Nascimento" name="datanascimento"/>
+                            <InputSmaller type="text" label="Numero do NIF" name="nif"  onChange={e => setnif (parseInt(e.target.value))}/>
                             <InputSmaller type="tel" label="Tel/Cel" name="Contato" value={telefone} onChange={e => settelefone(e.target.value)}/>
                         </div>
 
@@ -104,5 +90,7 @@ function CadastroAdm(){
 
     )
 }
+
+
 
 export default CadastroAdm;

@@ -1,5 +1,5 @@
 export const usuarioLogado = () => {
-    var token = localStorage.getItem('token');
+    var token = localStorage.getItem('provagas-chave-autenticacao');
 
     if (token !== null) {
         return true;
@@ -10,7 +10,7 @@ export const usuarioLogado = () => {
 };
 
 export const parseJWT = () => {
-    var token = localStorage.getItem('token');
+    var token = localStorage.getItem('provagas-chave-autenticacao');
 
     if (token) {
         var baseUrl64 = token.split('.')[1];

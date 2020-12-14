@@ -12,7 +12,7 @@ const Input: React.FunctionComponent<InputProps> = ({label, name, ...rest}) => {
     <div>
         <label htmlFor={name}>{label}</label>
         <br/>
-        <input type="text" id={name} {...rest}/>
+      <input className="entrada" type="text" id={name} {...rest}/>
     </div>
   );
 }

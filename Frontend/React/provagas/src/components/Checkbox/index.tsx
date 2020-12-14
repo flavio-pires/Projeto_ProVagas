@@ -1,22 +1,32 @@
-import React, { useState } from 'react'
+import React from 'react'
+import './style.css'
 
-// export default function ComponentCHeckBox({ values, callbackValue }) {
+interface checkboxprops {
+    values: any;
+    label:string;
+    callbackvalue: any;
+    title:any;
+}
 
-//     return values.map((v, i) => {
-//         return (
-//             <div key={i}>
-//                 <label htmlFor="v">{v}</label>
-//                 <input
-//                     type="checkbox" 
-//                     value={v} 
-//                     onChange={event => {
-//                         callbackValue({
-//                             value: v,
-//                             checked: event.target.checked
-//                         })
-//                     }}
-//                 />
-//             </div>
-//         )
-//     })   
-// }
+const checkBox: React.FunctionComponent<checkboxprops>= ({title, values, callbackvalue, label}) => {
+  return (
+      <div>
+            <input 
+            className="box"
+            type="checkbox"
+            value={values}
+            title={title}
+            onChange={event => {
+                callbackvalue({
+                    value: title,
+                    checked: event.target.checked
+                })
+            }}
+            
+            />
+            <label htmlFor="label">{label}</label>
+      </div>
+  )
+}
+
+export default checkBox;
