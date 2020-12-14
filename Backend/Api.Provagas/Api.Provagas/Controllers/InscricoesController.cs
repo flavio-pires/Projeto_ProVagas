@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Api.Provagas.Domains;
 using Api.Provagas.Interfaces;
 using Api.Provagas.Repositories;
+using Microsoft.IdentityModel.JsonWebTokens;
 
 namespace Api.Provagas.Controllers
 {
@@ -40,6 +41,14 @@ namespace Api.Provagas.Controllers
             {
                 return BadRequest(error);
             }
+        }
+
+        [HttpGet("varinscricao/{idVaga}")]
+        public bool verinscricao(int idVaga)
+        {
+            var id = Convert.ToInt32(HttpContext.User.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+            return _inscricaoRepository.confeinscricao(id, idVaga);
         }
 
         /// <summary>

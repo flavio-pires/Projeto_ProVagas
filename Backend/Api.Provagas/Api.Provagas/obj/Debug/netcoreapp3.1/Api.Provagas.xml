@@ -150,7 +150,7 @@
             </summary>
             <returns>Lista com todos os benefícios da vaga</returns>
         </member>
-        <member name="M:Api.Provagas.Controllers.BeneficiosXVagasController.Get(System.Int32)">
+        <member name="M:Api.Provagas.Controllers.BeneficiosXVagasController.GetporId(System.Int32)">
             <summary>
             Buscar benefícios por id
             </summary>

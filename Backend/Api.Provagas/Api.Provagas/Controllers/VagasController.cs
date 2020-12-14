@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Api.Provagas.Domains;
 using Api.Provagas.Interfaces;
 using Api.Provagas.Repositories;
+using Api.Provagas.ViewsModels;
 
 namespace Api.Provagas.Controllers
 {
@@ -30,9 +31,16 @@ namespace Api.Provagas.Controllers
         /// </summary>
         /// <returns>Lista com todas as vagas</returns>
         [HttpGet]
-        public IEnumerable<Vaga> Get()
+        public IEnumerable<InscricaoViewModels> Get()
         {
-            return _vagaRepository.GetAll();
+            return _vagaRepository.get();
+        }
+
+        [HttpGet("Empresa/{id}")]
+        public IEnumerable<InscricaoViewModels> vagasemp(int id)
+        {
+
+            return _vagaRepository.getempresa(id);
         }
 
         /// <summary>

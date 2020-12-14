@@ -156,6 +156,21 @@ namespace Api.Provagas.Repositories
             return get;
         }
 
-        
+        public bool confeinscricao(int iduser, int idvaga)
+        {
+            var inscricao = ctx.Inscricao.Where(i => i.IdVaga == idvaga).ToList();
+
+            foreach (var item in inscricao)
+            {
+                if (item.IdCandidato == iduser)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
     }
 }

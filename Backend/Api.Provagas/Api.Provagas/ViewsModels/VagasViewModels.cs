@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Api.Provagas.ViewsModels
 {
-    public class InscricaoViewModels
+    public class VagasViewModels
     {
         public string NomeVaga { get; set; }
         public string DescricaoAtividade { get; set; }
@@ -15,14 +15,11 @@ namespace Api.Provagas.ViewsModels
         public string Localizacao { get; set; }
         public string Salario { get; set; }
         public bool? AceitaTrabalhoRemoto { get; set; }
-        public ICollection<string> Beneficios { get; set; }
-
-        public string Status { get; set; }
+        public string NomeBeneficio { get; set; }
+        public string DescricaoEmpresa { get; set; }
+        public string NomeFantasia { get; set; }
         public string NomePorte { get; set; }
-        public string nomeFantasia { get; set; }
-
-        public string nomeBeneficio { get; set; }
-
-        public int IdVaga { get; set; }
+        public string NomeTipoVaga { get; set; }
+        public string NomeNivelVaga { get; set; }
     }
 }

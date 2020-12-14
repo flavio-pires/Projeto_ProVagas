@@ -45,5 +45,6 @@ namespace Api.Provagas.Interfaces
         void Deletar(int id);
         IEnumerable<InscricaoViewModels> GetInscricoesByid(int id);
 
+        public bool confeinscricao(int iduser, int idvaga);
     }
 }

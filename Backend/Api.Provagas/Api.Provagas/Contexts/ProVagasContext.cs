@@ -43,7 +43,7 @@ namespace Api.Provagas.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-8L7EE8D; Initial Catalog=ProVagas; Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=LAB08DESK301\\SQLEXPRESS; Initial Catalog=ProVagas; Integrated Security=True");
             }
         }
 

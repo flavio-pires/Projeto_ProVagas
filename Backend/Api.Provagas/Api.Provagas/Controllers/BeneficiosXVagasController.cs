@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Api.Provagas.Domains;
 using Api.Provagas.Interfaces;
 using Api.Provagas.Repositories;
+using Api.Provagas.ViewsModels;
 
 namespace Api.Provagas.Controllers
 {
@@ -33,13 +34,18 @@ namespace Api.Provagas.Controllers
             return _beneficioXVagaRepository.GetAll();
         }
 
+        [HttpGet("vagou/{id}")]
+        public IEnumerable<VagasViewModels> Get(int id)
+        {
+            return _beneficioXVagaRepository.getallvagas(id);
+        }
         /// <summary>
         /// Buscar benefícios por id
         /// </summary>
         /// <param name="id">Id do benefício a ser buscado</param>
         /// <returns>Benefício buscado</returns>
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult GetporId(int id)
         {
             if (_beneficioXVagaRepository.GetById(id) != null)
             {

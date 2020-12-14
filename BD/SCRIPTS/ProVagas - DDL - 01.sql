@@ -196,3 +196,15 @@ CREATE TABLE BeneficioXVaga (
 GO
 
 
+
+INSERT INTO TipoUsuario VALUES (
+	'Candidato'
+), (
+	'Empresa'
+), (
+	'Administrador'
+)
+
+GO
+
+Select * from Usuario
