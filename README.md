@@ -19,7 +19,7 @@ processo sendo gerido por um Administrador do Sistema.
 <br>
 <br>
 
-# Time Technowlogy ✨
+# Time Technowlogy
 
 <table>
   <tr>
