@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -11,6 +10,7 @@ using Api.Provagas.ViewModels;
 using Api.Provagas.Domains;
 using Api.Provagas.Interfaces;
 using Api.Provagas.Repositories;
+using System;
 
 namespace Api.Provagas.Controllers
 {
@@ -57,21 +57,21 @@ namespace Api.Provagas.Controllers
                         tipoRole = "Administrador";
                         Administrador administradorBuscado = _administradorRepository.Login(login.Email, login.Senha);
 
-                        return Ok(CriacaoToken(administradorBuscado.IdUsuarioNavigation.Email, Convert.ToInt32(administradorBuscado.IdAdministrador), tipoRole));
+                        return Ok(CriacaoToken(administradorBuscado.IdUsuarioNavigation.Email, administradorBuscado.IdAdministrador, tipoRole));
                     }
                     if (usuarioGenerico is Candidato)
                     {
                         tipoRole = "Candidato";
                         Candidato alunoBuscado = _candidatoRepository.Login(login.Email, login.Senha);
 
-                        return Ok(CriacaoToken(alunoBuscado.IdEnderecoNavigation.IdUsuarioNavigation.Email, Convert.ToInt32(alunoBuscado.IdCandidato), tipoRole));
+                        return Ok(CriacaoToken(alunoBuscado.IdEnderecoNavigation.IdUsuarioNavigation.Email, alunoBuscado.IdCandidato, tipoRole));
                     }
                     if (usuarioGenerico is Empresa)
                     {
                         tipoRole = "Empresa";
                         Empresa empresaBuscado = _empresaRepository.Login(login.Email, login.Senha);
 
-                        return Ok(CriacaoToken(empresaBuscado.IdEnderecoNavigation.IdUsuarioNavigation.Email, Convert.ToInt32(empresaBuscado.IdEmpresa), tipoRole));
+                        return Ok(CriacaoToken(empresaBuscado.IdEnderecoNavigation.IdUsuarioNavigation.Email, empresaBuscado.IdEmpresa, tipoRole));
                     }
                     else
                     {
@@ -91,8 +91,9 @@ namespace Api.Provagas.Controllers
         }
 
         [NonAction]
-        private IActionResult CriacaoToken(string email, int id, string tipoRole)
+        private IActionResult CriacaoToken(string email, int rawId, string tipoRole)
         {
+            var id = Convert.ToInt32(rawId);
             try
             {
                 var claims = new[]
@@ -130,8 +131,9 @@ namespace Api.Provagas.Controllers
                 // Retorna Ok com o token
                 return Ok(new
                 {
-                    token = new JwtSecurityTokenHandler().WriteToken(token)
-                });
+                    token = new JwtSecurityTokenHandler().WriteToken(token),
+                    id = rawId
+                }); ;
             }
             catch (Exception error)
             {

@@ -16,6 +16,8 @@ export default function CustomPaginationActionsTable() {
   const classes = useStyles2();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  
+
 
   const [contratos, setContratos] = useState<any[]>([]);
 
@@ -25,7 +27,7 @@ export default function CustomPaginationActionsTable() {
     fetch('http://localhost:5000/api/contratos', {
       method: 'GET',
       headers: {
-        // authorization: 'Bearer' + localStorage.getItem('provagas-chave-autenticacao, token')
+         authorization: 'Bearer' + localStorage.getItem('provagas-chave-autenticacao, token')
       }
     })
     .then(response => response.json())
@@ -66,10 +68,14 @@ export default function CustomPaginationActionsTable() {
             </TableRow>
           </TableHead>
           <TableBody>
+            
             {(rowsPerPage > 0
               ? contratos.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               : contratos
-            ).map((row) => (
+            )
+            
+            .map((row) => (
+              
               <TableRow key={row.idContrato}>
                 <TableCell component="th" scope="row">
                   {row.candidato}
@@ -80,6 +86,7 @@ export default function CustomPaginationActionsTable() {
                 <TableCell>
                   {row.dataAlertar}
                 </TableCell>
+              
               </TableRow>
             ))}
             {emptyRows > 0 && (

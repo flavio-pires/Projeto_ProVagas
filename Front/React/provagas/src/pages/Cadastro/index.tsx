@@ -6,7 +6,7 @@ import Button from '../../components/Button';
 import ImageCandidato from '../../assets/images/imgCandidato.png';
 import './style.css';
 import Header from '../../components/Header';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { CropFreeTwoTone, LinkedIn } from '@material-ui/icons';
 import InputSmallerMask from '../../components/MaskTel'
 
@@ -372,7 +372,7 @@ function Cadastro() {
           <br/>
           <br/>
           <br/>
-        <Button 
+        <Link className="link" to="/login"></Link><Button 
           value="Finalizar cadastro" 
         />
         <br/>

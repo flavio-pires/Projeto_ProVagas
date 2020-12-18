@@ -5,7 +5,7 @@ import Input from '../../components/Input';
 import InputSmaller from '../../components/InputSmaller';
 import imgcolaborador from '../../assets/images/imgEmpresa.png';
 import './style.css';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import InputMask from '../../components/InputMask';
 import InputSmallerMask from '../../components/MaskTel'
 
@@ -302,7 +302,9 @@ export default function Business() {
                     </div>
                     <br />
 
-                    <Button value="Finalizar Cadastro" />
+                    <Link className="link" to="/login"></Link><Button
+                        value="Finalizar cadastro"
+                    />
 
                     <br />
 

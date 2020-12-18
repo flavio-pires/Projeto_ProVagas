@@ -33,7 +33,8 @@ namespace Api.Provagas.Repositories
                     Salario = item.Salario,
                     Localizacao = item.Localizacao,
                     AceitaTrabalhoRemoto = item.AceitaTrabalhoRemoto,
-                    nomeFantasia = item.IdEmpresaNavigation.NomeFantasia
+                    nomeFantasia = item.IdEmpresaNavigation.NomeFantasia,
+                    NomePorte = item.IdEmpresaNavigation.NomePorte
                 };
                 getemp.Add(emp);
             }

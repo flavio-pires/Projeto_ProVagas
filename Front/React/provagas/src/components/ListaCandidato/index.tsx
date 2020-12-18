@@ -26,7 +26,7 @@ export default function CustomPaginationActionsTable() {
     fetch('http://localhost:5000/api/administradores/candidato/'+id,{
     method: 'DELETE',
     headers:{
-      // authorization: 'Bearer' + localStorage.getItem('provagas-chave-autenticacao, token')
+       authorization: 'Bearer' + localStorage.getItem('provagas-chave-autenticacao, token')
     }
   })
   .then(response => listar())
@@ -37,7 +37,7 @@ const listar =() =>{
   fetch('http://localhost:5000/api/administradores/candidato',{
     method: 'GET',
     headers:{
-      // authorization: 'Bearer' + localStorage.getItem('provagas-chave-autenticacao, token')
+       authorization: 'Bearer' + localStorage.getItem('provagas-chave-autenticacao, token')
     }
   })
   .then(response => response.json())

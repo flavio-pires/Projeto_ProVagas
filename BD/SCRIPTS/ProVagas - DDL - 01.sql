@@ -6,7 +6,6 @@ USE ProVagas
 GO
 
 
-SELECT * FROM Usuario
 CREATE TABLE TipoUsuario (
 	IdTipoUsuario INT PRIMARY KEY IDENTITY,
 	NomeTipoUsuario VARCHAR (255) NOT NULL 

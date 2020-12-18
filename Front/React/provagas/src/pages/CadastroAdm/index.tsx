@@ -6,9 +6,9 @@ import InputSmaller from '../../components/InputSmaller';
 import Button from '../../components/Button';
 import './style.css';
 import { parse } from 'path';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
-function CadastroAdm(){
+function CadastroAdm() {
 
     let history = useHistory();
 
@@ -29,61 +29,65 @@ function CadastroAdm(){
             UnidadeSenai: unisenai,
             Departamento: departamento,
             idUsuarioNavigation: {
-                Email:email,
-                Telefone:telefone,
-                Senha:senha,
-                IdTipoUsuario:3
+                Email: email,
+                Telefone: telefone,
+                Senha: senha,
+                IdTipoUsuario: 3
             }
         }
 
-        fetch('http://localhost:5000/api/Administradores',{
+        fetch('http://localhost:5000/api/Administradores', {
             method: 'POST',
             body: JSON.stringify(cadadm),
-            headers:{
+            headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             }
         },
-        
+
         )
-        .then(() => {
-            alert("Cadastro concluido com sucesso");
-            history.push('/login')
-        })
-        .catch(error=> {
-            console.error(error);
-            alert("Erro ao cadastrar usuario.");
-        });
-    
+            .then(() => {
+                alert("Cadastro concluido com sucesso");
+                history.push('/login')
+            })
+            .catch(error => {
+                console.error(error);
+                alert("Erro ao cadastrar usuario.");
+            });
+
     }
 
 
-    return(
+    return (
         <div className="prcp">
-            <Header/>
-            <form onSubmit= {event=>{ event.preventDefault();
-            cadastrarAdm();}}>
+            <Header />
+            <form onSubmit={event => {
+                event.preventDefault();
+                cadastrarAdm();
+            }}>
                 <div className="cadastroAdmin">
                     <div className="box-banner-colaborador">
-                        <img src={imgcolaborador} alt='desenho de duas pessoas frente a frente e cada uma mexendo em um computador'/>
+                        <img src={imgcolaborador} alt='desenho de duas pessoas frente a frente e cada uma mexendo em um computador' />
                     </div>
-                    
-                        <h1>Cadastro de Colaboradores</h1>
-                        <h4>Dados de acesso</h4>
-                        <Input type="email" label ="E-mail" name="email" value={email} onChange={e => setemail(e.target.value)} />
-                        <Input type="password" label="Senha" name="senha" value={senha} onChange={e => setsenha(e.target.value)}/>
-                        <h4>Informações do Colaborador</h4>
-                        <Input type="text" label="Nome Completo" name="nome" value={nomeAdm} onChange={e => setnomeAdm(e.target.value)}/>
-                        <Input type="text" label="Unidade Senai" name="senai" value={unisenai} onChange={e => setunisenai(e.target.value)}/>
 
-                            <Input type="text" label="Departamento" name="departamento" value={departamento} onChange={e => setdepartamento(e.target.value)}/>
-                        <div className="input-duplo">
-                            <InputSmaller type="text" label="Numero do NIF" name="nif"  onChange={e => setnif (parseInt(e.target.value))}/>
-                            <InputSmaller type="tel" label="Tel/Cel" name="Contato" value={telefone} onChange={e => settelefone(e.target.value)}/>
-                        </div>
-                        <br/>
-                        <Button value="Finalizar Cadastro" />
-                        <br/>
-                        <br/>
+                    <h1>Cadastro de Colaboradores</h1>
+                    <h4>Dados de acesso</h4>
+                    <Input type="email" label="E-mail" name="email" value={email} onChange={e => setemail(e.target.value)} />
+                    <Input type="password" label="Senha" name="senha" value={senha} onChange={e => setsenha(e.target.value)} />
+                    <h4>Informações do Colaborador</h4>
+                    <Input type="text" label="Nome Completo" name="nome" value={nomeAdm} onChange={e => setnomeAdm(e.target.value)} />
+                    <Input type="text" label="Unidade Senai" name="senai" value={unisenai} onChange={e => setunisenai(e.target.value)} />
+
+                    <Input type="text" label="Departamento" name="departamento" value={departamento} onChange={e => setdepartamento(e.target.value)} />
+                    <div className="input-duplo">
+                        <InputSmaller type="text" label="Numero do NIF" name="nif" onChange={e => setnif(parseInt(e.target.value))} />
+                        <InputSmaller type="tel" label="Tel/Cel" name="Contato" value={telefone} onChange={e => settelefone(e.target.value)} />
+                    </div>
+                    <br />
+                    <Link className="link" to="/login"></Link><Button
+                        value="Finalizar cadastro"
+                    />
+                    <br />
+                    <br />
 
                 </div>
             </form>

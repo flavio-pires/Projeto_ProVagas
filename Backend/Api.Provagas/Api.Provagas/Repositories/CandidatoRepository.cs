@@ -40,6 +40,7 @@ namespace Api.Provagas.Repositories
                 .Include(v => v.IdNivelVagaNavigation.NomeNivelVaga)
                 .Include(v => v.Localizacao)
                 .Include(v => v.Salario)
+                .Include(v => v.IdEmpresaNavigation.NomePorte)
                 .ToList();
 
             List<RequisitoXvaga> req = ctx.RequisitoXvaga

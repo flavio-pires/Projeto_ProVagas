@@ -31,9 +31,9 @@ namespace Api.Provagas.Controllers
         /// </summary>
         /// <returns>Lista com todas as vagas</returns>
         [HttpGet]
-        public IEnumerable<Vaga> Get()
+        public IEnumerable<InscricaoViewModels> Get()
         {
-            return _vagaRepository.GetAll();
+            return _vagaRepository.get();
         }
         [HttpGet("Empresa/{id}")]
         public IEnumerable<InscricaoViewModels> vagasemp(int id)

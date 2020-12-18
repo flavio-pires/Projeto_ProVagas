@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zDv+uRNGwADmKeqM3bQGIF91AtFsYbfyOhynwlbJTAC6sX0w3Cl5CxsJvzBFi5dhl0JKqg++QGtMWpbhDO/G4Q==",
+  "dgSpecHash": "1uJTvmBo01XAN0T8aybo8K6/x0tDyVLSBgwwDBh/BI348Xj0VFupbLXlLX2cKfysql6S06RyOyHElX9JZ2TaHQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\daniel\\Desktop\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj",
+  "projectFilePath": "C:\\Users\\daniel\\Desktop\\Projeto_ProVagas\\Backend\\Api.Provagas\\Api.Provagas\\Api.Provagas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\daniel\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\daniel\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.10\\microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",

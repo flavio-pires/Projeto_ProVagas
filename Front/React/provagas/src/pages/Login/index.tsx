@@ -29,14 +29,14 @@ function Login() {
         }
     })
         .then(resp => resp.json())
-        .then(data =>{
+        .then(data =>{ localStorage.setItem("id", data.value.id)
             if (data.value.token != undefined) 
             {
                 localStorage.setItem('provagas-chave-autenticacao', data.value.token)
                 
                 if (parseJWT().Role === 'Administrador')
                 {
-                    history.push('/dashboaradm/alertacontratos');
+                    history.push('/dashboardadm/administrador');
                 }
                 if (parseJWT().Role === 'Empresa') 
                 {

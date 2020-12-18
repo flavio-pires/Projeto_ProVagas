@@ -3,6 +3,7 @@ import Navleft from '../../../components/Navbar/navbar';
 import './style.css'
 import imghiring from '../../../assets/images/undraw_hiring_cyhs.png';
 import Button from '../../../components/Button/index';
+import { Link } from 'react-router-dom';
 
 export default function dashboard() {
     return (
@@ -28,7 +29,7 @@ export default function dashboard() {
                    <br/>
                 <h4>O que está esperando ?</h4><br/>
                 <p>Abra já a sua vaga e encontro o estagiário perfeito para sua empresa.</p><br/>
-                <Button value='Cadastre já uma vaga !'/>
+                <Link className="link" to="/dashboardempresa/vaga"><Button value='Cadastre já uma vaga !'/></Link>
                </div>
                <div className='conteudo1'>
                    <br/>

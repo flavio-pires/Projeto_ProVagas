@@ -46,10 +46,10 @@ function Vagas() {
                 <br/>
                 <br/>
                 <br/>
-              <div className="filter">
+              {/* <div className="filter">
                 <div className="quadrado">
                     <Filter/>
-                </div>
+                </div> */}
               <table>
              <tbody>
           {
@@ -82,7 +82,7 @@ function Vagas() {
         </tbody>       
       </table>
               </div>
-        </div>
+        {/* </div> */}
         <Footer/>
       </div>
   );

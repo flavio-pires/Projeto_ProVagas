@@ -5,7 +5,7 @@ import * as IoIcons from 'react-icons/io'
 import * as MdIcons from 'react-icons/md'
 
 
-export const SidebarData = [
+export const sidebarData = () => [
     {
         title:'Dashboard',
         path: '/dashboarduser',
@@ -28,7 +28,7 @@ export const SidebarData = [
     }
 ]
 
-export const SidebarEmpresa = [
+export const sidebarEmpresa = () => [
     {
         title:'Dashboard',
         path: '/dashboardempresa',
@@ -58,7 +58,7 @@ export const SidebarEmpresa = [
     }
 ]
 
-export const SidebarAdm = [
+export const sidebarAdm = () => [
     {
         title:'Alerta de Contratos',
         path: '/dashboaradm/alertacontratos',
@@ -68,7 +68,7 @@ export const SidebarAdm = [
 
     {
         title:'EditarPerfil',
-        path: '/dashboaradm/perfil/' + 1, // TODO colocar o id do adm logado,
+        path: '/dashboaradm/perfil/' + localStorage.getItem('id'), // TODO colocar o id do adm logado,
         icon: <IoIcons.IoMdPerson/>,
         cName: 'nav-text'
     },

@@ -11,6 +11,7 @@ import Paper from '@material-ui/core/Paper';
 import TablePaginationActions, { useStyles2 } from '../TablePaginationActions';
 import './style.css';
 import { TableHead } from '@material-ui/core';
+import Button from '../Button';
 
 
 
@@ -19,6 +20,7 @@ export default function CustomPaginationActionsTable() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [administradores, setAdministradores] = React.useState<any[]>([]);
+  const [botao, setBotao] = React.useState(true);
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, administradores.length - page * rowsPerPage);
 
@@ -33,11 +35,23 @@ export default function CustomPaginationActionsTable() {
     setPage(0);
   };
 
+  const deletar = (id: any) => {
+    fetch('http://localhost:5000/api/administradores/' + id, {
+      method: 'DELETE',
+      headers: {
+        authorization: 'Bearer' + localStorage.getItem('provagas-chave-autenticacao, token')
+      }
+    })
+      .then(() => alert('Administrador recusado.'))
+      .then(response => listar())
+      .catch(err => console.error(err));
+  }
+
   const listar = () => {
     fetch('http://localhost:5000/api/administradores', {
       method: 'GET',
       headers: {
-        // authorization: 'Bearer' + localStorage.getItem('provagas-chave-autenticacao, token')
+        authorization: 'Bearer' + localStorage.getItem('provagas-chave-autenticacao, token')
       }
     })
       .then(response => response.json())
@@ -68,7 +82,7 @@ export default function CustomPaginationActionsTable() {
             {(rowsPerPage > 0
               ? administradores.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               : administradores
-            ).map((row) => (
+            ).map((row, index) => (
               <TableRow key={row.idAdministrador}>
                 <TableCell component="th" scope="row">
                   {row.nomeCompletoAdmin}
@@ -79,6 +93,18 @@ export default function CustomPaginationActionsTable() {
                 <TableCell>
                   {row.unidadeSenai}
                 </TableCell>
+
+                {
+                  botao && localStorage.getItem("id") === "1" && index === 1 ?
+                    <>
+                      <TableCell><Button style={{ backgroundColor: 'green' }} value="Aceitar" onClick={() => setBotao(false)}>Aceitar</Button></TableCell>
+                      <TableCell><Button value="Recusar" onClick={() => deletar(row.idAdministrador)}>Recusar</Button></TableCell>
+                    </> :
+                    <>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                    </>
+                }
               </TableRow>
             ))}
             {emptyRows > 0 && (
